@@ -34,8 +34,32 @@
         .logo { display: flex; align-items: center; }
         .logo img { height: 40px; width: auto; display: block; }
         .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
-        .nav-item { position: relative; cursor: pointer; color: #aaa; transition: color 0.3s; }
-        .nav-item:hover { color: var(--channel-color); }
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s;
+            /* This padding creates an invisible bridge to the dropdown so it won't disappear */
+            padding: 25px 0; 
+        }
+
+        .nav-item:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Channels Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Starts exactly at the bottom of the padding bridge */
+            left: 0;
+            background-color: var(--bg-black);
+            min-width: 250px;
+            padding: 10px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink);
+            z-index: 2000; /* Ensures it stays above all hero images and videos */
+        }
         .nav-right { display: flex; align-items: center; gap: 15px; }
         .social-icons { display: flex; gap: 15px; }
         .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
