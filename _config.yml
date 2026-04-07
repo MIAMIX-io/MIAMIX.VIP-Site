@@ -1,0 +1,6 @@
+name: MIAMIX VIP
+description: MIAMIX Curated Lifestyle
+url: "https://miamix.vip"
+
+# This tells Jekyll to generate pages for your channels automatically
+permalink: /:categories/:title/
