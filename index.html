@@ -74,6 +74,8 @@
             cursor: pointer;
             color: var(--text-muted);
             transition: color 0.3s;
+            /* This padding creates an invisible bridge to the dropdown so it won't disappear */
+            padding: 25px 0; 
         }
 
         .nav-item:hover {
@@ -84,13 +86,14 @@
         .dropdown-menu {
             display: none;
             position: absolute;
-            top: 100%;
+            top: 100%; /* Starts exactly at the bottom of the padding bridge */
             left: 0;
             background-color: var(--bg-black);
             min-width: 250px;
             padding: 10px 0;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.9);
-            border-top: 2px solid var(--bg-black);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink);
+            z-index: 2000; /* Ensures it stays above all hero images and videos */
         }
 
         .dropdown-menu li {
