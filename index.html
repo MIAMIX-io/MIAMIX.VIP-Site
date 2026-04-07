@@ -124,19 +124,26 @@
 
         .social-icons {
             display: flex;
-            gap: 10px;
+            gap: 15px; /* Slightly increased gap for images */
         }
 
         .social-icon {
-            width: 30px;
-            height: 30px;
-            border: 1px solid var(--primary-pink);
-            border-radius: 4px;
+            width: 25px; /* Adjust size of the social icons here */
+            height: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-pink);
-            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1); /* Adds a nice little hover effect */
+        }
+
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         /* --- HERO SECTION --- */
@@ -432,13 +439,16 @@
             <li class="nav-item">INTER MIAMI</li>
             <li class="nav-item">CONTACT</li>
         </ul>
-        <div class="nav-right">
-            <a href="#" class="login-btn">Login</a>
-            <div class="social-icons">
-                <a href="#" class="social-icon">YT</a>
-                <a href="#" class="social-icon">IG</a>
-                <a href="#" class="social-icon">IN</a>
-                <a href="#" class="social-icon" style="background:var(--primary-pink); color:white;">W</a>
+        <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <img src="images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                </a>
             </div>
         </div>
     </header>
@@ -635,9 +645,15 @@
             <img src="images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
         </div>
         <div class="social-icons" style="justify-content: center;">
-            <a href="#" class="social-icon" style="color:white; border-color:white;">YT</a>
-            <a href="#" class="social-icon" style="color:white; border-color:white;">IG</a>
-            <a href="#" class="social-icon" style="color:white; border-color:white;">IN</a>
+            <a href="#" class="social-icon">
+                <img src="images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+            </a>
         </div>
     </footer>
 
