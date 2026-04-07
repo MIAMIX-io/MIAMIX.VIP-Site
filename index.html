@@ -177,10 +177,35 @@
             background-color: var(--bg-black);
         }
 
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            color: var(--text-main);
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: var(--primary-pink);
+        }
+
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -202,6 +227,11 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
         }
 
         .card-content {
@@ -393,6 +423,7 @@
     </section>
 
     <section class="grid-section">
+        <h2 class="section-title">Latest <span>Features</span></h2>
         <div class="card-grid">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
@@ -426,7 +457,39 @@
                     <p>Health & Wellness</p>
                 </div>
             </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Nature Experience 2</h3>
+                    <p>Wildlife & Outdoors</p>
+                </div>
             </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Oasis Resort 2</h3>
+                    <p>Luxury Travel</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Tropical Blooms 2</h3>
+                    <p>Event Decor</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Fitness Lifestyle 2</h3>
+                    <p>Health & Wellness</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="logo-banner">
@@ -435,6 +498,76 @@
         <img src="https://via.placeholder.com/200x80/222/fff?text=Miami+FC" alt="Banner 3">
         <img src="https://via.placeholder.com/200x80/222/fff?text=Partner+4" alt="Banner 4">
     </div>
+
+    <section class="grid-section">
+        <h2 class="section-title">Past <span>Highlights</span></h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Nature Experience 3</h3>
+                    <p>Wildlife & Outdoors</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Oasis Resort 3</h3>
+                    <p>Luxury Travel</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Tropical Blooms 3</h3>
+                    <p>Event Decor</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Fitness Lifestyle 3</h3>
+                    <p>Health & Wellness</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Nature Experience 4</h3>
+                    <p>Wildlife & Outdoors</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Oasis Resort 4</h3>
+                    <p>Luxury Travel</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Tropical Blooms 4</h3>
+                    <p>Event Decor</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Fitness Lifestyle 4</h3>
+                    <p>Health & Wellness</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="circular-partners">
         <div class="circle-logo"><img src="https://via.placeholder.com/150/550055/fff?text=Logo" alt="Logo"></div>
