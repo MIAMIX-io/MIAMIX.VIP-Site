@@ -1,0 +1,40 @@
+name: Sync Notion Content to GitHub Pages
+
+on:
+  schedule:
+    # Runs every hour. You can adjust this or trigger manually.
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allows you to run it manually from the Actions tab
+
+jobs:
+  notion-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Notion Database and convert to Markdown
+        uses: victornpb/notion-to-md-action@v0.0.12 # Popular open-source sync action
+        with:
+          notion_token: ${{ secrets.NOTION_SECRET }}
+          database_id: ${{ secrets.NOTION_DATABASE_ID }}
+          # Where to save the files (Jekyll expects them in _posts)
+          output_folder: _posts
+          # Status filter: Only pull posts marked as Published
+          status_property: Status
+          status_value: Published
+          # Map Notion properties to Jekyll Frontmatter
+          frontmatter: |
+            layout: post
+            title: "{{Name}}"
+            date: "{{Date}}"
+            categories: ["{{Channel}}"]
+            cover: "{{Cover Image}}"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Action Bot"
+          git config user.email "action@github.com"
+          git add _posts/
+          git commit -m "Auto-sync Notion content to blog" || echo "No changes to commit"
+          git push
