@@ -30,6 +30,7 @@ jobs:
             date: "{{Date}}"
             categories: ["{{Channel}}"]
             cover: "{{Cover Image}}"
+            grid_placement: "{{Grid Placement}}"
 
       - name: Commit and push changes
         run: |
