@@ -47,14 +47,16 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
+        /* Header Logo Sizing */
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: var(--primary-pink);
+        .logo img {
+            height: 40px; 
+            width: auto;
+            display: block;
         }
 
         .nav-center {
@@ -326,7 +328,7 @@
             gap: 10px;
             cursor: pointer;
         }
-        
+
         .accordion-item:last-child {
             border-bottom: 1px solid #444;
         }
@@ -341,11 +343,12 @@
             background-blend-mode: overlay;
         }
 
-        .footer-logo {
-            font-size: 40px;
-            color: #d4af37; /* Gold color from screenshot */
-            letter-spacing: 5px;
-            margin-bottom: 20px;
+        /* Footer Logo Sizing & Centering */
+        .footer-logo img {
+            height: 80px; 
+            width: auto;
+            margin: 0 auto 20px auto; 
+            display: block;
         }
     </style>
 </head>
@@ -353,8 +356,8 @@
 
     <header>
         <a href="/" class="logo">
-    <img src="images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
-</a>
+            <img src="images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        </a>
         <ul class="nav-center">
             <li class="nav-item dropdown">
                 CHANNELS <span>&#708;</span>
@@ -464,8 +467,8 @@
 
     <footer>
         <div class="footer-logo">
-    <img src="images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
-</div>
+            <img src="images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
+        </div>
         <div class="social-icons" style="justify-content: center;">
             <a href="#" class="social-icon" style="color:white; border-color:white;">YT</a>
             <a href="#" class="social-icon" style="color:white; border-color:white;">IG</a>
