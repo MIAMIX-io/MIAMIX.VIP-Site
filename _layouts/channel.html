@@ -218,7 +218,7 @@
     <section class="channel-content">
         <div class="card-grid">
             {% for post in site.posts %}
-                {% if post.categories contains page.channel_name %}
+                {% if post.channel contains page.channel_name %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;">
                         <img src="{{ post.cover }}" alt="{{ post.title }}">
