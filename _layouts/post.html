@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} | MIAMIX</title>
+    </head>
+<body style="background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif;">
+    <article style="max-width: 800px; margin: 100px auto; padding: 20px;">
+        <span style="color: #d9008d; font-size: 14px; text-transform: uppercase;">{{ page.categories | join: ", " }}</span>
+        <h1 style="font-size: 40px; margin-bottom: 10px;">{{ page.title }}</h1>
+        <p style="color: #aaa;">{{ page.date | date: "%B %d, %Y" }}</p>
+        
+        {% if page.cover %}
+            <img src="{{ page.cover }}" alt="Cover" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+        {% endif %}
+
+        <div class="content" style="line-height: 1.8;">
+            {{ content }}
+        </div>
+    </article>
+
+    </body>
+</html>
