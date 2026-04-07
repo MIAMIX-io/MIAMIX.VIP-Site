@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAMIX - {{ page.title }}</title>
+    <link rel="icon" type="image/png" href="{{ '/images/MIAMIX-favicon-2.png' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* These variables are dynamically injected based on the specific channel file */
+            --channel-color: {{ page.theme_color }};
+            --channel-bg: {{ page.bg_color | default: '#000000' }};
+            --primary-pink: #d9008d;
+            --text-main: {{ page.text_color | default: '#ffffff' }};
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--channel-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* HEADER (Inherited from Index) */
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 40px; width: auto; display: block; }
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item { position: relative; cursor: pointer; color: #aaa; transition: color 0.3s; }
+        .nav-item:hover { color: var(--channel-color); }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        .social-icon:hover { transform: scale(1.1); }
+        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* CHANNEL HERO */
+        .channel-hero {
+            position: relative;
+            height: 60vh;
+            background-image: url('{{ page.hero_image }}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .channel-hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        .channel-hero h1 {
+            position: relative; z-index: 2; font-size: 5vw; font-weight: 300; letter-spacing: 2px;
+            color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+        .channel-hero h1 span { font-weight: 700; }
+
+        /* CURVED DIVIDER */
+        .curve-divider {
+            position: absolute;
+            bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0;
+            z-index: 3;
+        }
+        .curve-divider svg {
+            display: block; width: calc(100% + 1.3px); height: 50px;
+        }
+        .curve-divider .shape-fill { fill: var(--channel-bg); }
+
+        /* OPTIN FORM SECTION */
+        .optin-section {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .optin-box {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--channel-color);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .optin-box h2 { margin-bottom: 15px; font-weight: 600; color: var(--channel-color); }
+        .optin-box p { font-size: 14px; margin-bottom: 20px; opacity: 0.8; }
+        .optin-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .optin-form input {
+            padding: 12px 15px; border: none; border-radius: 4px; outline: none; flex-grow: 1; max-width: 200px;
+        }
+        .optin-form button {
+            padding: 12px 25px; background: var(--channel-color); color: #fff; border: none;
+            border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;
+        }
+        .optin-form button:hover { opacity: 0.8; }
+
+        /* CHANNEL GRID (3 Columns based on screenshots) */
+        .channel-content { padding: 40px 60px; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+        .card {
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3/4;
+            display: flex; flex-direction: column; justify-content: flex-end;
+        }
+        .card img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 1; transition: transform 0.5s ease;
+        }
+        .card:hover img { transform: scale(1.05); }
+        .card-content {
+            position: relative; z-index: 2;
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%);
+            padding: 20px; text-align: left;
+            border-bottom: 3px solid var(--channel-color);
+        }
+        .card-badge {
+            background: var(--channel-color); color: white; padding: 5px 10px; font-size: 10px;
+            text-transform: uppercase; position: absolute; bottom: 90px; left: 20px; z-index: 3; font-weight: bold;
+        }
+        .card h3 { font-size: 18px; margin-bottom: 5px; color: #fff; }
+        .card p { font-size: 12px; color: #aaa; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="{{ '/' | relative_url }}" class="logo">
+            <img src="{{ '/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png' | relative_url }}" alt="MIAMIX Logo">
+        </a>
+        <ul class="nav-center">
+            <li class="nav-item">CHANNELS</li>
+            <li class="nav-item">CURATED LIFESTYLE</li>
+            <li class="nav-item">INTER MIAMI</li>
+            <li class="nav-item">CONTACT</li>
+        </ul>
+        <div class="nav-right">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="{{ '/images/MIAMIX_SocialLogos-3 (1).png' | relative_url }}" alt="YouTube"></a>
+                <a href="#" class="social-icon"><img src="{{ '/images/MIAMIX_SocialLogos-1 (1).png' | relative_url }}" alt="Instagram"></a>
+                <a href="#" class="social-icon"><img src="{{ '/images/MIAMIX_SocialLogos-2 (1).png' | relative_url }}" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="channel-hero">
+        {{ page.custom_hero_html | default: "" }}
+        {% if page.custom_hero_html == nil %}
+            <h1>MIAMIX <br><span>{{ page.channel_name }}</span></h1>
+        {% endif %}
+        
+        <div class="curve-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="optin-section">
+        <div class="optin-box">
+            <h2>Get On The List</h2>
+            <p>Subscribe to the MIAMIX {{ page.channel_name }} channel for the latest updates and exclusive content.</p>
+            <form class="optin-form">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email Address">
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="channel-content">
+        <div class="card-grid">
+            {% for post in site.posts %}
+                {% if post.categories contains page.channel_name %}
+                <div class="card">
+                    <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;">
+                        <img src="{{ post.cover }}" alt="{{ post.title }}">
+                        <div class="card-badge">MIAMIX</div>
+                        <div class="card-content">
+                            <h3>{{ post.title }}</h3>
+                            <p>Read More &rarr;</p>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+</body>
+</html>
