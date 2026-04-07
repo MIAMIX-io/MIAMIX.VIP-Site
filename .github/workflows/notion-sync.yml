@@ -14,28 +14,23 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Fetch Notion Database and convert to Markdown
-        uses: victornpb/notion-to-md-action@v0.0.12 # Popular open-source sync action
+        uses: victornpb/notion-jam@v0.0.9
         with:
-          notion_token: ${{ secrets.NOTION_SECRET }}
-          database_id: ${{ secrets.NOTION_DATABASE_ID }}
-          # Where to save the files (Jekyll expects them in _posts)
-          output_folder: _posts
-          # Status filter: Only pull posts marked as Published
-          status_property: Status
-          status_value: Published
-          # Map Notion properties to Jekyll Frontmatter
-          frontmatter: |
-            layout: post
-            title: "{{Name}}"
-            date: "{{Date}}"
-            categories: ["{{Channel}}"]
-            cover: "{{Cover Image}}"
-            grid_placement: "{{Grid Placement}}"
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
+          NOTION_DATABASE: ${{ secrets.NOTION_DATABASE_ID }}
+          FILTER_PROP: Status
+          FILTER_VALUES: Published
+          # Saves the file in Jekyll's required _posts folder
+          ARTICLE_PATH: _posts/{date}-{title}.md
+          # Saves Notion images locally so they don't expire
+          ASSETS_PATH: assets/images/
+          # Automatically converts Notion properties like "Grid Placement" to "grid_placement"
+          CONVERT_PROP_CASE: snake 
 
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Action Bot"
           git config user.email "action@github.com"
-          git add _posts/
+          git add _posts/ assets/images/
           git commit -m "Auto-sync Notion content to blog" || echo "No changes to commit"
           git push
