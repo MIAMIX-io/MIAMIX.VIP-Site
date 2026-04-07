@@ -22,6 +22,7 @@ jobs:
           ARTICLE_PATH: _posts/{date}-{title}.md
           ASSETS_PATH: assets/images/
           CONVERT_PROP_CASE: snake 
+          CONCURRENCY: 10 # <-- This explicitly tells it how many tasks to run at once, fixing the crash!
 
       - name: Commit and push changes
         run: |
