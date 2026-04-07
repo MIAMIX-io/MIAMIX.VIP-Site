@@ -2,9 +2,8 @@ name: Sync Notion Content to GitHub Pages
 
 on:
   schedule:
-    # Runs every hour. You can adjust this or trigger manually.
     - cron: '0 * * * *'
-  workflow_dispatch: # Allows you to run it manually from the Actions tab
+  workflow_dispatch: 
 
 jobs:
   notion-sync:
@@ -20,11 +19,8 @@ jobs:
           NOTION_DATABASE: ${{ secrets.NOTION_DATABASE_ID }}
           FILTER_PROP: Status
           FILTER_VALUES: Published
-          # Saves the file in Jekyll's required _posts folder
           ARTICLE_PATH: _posts/{date}-{title}.md
-          # Saves Notion images locally so they don't expire
           ASSETS_PATH: assets/images/
-          # Automatically converts Notion properties like "Grid Placement" to "grid_placement"
           CONVERT_PROP_CASE: snake 
 
       - name: Commit and push changes
@@ -34,3 +30,51 @@ jobs:
           git add _posts/ assets/images/
           git commit -m "Auto-sync Notion content to blog" || echo "No changes to commit"
           git push
+
+      - name: Update Notion Status to Live and set Timestamp
+        env:
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
+          DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          # 1. Get current time in ISO 8601 format
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          
+          # 2. Query Notion for pages currently marked as "Published"
+          # (These are the ones the previous step just synced)
+          PAGE_IDS=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/query" \
+            -H "Authorization: Bearer $NOTION_SECRET" \
+            -H "Notion-Version: 2022-06-28" \
+            -H "Content-Type: application/json" \
+            --data '{
+              "filter": {
+                "property": "Status",
+                "status": {
+                  "equals": "Published"
+                }
+              }
+            }' | jq -r '.results[].id')
+
+          # 3. Loop through those specific pages and update them
+          for id in $PAGE_IDS; do
+            if [ "$id" != "null" ] && [ -n "$id" ]; then
+              echo "Updating Notion page: $id"
+              curl -s -X PATCH "https://api.notion.com/v1/pages/$id" \
+                -H "Authorization: Bearer $NOTION_SECRET" \
+                -H "Notion-Version: 2022-06-28" \
+                -H "Content-Type: application/json" \
+                --data '{
+                  "properties": {
+                    "Status": {
+                      "status": {
+                        "name": "Live"
+                      }
+                    },
+                    "Last Synced to GitHub": {
+                      "date": {
+                        "start": "'$TIMESTAMP'"
+                      }
+                    }
+                  }
+                }'
+            fi
+          done
