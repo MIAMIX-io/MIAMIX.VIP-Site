@@ -465,70 +465,20 @@
 
     <section class="grid-section">
         <div class="card-grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Nature Experience</h3>
-                    <p>Wildlife & Outdoors</p>
+            {% for post in site.posts %}
+                {% if post.grid_placement == 'Grid A' %}
+                <div class="card">
+                    <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;">
+                        <img src="{{ post.cover }}" alt="{{ post.title }}">
+                        <div class="card-badge">MIAMIX</div>
+                        <div class="card-content">
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.categories | first }}</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Oasis Resort</h3>
-                    <p>Luxury Travel</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Tropical Blooms</h3>
-                    <p>Event Decor</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Fitness Lifestyle</h3>
-                    <p>Health & Wellness</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Nature Experience 2</h3>
-                    <p>Wildlife & Outdoors</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Oasis Resort 2</h3>
-                    <p>Luxury Travel</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Tropical Blooms 2</h3>
-                    <p>Event Decor</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Fitness Lifestyle 2</h3>
-                    <p>Health & Wellness</p>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
 
@@ -541,70 +491,20 @@
 
     <section class="grid-section">
         <div class="card-grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Nature Experience 3</h3>
-                    <p>Wildlife & Outdoors</p>
+            {% for post in site.posts %}
+                {% if post.grid_placement == 'Grid B' %}
+                <div class="card">
+                    <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;">
+                        <img src="{{ post.cover }}" alt="{{ post.title }}">
+                        <div class="card-badge">MIAMIX</div>
+                        <div class="card-content">
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.categories | first }}</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Oasis Resort 3</h3>
-                    <p>Luxury Travel</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Tropical Blooms 3</h3>
-                    <p>Event Decor</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Fitness Lifestyle 3</h3>
-                    <p>Health & Wellness</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Nature Experience 4</h3>
-                    <p>Wildlife & Outdoors</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Oasis Resort 4</h3>
-                    <p>Luxury Travel</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Tropical Blooms 4</h3>
-                    <p>Event Decor</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
-                <div class="card-badge">MIAMIX</div>
-                <div class="card-content">
-                    <h3>Fitness Lifestyle 4</h3>
-                    <p>Health & Wellness</p>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
 
