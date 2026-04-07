@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAMIX - VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #d9008d;
+            --bg-black: #000000;
+            --bg-dark-grey: #111111;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: var(--primary-pink);
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Channels Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--bg-black);
+            min-width: 250px;
+            padding: 10px 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.9);
+            border-top: 2px solid var(--bg-black);
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--primary-pink);
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #1a1a1a;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .login-btn {
+            color: var(--primary-pink);
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--primary-pink);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-pink);
+            font-size: 12px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 80px 60px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .hero-btn {
+            position: absolute;
+            bottom: 80px;
+            right: 60px;
+            color: var(--primary-pink);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- GRID SECTIONS (Dynamic Notion Content Area) --- */
+        .grid-section {
+            padding: 60px;
+            background-color: var(--bg-black);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-dark-grey);
+            border: 1px solid #333;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3/4;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-pink);
+        }
+
+        .card-badge {
+            background: rgba(217, 0, 141, 0.8);
+            color: white;
+            padding: 5px 10px;
+            font-size: 10px;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 80px;
+            right: 10px;
+            z-index: 3;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 12px;
+            color: var(--primary-pink);
+        }
+
+        /* --- CAROUSEL / BANNER --- */
+        .logo-banner {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px 60px;
+            background-color: #111;
+            align-items: center;
+        }
+
+        .logo-banner img {
+            height: 80px;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .logo-banner img:hover { opacity: 1; }
+
+        /* --- CIRCULAR PARTNERS SECTION --- */
+        .circular-partners {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px;
+            background: #050505;
+        }
+
+        .circle-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .circle-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-wrapper {
+            background: linear-gradient(135deg, #c4a000 0%, #d9008d 100%);
+            padding: 60px;
+        }
+
+        .services-container {
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid var(--primary-pink);
+        }
+
+        .services-thumbnails {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .services-thumbnails img {
+            width: calc(25% - 12px);
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border: 1px solid #444;
+        }
+
+        .services-content h2 {
+            color: var(--primary-pink);
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .services-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .accordion-item {
+            border-top: 1px solid #444;
+            padding: 15px 0;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .accordion-item:last-child {
+            border-bottom: 1px solid #444;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--bg-black);
+            background-image: url('https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+
+        .footer-logo {
+            font-size: 40px;
+            color: #d4af37; /* Gold color from screenshot */
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MIA<span>MIX</span></div>
+        <ul class="nav-center">
+            <li class="nav-item dropdown">
+                CHANNELS <span>&#708;</span>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Sports & Entertainment</a></li>
+                    <li><a href="#">Fashion & Lifestyle</a></li>
+                    <li><a href="#">Health & Wellness</a></li>
+                    <li><a href="#">Culture & Art</a></li>
+                    <li><a href="#">Travel & Leisure</a></li>
+                    <li><a href="#">Hospitality</a></li>
+                    <li><a href="#">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">CURATED LIFESTYLE <span>&#709;</span></li>
+            <li class="nav-item">INTER MIAMI</li>
+            <li class="nav-item">CONTACT</li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="login-btn">Login</a>
+            <div class="social-icons">
+                <a href="#" class="social-icon">YT</a>
+                <a href="#" class="social-icon">IG</a>
+                <a href="#" class="social-icon">IN</a>
+                <a href="#" class="social-icon" style="background:var(--primary-pink); color:white;">W</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Inter Miami</h1>
+        <p>Launches In Freedom Park</p>
+        <a href="#" class="hero-btn">CLICK HERE</a>
+    </section>
+
+    <section class="grid-section">
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alpaca">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Nature Experience</h3>
+                    <p>Wildlife & Outdoors</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Resort">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Oasis Resort</h3>
+                    <p>Luxury Travel</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Flowers">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Tropical Blooms</h3>
+                    <p>Event Decor</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Portrait">
+                <div class="card-badge">MIAMIX</div>
+                <div class="card-content">
+                    <h3>Fitness Lifestyle</h3>
+                    <p>Health & Wellness</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <div class="logo-banner">
+        <img src="https://via.placeholder.com/200x80/222/fff?text=Brightline" alt="Banner 1">
+        <img src="https://via.placeholder.com/200x80/222/fff?text=Royal+Caribbean" alt="Banner 2">
+        <img src="https://via.placeholder.com/200x80/222/fff?text=Miami+FC" alt="Banner 3">
+        <img src="https://via.placeholder.com/200x80/222/fff?text=Partner+4" alt="Banner 4">
+    </div>
+
+    <section class="circular-partners">
+        <div class="circle-logo"><img src="https://via.placeholder.com/150/550055/fff?text=Logo" alt="Logo"></div>
+        <div class="circle-logo"><img src="https://via.placeholder.com/150/eeddcc/000?text=TATORE" alt="Tatore"></div>
+        <div class="circle-logo"><img src="https://via.placeholder.com/150/ffff00/000?text=Sun" alt="Sun"></div>
+        <div class="circle-logo"><img src="https://via.placeholder.com/150/003366/fff?text=Car" alt="Car"></div>
+    </section>
+
+    <section class="services-wrapper">
+        <div class="services-container">
+            <div class="services-thumbnails">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 1">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 2">
+                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 3">
+                <img src="https://images.unsplash.com/photo-1533174000255-a63b8f10e4a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 4">
+            </div>
+            
+            <div class="services-content">
+                <h2>OUR SERVICES</h2>
+                <p>Welcome to MIAMIX. We are a full-service creative agency specializing in video production, content creation, and digital marketing. We help brands elevate their presence and engage their audience through high-quality visual storytelling.</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item"><span>&#9656;</span> Video Design</div>
+                    <div class="accordion-item"><span>&#9656;</span> Content Creation</div>
+                    <div class="accordion-item"><span>&#9656;</span> Marketing Strategy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">MIAMIX</div>
+        <div class="social-icons" style="justify-content: center;">
+            <a href="#" class="social-icon" style="color:white; border-color:white;">YT</a>
+            <a href="#" class="social-icon" style="color:white; border-color:white;">IG</a>
+            <a href="#" class="social-icon" style="color:white; border-color:white;">IN</a>
+        </div>
+    </footer>
+
+</body>
+</html>
