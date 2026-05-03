@@ -36,20 +36,42 @@
         }
 
         /* --- NAVIGATION --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
+        <header>
+        <a href="/" class="logo">
+            <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        </a>
+        <ul class="nav-center">
+            <li class="nav-item dropdown">
+                CHANNELS
+                <ul class="dropdown-menu">
+                    <li><a href="/sports.html">Sports & Entertainment</a></li>
+                    <li><a href="/fashion.html">Fashion & Lifestyle</a></li>
+                    <li><a href="/health.html">Health & Wellness</a></li>
+                    <li><a href="/culture.html">Culture & Art</a></li>
+                    <li><a href="/travel.html">Travel & Leisure</a></li>
+                    <li><a href="/hospitality.html">Hospitality</a></li>
+                    <li><a href="/nonprofit.html">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/curated-lifestyle.html">CURATED LIFESTYLE</a></li>
+            <li class="nav-item"><a href="/inter-miami.html">INTER MIAMI</a></li>
+            <li class="nav-item"><a href="/contact.html">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+        
         /* Header Logo Sizing */
         .logo {
             display: flex;
