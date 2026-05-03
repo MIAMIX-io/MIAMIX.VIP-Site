@@ -1,0 +1,222 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAMIX - Contact Us</title>
+    
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #d9008d;
+            --bg-black: #000000;
+            --bg-dark-grey: #111111;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- UNIVERSAL HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 40px; width: auto; display: block; }
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
+        .nav-item:hover { color: var(--primary-pink); }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
+            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink); z-index: 2000;
+        }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
+        .dropdown-menu a:hover { background-color: #1a1a1a; }
+        .nav-item.dropdown:hover .dropdown-menu { display: block; }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        .social-icon:hover { transform: scale(1.1); }
+        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* --- CONTACT HERO --- */
+        .contact-hero {
+            height: 40vh;
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+        }
+        .contact-hero h1 { font-size: 48px; font-weight: 300; letter-spacing: 3px; }
+        .contact-hero h1 span { font-weight: 700; color: var(--primary-pink); }
+
+        /* --- CONTACT SECTION --- */
+        .contact-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 { font-size: 28px; margin-bottom: 20px; color: var(--primary-pink); }
+        .contact-info p { font-size: 15px; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px; }
+        .info-block { margin-bottom: 25px; }
+        .info-block h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; color: #fff; }
+        .info-block p { margin-bottom: 0; color: var(--primary-pink); font-weight: 600; }
+
+        .contact-form {
+            background-color: var(--bg-dark-grey);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 15px; background-color: #000; border: 1px solid #444;
+            color: #fff; border-radius: 4px; font-family: inherit; font-size: 14px; outline: none; transition: border 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary-pink); }
+        .form-group textarea { resize: vertical; min-height: 150px; }
+        .submit-btn {
+            width: 100%; padding: 15px; background-color: var(--primary-pink); color: #fff;
+            border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; text-transform: uppercase; transition: opacity 0.3s;
+        }
+        .submit-btn:hover { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .contact-section { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* --- UNIVERSAL FOOTER --- */
+        footer {
+            text-align: center; padding: 60px 20px; background-color: var(--bg-black);
+            background-image: url('https://images.unsplash.com/photo-1652112428671-fceb3e666710?q=80&w=930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover; background-position: center; background-blend-mode: overlay;
+        }
+        .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        </a>
+        <ul class="nav-center">
+            <li class="nav-item dropdown">
+                CHANNELS
+                <ul class="dropdown-menu">
+                    <li><a href="/sports.html">Sports & Entertainment</a></li>
+                    <li><a href="/fashion.html">Fashion & Lifestyle</a></li>
+                    <li><a href="/health.html">Health & Wellness</a></li>
+                    <li><a href="/culture.html">Culture & Art</a></li>
+                    <li><a href="/travel.html">Travel & Leisure</a></li>
+                    <li><a href="/hospitality.html">Hospitality</a></li>
+                    <li><a href="/nonprofit.html">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/curated-lifestyle.html">CURATED LIFESTYLE</a></li>
+            <li class="nav-item"><a href="/inter-miami.html">INTER MIAMI</a></li>
+            <li class="nav-item"><a href="/contact.html">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/miamix.us/.us" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <h1>Get In <span>Touch</span></h1>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-info">
+            <h2>Let's Collaborate</h2>
+            <p>Whether you're looking to elevate your brand's digital presence, explore content creation, or have a question about our curated lifestyle features, the MIAMIX team is here to help. Reach out to us directly or fill out the form, and we'll get back to you shortly.</p>
+            
+            <div class="info-block">
+                <h4>Email Us</h4>
+                <p>hello@miamix.vip</p>
+            </div>
+            
+            <div class="info-block">
+                <h4>Headquarters</h4>
+                <p>Miami, FL</p>
+            </div>
+
+            <div class="info-block">
+                <h4>Follow Us</h4>
+                <div class="social-icons" style="margin-top: 10px;">
+                    <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon" style="border: 1px solid var(--primary-pink);">
+                        <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                    </a>
+                    <a href="https://www.instagram.com/miamix.us/.us" target="_blank" class="social-icon" style="border: 1px solid var(--primary-pink);">
+                        <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon" style="border: 1px solid var(--primary-pink);">
+                        <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="#" method="POST"> <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="/images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
+        </div>
+        <div class="social-icons" style="justify-content: center;">
+            <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/miamix.us/.us" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
