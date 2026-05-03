@@ -184,7 +184,8 @@
         </div>
 
         <div class="contact-form">
-            <form action="#" method="POST"> <div class="form-group">
+            <form name="submit-to-google-sheet">
+                <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
@@ -196,7 +197,8 @@
                 <div class="form-group">
                     <textarea name="message" placeholder="How can we help you?" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                <span id="msg" style="display: block; margin-top: 15px; color: var(--primary-pink); font-weight: bold;"></span>
             </form>
         </div>
     </section>
@@ -218,5 +220,31 @@
         </div>
     </footer>
 
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwDp6296JSOiLzAXctG8ulREqRc6TfxZZOHxbLCTQztji-LzNoUNf3DwcYu0k03ITLsHA/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+      const btn = document.getElementById("submitBtn")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        btn.innerHTML = "Sending..."
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              msg.innerHTML = "Message sent successfully!"
+              btn.innerHTML = "Send Message"
+              form.reset()
+              setTimeout(function(){
+                  msg.innerHTML = ""
+              }, 5000)
+          })
+          .catch(error => {
+              msg.innerHTML = "Error sending message. Please try again."
+              console.error('Error!', error.message)
+              btn.innerHTML = "Send Message"
+          })
+      })
+    </script>
 </body>
 </html>
