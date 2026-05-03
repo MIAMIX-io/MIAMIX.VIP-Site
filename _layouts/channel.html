@@ -25,8 +25,27 @@
         a { text-decoration: none; color: inherit; }
 
         /* HEADER (Inherited from Index) */
-        <header>
-        <a href="/" class="logo">
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 40px; width: auto; display: block; }
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s;
+            /* This padding creates an invisible bridge to the dropdown so it won't disappear */
+            padding: 25px 0; 
+        }
+
+        .nav-item:hover {
+            color: var(--primary-pink);
+        }        <a href="/" class="logo">
             <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
         </a>
         <ul class="nav-center">
