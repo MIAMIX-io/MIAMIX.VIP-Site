@@ -79,15 +79,21 @@
         .card p { font-size: 12px; color: var(--primary-pink); }
 
         /* --- CAROUSEL / BANNER --- */
-        .logo-banner { display: flex; overflow-x: auto; gap: 15px; padding: 20px 60px; background-color: #111; align-items: center; }
-        .logo-banner img { height: 80px; object-fit: contain; opacity: 0.7; transition: opacity 0.3s; }
-        .logo-banner a:hover img { opacity: 1; }
+        .logo-banner { display: flex; overflow-x: auto; gap: 40px; padding: 30px 60px; background-color: #111; align-items: center; }
+        .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; }
+        .carousel-item img { height: 80px; object-fit: contain; opacity: 0.7; transition: opacity 0.3s; }
+        .brand-name { color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; transition: all 0.3s; white-space: nowrap; }
+        .carousel-item:hover img { opacity: 1; }
+        .carousel-item:hover .brand-name { opacity: 1; color: var(--primary-pink); }
 
         /* --- CIRCULAR PARTNERS SECTION --- */
-        .circular-partners { display: flex; justify-content: center; gap: 30px; padding: 60px; background: #050505; flex-wrap: wrap; }
+        .circular-partners { display: flex; justify-content: center; gap: 40px; padding: 60px; background: #050505; flex-wrap: wrap; }
+        .partner-item { display: flex; flex-direction: column; align-items: center; gap: 15px; text-decoration: none; }
         .circle-logo { width: 120px; height: 120px; border-radius: 50%; background-color: #222; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: transform 0.3s ease; }
-        .circle-logo:hover { transform: scale(1.05); }
+        .partner-item:hover .circle-logo { transform: scale(1.05); }
         .circle-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .partner-name { color: #fff; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; text-align: center; }
+        .partner-item:hover .partner-name { color: var(--primary-pink); }
 
         /* --- SERVICES SECTION & ACCORDION --- */
         .services-wrapper { position: relative; padding: 60px; overflow: hidden; background-color: var(--bg-black); }
@@ -188,14 +194,23 @@
     <div class="logo-banner">
         {% assign carousel_posts = site.posts | where: "grid_placement", "Carousel" %}
         {% for post in carousel_posts %}
-            <a href="{{ post.external_url | default: '#' }}" target="_blank">
-                <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
+            <a href="{{ post.external_url | default: '#' }}" target="_blank" class="carousel-item">
+                <img src="{{ post.thumbnail }}" alt="{{ post.business_name | default: post.page_title }}">
+                {% if post.business_name %}
+                    <span class="brand-name">{{ post.business_name }}</span>
+                {% endif %}
             </a>
         {% endfor %}
         
         {% if carousel_posts.size == 0 %}
-            <img src="https://www.ingressosrca.com.br/media/catalog/category/BRIGHTLINE_TRAIN.jpeg" alt="Placeholder 1">
-            <img src="https://www.royalcaribbean.com/content/dam/royal/ships/utopia/utopia-of-the-seas-aerial-aft-night-crop-sailing.jpg" alt="Placeholder 2">
+            <div class="carousel-item">
+                <img src="https://www.ingressosrca.com.br/media/catalog/category/BRIGHTLINE_TRAIN.jpeg" alt="Placeholder 1">
+                <span class="brand-name">Brightline</span>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.royalcaribbean.com/content/dam/royal/ships/utopia/utopia-of-the-seas-aerial-aft-night-crop-sailing.jpg" alt="Placeholder 2">
+                <span class="brand-name">Royal Caribbean</span>
+            </div>
         {% endif %}
     </div>
 
@@ -220,14 +235,25 @@
     <section class="circular-partners">
         {% assign partner_posts = site.posts | where: "grid_placement", "Partner" %}
         {% for post in partner_posts %}
-            <a href="{{ post.external_url | default: '#' }}" target="_blank" class="circle-logo">
-                <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
+            <a href="{{ post.external_url | default: '#' }}" target="_blank" class="partner-item">
+                <div class="circle-logo">
+                    <img src="{{ post.thumbnail }}" alt="{{ post.business_name | default: post.page_title }}">
+                </div>
+                {% if post.business_name %}
+                    <div class="partner-name">{{ post.business_name }}</div>
+                {% endif %}
             </a>
         {% endfor %}
 
         {% if partner_posts.size == 0 %}
-            <div class="circle-logo"><img src="https://via.placeholder.com/150/eeddcc/000?text=TATORE" alt="Tatore Placeholder"></div>
-            <div class="circle-logo"><img src="https://via.placeholder.com/150/ffff00/000?text=Sun" alt="Sun Placeholder"></div>
+            <div class="partner-item">
+                <div class="circle-logo"><img src="https://via.placeholder.com/150/eeddcc/000?text=TATORE" alt="Tatore Placeholder"></div>
+                <div class="partner-name">Tatore</div>
+            </div>
+            <div class="partner-item">
+                <div class="circle-logo"><img src="https://via.placeholder.com/150/ffff00/000?text=Sun" alt="Sun Placeholder"></div>
+                <div class="partner-name">Sun Life</div>
+            </div>
         {% endif %}
     </section>
 
@@ -241,8 +267,8 @@
             <div class="services-thumbnails">
                 <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 1">
                 <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 2">
-                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 3">
-                <img src="https://images.unsplash.com/photo-1533174000255-a63b8f10e4a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60" alt="Video 4">
+                <img src="https://images.unsplash.com/photo-1728116693268-125c5d6ad9e2?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video 3">
+                <img src="https://images.unsplash.com/photo-1571924848943-25c2c95bbb4b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video 4">
             </div>
             
             <div class="services-content">
