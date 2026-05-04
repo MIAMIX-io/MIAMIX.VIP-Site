@@ -19,23 +19,9 @@
             --text-muted: #aaaaaa;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
 
         /* --- NAVIGATION CSS --- */
         header {
@@ -47,27 +33,13 @@
         .logo { display: flex; align-items: center; }
         .logo img { height: 40px; width: auto; display: block; }
         .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
-        .nav-item {
-            position: relative;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: color 0.3s;
-            padding: 25px 0; 
-        }
+        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
         .nav-item:hover { color: var(--primary-pink); }
 
-        /* Channels Dropdown */
         .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%; 
-            left: 0;
-            background-color: var(--bg-black);
-            min-width: 250px;
-            padding: 10px 0;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.9);
-            border-top: 3px solid var(--primary-pink);
-            z-index: 2000; 
+            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
+            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink); z-index: 2000; 
         }
         .dropdown-menu li { list-style: none; }
         .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
@@ -76,9 +48,7 @@
 
         .nav-right { display: flex; align-items: center; gap: 15px; }
         .social-icons { display: flex; gap: 15px; }
-        .social-icon {
-            width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;
-        }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
         .social-icon:hover { transform: scale(1.1); }
         .social-icon img { width: 100%; height: 100%; object-fit: contain; }
 
@@ -86,115 +56,70 @@
         .hero {
             height: 100vh;
             background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 80px 60px;
-            position: relative;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 60px; position: relative;
         }
         .hero h1 { font-size: 48px; font-weight: 600; margin-bottom: 10px; }
         .hero p { font-size: 24px; font-weight: 300; }
-        .hero-btn {
-            position: absolute; bottom: 80px; right: 60px; color: var(--primary-pink); font-weight: 600;
-            letter-spacing: 2px; text-transform: uppercase;
-        }
+        .hero-btn { position: absolute; bottom: 80px; right: 60px; color: var(--primary-pink); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
 
         /* --- GRID SECTIONS --- */
         .grid-section { padding: 60px; background-color: var(--bg-black); }
-        .section-title {
-            text-align: center; font-size: 24px; color: var(--text-main); margin-bottom: 40px;
-            letter-spacing: 2px; text-transform: uppercase;
-        }
+        .section-title { text-align: center; font-size: 24px; color: var(--text-main); margin-bottom: 40px; letter-spacing: 2px; text-transform: uppercase; }
         .section-title span { color: var(--primary-pink); }
-
         .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         @media (max-width: 1024px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
 
-        .card {
-            background-color: var(--bg-dark-grey); border: 1px solid #333; overflow: hidden;
-            position: relative; aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end;
-        }
-        .card img {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.5s ease;
-        }
+        .card { background-color: var(--bg-dark-grey); border: 1px solid #333; overflow: hidden; position: relative; aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end; }
+        .card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.5s ease; }
         .card:hover img { transform: scale(1.05); }
-        .card-content {
-            position: relative; z-index: 2; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%);
-            padding: 20px; text-align: center; border-bottom: 3px solid var(--primary-pink);
-        }
-        .card-badge {
-            background: rgba(217, 0, 141, 0.8); color: white; padding: 5px 10px; font-size: 10px;
-            text-transform: uppercase; position: absolute; bottom: 80px; right: 10px; z-index: 3;
-        }
+        .card-content { position: relative; z-index: 2; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%); padding: 20px; text-align: center; border-bottom: 3px solid var(--primary-pink); }
+        .card-badge { background: rgba(217, 0, 141, 0.8); color: white; padding: 5px 10px; font-size: 10px; text-transform: uppercase; position: absolute; bottom: 80px; right: 10px; z-index: 3; }
         .card h3 { font-size: 16px; margin-bottom: 5px; }
         .card p { font-size: 12px; color: var(--primary-pink); }
 
         /* --- CAROUSEL / BANNER --- */
-        .logo-banner {
-            display: flex; overflow-x: auto; gap: 15px; padding: 20px 60px; background-color: #111; align-items: center;
-        }
+        .logo-banner { display: flex; overflow-x: auto; gap: 15px; padding: 20px 60px; background-color: #111; align-items: center; }
         .logo-banner img { height: 80px; object-fit: contain; opacity: 0.7; transition: opacity 0.3s; }
-        .logo-banner img:hover { opacity: 1; }
+        .logo-banner a:hover img { opacity: 1; }
 
         /* --- CIRCULAR PARTNERS SECTION --- */
-        .circular-partners { display: flex; justify-content: center; gap: 30px; padding: 60px; background: #050505; }
-        .circle-logo {
-            width: 120px; height: 120px; border-radius: 50%; background-color: #222;
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-        }
+        .circular-partners { display: flex; justify-content: center; gap: 30px; padding: 60px; background: #050505; flex-wrap: wrap; }
+        .circle-logo { width: 120px; height: 120px; border-radius: 50%; background-color: #222; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: transform 0.3s ease; }
+        .circle-logo:hover { transform: scale(1.05); }
         .circle-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- SERVICES SECTION --- */
+        /* --- SERVICES SECTION & ACCORDION --- */
         .services-wrapper { position: relative; padding: 60px; overflow: hidden; background-color: var(--bg-black); }
-        .services-video-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
-        }
-        .services-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(196, 160, 0, 0.5) 0%, rgba(217, 0, 141, 0.5) 100%); z-index: 1;
-        }
-        .services-container {
-            position: relative; z-index: 2; background: rgba(0, 0, 0, 0.85); border-radius: 15px;
-            padding: 40px; border: 1px solid var(--primary-pink); max-width: 1200px; margin: 0 auto;
-        }
+        .services-video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .services-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(196, 160, 0, 0.5) 0%, rgba(217, 0, 141, 0.5) 100%); z-index: 1; }
+        .services-container { position: relative; z-index: 2; background: rgba(0, 0, 0, 0.85); border-radius: 15px; padding: 40px; border: 1px solid var(--primary-pink); max-width: 1200px; margin: 0 auto; }
         .services-thumbnails { display: flex; gap: 15px; margin-bottom: 40px; }
         .services-thumbnails img { width: calc(25% - 12px); aspect-ratio: 16/9; object-fit: cover; border: 1px solid #444; }
         .services-content h2 { color: var(--primary-pink); font-size: 24px; margin-bottom: 20px; text-transform: uppercase; }
         .services-content p { font-size: 14px; line-height: 1.6; margin-bottom: 30px; color: #ddd; }
-        .accordion-item {
-            border-top: 1px solid #444; padding: 15px 0; color: #ccc; display: flex; align-items: center; gap: 10px; cursor: pointer;
-        }
+        
+        .accordion-item { border-top: 1px solid #444; padding: 15px 0; color: #ccc; cursor: pointer; }
         .accordion-item:last-child { border-bottom: 1px solid #444; }
+        .accordion-item summary { display: flex; align-items: center; gap: 10px; outline: none; list-style: none; font-weight: 600; font-size: 15px; }
+        .accordion-item summary::-webkit-details-marker { display: none; }
+        .accordion-item summary span { color: var(--primary-pink); transition: transform 0.3s; display: inline-block; }
+        .accordion-item[open] summary span { transform: rotate(90deg); }
+        .accordion-content { padding: 15px 0 0 25px; font-size: 14px; line-height: 1.6; color: #aaa; }
 
         /* --- OPT-IN / SUBSCRIBE SECTION --- */
         .optin-section { padding: 80px 20px; display: flex; justify-content: center; background-color: var(--bg-black); }
-        .optin-box {
-            background: rgba(255,255,255,0.05); border: 1px solid var(--primary-pink); border-radius: 10px;
-            padding: 40px; max-width: 800px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+        .optin-box { background: rgba(255,255,255,0.05); border: 1px solid var(--primary-pink); border-radius: 10px; padding: 40px; max-width: 800px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .optin-box h2 { margin-bottom: 15px; font-weight: 600; color: var(--primary-pink); font-size: 28px; text-transform: uppercase; }
         .optin-box p { font-size: 15px; margin-bottom: 25px; opacity: 0.8; line-height: 1.6; }
         .optin-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .optin-form input { 
-            padding: 12px 15px; border: 1px solid #333; background: #000; color: #fff; 
-            border-radius: 4px; outline: none; flex-grow: 1; max-width: 200px; transition: border 0.3s;
-        }
+        .optin-form input { padding: 12px 15px; border: 1px solid #333; background: #000; color: #fff; border-radius: 4px; outline: none; flex-grow: 1; max-width: 200px; transition: border 0.3s; }
         .optin-form input:focus { border-color: var(--primary-pink); }
-        .optin-form button {
-            padding: 12px 25px; background: var(--primary-pink); color: #fff; border: none;
-            border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s; text-transform: uppercase;
-        }
+        .optin-form button { padding: 12px 25px; background: var(--primary-pink); color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s; text-transform: uppercase; }
         .optin-form button:hover { opacity: 0.8; }
 
         /* --- FOOTER CSS --- */
-        footer {
-            text-align: center; 
-            padding: 60px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover; 
-            background-position: center; 
-        }
+        footer { text-align: center; padding: 60px 20px; background-color: var(--bg-black); background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; }
         .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
     </style>
 </head>
@@ -244,8 +169,8 @@
 
     <section class="grid-section">
         <div class="card-grid">
-            {% for post in site.posts %}
-                {% if post.grid_placement == 'Grid A' %}
+            {% assign grid_a = site.posts | where: "grid_placement", "Grid A" %}
+            {% for post in grid_a limit: 8 %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;">
                         <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
@@ -256,22 +181,28 @@
                         </div>
                     </a>
                 </div>
-                {% endif %}
             {% endfor %}
         </div>
     </section>
 
     <div class="logo-banner">
-        <img src="https://www.ingressosrca.com.br/media/catalog/category/BRIGHTLINE_TRAIN.jpeg" alt="Banner 1">
-        <img src="https://www.royalcaribbean.com/content/dam/royal/ships/utopia/utopia-of-the-seas-aerial-aft-night-crop-sailing.jpg" alt="Banner 2">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.nF2hwUqZJORHQUSVGKixPgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Banner 3">
-        <img src="https://images5.alphacoders.com/132/1323714.jpeg" alt="Banner 4">
+        {% assign carousel_posts = site.posts | where: "grid_placement", "Carousel" %}
+        {% for post in carousel_posts %}
+            <a href="{{ post.external_url | default: '#' }}" target="_blank">
+                <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
+            </a>
+        {% endfor %}
+        
+        {% if carousel_posts.size == 0 %}
+            <img src="https://www.ingressosrca.com.br/media/catalog/category/BRIGHTLINE_TRAIN.jpeg" alt="Placeholder 1">
+            <img src="https://www.royalcaribbean.com/content/dam/royal/ships/utopia/utopia-of-the-seas-aerial-aft-night-crop-sailing.jpg" alt="Placeholder 2">
+        {% endif %}
     </div>
 
     <section class="grid-section">
         <div class="card-grid">
-            {% for post in site.posts %}
-                {% if post.grid_placement == 'Grid B' %}
+            {% assign grid_b = site.posts | where: "grid_placement", "Grid B" %}
+            {% for post in grid_b %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;">
                         <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
@@ -282,16 +213,22 @@
                         </div>
                     </a>
                 </div>
-                {% endif %}
             {% endfor %}
         </div>
     </section>
 
     <section class="circular-partners">
-        <div class="circle-logo"><img src="https://via.placeholder.com/150/550055/fff?text=Logo" alt="Logo"></div>
-        <div class="circle-logo"><img src="https://via.placeholder.com/150/eeddcc/000?text=TATORE" alt="Tatore"></div>
-        <div class="circle-logo"><img src="https://via.placeholder.com/150/ffff00/000?text=Sun" alt="Sun"></div>
-        <div class="circle-logo"><img src="https://via.placeholder.com/150/003366/fff?text=Car" alt="Car"></div>
+        {% assign partner_posts = site.posts | where: "grid_placement", "Partner" %}
+        {% for post in partner_posts %}
+            <a href="{{ post.external_url | default: '#' }}" target="_blank" class="circle-logo">
+                <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
+            </a>
+        {% endfor %}
+
+        {% if partner_posts.size == 0 %}
+            <div class="circle-logo"><img src="https://via.placeholder.com/150/eeddcc/000?text=TATORE" alt="Tatore Placeholder"></div>
+            <div class="circle-logo"><img src="https://via.placeholder.com/150/ffff00/000?text=Sun" alt="Sun Placeholder"></div>
+        {% endif %}
     </section>
 
     <section class="services-wrapper">
@@ -313,11 +250,33 @@
                 <p>Welcome to MIAMIX. We are a full-service creative agency specializing in video production, content creation, and digital marketing. We help brands elevate their presence and engage their audience through high-quality visual storytelling.</p>
                 
                 <div class="accordion">
-                    <div class="accordion-item"><span>&#9656;</span> Video Design</div>
-                    <div class="accordion-item"><span>&#9656;</span> Content Creation</div>
-                    <div class="accordion-item"><span>&#9656;</span> Marketing Strategy</div>
+                    <details class="accordion-item">
+                        <summary><span>&#9656;</span> Video Design</summary>
+                        <div class="accordion-content">Our expert video design team crafts visually stunning narratives that capture your brand's essence and engage your audience across all platforms.</div>
+                    </details>
+                    <details class="accordion-item">
+                        <summary><span>&#9656;</span> Content Creation</summary>
+                        <div class="accordion-content">From concept to execution, we develop high-quality, tailored content that resonates with your target demographic and drives meaningful interactions.</div>
+                    </details>
+                    <details class="accordion-item">
+                        <summary><span>&#9656;</span> Marketing Strategy</summary>
+                        <div class="accordion-content">We leverage data-driven strategies designed to elevate your brand, increase visibility, and convert passive viewers into loyal customers.</div>
+                    </details>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="optin-section">
+        <div class="optin-box">
+            <h2>Get On The List</h2>
+            <p>Subscribe to MIAMIX for the latest VIP updates, curated lifestyle features, and exclusive content straight to your inbox.</p>
+            <form class="optin-form">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email Address">
+                <button type="submit">SUBMIT</button>
+            </form>
         </div>
     </section>
 
