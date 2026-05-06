@@ -1,0 +1,310 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAMIX - App Support</title>
+    
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #d9008d;
+            --bg-black: #000000;
+            --bg-dark-grey: #111111;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- UNIVERSAL HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 40px; width: auto; display: block; }
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
+        .nav-item:hover { color: var(--primary-pink); }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
+            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink); z-index: 2000; 
+        }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
+        .dropdown-menu a:hover { background-color: #1a1a1a; }
+        .nav-item.dropdown:hover .dropdown-menu { display: block; }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        .social-icon:hover { transform: scale(1.1); }
+        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* --- SUPPORT HERO --- */
+        .support-hero {
+            padding: 120px 20px 40px 20px; 
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(217, 0, 141, 0.15) 0%, transparent 100%);
+            border-bottom: 1px solid #222;
+        }
+        .support-hero h1 { font-size: 40px; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px; }
+        .support-hero h1 span { font-weight: 700; color: var(--primary-pink); }
+        .support-hero p { font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* --- MAIN LAYOUT --- */
+        .support-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto 80px auto;
+            padding: 0 20px;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* --- LEFT SIDE: DEVICE IMAGE --- */
+        .device-mockup {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 120px; /* Keeps the phone visible while scrolling through FAQs */
+        }
+        .device-mockup img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 2px solid #333;
+        }
+
+        /* --- RIGHT SIDE: FAQ ACCORDION --- */
+        .faq-section {
+            flex: 1.5;
+        }
+        .faq-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--primary-pink);
+            padding-left: 15px;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .accordion-item {
+            background-color: var(--bg-dark-grey);
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .accordion-item:hover { border-color: #555; }
+        .accordion-item summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+        }
+        .accordion-item summary::-webkit-details-marker { display: none; }
+        
+        /* The custom arrow icon */
+        .accordion-item summary::after {
+            content: '▾';
+            color: var(--primary-pink);
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        .accordion-item[open] summary::after {
+            transform: rotate(90deg);
+        }
+        .accordion-item[open] {
+            border-color: var(--primary-pink);
+        }
+
+        .accordion-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* --- CONTACT CTA --- */
+        .contact-cta {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(217, 0, 141, 0.05);
+            border: 1px dashed var(--primary-pink);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .contact-cta p { margin-bottom: 15px; font-size: 15px; }
+        .contact-cta a {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary-pink);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
+        }
+        .contact-cta a:hover { opacity: 0.8; }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .support-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .device-mockup {
+                position: relative;
+                top: 0;
+                margin-bottom: 40px;
+            }
+            .faq-section {
+                width: 100%;
+            }
+        }
+
+        /* --- UNIVERSAL FOOTER --- */
+        footer {
+            text-align: center; padding: 60px 20px; background-color: var(--bg-black);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover; background-position: center;
+        }
+        .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        </a>
+        <ul class="nav-center">
+            <li class="nav-item dropdown">
+                CHANNELS
+                <ul class="dropdown-menu">
+                    <li><a href="/sports">Sports & Entertainment</a></li>
+                    <li><a href="/fashion">Fashion & Lifestyle</a></li>
+                    <li><a href="/health">Health & Wellness</a></li>
+                    <li><a href="/culture">Culture & Art</a></li>
+                    <li><a href="/travel">Travel & Leisure</a></li>
+                    <li><a href="/hospitality">Hospitality</a></li>
+                    <li><a href="/nonprofit">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
+            <li class="nav-item"><a href="/inter-miami">INTER MIAMI</a></li>
+            <li class="nav-item"><a href="/contact">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="support-hero">
+        <h1>App <span>Support</span></h1>
+        <p>Everything you need to know about the MIAMIX App. Find answers to common questions below, or reach out to our team directly.</p>
+    </section>
+
+    <section class="support-container">
+        <div class="device-mockup">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="MIAMIX App Preview">
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="accordion">
+                <details class="accordion-item" open>
+                    <summary>What is MIAMIX App?</summary>
+                    <div class="accordion-content">
+                        The MIAMIX app is your ultimate digital concierge, providing exclusive access to curated lifestyle features, VIP updates, and premium content across Miami's hottest channels including sports, fashion, and hospitality.
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary>Is the app free to download?</summary>
+                    <div class="accordion-content">
+                        Yes! The core features of the MIAMIX app are entirely free to download and use. We may offer premium VIP tiers for exclusive event access in the future.
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>How do I reset my password?</summary>
+                    <div class="accordion-content">
+                        Open the app and navigate to the login screen. Tap on "Forgot Password," enter your registered email address, and follow the instructions sent to your inbox to securely reset your credentials.
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>Can I customize my content feed?</summary>
+                    <div class="accordion-content">
+                        Absolutely. Under your profile settings, you can select your favorite channels (such as Culture & Art or Health & Wellness) to tailor your home feed exactly to your interests.
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>The app is crashing or freezing. What should I do?</summary>
+                    <div class="accordion-content">
+                        First, ensure you are running the latest version of the app from the App Store or Google Play. If the issue persists, try forcing the app to close and clearing your cache. If you still need help, please contact our support team below.
+                    </div>
+                </details>
+            </div>
+
+            <div class="contact-cta">
+                <p>Can't find what you're looking for?</p>
+                <a href="/contact">Submit a Ticket</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="/images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
+        </div>
+        <div class="social-icons" style="justify-content: center;">
+            <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
