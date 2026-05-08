@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIAMIX - Curated Lifestyle</title>
+    <title>MIAMIX - Curated Lifestyle by Romina</title>
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -53,32 +53,128 @@
         .social-icon:hover { transform: scale(1.1); }
         .social-icon img { width: 100%; height: 100%; object-fit: contain; }
 
-        /* --- HERO SECTION --- */
-        .channel-hero {
-            position: relative; height: 60vh; 
-            /* Luxury / Lifestyle Miami vibe image */
-            background-image: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center; display: flex;
-            align-items: center; justify-content: center; text-align: center; margin-top: 70px;
+        /* --- NEW CREATOR HERO SECTION --- */
+        .creator-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 120px 40px 60px 40px;
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        .channel-hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4);
+        
+        .hero-text {
+            flex: 1;
+            text-align: left;
         }
-        .channel-hero h1 {
-            position: relative; z-index: 2; font-size: 5vw; font-weight: 300; letter-spacing: 2px;
-            color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); text-transform: uppercase;
+        .hero-text h1 {
+            font-size: 3.5vw;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        .channel-hero h1 span { font-weight: 700; color: var(--channel-color); }
+        .hero-text h1 span {
+            color: var(--channel-color); /* Gold color */
+            font-weight: 700;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 500px;
+            line-height: 1.6;
+        }
 
-        /* CURVED DIVIDER */
-        .curve-divider {
-            position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 3;
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
         }
-        .curve-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
-        .curve-divider .shape-fill { fill: var(--channel-bg); }
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 10px; /* Slight rounded corners */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 2px solid #333;
+        }
+
+        @media (max-width: 900px) {
+            .creator-hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 150px;
+            }
+            .hero-text { text-align: center; }
+            .hero-text h1 { font-size: 32px; }
+            .hero-text p { margin: 0 auto; }
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-section {
+            padding: 0 40px 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 8px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-grid img:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+        
+        @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* --- BIO SECTION --- */
+        .bio-section {
+            padding: 60px 40px;
+            background-color: var(--bg-dark-grey);
+            text-align: center;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        .bio-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .bio-container h2 {
+            font-size: 28px;
+            color: var(--channel-color);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .bio-container p {
+            font-size: 16px;
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
 
         /* --- CHANNEL GRID --- */
-        .channel-content { padding: 60px; }
+        .channel-content { padding: 80px 60px; }
+        .section-title {
+            text-align: center; font-size: 24px; color: var(--text-main); margin-bottom: 40px;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
         .card-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;
         }
@@ -176,19 +272,37 @@
         </div>
     </header>
 
-    <section class="channel-hero">
-        <h1>MIAMIX <br><span>CURATED LIFESTYLE</span></h1>
-        
-        <div class="curve-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
+    <section class="creator-hero">
+        <div class="hero-text">
+            <h1>MIAMIX <br><span>Curated Lifestyle</span> <br>by Romina</h1>
+            <p>Discover the absolute best of Miami's luxury experiences, fashion trends, and exclusive events, personally selected to elevate your everyday life.</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Romina Headshot">
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1516483638261-f408892608b7?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1505356822725-08ad25f3ffe4?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1534190239940-9ba8944ea261?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 3">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 4">
+        </div>
+    </section>
+
+    <section class="bio-section">
+        <div class="bio-container">
+            <h2>Meet Romina</h2>
+            <p>With an eye for design and a passion for the extraordinary, Romina explores the heart of Miami to bring you the most exclusive and inspiring content. From high-end fashion and wellness retreats to the city's hidden culinary gems, her curated guides offer a VIP pass to the ultimate Miami lifestyle.</p>
+            <p>Join her on this journey to uncover the beauty, art, and culture that make this city truly unforgettable.</p>
         </div>
     </section>
 
     <section class="channel-content">
+        <h2 class="section-title">Latest <span>Articles</span></h2>
         <div class="card-grid">
-            {% assign lifestyle_posts = site.posts | where_exp: "item", "item.channel contains 'Curated Lifestyle'" %}
+            {% assign lifestyle_posts = site.posts | where_exp: "item", "item.channel contains 'Curated Lifestyle'" | sort: "date" | reverse %}
             {% for post in lifestyle_posts %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; position: relative;">
