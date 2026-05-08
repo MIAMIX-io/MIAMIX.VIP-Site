@@ -53,29 +53,59 @@
         .social-icon:hover { transform: scale(1.1); }
         .social-icon img { width: 100%; height: 100%; object-fit: contain; }
 
-        /* --- HERO SECTION --- */
-        .channel-hero {
-            position: relative; height: 60vh; 
-            /* High-quality stadium/soccer vibe image */
-            background-image: url('https://images.unsplash.com/photo-1518605368461-1e12d1ce2580?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center; display: flex;
-            align-items: center; justify-content: center; text-align: center; margin-top: 70px;
+        /* --- NEW LOGO HERO SECTION --- */
+        .logo-hero {
+            padding: 150px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-        .channel-hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
+        .logo-hero img {
+            max-width: 400px; /* Adjust size based on your actual logo */
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
         }
-        .channel-hero h1 {
-            position: relative; z-index: 2; font-size: 5vw; font-weight: 300; letter-spacing: 2px;
-            color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); text-transform: uppercase;
+        .logo-hero h1 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #fff;
         }
-        .channel-hero h1 span { font-weight: 700; color: var(--channel-color); }
+        .logo-hero h1 span {
+            color: var(--channel-color);
+            font-weight: 700;
+        }
 
-        /* CURVED DIVIDER */
-        .curve-divider {
-            position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 3;
+        /* --- YOUTUBE VIDEO SECTION --- */
+        .video-section {
+            padding: 0 40px 60px 40px;
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .curve-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
-        .curve-divider .shape-fill { fill: var(--channel-bg); }
+        .video-container {
+            position: relative;
+            width: 100%;
+            /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; 
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 2px solid #222;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
         /* --- CHANNEL GRID --- */
         .channel-content { padding: 60px; }
@@ -176,19 +206,20 @@
         </div>
     </header>
 
-    <section class="channel-hero">
-        <h1>MIAMIX <br><span>INTER MIAMI</span></h1>
-        
-        <div class="curve-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
+    <section class="logo-hero">
+        <img src="https://images.mlssoccer.com/image/upload/v1769709375/assets/mia/IMCF_Logos-01_qxhjrp.png" alt="Inter Miami Logo">
+        <h1>MIAMIX <span>INTER MIAMI</span></h1>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
 
     <section class="channel-content">
         <div class="card-grid">
-            {% assign inter_miami_posts = site.posts | where_exp: "item", "item.channel contains 'Inter Miami'" %}
+            {% assign inter_miami_posts = site.posts | where_exp: "item", "item.channel contains 'Inter Miami'" | sort: "date" | reverse %}
             {% for post in inter_miami_posts %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; position: relative;">
