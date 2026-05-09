@@ -55,26 +55,42 @@
 
         .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
 
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 60px; position: relative;
+        }
+        .hero h1 { font-weight: 600; margin-bottom: 10px; font-size: 64px; }
+        .hero p { font-weight: 300; font-size: 24px; }
+        .hero-btn { position: absolute; bottom: 80px; right: 60px; color: var(--primary-pink); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+
         /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
         @media (max-width: 900px) {
             header { padding: 15px 20px; }
             .mobile-menu-toggle { display: block; }
-            .nav-right { display: none; } /* Hides top social icons on mobile to save space */
+            .nav-right { display: none; }
             
             .nav-center {
                 position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
                 background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
                 align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-                z-index: 2001; padding-top: 80px; gap: 0;
+                z-index: 2001; padding-top: 80px; gap: 0; overflow-y: auto;
             }
             .nav-center.active { right: 0; }
             .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
-            .nav-item.dropdown:hover .dropdown-menu { position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; }
             
-            .hero { padding: 40px 20px; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            .hero-btn { right: 20px; bottom: 40px; }
+            /* Mobile Dropdown Fix */
+            .nav-item.dropdown .dropdown-menu { 
+                display: none; position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; margin-top: 15px; 
+            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; } /* Controlled by Javascript tap */
+            
+            /* Mobile Hero Button Alignment Fix */
+            .hero { padding: 40px 30px; padding-bottom: 80px; }
+            .hero h1 { font-size: 42px; line-height: 1.1; margin-bottom: 10px; }
+            .hero p { font-size: 18px; margin-bottom: 25px; }
+            .hero-btn { position: relative; bottom: auto; right: auto; display: inline-block; }
             
             .grid-section { padding: 40px 20px; }
             .logo-banner { padding: 20px; gap: 20px; }
@@ -84,21 +100,7 @@
             .services-container { padding: 20px; }
             .services-thumbnails { flex-wrap: wrap; }
             .services-thumbnails img { width: calc(50% - 8px); margin-bottom: 10px; }
-            
-            .optin-section { padding: 40px 20px; }
-            .optin-form { flex-direction: column; width: 100%; }
-            .optin-form input, .optin-form button { max-width: 100%; width: 100%; margin-bottom: 10px; }
         }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 60px; position: relative;
-        }
-        .hero h1 { font-weight: 600; margin-bottom: 10px; }
-        .hero p { font-weight: 300; }
-        .hero-btn { position: absolute; bottom: 80px; right: 60px; color: var(--primary-pink); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
 
         /* --- GRID SECTIONS --- */
         .grid-section { padding: 60px; background-color: var(--bg-black); }
@@ -112,7 +114,6 @@
         .card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.5s ease; }
         .card:hover img { transform: scale(1.05); }
         
-        /* VIDEO OVERLAY FOR CARDS */
         .card-video-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2;
             pointer-events: none; opacity: 0.6; mix-blend-mode: screen; transition: opacity 0.5s ease;
@@ -120,14 +121,13 @@
         .card:hover .card-video-overlay { opacity: 0.9; }
 
         .card-content { position: relative; z-index: 3 !important; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%); padding: 20px; text-align: center; border-bottom: 3px solid var(--primary-pink); }
-        .card-badge { background: rgba(217, 0, 141, 0.8); color: white; padding: 5px 10px; font-size: 10px; text-transform: uppercase; position: absolute; bottom: 80px; right: 10px; z-index: 4 !important; }
         .card h3 { font-size: 16px; margin-bottom: 5px; }
         .card p { font-size: 12px; color: var(--primary-pink); }
 
         /* --- CAROUSEL / BANNER --- */
         .logo-banner { 
             display: flex; overflow-x: auto; gap: 40px; padding: 30px 60px; background-color: #111; align-items: center; 
-            -webkit-overflow-scrolling: touch; scrollbar-width: none; /* Hides scrollbar but allows swiping */
+            -webkit-overflow-scrolling: touch; scrollbar-width: none; 
         }
         .logo-banner::-webkit-scrollbar { display: none; }
         .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; min-width: 120px; }
@@ -179,7 +179,7 @@
 
         <ul class="nav-center" id="navMenu">
             <li class="nav-item dropdown">
-                CHANNELS
+                CHANNELS <span style="font-size: 10px;">▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="/sports">Sports & Entertainment</a></li>
                     <li><a href="/fashion">Fashion & Lifestyle</a></li>
@@ -363,14 +363,25 @@
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
+        const dropdownMenu = document.querySelector('.nav-item.dropdown');
 
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            // Toggle icon between hamburger and close (X)
             if (navMenu.classList.contains('active')) {
                 mobileMenuBtn.innerHTML = '✕';
             } else {
                 mobileMenuBtn.innerHTML = '☰';
+                dropdownMenu.classList.remove('mobile-open'); // Close dropdown when menu closes
+            }
+        });
+
+        // Mobile tap listener for the Dropdown Menu
+        dropdownMenu.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900) {
+                // If they tapped the word "CHANNELS", open it!
+                if(e.target.tagName !== 'A') {
+                    this.classList.toggle('mobile-open');
+                }
             }
         });
     </script>
