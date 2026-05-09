@@ -2,11 +2,11 @@
 id: 3569f477-fdba-80ee-be38-cbd9dd333449
 title: The Modern Mother’s Day Edit
 created_time: 2026-05-04T15:10:00.000Z
-last_edited_time: 2026-05-09T21:47:00.000Z
+last_edited_time: 2026-05-09T22:16:00.000Z
 cover_image: >-
-  /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_1.png
+  /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_8.png
 status: Published
-last_synced_to_git_hub: 2026-05-09T21:28:00.000Z
+last_synced_to_git_hub: 2026-05-09T21:49:00.000Z
 grid_placement: None
 website: miamix.vip
 content_type: Blog Post
@@ -28,11 +28,9 @@ author:
 sync_to_git_hub: true
 page_title: The Modern Mother’s Day Edit
 _thumbnail: >-
-  /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_1.png
+  /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_8.png
 
 ---
-
-# **The Modern Mother’s Day Edit**
 
 ## **Beauty, Wellness, Fragrance, and Thoughtful Gifts**
 
@@ -40,28 +38,28 @@ Mother’s Day is an invitation to slow down and choose with intention. It is no
 
 This season, gifting feels more refined when it balances beauty with purpose. There is a growing awareness around wellness, and with it, a shift in how women approach their own care. What was once overlooked or avoided is now being reimagined with more sensitivity and design. NellaSpec speaks to that evolution. With a more thoughtful and refined approach, it transforms an experience that has traditionally felt clinical into something more comfortable and considered. It is a subtle but powerful way of acknowledging her well being, offering something that feels both modern and genuinely supportive.
 
-![](/assets/images/CuratedLifestyle/SoSoft_Modal_Ultra-Fine_Short_Robe_in_Black_4.png)
+![](/assets/images/CuratedLifestyle/SoSoft_Modal_Ultra-Fine_Short_Robe_in_Black_9.png)
 
-![](/assets/images/CuratedLifestyle/SoSoft_Modal_Ultra-Fine_Short_Robe_in_Grey_5.png)
+![](/assets/images/CuratedLifestyle/SoSoft_Modal_Ultra-Fine_Short_Robe_in_Grey_4.png)
 
-![](/assets/images/CuratedLifestyle/Signature_Satin_Short_Pajama_Set_in_Pink_Sugar_8.png)
+![](/assets/images/CuratedLifestyle/Signature_Satin_Short_Pajama_Set_in_Pink_Sugar_3.png)
 
 Fragrance, on the other hand, remains one of the most intimate ways to gift. It becomes part of how she is remembered, a quiet signature that lingers long after she has left the room. The Bronze Bombshell by Victoria’s Secret captures the warmth of summer with an effortless elegance. There is something luminous about it, a softness that evokes sunlit afternoons and a confidence that does not need to be overstated. It is the kind of scent she reaches for instinctively, one that feels both personal and uplifting.
 
-![](/assets/images/CuratedLifestyle/Mothers_Day_-_Jasmine_1__0.png)
+![](/assets/images/CuratedLifestyle/Mothers_Day_-_Jasmine_1__7.png)
 
 At the same time, there is beauty in returning to what has always worked. The classics continue to hold their place, not out of habit, but because they carry emotion. Flowers, chocolates, handwritten notes, and the simplicity of a quiet morning shared together still resonate in a way nothing else quite can. These gestures are not about perfection, they are about presence. When paired with something she can continue to enjoy, such as soft cotton pajamas that become part of her everyday rhythm, they take on an added sense of care. The latest pieces from Victoria’s Secret, featuring Adriana Lima alongside her daughters, reflect that ease, where comfort and femininity naturally coexist.
 
-![](/assets/images/CuratedLifestyle/ceek_nellaspec_product_shot7_390_3.jpeg)
+![](/assets/images/CuratedLifestyle/ceek_nellaspec_product_shot7_390_6.jpeg)
 
 There is also a more current side to gifting that feels equally relevant. Today’s woman is not defined by a single role, and her style reflects that fluidity. She moves effortlessly between moments, and what she wears often mirrors that energy. Sport inspired pieces, elevated sneakers, or even a jersey chosen with intention can feel unexpectedly thoughtful. Brands such as Adidas, Nike, and Air Jordan continue to shape that space, while collaborations like Sofía Vergara with Skechers bring a softer, more lifestyle driven perspective. These are the pieces that meet her where she is, active, expressive, and entirely herself.
 
-![](/assets/images/CuratedLifestyle/Mothers_Day_-_Elsa_5_6.png)
+![](/assets/images/CuratedLifestyle/Mothers_Day_-_Elsa_5_1.png)
 
 In the end, Mother’s Day is not defined by the gift itself, but by the intention behind it. It is a moment to recognize her fully, her beauty, her strength, her individuality, and the quiet ways she shows up every day. When chosen with care, even the simplest gesture becomes something lasting, a reflection of how deeply she is seen and appreciated.
 
-![](/assets/images/CuratedLifestyle/Bombshell_Highlighting_Body_Oil_9.png)
+![](/assets/images/CuratedLifestyle/Bombshell_Highlighting_Body_Oil_2.png)
 
-![](/assets/images/CuratedLifestyle/112756207100_OM_F_7.jpeg)
+![](/assets/images/CuratedLifestyle/112756207100_OM_F_0.jpeg)
 
-![](/assets/images/CuratedLifestyle/Bombshell_Bronze_Fine_Fragrance_Lotion_2.png)
+![](/assets/images/CuratedLifestyle/Bombshell_Bronze_Fine_Fragrance_Lotion_5.png)
