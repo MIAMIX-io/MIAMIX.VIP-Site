@@ -1,9 +1,9 @@
 name: Sync Notion Content to GitHub Pages
 
-
-
-
-  workflow_dispatch: 
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour automatically
+  workflow_dispatch: # Allows you to click the manual "Run workflow" button
 
 jobs:
   notion-sync:
