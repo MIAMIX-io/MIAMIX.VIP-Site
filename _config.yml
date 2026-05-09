@@ -2,8 +2,6 @@ name: MIAMIX VIP
 description: MIAMIX Curated Lifestyle
 url: "https://miamix.vip"
 
-# This tells Jekyll to generate pages for your channels automatically
-permalink: /:categories/:title/
 # Automatically apply the post.html layout to everything in the _posts folder
 defaults:
   - scope:
@@ -11,4 +9,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+# This uses your custom Notion 'URL Slug' property to build the web address
 permalink: /:slug/
