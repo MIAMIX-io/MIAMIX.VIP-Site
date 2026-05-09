@@ -1,10 +1,292 @@
 ---
-layout: channel
-title: MIAMIX Culture
-channel_name: Culture
-theme_color: "#d9008d" # Brand pink
-bg_color: "#d9008d" # Solid pink background for Culture per screenshot
-text_color: "#ffffff"
-hero_image: "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?auto=format&fit=crop&w=1920&q=80"
-custom_hero_html: "<h1>ARTIST <span>- MIX</span></h1>"
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAMIX - Culture</title>
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* White accents to pop against the pink background */
+            --channel-color: #ffffff; 
+            /* Solid Pink Background */
+            --channel-bg: #d9008d;
+            --primary-pink: #d9008d;
+            --text-main: #ffffff;
+            --bg-black: #000000;
+            --bg-dark-grey: #111111;
+            --text-muted: #aaaaaa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--channel-bg); color: var(--text-main); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- NAVIGATION CSS --- */
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .logo { display: flex; align-items: center; z-index: 2002; }
+        .logo img { height: 40px; width: auto; display: block; }
+        
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
+        .nav-item:hover { color: var(--primary-pink); }
+
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
+            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink); z-index: 2000; 
+        }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
+        .dropdown-menu a:hover { background-color: #1a1a1a; }
+        .nav-item.dropdown:hover .dropdown-menu { display: block; }
+
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        .social-icon:hover { transform: scale(1.1); }
+        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
+
+        /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
+        @media (max-width: 900px) {
+            header { padding: 15px 20px; }
+            .mobile-menu-toggle { display: block; }
+            .nav-right { display: none; }
+            
+            .nav-center {
+                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
+                background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
+                align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
+                z-index: 2001; padding-top: 80px; gap: 0;
+            }
+            .nav-center.active { right: 0; }
+            .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
+            .nav-item.dropdown:hover .dropdown-menu { position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; }
+            
+            .channel-hero h1 { font-size: 32px !important; }
+            .channel-content { padding: 40px 20px; }
+            
+            .optin-section { padding: 40px 20px; }
+            .optin-form { flex-direction: column; width: 100%; }
+            .optin-form input, .optin-form button { max-width: 100%; width: 100%; margin-bottom: 10px; }
+        }
+
+        /* --- HERO SECTION --- */
+        .channel-hero {
+            position: relative; height: 60vh; 
+            /* Custom Hero Image from your config */
+            background-image: url('https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; display: flex;
+            align-items: center; justify-content: center; text-align: center; margin-top: 70px;
+        }
+        .channel-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
+        }
+        .channel-hero h1 {
+            position: relative; z-index: 2; font-size: 5vw; font-weight: 300; letter-spacing: 2px;
+            color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); text-transform: uppercase;
+        }
+        .channel-hero h1 span { font-weight: 700; color: var(--channel-color); }
+
+        /* CURVED DIVIDER */
+        .curve-divider {
+            position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 3;
+        }
+        .curve-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
+        .curve-divider .shape-fill { fill: var(--channel-bg); }
+
+        /* --- CHANNEL GRID --- */
+        .channel-content { padding: 80px 60px; }
+        .section-title {
+            text-align: center; font-size: 24px; color: var(--text-main); margin-bottom: 40px;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+        .card-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;
+        }
+        @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+
+        .card {
+            background-color: #111; border: 1px solid #333; border-radius: 8px; overflow: hidden;
+            position: relative; aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .card img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.5s ease;
+        }
+        .card:hover img { transform: scale(1.05); }
+        
+        /* VIDEO OVERLAY FOR CARDS */
+        .card-video-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2;
+            pointer-events: none; opacity: 0.6; mix-blend-mode: screen; transition: opacity 0.5s ease;
+        }
+        .card:hover .card-video-overlay { opacity: 0.9; }
+
+        .card-content {
+            position: relative; z-index: 3 !important; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%);
+            padding: 20px; text-align: left; border-bottom: 3px solid var(--channel-color);
+        }
+        .card-badge {
+            background: var(--channel-color); color: var(--primary-pink); padding: 5px 10px; font-size: 10px;
+            text-transform: uppercase; position: absolute; bottom: 90px; left: 20px; z-index: 4 !important; font-weight: bold;
+        }
+        .card h3 { font-size: 18px; margin-bottom: 5px; color: #fff; }
+        .card p { font-size: 12px; color: #aaa; }
+
+        /* --- OPT-IN / SUBSCRIBE SECTION --- */
+        .optin-section { padding: 40px 20px 80px 20px; display: flex; justify-content: center; }
+        .optin-box {
+            background: rgba(0,0,0,0.4); border: 1px solid var(--channel-color); border-radius: 10px;
+            padding: 40px; max-width: 800px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .optin-box h2 { margin-bottom: 15px; font-weight: 600; color: var(--channel-color); font-size: 28px; text-transform: uppercase; }
+        .optin-box p { font-size: 15px; margin-bottom: 25px; opacity: 0.9; }
+        .optin-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .optin-form input { padding: 12px 15px; border: 1px solid #333; background: #000; color: #fff; border-radius: 4px; outline: none; flex-grow: 1; max-width: 200px; transition: border 0.3s; }
+        .optin-form input:focus { border-color: var(--channel-color); }
+        .optin-form button {
+            padding: 12px 25px; background: var(--channel-color); color: var(--primary-pink); border: none;
+            border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s; text-transform: uppercase;
+        }
+        .optin-form button:hover { opacity: 0.8; }
+
+        /* --- FOOTER CSS --- */
+        footer {
+            text-align: center; padding: 60px 20px; background-color: var(--bg-black);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover; background-position: center;
+        }
+        .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        </a>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
+
+        <ul class="nav-center" id="navMenu">
+            <li class="nav-item dropdown">
+                CHANNELS
+                <ul class="dropdown-menu">
+                    <li><a href="/sports">Sports & Entertainment</a></li>
+                    <li><a href="/fashion">Fashion & Lifestyle</a></li>
+                    <li><a href="/health">Health & Wellness</a></li>
+                    <li><a href="/culture">Culture & Art</a></li>
+                    <li><a href="/travel">Travel & Leisure</a></li>
+                    <li><a href="/hospitality">Hospitality</a></li>
+                    <li><a href="/nonprofit">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
+            <li class="nav-item"><a href="/inter-miami">INTER MIAMI</a></li>
+            <li class="nav-item"><a href="/contact">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="channel-hero">
+        <h1>ARTIST <br><span>- MIX</span></h1>
+        
+        <div class="curve-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="channel-content">
+        <div class="card-grid">
+            {% assign culture_posts = site.posts | where_exp: "item", "item.channel contains 'Culture'" | sort: "date" | reverse %}
+            {% for post in culture_posts %}
+                <div class="card">
+                    <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; position: relative;">
+                        <img src="{{ post.thumbnail }}" alt="{{ post.page_title }}">
+                        
+                        <video class="card-video-overlay" autoplay loop muted playsinline>
+                            <source src="/video/MIAMIX-1.mp4" type="video/mp4">
+                        </video>
+
+                        <div class="card-badge">MIAMIX</div>
+                        <div class="card-content">
+                            <h3>{{ post.page_title }}</h3>
+                            <p>Read More &rarr;</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="optin-section">
+        <div class="optin-box">
+            <h2>Get On The List</h2>
+            <p>Subscribe to the MIAMIX Culture channel for the latest art exhibits, artist spotlights, and exclusive events.</p>
+            <form class="optin-form">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email Address">
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">
+            <img src="/images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
+        </div>
+        <div class="social-icons" style="justify-content: center;">
+            <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '✕';
+            } else {
+                mobileMenuBtn.innerHTML = '☰';
+            }
+        });
+    </script>
+</body>
+</html>
