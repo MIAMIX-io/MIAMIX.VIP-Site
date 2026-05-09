@@ -1,0 +1,34 @@
+---
+id: 89395202-5d52-4f30-ae94-801747a9b5f4
+title: >-
+  Chayanne’s triumphant return in Miami: a night of dance and emotion at Kaseya
+  Center
+created_time: 2026-03-03T23:43:00.000Z
+last_edited_time: 2026-05-09T15:44:00.000Z
+cover_image: >-
+  https://prod-files-secure.s3.us-west-2.amazonaws.com/a2e5e5da-7f87-4d74-8757-949651e94148/b7dddb14-b91b-43f5-b6c1-1cd90c53f9b3/latinicons_files20250927_0411.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666NGFFTVU%2F20260509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260509T155236Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB8aCXVzLXdlc3QtMiJHMEUCIDB3Es8WItIyLQ5Eeoti4J1iAn0i5y%2Fy2XkbClOUXTJvAiEA5wYMVyGZuD1sWywQZVgbd0dUpt2ItrKLnHOi7GKuw%2BsqiAQI6P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDFJjbE%2BKwk%2BeL1O0RSrcA7Z6JHNFY5cRrtOjqUFLye1iXYHm0VKUotM08Wy66mOGbPBAQU6j6scUtj3WcjBXpYnP4GUzbVYiMJGbZkKBxopnDuzAqRl6rH2afwXB%2By7plg21XASTSVFiwUkcEVFrrW%2BgQUDfAqzD6%2FAUylEBBzvO78e0OqikJ7FaF1Bsk0K4zmRqqi9hqKwqd8sVKsoGP2m6yiV76TYC1JSP98Rf58TinUE6K96Soeec8z3b4KKpaZKU9ft%2Bpwyc0EWzbxVp8sUoPwjsk9Ogz44FeCJS8YXBdJtFTSV1J4v2hInCjsg4NigjCokVPMl%2F5MXf96O4KgjIza1yxmGscH1TOrssWlUH6Utymp%2Ba9vZ2m64MH4VE%2FemVAE1lTzXfTWKtU4ZFsv5uM7LN9TnKedqlJA0zMn4pXH50j5M4hcodY4G8ujvmTwl06JjNDFAAV9AV3RdJ0YiGPBpjUaPmWhltsDB5tHUIU0ZNU9xnTibmYzgfAAotGleysXgUYiQBrsd4%2Bpkl3oQghSGvDElxt85pLhj7Mhdq%2Bxv5cEtN%2BlpD5SP3LmOLGzJv5dqvQrhMWtFi9GQpuJi%2FsSUIe2Gwdus8sXEGMNXnL3AL228PHuDsTeUWLPlDtYBIPsTsBChd5Cb3MPyL%2Fc8GOqUBq9oAy62DG%2F8dZvs1guAXlbwZ23EjZ6h89%2B%2FUHZfO%2F8NQdWP0W5hEzHuwSo87J3TWWWRRXFyw3cwKB8UcQMo%2Frrm2Fy3QIlHN9egHZ3N%2FHgPEzyUwBP8DcoEFt8pPkGlE0d7UI0PXN3eBUXrYNjhADoeS6NTTL40rPVVQee4bTPxymPLfa3EaRFuy%2BxKLdsr40jkXrnUOrdyCiub1gfPDLGn0%2BIh8&X-Amz-Signature=9c4597d61ead796773d9f5f8d2d2e09e790898ceec978b6406827603b5e96fa3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+status: Published
+last_synced_to_git_hub: 2026-05-09T15:25:00.000Z
+grid_placement: None
+website: miamix.vip
+content_type: Blog Post
+external_url: null
+channel:
+  - Culture
+date: 2026-05-09T00:00:00.000Z
+reviewer: []
+business_name: Chayanne
+language: English
+url_slug:
+  type: string
+  string: >-
+    /culture/chayannes-triumphant-return-in-miami-a-night-of-dance-and-emotion-at-kaseya-center/en
+author: []
+sync_to_git_hub: true
+page_title: >-
+  Chayanne’s triumphant return in Miami: a night of dance and emotion at Kaseya
+  Center
+_thumbnail: >-
+  https://prod-files-secure.s3.us-west-2.amazonaws.com/a2e5e5da-7f87-4d74-8757-949651e94148/b7dddb14-b91b-43f5-b6c1-1cd90c53f9b3/latinicons_files20250927_0411.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666NGFFTVU%2F20260509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260509T155236Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB8aCXVzLXdlc3QtMiJHMEUCIDB3Es8WItIyLQ5Eeoti4J1iAn0i5y%2Fy2XkbClOUXTJvAiEA5wYMVyGZuD1sWywQZVgbd0dUpt2ItrKLnHOi7GKuw%2BsqiAQI6P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDFJjbE%2BKwk%2BeL1O0RSrcA7Z6JHNFY5cRrtOjqUFLye1iXYHm0VKUotM08Wy66mOGbPBAQU6j6scUtj3WcjBXpYnP4GUzbVYiMJGbZkKBxopnDuzAqRl6rH2afwXB%2By7plg21XASTSVFiwUkcEVFrrW%2BgQUDfAqzD6%2FAUylEBBzvO78e0OqikJ7FaF1Bsk0K4zmRqqi9hqKwqd8sVKsoGP2m6yiV76TYC1JSP98Rf58TinUE6K96Soeec8z3b4KKpaZKU9ft%2Bpwyc0EWzbxVp8sUoPwjsk9Ogz44FeCJS8YXBdJtFTSV1J4v2hInCjsg4NigjCokVPMl%2F5MXf96O4KgjIza1yxmGscH1TOrssWlUH6Utymp%2Ba9vZ2m64MH4VE%2FemVAE1lTzXfTWKtU4ZFsv5uM7LN9TnKedqlJA0zMn4pXH50j5M4hcodY4G8ujvmTwl06JjNDFAAV9AV3RdJ0YiGPBpjUaPmWhltsDB5tHUIU0ZNU9xnTibmYzgfAAotGleysXgUYiQBrsd4%2Bpkl3oQghSGvDElxt85pLhj7Mhdq%2Bxv5cEtN%2BlpD5SP3LmOLGzJv5dqvQrhMWtFi9GQpuJi%2FsSUIe2Gwdus8sXEGMNXnL3AL228PHuDsTeUWLPlDtYBIPsTsBChd5Cb3MPyL%2Fc8GOqUBq9oAy62DG%2F8dZvs1guAXlbwZ23EjZ6h89%2B%2FUHZfO%2F8NQdWP0W5hEzHuwSo87J3TWWWRRXFyw3cwKB8UcQMo%2Frrm2Fy3QIlHN9egHZ3N%2FHgPEzyUwBP8DcoEFt8pPkGlE0d7UI0PXN3eBUXrYNjhADoeS6NTTL40rPVVQee4bTPxymPLfa3EaRFuy%2BxKLdsr40jkXrnUOrdyCiub1gfPDLGn0%2BIh8&X-Amz-Signature=9c4597d61ead796773d9f5f8d2d2e09e790898ceec978b6406827603b5e96fa3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+
+---
