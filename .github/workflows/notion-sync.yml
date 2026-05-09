@@ -22,7 +22,6 @@ jobs:
           NOTION_DATABASE: ${{ secrets.NOTION_DATABASE_ID }}
           FILTER_PROP: Status
           FILTER_VALUES: Published
-          # Adds the channel subfolder back in!
           ARTICLE_PATH: _posts/{channel}/{title}.md
           ASSETS_PATH: assets/images/
           CONVERT_PROP_CASE: snake
@@ -55,11 +54,13 @@ jobs:
               
               new_content = content
               for i, url in enumerate(urls):
-                  clean_url = url.split("?")[0]
+                  # THE FIX: Remove the backslashes and HTML entities so Amazon accepts the download!
+                  download_url = url.replace("\\&", "&").replace("&amp;", "&")
+                  
+                  clean_url = download_url.split("?")[0]
                   filename = clean_url.split("/")[-1]
                   name, ext = os.path.splitext(filename)
                   
-                  # Clean the filename to be safe for the web
                   safe_name = re.sub(r"[^a-zA-Z0-9_-]", "", name)
                   if not ext: 
                       ext = ".png"
@@ -67,16 +68,16 @@ jobs:
                   filepath = out_dir / safe_filename
                   
                   try:
-                      print(f"Downloading {filename} for {md_file.name}...")
-                      req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                      print(f"Downloading {safe_filename}...")
+                      req = urllib.request.Request(download_url, headers={"User-Agent": "Mozilla/5.0"})
                       with urllib.request.urlopen(req) as response, open(filepath, "wb") as out_file:
                           out_file.write(response.read())
                       
-                      # Replace the expiring AWS link with the permanent local path
+                      # Replace the expiring AWS link with the permanent local path in the markdown file
                       new_url = f"/assets/images/{channel}/{safe_filename}"
                       new_content = new_content.replace(url, new_url)
                   except Exception as e:
-                      print(f"Failed to download image: {e}")
+                      print(f"Failed to download image {safe_filename}: {e}")
                       
               with open(md_file, "w", encoding="utf-8") as f:
                   f.write(new_content)
@@ -84,20 +85,11 @@ jobs:
 
       - name: Fix Jekyll File Names
         run: |
-          # Use find to look inside all the new channel subfolders for markdown files
           find _posts -type f -name "*.md" | while read -r file; do
-            
-            # 1. Extract the clean date from the frontmatter (e.g. 2026-05-09)
             post_date=$(grep "^date: " "$file" | head -n 1 | awk '{print $2}' | cut -c 1-10)
-            
             if [ -n "$post_date" ]; then
-               # 2. Create a clean URL-friendly title slug
-               clean_title=$(grep "^title: " "$file" | head -n 1 | sed "s/^title: //; s/[^a-zA-Z0-9]/-/g" | tr "[:upper:]" "[:lower:]" | sed "s/-\{2,\}/-/g" | sed "s/^-//;s/-$//")
-               
-               # 3. Get the folder path (e.g., _posts/CuratedLifestyle)
+               clean_title=$(grep "^title: " "$file" | head -n 1 | sed 's/^title: //; s/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed 's/-\{2,\}/-/g' | sed 's/^-//;s/-$//')
                dir=$(dirname "$file")
-               
-               # 4. Rename the file inside its specific folder
                new_name="${dir}/${post_date}-${clean_title}.md"
                if [ "$file" != "$new_name" ]; then
                  mv "$file" "$new_name"
@@ -111,7 +103,7 @@ jobs:
           git config user.name "GitHub Action Bot"
           git config user.email "action@github.com"
           git add _posts/ assets/images/
-          git commit -m "Auto-sync Notion content to channel folders with fixed file names" || echo "No changes to commit"
+          git commit -m "Auto-download images to channel folders and fix file names" || echo "No changes to commit"
           git push
 
       - name: Update Notion Status to Live and set Timestamp
@@ -120,7 +112,6 @@ jobs:
           DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          
           echo "Querying Notion for Published posts..."
           
           RESPONSE=$(curl -s -X POST "https://api.notion.com/v1/databases/$DATABASE_ID/query" \
