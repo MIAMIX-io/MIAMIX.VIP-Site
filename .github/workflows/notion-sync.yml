@@ -28,10 +28,63 @@ jobs:
           CONVERT_PROP_CASE: snake
           PARALLEL_PAGES: 10
           PARALLEL_DOWNLOADS_PER_PAGE: 3
+
+      - name: Download Expiring Images & Organize by Channel
+        run: |
+          python3 -c '
+          import os, re, urllib.request
+          from pathlib import Path
           
+          # Match ANY url in the markdown that looks like a Notion S3 image link
+          url_regex = re.compile(r"(https://[^ \)\"\x27\n\[\]]+(?:amazonaws\.com|notion-static\.com)[^ \)\"\x27\n\[\]]+)")
+          
+          for md_file in Path("_posts").rglob("*.md"):
+              with open(md_file, "r", encoding="utf-8") as f:
+                  content = f.read()
+              
+              urls = list(set(url_regex.findall(content)))
+              if not urls:
+                  continue
+              
+              channel = md_file.parent.name
+              if channel == "_posts":
+                  channel = "general"
+                  
+              out_dir = Path("assets/images") / channel
+              out_dir.mkdir(parents=True, exist_ok=True)
+              
+              new_content = content
+              for i, url in enumerate(urls):
+                  clean_url = url.split("?")[0]
+                  filename = clean_url.split("/")[-1]
+                  name, ext = os.path.splitext(filename)
+                  
+                  # Clean the filename to be safe for the web
+                  safe_name = re.sub(r"[^a-zA-Z0-9_-]", "", name)
+                  if not ext: 
+                      ext = ".png"
+                  safe_filename = f"{safe_name}_{i}{ext[:5]}"
+                  filepath = out_dir / safe_filename
+                  
+                  try:
+                      print(f"Downloading {filename} for {md_file.name}...")
+                      req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                      with urllib.request.urlopen(req) as response, open(filepath, "wb") as out_file:
+                          out_file.write(response.read())
+                      
+                      # Replace the expiring AWS link with the permanent local path
+                      new_url = f"/assets/images/{channel}/{safe_filename}"
+                      new_content = new_content.replace(url, new_url)
+                  except Exception as e:
+                      print(f"Failed to download image: {e}")
+                      
+              with open(md_file, "w", encoding="utf-8") as f:
+                  f.write(new_content)
+          '
+
       - name: Fix Jekyll File Names
         run: |
-          # Use 'find' to look inside all the new channel subfolders for markdown files
+          # Use find to look inside all the new channel subfolders for markdown files
           find _posts -type f -name "*.md" | while read -r file; do
             
             # 1. Extract the clean date from the frontmatter (e.g. 2026-05-09)
@@ -39,7 +92,7 @@ jobs:
             
             if [ -n "$post_date" ]; then
                # 2. Create a clean URL-friendly title slug
-               clean_title=$(grep "^title: " "$file" | head -n 1 | sed 's/^title: //; s/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed 's/-\{2,\}/-/g' | sed 's/^-//;s/-$//')
+               clean_title=$(grep "^title: " "$file" | head -n 1 | sed "s/^title: //; s/[^a-zA-Z0-9]/-/g" | tr "[:upper:]" "[:lower:]" | sed "s/-\{2,\}/-/g" | sed "s/^-//;s/-$//")
                
                # 3. Get the folder path (e.g., _posts/CuratedLifestyle)
                dir=$(dirname "$file")
