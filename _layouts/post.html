@@ -6,22 +6,247 @@
     <title>{{ page.title }} | MIAMIX</title>
     
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #d9008d;
+            --bg-black: #000000;
+            --bg-dark-grey: #111111;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER CSS --- */
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo { display: flex; align-items: center; z-index: 2002; }
+        .logo img { height: 40px; width: auto; display: block; }
+        
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
+        .nav-item:hover { color: var(--primary-pink); }
+
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
+            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink); z-index: 2000; 
+        }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
+        .dropdown-menu a:hover { background-color: #1a1a1a; }
+        .nav-item.dropdown:hover .dropdown-menu { display: block; }
+
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        .social-icon:hover { transform: scale(1.1); }
+        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
+
+        @media (max-width: 900px) {
+            header { padding: 15px 20px; }
+            .mobile-menu-toggle { display: block; }
+            .nav-right { display: none; }
+            .nav-center {
+                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
+                background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
+                align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
+                z-index: 2001; padding-top: 80px; gap: 0;
+            }
+            .nav-center.active { right: 0; }
+            .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
+            .nav-item.dropdown:hover .dropdown-menu { position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; }
+        }
+
+        /* --- EDITORIAL ARTICLE CSS --- */
+        .article-container { max-width: 800px; margin: 150px auto 100px auto; padding: 20px; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-cat { color: var(--primary-pink); font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 15px; }
+        .article-title { font-size: 42px; line-height: 1.2; margin-bottom: 20px; font-weight: 600; }
+        .article-date { color: var(--text-muted); font-size: 14px; }
+        
+        .article-cover { width: 100%; border-radius: 12px; margin-bottom: 50px; object-fit: cover; aspect-ratio: 16/9; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        /* --- NOTION CONTENT FORMATTING --- */
+        .content { line-height: 1.8; font-size: 18px; color: #ddd; }
+        .content h2, .content h3, .content h4 { color: #fff; margin-top: 50px; margin-bottom: 20px; font-weight: 600; }
+        .content p { margin-bottom: 25px; }
+        .content a { color: var(--primary-pink); text-decoration: none; border-bottom: 1px dotted var(--primary-pink); }
+        .content a:hover { border-bottom: 1px solid var(--primary-pink); }
+        
+        /* 1. SCALED INLINE IMAGES */
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-height: 70vh; /* Prevents vertical images from overtaking the screen */
+            object-fit: cover;
+        }
+
+        /* 2. RESPONSIVE YOUTUBE / VIDEO IFRAMES */
+        .content iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Perfect YouTube formatting */
+            border: none;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #111;
+        }
+
+        /* 3. NOTION CALLOUTS (Blockquotes) */
+        .content blockquote {
+            background: rgba(217, 0, 141, 0.05); /* Slight pink tint */
+            border-left: 4px solid var(--primary-pink);
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 20px;
+            font-style: italic;
+            color: #fff;
+        }
+        .content blockquote p { margin: 0; }
+
+        /* 4. NOTION DROPDOWNS (Details/Summary Toggles) */
+        .content details {
+            background: var(--bg-dark-grey);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #333;
+            transition: border-color 0.3s;
+        }
+        .content details:hover { border-color: #555; }
+        .content summary {
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            color: #fff;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .content summary::-webkit-details-marker { display: none; }
+        .content summary::after {
+            content: '▾';
+            color: var(--primary-pink);
+            font-size: 24px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .content details[open] summary::after { transform: rotate(180deg); }
+        .content details[open] summary { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; color: var(--primary-pink); }
+        .content details p:last-child { margin-bottom: 0; }
+        
+        /* --- FOOTER CSS --- */
+        footer { text-align: center; padding: 60px 20px; background-color: var(--bg-black); background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; }
+        .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
+        
+        @media (max-width: 600px) {
+            .article-title { font-size: 32px; }
+            .content { font-size: 16px; }
+        }
+    </style>
 </head>
-<body style="background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif;">
-    <article style="max-width: 800px; margin: 100px auto; padding: 20px;">
-        <span style="color: #d9008d; font-size: 14px; text-transform: uppercase;">{{ page.categories | join: ", " }}</span>
-        <h1 style="font-size: 40px; margin-bottom: 10px;">{{ page.title }}</h1>
-        <p style="color: #aaa;">{{ page.date | date: "%B %d, %Y" }}</p>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
+        <ul class="nav-center" id="navMenu">
+            <li class="nav-item dropdown">
+                CHANNELS
+                <ul class="dropdown-menu">
+                    <li><a href="/sports">Sports & Entertainment</a></li>
+                    <li><a href="/fashion">Fashion & Lifestyle</a></li>
+                    <li><a href="/health">Health & Wellness</a></li>
+                    <li><a href="/culture">Culture & Art</a></li>
+                    <li><a href="/travel">Travel & Leisure</a></li>
+                    <li><a href="/hospitality">Hospitality</a></li>
+                    <li><a href="/nonprofit">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
+            <li class="nav-item"><a href="/inter-miami">INTER MIAMI</a></li>
+            <li class="nav-item"><a href="/contact">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                    <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <article class="article-container">
+        <div class="article-header">
+            <span class="article-cat">{{ page.channel | join: ", " }}</span>
+            <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
+            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
+        </div>
         
         {% if page.cover %}
-            <img src="{{ page.cover }}" alt="Cover" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+            <img src="{{ page.cover }}" alt="Cover Image" class="article-cover">
+        {% elsif page.cover_image %}
+            <img src="{{ page.cover_image }}" alt="Cover Image" class="article-cover">
         {% endif %}
 
-        <div class="content" style="line-height: 1.8;">
+        <div class="content">
             {{ content }}
         </div>
     </article>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="/images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
+        </div>
+        <div class="social-icons" style="justify-content: center;">
+            <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
+                <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '✕';
+            } else {
+                mobileMenuBtn.innerHTML = '☰';
+            }
+        });
+    </script>
 </body>
 </html>
