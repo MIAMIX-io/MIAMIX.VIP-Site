@@ -22,8 +22,8 @@ jobs:
           NOTION_DATABASE: ${{ secrets.NOTION_DATABASE_ID }}
           FILTER_PROP: Status
           FILTER_VALUES: Published
-          # We use just the title here; the next step fixes the date!
-          ARTICLE_PATH: _posts/{title}.md
+          # Adds the channel subfolder back in!
+          ARTICLE_PATH: _posts/{channel}/{title}.md
           ASSETS_PATH: assets/images/
           CONVERT_PROP_CASE: snake
           PARALLEL_PAGES: 10
@@ -31,10 +31,8 @@ jobs:
           
       - name: Fix Jekyll File Names
         run: |
-          # Jekyll strictly requires files in _posts to start with YYYY-MM-DD
-          # This script grabs the date from the file contents and renames the file perfectly
-          for file in _posts/*.md; do
-            [ -e "$file" ] || continue
+          # Use 'find' to look inside all the new channel subfolders for markdown files
+          find _posts -type f -name "*.md" | while read -r file; do
             
             # 1. Extract the clean date from the frontmatter (e.g. 2026-05-09)
             post_date=$(grep "^date: " "$file" | head -n 1 | awk '{print $2}' | cut -c 1-10)
@@ -43,8 +41,11 @@ jobs:
                # 2. Create a clean URL-friendly title slug
                clean_title=$(grep "^title: " "$file" | head -n 1 | sed 's/^title: //; s/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed 's/-\{2,\}/-/g' | sed 's/^-//;s/-$//')
                
-               # 3. Rename the file
-               new_name="_posts/${post_date}-${clean_title}.md"
+               # 3. Get the folder path (e.g., _posts/CuratedLifestyle)
+               dir=$(dirname "$file")
+               
+               # 4. Rename the file inside its specific folder
+               new_name="${dir}/${post_date}-${clean_title}.md"
                if [ "$file" != "$new_name" ]; then
                  mv "$file" "$new_name"
                  echo "Renamed $file to $new_name"
@@ -57,7 +58,7 @@ jobs:
           git config user.name "GitHub Action Bot"
           git config user.email "action@github.com"
           git add _posts/ assets/images/
-          git commit -m "Auto-sync Notion content with fixed file names" || echo "No changes to commit"
+          git commit -m "Auto-sync Notion content to channel folders with fixed file names" || echo "No changes to commit"
           git push
 
       - name: Update Notion Status to Live and set Timestamp
