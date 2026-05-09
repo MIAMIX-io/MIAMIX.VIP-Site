@@ -104,7 +104,17 @@
             color: #fff; letter-spacing: 2px; text-transform: uppercase;
         }
         .hero-text h1 span { color: var(--channel-color); font-weight: 700; }
-        .hero-text p { font-size: 18px; color: var(--text-muted); max-width: 500px; line-height: 1.6; }
+        
+        .hero-text p { 
+            font-size: 16px; /* Slightly smaller for longer text */
+            color: var(--text-muted); 
+            max-width: 550px; /* Slightly wider so it doesn't stack too tall */
+            line-height: 1.8; /* Increased line height for breathability */
+            margin-bottom: 20px; /* Adds the missing space between your paragraphs! */
+        }
+        .hero-text p:last-child {
+            margin-bottom: 0; /* Keeps the bottom spacing perfectly clean */
+        }
 
         .hero-image { flex: 1; display: flex; justify-content: center; }
         .hero-image img {
