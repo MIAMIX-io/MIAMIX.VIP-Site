@@ -5,12 +5,16 @@ on:
     - cron: '0 * * * *' # Runs every hour automatically
   workflow_dispatch: # Allows you to click the manual "Run workflow" button
 
+# This clears the Node 20 warning and future-proofs the action
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   notion-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Upgraded to v4
 
       - name: Fetch Notion Database and convert to Markdown
         uses: victornpb/notion-jam@v0.0.13
@@ -25,6 +29,7 @@ jobs:
           # Explicitly setting the parallel limits to prevent the crash
           PARALLEL_PAGES: 10
           PARALLEL_DOWNLOADS_PER_PAGE: 3
+          
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Action Bot"
