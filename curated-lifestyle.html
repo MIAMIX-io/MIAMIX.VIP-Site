@@ -149,7 +149,6 @@
         .card:hover .card-video-overlay { opacity: 0.9; }
 
         .card-content { position: relative; z-index: 3 !important; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%); padding: 20px; text-align: left; border-bottom: 3px solid var(--channel-color); }
-        .card-badge { background: var(--channel-color); color: #000; padding: 5px 10px; font-size: 10px; text-transform: uppercase; position: absolute; bottom: 90px; left: 20px; z-index: 4 !important; font-weight: bold; }
         .card h3 { font-size: 18px; margin-bottom: 5px; color: #fff; }
         .card p { font-size: 12px; color: #aaa; }
 
@@ -240,7 +239,7 @@
     <section class="channel-content">
         <h2 class="section-title">Latest <span>Articles</span></h2>
         <div class="card-grid">
-            {% assign lifestyle_posts = site.posts | where_exp: "item", "item.channel contains 'Curated Lifestyle'" | sort: "date" | reverse %}
+            {% assign lifestyle_posts = site.posts | where_exp: "item", "item.channel contains 'CuratedLifestyle'" | sort: "date" | reverse %}
             {% for post in lifestyle_posts %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; position: relative;">
