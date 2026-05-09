@@ -1,0 +1,26 @@
+---
+id: 4af94200-c57a-477b-92e0-9aa6b0be2080
+title: Martín Fierro Latino 2024 in Miami
+created_time: 2026-03-03T23:43:00.000Z
+last_edited_time: 2026-05-09T16:39:00.000Z
+cover_image: >-
+  https://prod-files-secure.s3.us-west-2.amazonaws.com/a2e5e5da-7f87-4d74-8757-949651e94148/7643e4c7-0b52-4fe8-bf97-9d017023188f/latinicons_files20250927_0402.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y7YXOZYV%2F20260509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260509T164053Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECAaCXVzLXdlc3QtMiJGMEQCIEx9%2Fmaq30k%2BWG4o743vFuaGY4qY9kcdF2Xn3%2BeGUFUfAiBMt7Dauz0bC%2FXo3AY29G%2BP8AnFlD3mZHGwmztGnUJWqyqIBAjp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMidVCXPa%2FuPCNgmfeKtwD%2FdscsfNBtRWN7QBP%2Bjj3HXPH7Xy8a%2BU0hgi57jT2BcnGq339yZQ7E%2FZQ9VXyRA8PtC4M%2FXE3Ce0GXVGWv%2FnqMbhzT%2FtwIat%2Fw6u9j3MIzGeucetvEJB1Hoc%2ByGyedNTnLsckdMllEZWkj3iiUYEDrjl1XfuD2s8wPZiJ4cSabpBLYpWkoF%2Fa%2B5t9P%2FNXc19bsKfmEkLX2hjcisKv3hNVe%2FCdUIofQ%2FK4cIZenqHNnvpg30ZmEC77n2q1dS47xW871dLF8BI6xMe6vQQRpCM01pSTQYA9zOTQvrlwS%2Fovs6hrlQoE4%2F7C5e%2FbpS1V9nBf8tv%2FM95R%2FFDnf73WDi41K4URMb5v%2BfShn1V%2BcyVsOIQJkiGH%2Fq3l90s7HwG0Zc13kV2GgCTDjDVhhEFbjWDtAJFdN9ptK98yhLEMansrVast%2Bt4uj%2FDU%2FkM0AsttsPkVo8ozPw0HzcVe%2Fta%2BpdWloONmYvbE7UKG81G7NNI5yuzQ3AHj1Z5yRIlauNevYtYC2sR3VW6HGEXgkTUXk5BOQqAbycBZ%2FIOhtt5JhdDa4bQ9RrHvHQnwwdsAD1lwm9AhpSbEWfatzlEmjycfH0DDmJPa3UfGA1AaC4P6eNT%2BIO%2Be%2BTeNfUVahcL1MOIworz9zwY6pgG2f%2Bj0omsj95NBnJjjD%2Bz2Sao3VydXGpJOSASNcGHMjvRG91zIoSJI%2BbqZuE%2BaSgBl1HmLI46trHLht81ijyvZE%2BIxIPAX2ywhxV%2F%2BRbc%2BLLM0mgocno7irr%2FfYOQPYHjn%2B0RP%2FTYHI6OwzZEkHSvZ0AL%2BfryDI5QIwsjSYxvTVXPemGw15js2jci6IDwh33s970E1f7z4KGLrKQ8SkduUb9pSfOe1&X-Amz-Signature=470dcc7c59fb9abde4160536c3ddb0e1b7c9c9d28e3e94b573148662b6499923&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+status: Published
+last_synced_to_git_hub: 2026-05-09T16:21:00.000Z
+grid_placement: None
+website: miamix.vip
+content_type: Blog Post
+external_url: null
+channel:
+  - Culture
+date: 2026-05-09T00:00:00.000Z
+reviewer: []
+business_name: Martín Fierro Latino
+language: English
+author: []
+sync_to_git_hub: true
+page_title: Martín Fierro Latino 2024 in Miami
+_thumbnail: >-
+  https://prod-files-secure.s3.us-west-2.amazonaws.com/a2e5e5da-7f87-4d74-8757-949651e94148/7643e4c7-0b52-4fe8-bf97-9d017023188f/latinicons_files20250927_0402.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466Y7YXOZYV%2F20260509%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260509T164053Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECAaCXVzLXdlc3QtMiJGMEQCIEx9%2Fmaq30k%2BWG4o743vFuaGY4qY9kcdF2Xn3%2BeGUFUfAiBMt7Dauz0bC%2FXo3AY29G%2BP8AnFlD3mZHGwmztGnUJWqyqIBAjp%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMidVCXPa%2FuPCNgmfeKtwD%2FdscsfNBtRWN7QBP%2Bjj3HXPH7Xy8a%2BU0hgi57jT2BcnGq339yZQ7E%2FZQ9VXyRA8PtC4M%2FXE3Ce0GXVGWv%2FnqMbhzT%2FtwIat%2Fw6u9j3MIzGeucetvEJB1Hoc%2ByGyedNTnLsckdMllEZWkj3iiUYEDrjl1XfuD2s8wPZiJ4cSabpBLYpWkoF%2Fa%2B5t9P%2FNXc19bsKfmEkLX2hjcisKv3hNVe%2FCdUIofQ%2FK4cIZenqHNnvpg30ZmEC77n2q1dS47xW871dLF8BI6xMe6vQQRpCM01pSTQYA9zOTQvrlwS%2Fovs6hrlQoE4%2F7C5e%2FbpS1V9nBf8tv%2FM95R%2FFDnf73WDi41K4URMb5v%2BfShn1V%2BcyVsOIQJkiGH%2Fq3l90s7HwG0Zc13kV2GgCTDjDVhhEFbjWDtAJFdN9ptK98yhLEMansrVast%2Bt4uj%2FDU%2FkM0AsttsPkVo8ozPw0HzcVe%2Fta%2BpdWloONmYvbE7UKG81G7NNI5yuzQ3AHj1Z5yRIlauNevYtYC2sR3VW6HGEXgkTUXk5BOQqAbycBZ%2FIOhtt5JhdDa4bQ9RrHvHQnwwdsAD1lwm9AhpSbEWfatzlEmjycfH0DDmJPa3UfGA1AaC4P6eNT%2BIO%2Be%2BTeNfUVahcL1MOIworz9zwY6pgG2f%2Bj0omsj95NBnJjjD%2Bz2Sao3VydXGpJOSASNcGHMjvRG91zIoSJI%2BbqZuE%2BaSgBl1HmLI46trHLht81ijyvZE%2BIxIPAX2ywhxV%2F%2BRbc%2BLLM0mgocno7irr%2FfYOQPYHjn%2B0RP%2FTYHI6OwzZEkHSvZ0AL%2BfryDI5QIwsjSYxvTVXPemGw15js2jci6IDwh33s970E1f7z4KGLrKQ8SkduUb9pSfOe1&X-Amz-Signature=470dcc7c59fb9abde4160536c3ddb0e1b7c9c9d28e3e94b573148662b6499923&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+
+---
