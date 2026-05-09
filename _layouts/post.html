@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | MIAMIX</title>
-    </head>
+    
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 <body style="background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif;">
     <article style="max-width: 800px; margin: 100px auto; padding: 20px;">
         <span style="color: #d9008d; font-size: 14px; text-transform: uppercase;">{{ page.categories | join: ", " }}</span>
@@ -18,6 +23,5 @@
             {{ content }}
         </div>
     </article>
-
-    </body>
+</body>
 </html>
