@@ -124,41 +124,57 @@
 
         /* --- GALLERY SECTION --- */
         .gallery-section { padding: 0 40px 60px 40px; max-width: 1400px; margin: 0 auto; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; } /* Changed to 3 columns */
         .gallery-grid img {
-            width: 100%; 
-            height: 100%; 
-            aspect-ratio: 2/3; /* Changed from 1/1 to classic portrait */
-            object-fit: cover;
-            border-radius: 8px; 
-            opacity: 0.8; 
-            transition: opacity 0.3s ease, transform 0.3s ease; 
-            cursor: pointer;
+            width: 100%; height: 100%; aspect-ratio: 3/4; object-fit: cover;
+            border-radius: 8px; opacity: 0.8; transition: opacity 0.3s ease, transform 0.3s ease; cursor: pointer;
         }
         .gallery-grid img:hover { opacity: 1; transform: scale(1.02); }
 
-        /* --- BIO SECTION (EDITORIAL STYLE) --- */
+        /* --- BIO SECTION (EDITORIAL STYLE W/ IMAGE) --- */
         .bio-section {
             padding: 100px 40px; background-color: var(--bg-dark-grey); 
             border-top: 1px solid #333; border-bottom: 1px solid #333;
         }
         .bio-container { 
-            max-width: 1200px; margin: 0 auto; display: flex; gap: 60px; align-items: flex-start;
+            max-width: 1200px; margin: 0 auto; display: flex; gap: 80px; align-items: flex-start;
         }
-        .bio-title-wrapper { flex: 1; position: sticky; top: 120px; }
+        
+        /* The new tall image wrapper on the left */
+        .bio-image-wrapper { flex: 1; position: sticky; top: 100px; }
+        .bio-image-wrapper img {
+            width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; /* Tall, elegant crop */
+            border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid #333;
+        }
+
+        /* The text content on the right */
+        .bio-content-wrapper { flex: 1.5; }
+        .bio-title-wrapper { margin-bottom: 30px; }
         .bio-title-wrapper h2 { 
             font-size: 32px; color: var(--channel-color); text-transform: uppercase; 
             letter-spacing: 2px; margin-bottom: 10px;
         }
         .bio-title-wrapper span {
-            display: block; width: 40px; height: 3px; background-color: var(--primary-pink); margin-top: 15px;
+            display: block; width: 40px; height: 3px; background-color: var(--primary-pink);
         }
         
-        .bio-content { flex: 2; }
         .bio-content p { 
             font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 25px;
         }
         .bio-content p:last-child { margin-bottom: 0; }
+        
+        .bio-quote {
+            font-size: 20px !important; font-weight: 300; color: #fff !important; 
+            font-style: italic; border-left: 3px solid var(--primary-pink); padding-left: 20px;
+            margin: 40px 0 35px 0 !important;
+        }
+
+        @media (max-width: 900px) {
+            .bio-container { flex-direction: column; gap: 40px; }
+            .bio-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; }
+            .bio-title-wrapper { text-align: center; }
+            .bio-title-wrapper span { margin: 0 auto; }
+        }
         
         /* Styling her pull quotes */
         .bio-quote {
@@ -299,35 +315,40 @@
             <img src="/images/romina-img1.png" alt="Gallery Image 1">
             <img src="/images/romina-img2.JPG" alt="Gallery Image 2">
             <img src="/images/rominapic.jpg" alt="Gallery Image 3">
-            <img src="/images/romina-italia.jpg" alt="Gallery Image 4">
-        </div>
+            </div>
     </section>
 
     <section class="bio-section">
         <div class="bio-container">
-            <div class="bio-title-wrapper">
-                <h2>Meet Romina</h2>
-                <span></span>
+            <div class="bio-image-wrapper">
+                <img src="/images/romina-italia.jpg" alt="Romina Editorial Portrait">
             </div>
             
-            <div class="bio-content">
-                <p>In every chapter of her career, Romina has demonstrated an exceptional ability to unite creativity and business from a sensitive, results-oriented approach. That philosophy led her to found RCN Curated Luxury, where she offers business development, strategic partnerships, art direction, style consulting, media training, and editorial storytelling for a select group of global clients. Her mission is clear: create visibility with soul and credibility with purpose, ensuring that every brand reflects not only excellence but essence.</p>
+            <div class="bio-content-wrapper">
+                <div class="bio-title-wrapper">
+                    <h2>Meet Romina</h2>
+                    <span></span>
+                </div>
                 
-                <p class="bio-quote">"True luxury is not about excess. It's about alignment, about the quiet confidence of knowing who you are and curating everything around you from that truth."</p>
-                
-                <p>This vision is reflected in every project she leads, where intention is always as important as aesthetics.</p>
-                
-                <p>Through her podcast My LIFE | Mi VIDA on Spotify and her project The Seasonal Review, Romina invites her audience into a space where style, reflection, and sensitivity coexist naturally. Her partnership collaboration with MIAMIX contributes special articles focused on Fashion, Beauty & Lifestyle, aligned with her contemporary and deeply human perspective on luxury.</p>
-                
-                <p>Her presence also stands out in women's leadership initiatives. As Platform Partner and CEO Circle Member of Miami Women Who Rock, Romina is part of a community dedicated to inspiration, philanthropy, and empowerment. She was recently featured on Telemundo National as an expert voice on reinvention, and profiled in The Book of Rockstar Leaders, a book recognizing visionary entrepreneurs driving Miami's development.</p>
-                
-                <p class="bio-quote">"Luxury is how you live between the big milestones: in conversations, in connections, and in those quiet moments you choose to make beautiful."</p>
-                
-                <p>Today, Romina Nabhen continues expanding her impact with projects, collaborations, and experiences that celebrate the beauty of living with intention. Whether through a global strategy, an elegant event, or an intimate conversation, her work reflects what she embodies: purpose, art, and an elegance that endures.</p>
+                <div class="bio-content">
+                    <p>In every chapter of her career, Romina has demonstrated an exceptional ability to unite creativity and business from a sensitive, results-oriented approach. That philosophy led her to found RCN Curated Luxury, where she offers business development, strategic partnerships, art direction, style consulting, media training, and editorial storytelling for a select group of global clients. Her mission is clear: create visibility with soul and credibility with purpose, ensuring that every brand reflects not only excellence but essence.</p>
+                    
+                    <p class="bio-quote">"True luxury is not about excess. It's about alignment, about the quiet confidence of knowing who you are and curating everything around you from that truth."</p>
+                    
+                    <p>This vision is reflected in every project she leads, where intention is always as important as aesthetics.</p>
+                    
+                    <p>Through her podcast My LIFE | Mi VIDA on Spotify and her project The Seasonal Review, Romina invites her audience into a space where style, reflection, and sensitivity coexist naturally. Her partnership collaboration with MIAMIX contributes special articles focused on Fashion, Beauty & Lifestyle, aligned with her contemporary and deeply human perspective on luxury.</p>
+                    
+                    <p>Her presence also stands out in women's leadership initiatives. As Platform Partner and CEO Circle Member of Miami Women Who Rock, Romina is part of a community dedicated to inspiration, philanthropy, and empowerment. She was recently featured on Telemundo National as an expert voice on reinvention, and profiled in The Book of Rockstar Leaders, a book recognizing visionary entrepreneurs driving Miami's development.</p>
+                    
+                    <p class="bio-quote">"Luxury is how you live between the big milestones: in conversations, in connections, and in those quiet moments you choose to make beautiful."</p>
+                    
+                    <p>Today, Romina Nabhen continues expanding her impact with projects, collaborations, and experiences that celebrate the beauty of living with intention. Whether through a global strategy, an elegant event, or an intimate conversation, her work reflects what she embodies: purpose, art, and an elegance that endures.</p>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <section class="channel-content">
         <h2 class="section-title">Latest <span>Articles</span></h2>
         <div class="card-grid">
