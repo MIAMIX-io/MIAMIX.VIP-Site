@@ -23,7 +23,7 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- NAVIGATION CSS --- */
+        /* --- DESKTOP NAVIGATION CSS --- */
         header {
             position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
             align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
@@ -33,10 +33,12 @@
         .logo { display: flex; align-items: center; z-index: 2002; }
         .logo img { height: 40px; width: auto; display: block; }
         
+        /* RESTORED DESKTOP MENU STYLING */
         .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
         .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
         .nav-item:hover { color: var(--primary-pink); }
 
+        /* RESTORED DESKTOP DROPDOWN */
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
             min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
@@ -55,23 +57,13 @@
 
         .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 60px; position: relative;
-        }
-        .hero h1 { font-weight: 600; margin-bottom: 10px; font-size: 64px; }
-        .hero p { font-weight: 300; font-size: 24px; }
-        .hero-btn { position: absolute; bottom: 80px; right: 60px; color: var(--primary-pink); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
-
         /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
         @media (max-width: 900px) {
             header { padding: 15px 20px; }
             .mobile-menu-toggle { display: block; }
             .nav-right { display: none; }
             
-            /* MENU LAYOUT FIXES */
+            /* MENU LAYOUT FIXES FOR MOBILE ONLY */
             .nav-center {
                 position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
                 background-color: var(--bg-dark-grey); flex-direction: column; 
@@ -85,9 +77,9 @@
             }
             .nav-center.active { right: 0; }
             
-            /* --- CRITICAL FIX: Strip all extra padding/margins from mobile nav items --- */
+            /* OVERRIDE DESKTOP PADDING FOR MOBILE ONLY */
             .nav-item { 
-                padding: 15px 0 !important; /* Forces tighter spacing */
+                padding: 15px 0 !important; 
                 font-size: 18px; 
                 width: 100%; 
                 text-align: center; 
@@ -96,17 +88,16 @@
             
             /* Mobile Dropdown Fix */
             .nav-item.dropdown {
-                /* Ensures the dropdown container doesn't create extra vertical space */
                 position: relative;
             }
             .nav-item.dropdown .dropdown-menu { 
                 display: none; 
-                position: static; /* CHANGES THIS FROM RELATIVE TO STATIC */
+                position: static; 
                 box-shadow: none; 
                 border-top: none; 
-                background: #111; /* Slightly lighter so it stands out */
+                background: #111; 
                 width: 100%; 
-                margin-top: 15px; /* Brings it right up to the text */
+                margin-top: 15px; 
                 padding: 10px 0;
             }
             .nav-item.dropdown.mobile-open .dropdown-menu { 
@@ -116,7 +107,33 @@
                 padding: 12px 20px; 
                 font-size: 14px;
             }
-        
+            
+            /* Mobile Hero Alignments */
+            .hero { padding: 40px 30px; padding-bottom: 80px; }
+            .hero h1 { font-size: 42px; line-height: 1.1; margin-bottom: 10px; }
+            .hero p { font-size: 18px; margin-bottom: 25px; }
+            .hero-btn { position: relative; bottom: auto; right: auto; display: inline-block; }
+            
+            .grid-section { padding: 40px 20px; }
+            .logo-banner { padding: 20px; gap: 20px; }
+            .circular-partners { padding: 40px 20px; gap: 20px; }
+            
+            .services-wrapper { padding: 40px 20px; }
+            .services-container { padding: 20px; }
+            .services-thumbnails { flex-wrap: wrap; }
+            .services-thumbnails img { width: calc(50% - 8px); margin-bottom: 10px; }
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 60px; position: relative;
+        }
+        .hero h1 { font-weight: 600; margin-bottom: 10px; font-size: 64px; }
+        .hero p { font-weight: 300; font-size: 24px; }
+        .hero-btn { position: absolute; bottom: 80px; right: 60px; color: var(--primary-pink); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+
         /* --- GRID SECTIONS --- */
         .grid-section { padding: 80px 60px; }
         .section-title { text-align: center; font-size: 24px; color: var(--text-main); margin-bottom: 50px; letter-spacing: 2px; text-transform: uppercase; }
