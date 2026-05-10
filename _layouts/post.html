@@ -156,26 +156,39 @@
         footer { text-align: center; padding: 60px 20px; background-color: var(--bg-black); background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; }
         .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
         
-        /* --- RESPONSIVE STYLING (IPAD & MOBILE) --- */
+        /* --- RESPONSIVE STYLING (IPAD & MOBILE FIXES) --- */
         @media (max-width: 1024px) {
-            .post-hero { min-height: 500px; height: 60vh; }
+            /* FIX 1: Turn off fixed attachment on tablets/mobile to prevent the massive iOS zoom bug */
+            .post-hero { 
+                background-attachment: scroll !important; 
+                background-position: center center;
+                min-height: 400px; height: 50vh; 
+            }
             .article-title { font-size: 42px; }
-            .article-container { margin: 40px auto 60px auto; }
+            .article-container { margin: 20px auto 60px auto; }
         }
         
         @media (max-width: 900px) {
             header { padding: 15px 20px; }
             .mobile-menu-toggle { display: block; }
             .nav-right { display: none; }
+            
+            /* FIX 2: Fixed the mobile menu flex layout and added scrolling */
             .nav-center {
                 position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
-                background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
+                background-color: var(--bg-dark-grey); flex-direction: column; 
+                justify-content: flex-start; /* Aligns to top instead of center so items aren't cut off */
                 align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-                z-index: 2001; padding-top: 80px; gap: 0;
+                z-index: 2001; padding-top: 100px; padding-bottom: 50px; gap: 0; overflow-y: auto;
             }
             .nav-center.active { right: 0; }
             .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
-            .nav-item.dropdown:hover .dropdown-menu { position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; }
+            
+            /* Mobile Dropdown Fix */
+            .nav-item.dropdown .dropdown-menu { 
+                display: none; position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; margin-top: 15px; 
+            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
         }
 
         @media (max-width: 768px) {
@@ -184,22 +197,25 @@
             .article-container { padding: 20px 30px; }
             .content { font-size: 17px; }
             .content blockquote { font-size: 20px; padding: 25px; margin: 40px 0; }
+            .image-gallery img, .content > p > img:only-child { max-height: 50vh; }
         }
 
         @media (max-width: 480px) {
-            .post-hero { min-height: 400px; height: 50vh; }
+            .post-hero { min-height: 350px; height: 45vh; }
             .article-title { font-size: 28px; margin-bottom: 15px; }
             .article-cat { font-size: 13px; letter-spacing: 2px; }
-            .article-container { margin: 20px auto; padding: 20px 20px; }
+            .article-container { margin: 10px auto; padding: 20px 20px; }
             
             .content { font-size: 16px; line-height: 1.7; }
-            .content h2, .content h3, .content h4 { margin-top: 40px; margin-bottom: 20px; }
+            .content h2, .content h3, .content h4 { margin-top: 40px; margin-bottom: 20px; font-size: 24px; }
             
             .content blockquote { font-size: 18px; padding: 20px; margin: 30px 0; border-left-width: 3px; }
             .content details { padding: 15px; margin: 20px 0; }
             .content summary { font-size: 16px; }
             
             .content iframe { margin: 30px 0; }
+            .image-gallery { gap: 10px; margin: 20px auto; }
+            .image-gallery img, .content > p > img:only-child { margin: 20px auto; }
         }
     </style>
 </head>
@@ -212,7 +228,7 @@
         <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
         <ul class="nav-center" id="navMenu">
             <li class="nav-item dropdown">
-                CHANNELS
+                CHANNELS <span style="font-size: 10px;">▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="/sports">Sports & Entertainment</a></li>
                     <li><a href="/fashion">Fashion & Lifestyle</a></li>
@@ -290,6 +306,7 @@
         // MOBILE MENU LOGIC
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
+        const dropdownMenu = document.querySelector('.nav-item.dropdown');
 
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -297,11 +314,21 @@
                 mobileMenuBtn.innerHTML = '✕';
             } else {
                 mobileMenuBtn.innerHTML = '☰';
+                if(dropdownMenu) dropdownMenu.classList.remove('mobile-open');
             }
         });
 
+        if(dropdownMenu) {
+            dropdownMenu.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900) {
+                    if(e.target.tagName !== 'A') {
+                        this.classList.toggle('mobile-open');
+                    }
+                }
+            });
+        }
+
         // AUTOMATIC IMAGE GALLERY LOGIC
-        // This script automatically finds back-to-back images and wraps them in a beautiful flex grid!
         document.addEventListener("DOMContentLoaded", function() {
             const content = document.querySelector('.content');
             if(!content) return;
@@ -312,18 +339,15 @@
                 const images = Array.from(el.querySelectorAll('img'));
                 const text = el.textContent.trim();
                 
-                // If it's a paragraph containing ONLY images (no text)
                 if (el.tagName === 'P' && images.length > 0 && text === '') {
                     if (!gallery) {
                         gallery = document.createElement('div');
                         gallery.className = 'image-gallery';
                         el.parentNode.insertBefore(gallery, el);
                     }
-                    // Move images into the gallery wrapper
                     images.forEach(img => gallery.appendChild(img));
                     el.remove();
                 } else {
-                    // Reset if we hit a text paragraph
                     gallery = null; 
                 }
             });
