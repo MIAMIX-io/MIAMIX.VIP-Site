@@ -85,17 +85,37 @@
             }
             .nav-center.active { right: 0; }
             
-            /* Tighter padding so more links fit on the screen at once */
-            .nav-item { padding: 12px 0; font-size: 16px; width: 100%; text-align: center; } 
+            /* --- CRITICAL FIX: Strip all extra padding/margins from mobile nav items --- */
+            .nav-item { 
+                padding: 15px 0 !important; /* Forces tighter spacing */
+                font-size: 18px; 
+                width: 100%; 
+                text-align: center; 
+                margin: 0;
+            } 
             
             /* Mobile Dropdown Fix */
-            .nav-item.dropdown .dropdown-menu { 
-                display: none; position: relative; box-shadow: none; border-top: none; 
-                background: #000; width: 100%; margin-top: 10px; padding: 5px 0;
+            .nav-item.dropdown {
+                /* Ensures the dropdown container doesn't create extra vertical space */
+                position: relative;
             }
-            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
-            .dropdown-menu a { padding: 10px 20px; }
-        }
+            .nav-item.dropdown .dropdown-menu { 
+                display: none; 
+                position: static; /* CHANGES THIS FROM RELATIVE TO STATIC */
+                box-shadow: none; 
+                border-top: none; 
+                background: #111; /* Slightly lighter so it stands out */
+                width: 100%; 
+                margin-top: 15px; /* Brings it right up to the text */
+                padding: 10px 0;
+            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { 
+                display: block; 
+            }
+            .dropdown-menu a { 
+                padding: 12px 20px; 
+                font-size: 14px;
+            }
         
         /* --- GRID SECTIONS --- */
         .grid-section { padding: 80px 60px; }
