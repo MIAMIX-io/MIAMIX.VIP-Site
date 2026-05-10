@@ -23,17 +23,21 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- UNIVERSAL HEADER --- */
+        /* --- DESKTOP HEADER CSS --- */
         header {
             position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
             align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .logo { display: flex; align-items: center; }
+        .logo { display: flex; align-items: center; z-index: 2002; }
         .logo img { height: 40px; width: auto; display: block; }
+        
+        /* RESTORED DESKTOP MENU SPACING */
         .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
         .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
         .nav-item:hover { color: var(--primary-pink); }
+        
+        /* RESTORED DESKTOP DROPDOWN */
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
             min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
@@ -43,6 +47,7 @@
         .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
         .dropdown-menu a:hover { background-color: #1a1a1a; }
         .nav-item.dropdown:hover .dropdown-menu { display: block; }
+        
         .nav-right { display: flex; align-items: center; gap: 15px; }
         .social-icons { display: flex; gap: 15px; }
         .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
@@ -60,7 +65,7 @@
             justify-content: center;
             margin-top: 70px;
         }
-        .contact-hero h1 { font-size: 48px; font-weight: 300; letter-spacing: 3px; }
+        .contact-hero h1 { font-size: 48px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
         .contact-hero h1 span { font-weight: 700; color: var(--primary-pink); }
 
         /* --- CONTACT SECTION --- */
@@ -73,7 +78,7 @@
             gap: 60px;
         }
 
-        .contact-info h2 { font-size: 28px; margin-bottom: 20px; color: var(--primary-pink); }
+        .contact-info h2 { font-size: 28px; margin-bottom: 20px; color: var(--primary-pink); text-transform: uppercase; }
         .contact-info p { font-size: 15px; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px; }
         .info-block { margin-bottom: 25px; }
         .info-block h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; color: #fff; }
@@ -112,18 +117,16 @@
                 justify-content: flex-start; /* Aligns to top instead of center */
                 align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
                 z-index: 2001; 
-                padding-top: 70px; /* Reduced from 100px to pull menu up */
+                padding-top: 70px; 
                 padding-bottom: 30px; gap: 0; 
-                overflow-y: auto; /* Ensures the menu can scroll */
+                overflow-y: auto; 
                 -webkit-overflow-scrolling: touch;
             }
             .nav-center.active { right: 0; }
             
-            .nav-item { padding: 12px 0; font-size: 16px; width: 100%; text-align: center; } 
-            
             /* --- CRITICAL FIX: Strip all extra padding/margins from mobile nav items --- */
             .nav-item { 
-                padding: 15px 0 !important; /* Forces tighter spacing */
+                padding: 15px 0 !important; 
                 font-size: 18px; 
                 width: 100%; 
                 text-align: center; 
@@ -132,7 +135,6 @@
             
             /* Mobile Dropdown Fix */
             .nav-item.dropdown {
-                /* Ensures the dropdown container doesn't create extra vertical space */
                 position: relative;
             }
             .nav-item.dropdown .dropdown-menu { 
@@ -140,18 +142,14 @@
                 position: static; /* CHANGES THIS FROM RELATIVE TO STATIC */
                 box-shadow: none; 
                 border-top: none; 
-                background: #111; /* Slightly lighter so it stands out */
+                background: #111; 
                 width: 100%; 
-                margin-top: 15px; /* Brings it right up to the text */
+                margin-top: 15px; 
                 padding: 10px 0;
             }
-            .nav-item.dropdown.mobile-open .dropdown-menu { 
-                display: block; 
-            }
-            .dropdown-menu a { 
-                padding: 12px 20px; 
-                font-size: 14px;
-            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
+            .dropdown-menu a { padding: 12px 20px; font-size: 14px; }
+        }
 
         @media (max-width: 768px) {
             .contact-section { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
