@@ -112,8 +112,10 @@
             .grid-section { padding: 40px 20px; }
             
             /* Carousel Adjustments for Mobile */
-            .logo-banner { padding: 40px 20px !important; gap: 30px !important; }
-            .carousel-item img { height: 80px !important; }
+            .logo-banner { padding: 60px 20px !important; gap: 40px !important; }
+            .carousel-item { min-width: 220px !important; }
+            .carousel-item img { height: 130px !important; max-width: 200px !important; }
+            .brand-name { font-size: 14px !important; }
             
             .circular-partners { padding: 40px 20px; gap: 20px; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
             .circle-logo { width: 120px !important; height: 120px !important; flex-shrink: 0; }
@@ -189,19 +191,19 @@
 
         /* --- CAROUSEL / BANNER WITH NEW GIF BACKGROUND --- */
         .logo-banner { 
-            display: flex; overflow-x: auto; gap: 60px; padding: 60px 60px; 
+            display: flex; overflow-x: auto; gap: 80px; padding: 100px 60px; 
             /* Added GIF background with dark overlay for readability */
-            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXA0bGFzZ3luemVpZHMxcmNkaGNtMDByYm1hemE3djVmd2hjczBxdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D7D0bE6Y4V8oOtdG4v/giphy.gif') center/cover no-repeat;
+            background: linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXA0bGFzZ3luemVpZHMxcmNkaGNtMDByYm1hemE3djVmd2hjczBxdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D7D0bE6Y4V8oOtdG4v/giphy.gif') center/cover no-repeat;
             align-items: center; 
             -webkit-overflow-scrolling: touch; scrollbar-width: none; 
             border-top: 1px solid #333;
             border-bottom: 1px solid #333;
         }
         .logo-banner::-webkit-scrollbar { display: none; }
-        .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 15px; text-decoration: none; min-width: 180px; flex-shrink: 0; }
-        .carousel-item img { height: 120px; object-fit: contain; opacity: 0.7; transition: opacity 0.3s; }
-        .brand-name { color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; transition: all 0.3s; white-space: nowrap; font-weight: 600;}
-        .carousel-item:hover img { opacity: 1; }
+        .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 20px; text-decoration: none; min-width: 300px; flex-shrink: 0; }
+        .carousel-item img { height: 180px; max-width: 280px; object-fit: contain; opacity: 0.8; transition: opacity 0.3s, transform 0.3s; }
+        .brand-name { color: #fff; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; transition: all 0.3s; white-space: nowrap; font-weight: 700;}
+        .carousel-item:hover img { opacity: 1; transform: scale(1.05); }
         .carousel-item:hover .brand-name { opacity: 1; color: var(--primary-pink); }
 
         /* --- CIRCULAR PARTNERS SECTION --- */
@@ -290,7 +292,7 @@
     <section class="grid-section">
         <div class="card-grid">
             {% assign grid_a = site.posts | where: "grid_placement", "Grid A" %}
-            {% for post in grid_a limit: 6 %}
+            {% for post in grid_a limit: 8 %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; text-decoration: none;">
                         
@@ -322,12 +324,23 @@
                 {% endif %}
             </a>
         {% endfor %}
+        
+        {% if carousel_posts.size == 0 %}
+            <div class="carousel-item">
+                <img src="https://www.ingressosrca.com.br/media/catalog/category/BRIGHTLINE_TRAIN.jpeg" alt="Placeholder 1">
+                <span class="brand-name">Brightline</span>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.royalcaribbean.com/content/dam/royal/ships/utopia/utopia-of-the-seas-aerial-aft-night-crop-sailing.jpg" alt="Placeholder 2">
+                <span class="brand-name">Royal Caribbean</span>
+            </div>
+        {% endif %}
     </div>
 
     <section class="grid-section">
         <div class="card-grid">
             {% assign grid_b = site.posts | where: "grid_placement", "Grid B" %}
-            {% for post in grid_b limit: 6 %}
+            {% for post in grid_b %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; text-decoration: none;">
                         
@@ -361,6 +374,17 @@
                 {% endif %}
             </a>
         {% endfor %}
+
+        {% if partner_posts.size == 0 %}
+            <div class="partner-item">
+                <div class="circle-logo"><img src="https://via.placeholder.com/150/eeddcc/000?text=TATORE" alt="Tatore Placeholder"></div>
+                <div class="partner-name">Tatore</div>
+            </div>
+            <div class="partner-item">
+                <div class="circle-logo"><img src="https://via.placeholder.com/150/ffff00/000?text=Sun" alt="Sun Placeholder"></div>
+                <div class="partner-name">Sun Life</div>
+            </div>
+        {% endif %}
     </section>
 
     <section class="services-wrapper">
