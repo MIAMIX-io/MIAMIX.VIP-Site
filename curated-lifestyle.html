@@ -107,8 +107,42 @@
                 padding: 12px 20px; 
                 font-size: 14px;
             }
+            
+            /* --- MOBILE HERO FIX FOR CURATED LIFESTYLE --- */
+            .creator-hero { 
+                height: auto; 
+                min-height: 50vh; 
+                padding-top: 100px !important; /* Pushes the text down below the sticky header */
+                padding-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+                justify-content: center;
+                gap: 40px;
+            }
+            .hero-text h1 {
+                font-size: 36px !important; /* Scale down the massive text */
+                margin-top: 20px; 
+                line-height: 1.2;
+                text-align: center;
+            }
+            .hero-text p {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        }
         
-        /* --- NEW CREATOR HERO SECTION --- */
+        @media (max-width: 480px) {
+             .creator-hero {
+                min-height: 40vh;
+                padding-top: 90px !important;
+             }
+             .hero-text h1 {
+                 font-size: 28px !important;
+             }
+        }
+        
+        /* --- NEW CREATOR HERO SECTION (DESKTOP) --- */
         .creator-hero {
             display: flex;
             align-items: center;
@@ -128,15 +162,10 @@
         .hero-text h1 span { color: var(--channel-color); font-weight: 700; }
         
         .hero-text p { 
-            font-size: 16px; /* Slightly smaller for longer text */
-            color: var(--text-muted); 
-            max-width: 550px; /* Slightly wider so it doesn't stack too tall */
-            line-height: 1.8; /* Increased line height for breathability */
-            margin-bottom: 20px; /* Adds the missing space between your paragraphs! */
+            font-size: 16px; color: var(--text-muted); max-width: 550px; 
+            line-height: 1.8; margin-bottom: 20px; 
         }
-        .hero-text p:last-child {
-            margin-bottom: 0; /* Keeps the bottom spacing perfectly clean */
-        }
+        .hero-text p:last-child { margin-bottom: 0; }
 
         .hero-image { flex: 1; display: flex; justify-content: center; }
         .hero-image img {
@@ -146,7 +175,7 @@
 
         /* --- GALLERY SECTION --- */
         .gallery-section { padding: 0 40px 60px 40px; max-width: 1400px; margin: 0 auto; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; } /* Changed to 3 columns */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; } 
         .gallery-grid img {
             width: 100%; height: 100%; aspect-ratio: 2/3; object-fit: cover;
             border-radius: 8px; opacity: 0.8; transition: opacity 0.3s ease, transform 0.3s ease; cursor: pointer;
@@ -162,14 +191,12 @@
             max-width: 1200px; margin: 0 auto; display: flex; gap: 80px; align-items: flex-start;
         }
         
-        /* The new tall image wrapper on the left */
         .bio-image-wrapper { flex: 1; position: sticky; top: 100px; }
         .bio-image-wrapper img {
-            width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; /* Tall, elegant crop */
+            width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; 
             border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid #333;
         }
 
-        /* The text content on the right */
         .bio-content-wrapper { flex: 1.5; }
         .bio-title-wrapper { margin-bottom: 30px; }
         .bio-title-wrapper h2 { 
@@ -195,19 +222,6 @@
             .bio-container { flex-direction: column; gap: 40px; }
             .bio-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; }
             .bio-title-wrapper { text-align: center; }
-            .bio-title-wrapper span { margin: 0 auto; }
-        }
-        
-        /* Styling her pull quotes */
-        .bio-quote {
-            font-size: 20px !important; font-weight: 300; color: #fff !important; 
-            font-style: italic; border-left: 3px solid var(--primary-pink); padding-left: 20px;
-            margin: 40px 0 35px 0 !important;
-        }
-
-        @media (max-width: 900px) {
-            .bio-container { flex-direction: column; gap: 30px; }
-            .bio-title-wrapper { position: relative; top: 0; text-align: center; }
             .bio-title-wrapper span { margin: 15px auto 0 auto; }
         }
 
@@ -291,7 +305,7 @@
 
         <ul class="nav-center" id="navMenu">
             <li class="nav-item dropdown">
-                CHANNELS
+                CHANNELS <span style="font-size: 10px;">▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="/sports">Sports & Entertainment</a></li>
                     <li><a href="/fashion">Fashion & Lifestyle</a></li>
@@ -337,7 +351,7 @@
             <img src="/images/romina-img1.png" alt="Gallery Image 1">
             <img src="/images/romina-img2.JPG" alt="Gallery Image 2">
             <img src="/images/rominapic.jpg" alt="Gallery Image 3">
-            </div>
+        </div>
     </section>
 
     <section class="bio-section">
@@ -381,7 +395,7 @@
                         
                         <div class="card-media">
                            <img src="{{ post.cover_image }}" alt="{{ post.title }}">
-                            
+                           
                             <video class="card-video-overlay" autoplay loop muted playsinline>
                                 <source src="/video/MIAMIX-1.mp4" type="video/mp4">
                             </video>
