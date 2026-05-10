@@ -25,7 +25,7 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--channel-bg); color: var(--text-main); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- NAVIGATION CSS --- */
+        /* --- DESKTOP NAVIGATION CSS --- */
         header {
             position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
             align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
@@ -35,10 +35,12 @@
         .logo { display: flex; align-items: center; z-index: 2002; }
         .logo img { height: 40px; width: auto; display: block; }
         
+        /* RESTORED DESKTOP MENU STYLING */
         .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
         .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
         .nav-item:hover { color: var(--primary-pink); }
 
+        /* RESTORED DESKTOP DROPDOWN */
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
             min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
@@ -63,7 +65,7 @@
             .mobile-menu-toggle { display: block; }
             .nav-right { display: none; }
             
-            /* MENU LAYOUT FIXES */
+            /* MENU LAYOUT FIXES FOR MOBILE ONLY */
             .nav-center {
                 position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
                 background-color: var(--bg-dark-grey); flex-direction: column; 
@@ -77,9 +79,9 @@
             }
             .nav-center.active { right: 0; }
             
-            /* --- CRITICAL FIX: Strip all extra padding/margins from mobile nav items --- */
+            /* OVERRIDE DESKTOP PADDING FOR MOBILE ONLY */
             .nav-item { 
-                padding: 15px 0 !important; /* Forces tighter spacing */
+                padding: 15px 0 !important; 
                 font-size: 18px; 
                 width: 100%; 
                 text-align: center; 
@@ -88,17 +90,16 @@
             
             /* Mobile Dropdown Fix */
             .nav-item.dropdown {
-                /* Ensures the dropdown container doesn't create extra vertical space */
                 position: relative;
             }
             .nav-item.dropdown .dropdown-menu { 
                 display: none; 
-                position: static; /* CHANGES THIS FROM RELATIVE TO STATIC */
+                position: static; 
                 box-shadow: none; 
                 border-top: none; 
-                background: #111; /* Slightly lighter so it stands out */
+                background: #111; 
                 width: 100%; 
-                margin-top: 15px; /* Brings it right up to the text */
+                margin-top: 15px; 
                 padding: 10px 0;
             }
             .nav-item.dropdown.mobile-open .dropdown-menu { 
@@ -108,6 +109,14 @@
                 padding: 12px 20px; 
                 font-size: 14px;
             }
+            
+            /* FIX HERO FOR MOBILE */
+            .channel-hero {
+                min-height: 50vh;
+                padding-top: 100px; /* Pushes content below header */
+                background-attachment: scroll !important; /* Fixes massive zoom bug on iOS */
+            }
+        }
         
         /* --- HERO SECTION --- */
         .channel-hero {
@@ -193,12 +202,12 @@
             padding: 40px; max-width: 800px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .optin-box h2 { margin-bottom: 15px; font-weight: 600; color: var(--channel-color); font-size: 28px; text-transform: uppercase; }
-        .optin-box p { font-size: 15px; margin-bottom: 25px; opacity: 0.9; }
+        .optin-box p { font-size: 15px; margin-bottom: 25px; opacity: 0.8; }
         .optin-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
         .optin-form input { padding: 12px 15px; border: 1px solid #333; background: #000; color: #fff; border-radius: 4px; outline: none; flex-grow: 1; max-width: 200px; transition: border 0.3s; }
         .optin-form input:focus { border-color: var(--channel-color); }
         .optin-form button {
-            padding: 12px 25px; background: var(--channel-color); color: #fff; border: none;
+            padding: 12px 25px; background: var(--channel-color); color: #000; border: none;
             border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s; text-transform: uppercase;
         }
         .optin-form button:hover { opacity: 0.8; }
@@ -223,7 +232,7 @@
 
         <ul class="nav-center" id="navMenu">
             <li class="nav-item dropdown">
-                CHANNELS
+                CHANNELS <span style="font-size: 10px;">▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="/sports">Sports & Entertainment</a></li>
                     <li><a href="/fashion">Fashion & Lifestyle</a></li>
