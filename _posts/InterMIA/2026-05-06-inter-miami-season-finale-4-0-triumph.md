@@ -2,21 +2,26 @@
 id: c64eaf9e-81a8-4fc2-aa27-ab8180b201be
 title: 'Inter Miami: Season Finale 4–0 Triumph'
 created_time: 2026-05-09T23:58:00.000Z
-last_edited_time: 2026-05-10T13:07:00.000Z
+last_edited_time: 2026-05-10T19:42:00.000Z
+cover_image: >-
+  /assets/images/InterMIA/IMG_9195_0.jpg
 status: Published
-last_synced_to_git_hub: 2026-05-10T13:02:00.000Z
-grid_placement: None
+last_synced_to_git_hub: 2026-05-10T13:10:00.000Z
+grid_placement: Grid A
 website: miamix.vip
 content_type: Blog Post
-external_url: https://www.miamix.io/inter-miami-fc/inter-miami-season-finale-40-triumph
+external_url: https://www.intermiamicf.com/
 channel:
   - InterMIA
 date: 2026-05-06T00:00:00.000Z
 reviewer: []
+business_name: Inter Miami
 language: English
 author: []
 sync_to_git_hub: true
 page_title: 'Inter Miami: Season Finale 4–0 Triumph'
+_thumbnail: >-
+  /assets/images/InterMIA/IMG_9195_0.jpg
 
 ---
 
