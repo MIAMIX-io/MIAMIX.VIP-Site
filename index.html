@@ -112,9 +112,8 @@
             .grid-section { padding: 40px 20px; }
             
             /* Carousel Adjustments for Mobile */
-            .logo-banner { padding: 60px 20px !important; gap: 40px !important; }
-            .carousel-item { min-width: 220px !important; }
-            .carousel-item img { height: 130px !important; max-width: 200px !important; }
+            .logo-banner { padding: 40px 20px !important; gap: 20px !important; }
+            .carousel-item img { width: 220px !important; height: 320px !important; }
             .brand-name { font-size: 14px !important; }
             
             .circular-partners { padding: 40px 20px; gap: 20px; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
@@ -189,10 +188,9 @@
         }
         .card:hover p { color: #fff; }
 
-        /* --- CAROUSEL / BANNER WITH NEW GIF BACKGROUND --- */
+        /* --- CAROUSEL / BANNER WITH NEW GIF BACKGROUND & POSTER STYLE --- */
         .logo-banner { 
-            display: flex; overflow-x: auto; gap: 80px; padding: 100px 60px; 
-            /* Added GIF background with dark overlay for readability */
+            display: flex; overflow-x: auto; gap: 40px; padding: 80px 60px; 
             background: linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXA0bGFzZ3luemVpZHMxcmNkaGNtMDByYm1hemE3djVmd2hjczBxdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D7D0bE6Y4V8oOtdG4v/giphy.gif') center/cover no-repeat;
             align-items: center; 
             -webkit-overflow-scrolling: touch; scrollbar-width: none; 
@@ -200,11 +198,27 @@
             border-bottom: 1px solid #333;
         }
         .logo-banner::-webkit-scrollbar { display: none; }
-        .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 20px; text-decoration: none; min-width: 300px; flex-shrink: 0; }
-        .carousel-item img { height: 180px; max-width: 280px; object-fit: contain; opacity: 0.8; transition: opacity 0.3s, transform 0.3s; }
-        .brand-name { color: #fff; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; transition: all 0.3s; white-space: nowrap; font-weight: 700;}
-        .carousel-item:hover img { opacity: 1; transform: scale(1.05); }
-        .carousel-item:hover .brand-name { opacity: 1; color: var(--primary-pink); }
+        
+        .carousel-item { 
+            display: flex; flex-direction: column; align-items: center; gap: 15px; text-decoration: none; flex-shrink: 0; 
+        }
+        .carousel-item img { 
+            width: 280px; height: 400px; /* Strong Portrait Aspect Ratio */
+            object-fit: cover; /* Eliminates white space/padding, making it fill like a poster */
+            border-radius: 12px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+            border: 1px solid #333;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease; 
+        }
+        .brand-name { 
+            color: #fff; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; white-space: nowrap; font-weight: 700;
+        }
+        .carousel-item:hover img { 
+            transform: scale(1.05); 
+            box-shadow: 0 20px 40px rgba(217, 0, 141, 0.3); 
+            border-color: var(--primary-pink); 
+        }
+        .carousel-item:hover .brand-name { color: var(--primary-pink); }
 
         /* --- CIRCULAR PARTNERS SECTION --- */
         .circular-partners { 
