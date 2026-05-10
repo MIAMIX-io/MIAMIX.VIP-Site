@@ -65,22 +65,30 @@
             .mobile-menu-toggle { display: block; }
             .nav-right { display: none; }
             
+            /* MENU LAYOUT FIXES */
             .nav-center {
                 position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
-                background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
+                background-color: var(--bg-dark-grey); flex-direction: column; 
+                justify-content: flex-start; /* Aligns to top instead of center */
                 align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-                z-index: 2001; padding-top: 80px; gap: 0;
+                z-index: 2001; 
+                padding-top: 70px; /* Reduced from 100px to pull menu up */
+                padding-bottom: 30px; gap: 0; 
+                overflow-y: auto; /* Ensures the menu can scroll */
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
             }
             .nav-center.active { right: 0; }
-            .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
-            .nav-item.dropdown:hover .dropdown-menu { position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; }
             
-            .channel-hero h1 { font-size: 36px !important; }
-            .channel-content { padding: 40px 20px; }
+            /* Tighter padding so more links fit on the screen at once */
+            .nav-item { padding: 12px 0; font-size: 16px; width: 100%; text-align: center; } 
             
-            .optin-section { padding: 40px 20px; }
-            .optin-form { flex-direction: column; width: 100%; }
-            .optin-form input, .optin-form button { max-width: 100%; width: 100%; margin-bottom: 10px; }
+            /* Mobile Dropdown Fix */
+            .nav-item.dropdown .dropdown-menu { 
+                display: none; position: relative; box-shadow: none; border-top: none; 
+                background: #000; width: 100%; margin-top: 10px; padding: 5px 0;
+            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
+            .dropdown-menu a { padding: 10px 20px; }
         }
 
         /* --- HERO SECTION --- */
