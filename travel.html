@@ -69,11 +69,16 @@
                 position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
                 background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
                 align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-                z-index: 2001; padding-top: 80px; gap: 0;
+                z-index: 2001; padding-top: 80px; gap: 0; overflow-y: auto;
             }
             .nav-center.active { right: 0; }
             .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
-            .nav-item.dropdown:hover .dropdown-menu { position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; }
+            
+            /* Mobile Dropdown Fix */
+            .nav-item.dropdown .dropdown-menu { 
+                display: none; position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; margin-top: 15px; 
+            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; } 
             
             .channel-hero h1 { font-size: 36px !important; }
             .channel-content { padding: 40px 20px; }
@@ -127,8 +132,8 @@
             aspect-ratio: 3/4;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border: 1px solid #222;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Slightly lighter shadow for the beige background */
+            border: 1px solid rgba(0,0,0,0.1); /* Lighter border for beige bg */
         }
         
         .card-media img { 
@@ -149,16 +154,16 @@
             text-align: left; 
         }
         .card h3 { 
-            font-size: 18px; margin-bottom: 8px; color: #fff; font-weight: 600; line-height: 1.4; 
+            font-size: 18px; margin-bottom: 8px; color: var(--text-main); font-weight: 600; line-height: 1.4; 
             transition: color 0.3s ease; 
         }
-        .card:hover h3 { color: var(--primary-pink); }
+        .card:hover h3 { color: var(--channel-color); }
         
         .card p { 
-            font-size: 12px; color: var(--text-muted); text-transform: uppercase; 
+            font-size: 12px; color: #666; text-transform: uppercase; 
             letter-spacing: 1px; font-weight: 600; transition: color 0.3s ease; 
         }
-        .card:hover p { color: #fff; }
+        .card:hover p { color: var(--text-main); }
 
         /* --- OPT-IN / SUBSCRIBE SECTION --- */
         .optin-section { padding: 40px 20px 80px 20px; display: flex; justify-content: center; }
@@ -203,7 +208,7 @@
 
         <ul class="nav-center" id="navMenu">
             <li class="nav-item dropdown">
-                CHANNELS
+                CHANNELS <span style="font-size: 10px;">▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="/sports">Sports & Entertainment</a></li>
                     <li><a href="/fashion">Fashion & Lifestyle</a></li>
@@ -243,7 +248,10 @@
         </div>
     </section>
 
-    {% assign travel_posts = site.posts | where_exp: "item", "item.channel contains 'Travel'" | sort: "date" | reverse %}
+    <section class="channel-content">
+        <h2 class="section-title">Latest <span>Articles</span></h2>
+        <div class="card-grid">
+            {% assign travel_posts = site.posts | where_exp: "item", "item.channel contains 'Travel'" | sort: "date" | reverse %}
             {% for post in travel_posts %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; text-decoration: none;">
@@ -263,6 +271,8 @@
                     </a>
                 </div>
             {% endfor %}
+        </div>
+    </section>
 
     <section class="optin-section">
         <div class="optin-box">
@@ -297,6 +307,7 @@
     <script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
+        const dropdownMenu = document.querySelector('.nav-item.dropdown');
 
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -304,6 +315,16 @@
                 mobileMenuBtn.innerHTML = '✕';
             } else {
                 mobileMenuBtn.innerHTML = '☰';
+                dropdownMenu.classList.remove('mobile-open');
+            }
+        });
+
+        // Mobile tap listener for the Dropdown Menu
+        dropdownMenu.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900) {
+                if(e.target.tagName !== 'A') {
+                    this.classList.toggle('mobile-open');
+                }
             }
         });
     </script>
