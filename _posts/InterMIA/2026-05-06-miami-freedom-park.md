@@ -2,21 +2,26 @@
 id: 09f94518-1cbb-4894-8c22-ce3f1594f63d
 title: Miami Freedom Park
 created_time: 2026-05-09T23:58:00.000Z
-last_edited_time: 2026-05-10T13:07:00.000Z
+last_edited_time: 2026-05-10T19:37:00.000Z
+cover_image: >-
+  /assets/images/InterMIA/media_94707295_94313658_compressed_0.jpg
 status: Published
-last_synced_to_git_hub: 2026-05-10T13:02:00.000Z
-grid_placement: None
+last_synced_to_git_hub: 2026-05-10T13:10:00.000Z
+grid_placement: Partner
 website: miamix.vip
 content_type: Blog Post
-external_url: https://www.miamix.io/inter-miami-fc/aqn5p5bg7z8sc2az1p106j6wx9nn86
+external_url: https://www.intermiamicf.com/
 channel:
   - InterMIA
 date: 2026-05-06T00:00:00.000Z
 reviewer: []
+business_name: Inter Miami
 language: English
 author: []
 sync_to_git_hub: true
 page_title: Miami Freedom Park
+_thumbnail: >-
+  /assets/images/InterMIA/media_94707295_94313658_compressed_0.jpg
 
 ---
 
