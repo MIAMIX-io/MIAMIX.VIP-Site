@@ -100,13 +100,8 @@
                 margin-top: 15px; 
                 padding: 10px 0;
             }
-            .nav-item.dropdown.mobile-open .dropdown-menu { 
-                display: block; 
-            }
-            .dropdown-menu a { 
-                padding: 12px 20px; 
-                font-size: 14px;
-            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
+            .dropdown-menu a { padding: 12px 20px; font-size: 14px; }
             
             /* Mobile Hero Alignments */
             .hero { padding: 40px 30px; padding-bottom: 80px; }
@@ -115,8 +110,13 @@
             .hero-btn { position: relative; bottom: auto; right: auto; display: inline-block; }
             
             .grid-section { padding: 40px 20px; }
-            .logo-banner { padding: 20px; gap: 20px; }
-            .circular-partners { padding: 40px 20px; gap: 20px; }
+            
+            /* Carousel Adjustments for Mobile */
+            .logo-banner { padding: 30px 20px; gap: 20px; }
+            .carousel-item img { height: 100px !important; }
+            
+            .circular-partners { padding: 40px 20px; gap: 20px; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+            .circle-logo { width: 120px !important; height: 120px !important; flex-shrink: 0; }
             
             .services-wrapper { padding: 40px 20px; }
             .services-container { padding: 20px; }
@@ -189,23 +189,27 @@
 
         /* --- CAROUSEL / BANNER --- */
         .logo-banner { 
-            display: flex; overflow-x: auto; gap: 40px; padding: 30px 60px; background-color: #111; align-items: center; 
+            display: flex; overflow-x: auto; gap: 60px; padding: 40px 60px; background-color: #111; align-items: center; 
             -webkit-overflow-scrolling: touch; scrollbar-width: none; 
         }
         .logo-banner::-webkit-scrollbar { display: none; }
-        .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; min-width: 120px; }
-        .carousel-item img { height: 80px; object-fit: contain; opacity: 0.7; transition: opacity 0.3s; }
-        .brand-name { color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; transition: all 0.3s; white-space: nowrap; }
+        .carousel-item { display: flex; flex-direction: column; align-items: center; gap: 15px; text-decoration: none; min-width: 180px; flex-shrink: 0; }
+        .carousel-item img { height: 120px; object-fit: contain; opacity: 0.7; transition: opacity 0.3s; }
+        .brand-name { color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; transition: all 0.3s; white-space: nowrap; font-weight: 600;}
         .carousel-item:hover img { opacity: 1; }
         .carousel-item:hover .brand-name { opacity: 1; color: var(--primary-pink); }
 
         /* --- CIRCULAR PARTNERS SECTION --- */
-        .circular-partners { display: flex; justify-content: center; gap: 40px; padding: 60px; background: #050505; flex-wrap: wrap; }
-        .partner-item { display: flex; flex-direction: column; align-items: center; gap: 15px; text-decoration: none; }
-        .circle-logo { width: 120px; height: 120px; border-radius: 50%; background-color: #222; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: transform 0.3s ease; }
+        .circular-partners { 
+            display: flex; overflow-x: auto; gap: 50px; padding: 60px; background: #050505; align-items: center;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none;
+        }
+        .circular-partners::-webkit-scrollbar { display: none; }
+        .partner-item { display: flex; flex-direction: column; align-items: center; gap: 20px; text-decoration: none; min-width: 160px; flex-shrink: 0;}
+        .circle-logo { width: 160px; height: 160px; border-radius: 50%; background-color: #222; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: transform 0.3s ease; }
         .partner-item:hover .circle-logo { transform: scale(1.05); }
         .circle-logo img { width: 100%; height: 100%; object-fit: cover; }
-        .partner-name { color: #fff; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; text-align: center; }
+        .partner-name { color: #fff; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; text-align: center; }
         .partner-item:hover .partner-name { color: var(--primary-pink); }
 
         /* --- SERVICES SECTION & ACCORDION --- */
@@ -281,7 +285,7 @@
     <section class="grid-section">
         <div class="card-grid">
             {% assign grid_a = site.posts | where: "grid_placement", "Grid A" %}
-            {% for post in grid_a limit: 8 %}
+            {% for post in grid_a limit: 6 %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; text-decoration: none;">
                         
@@ -328,7 +332,7 @@
 
     <section class="grid-section">
         <div class="card-grid">
-            {% assign grid_b = site.posts | where: "grid_placement", "Grid B" %}
+            {% assign grid_b = site.posts | where: "grid_placement", "Grid 6" %}
             {% for post in grid_b %}
                 <div class="card">
                     <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; text-decoration: none;">
