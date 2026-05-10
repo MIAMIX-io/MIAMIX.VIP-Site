@@ -24,6 +24,38 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--channel-bg); color: var(--text-main); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
+        /* --- NAVIGATION CSS --- */
+        header {
+            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .logo { display: flex; align-items: center; z-index: 2002; }
+        .logo img { height: 40px; width: auto; display: block; }
+        
+        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
+        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
+        .nav-item:hover { color: var(--primary-pink); }
+
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
+            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+            border-top: 3px solid var(--primary-pink); z-index: 2000; 
+        }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
+        .dropdown-menu a:hover { background-color: #1a1a1a; }
+        .nav-item.dropdown:hover .dropdown-menu { display: block; }
+
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        .social-icon:hover { transform: scale(1.1); }
+        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
+
         /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
         @media (max-width: 900px) {
             header { padding: 15px 20px; }
@@ -75,7 +107,33 @@
                 padding: 12px 20px; 
                 font-size: 14px;
             }
-        
+            
+            .card-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } 
+            .video-grid { grid-template-columns: 1fr; gap: 40px; } 
+            .video-gallery-section { padding: 60px 20px; } 
+            
+            .optin-form { flex-direction: column; width: 100%; }
+            .optin-form input, .optin-form button { max-width: 100%; width: 100%; margin-bottom: 10px; }
+            
+            /* INTER HERO MOBILE FIXES */
+            .inter-hero {
+                min-height: 60vh;
+                padding: 100px 20px 40px 20px; /* Ensure content is pushed below header */
+                background-attachment: scroll !important; /* Fix massive iOS zoom bug */
+            }
+            .inter-hero img { max-width: 220px; margin-bottom: 20px; }
+            .inter-hero h1 { font-size: 20px; margin-bottom: 30px; letter-spacing: 2px; }
+        }
+        @media (max-width: 600px) { 
+            .card-grid { grid-template-columns: 1fr; gap: 30px; } 
+            .channel-content { padding: 60px 20px; }
+            
+            /* FURTHER TWEAKS FOR PHONES */
+            .inter-hero { min-height: 50vh; padding: 100px 15px 30px 15px; }
+            .inter-hero img { max-width: 180px; margin-bottom: 15px; }
+            .inter-hero h1 { font-size: 18px; margin-bottom: 20px; }
+        }
+
         /* --- DYNAMIC INTER HERO SECTION --- */
         .inter-hero {
             position: relative;
@@ -196,37 +254,6 @@
             background-size: cover; background-position: center;
         }
         .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
-        
-        /* --- RESPONSIVE MOBILE --- */
-        @media (max-width: 900px) { 
-            header { padding: 15px 20px; }
-            .mobile-menu-toggle { display: block; }
-            .nav-right { display: none; }
-            
-            .nav-center {
-                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
-                background-color: var(--bg-dark-grey); flex-direction: column; justify-content: center;
-                align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-                z-index: 2001; padding-top: 80px; gap: 0; overflow-y: auto;
-            }
-            .nav-center.active { right: 0; }
-            .nav-item { padding: 15px 0; font-size: 16px; width: 100%; text-align: center; }
-            .nav-item.dropdown .dropdown-menu { display: none; position: relative; box-shadow: none; border-top: none; background: #000; width: 100%; margin-top: 15px; }
-            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; } 
-            
-            .card-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } 
-            .video-grid { grid-template-columns: 1fr; gap: 40px; } 
-            .video-gallery-section { padding: 60px 20px; } 
-            
-            .optin-form { flex-direction: column; width: 100%; }
-            .optin-form input, .optin-form button { max-width: 100%; width: 100%; margin-bottom: 10px; }
-        }
-        @media (max-width: 600px) { 
-            .card-grid { grid-template-columns: 1fr; gap: 30px; } 
-            .channel-content { padding: 60px 20px; }
-            .inter-hero { min-height: 50vh; padding: 120px 20px 40px 20px; }
-            .inter-hero img { max-width: 200px; }
-        }
     </style>
 </head>
 <body>
