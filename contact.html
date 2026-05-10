@@ -49,6 +49,8 @@
         .social-icon:hover { transform: scale(1.1); }
         .social-icon img { width: 100%; height: 100%; object-fit: contain; }
 
+        .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
+
         /* --- CONTACT HERO --- */
         .contact-hero {
             height: 40vh;
@@ -97,8 +99,40 @@
         }
         .submit-btn:hover { opacity: 0.8; }
 
+        /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
+        @media (max-width: 900px) {
+            header { padding: 15px 20px; }
+            .mobile-menu-toggle { display: block; }
+            .nav-right { display: none; }
+            
+            /* MENU LAYOUT FIXES */
+            .nav-center {
+                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
+                background-color: var(--bg-dark-grey); flex-direction: column; 
+                justify-content: flex-start; /* Aligns to top instead of center */
+                align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
+                z-index: 2001; 
+                padding-top: 70px; /* Reduced from 100px to pull menu up */
+                padding-bottom: 30px; gap: 0; 
+                overflow-y: auto; /* Ensures the menu can scroll */
+                -webkit-overflow-scrolling: touch;
+            }
+            .nav-center.active { right: 0; }
+            
+            .nav-item { padding: 12px 0; font-size: 16px; width: 100%; text-align: center; } 
+            
+            /* Mobile Dropdown Fix */
+            .nav-item.dropdown .dropdown-menu { 
+                display: none; position: relative; box-shadow: none; border-top: none; 
+                background: #000; width: 100%; margin-top: 10px; padding: 5px 0;
+            }
+            .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
+            .dropdown-menu a { padding: 10px 20px; }
+        }
+
         @media (max-width: 768px) {
-            .contact-section { grid-template-columns: 1fr; gap: 40px; }
+            .contact-section { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
+            .contact-hero h1 { font-size: 36px; }
         }
 
         /* --- UNIVERSAL FOOTER --- */
@@ -116,9 +150,10 @@
         <a href="/" class="logo">
             <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
         </a>
-        <ul class="nav-center">
+        <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
+        <ul class="nav-center" id="navMenu">
             <li class="nav-item dropdown">
-                CHANNELS
+                CHANNELS <span style="font-size: 10px;">▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="/sports">Sports & Entertainment</a></li>
                     <li><a href="/fashion">Fashion & Lifestyle</a></li>
@@ -221,30 +256,60 @@
     </footer>
 
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwDp6296JSOiLzAXctG8ulREqRc6TfxZZOHxbLCTQztji-LzNoUNf3DwcYu0k03ITLsHA/exec'
-      const form = document.forms['submit-to-google-sheet']
-      const msg = document.getElementById("msg")
-      const btn = document.getElementById("submitBtn")
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        btn.innerHTML = "Sending..."
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-              msg.innerHTML = "Message sent successfully!"
-              btn.innerHTML = "Send Message"
-              form.reset()
-              setTimeout(function(){
-                  msg.innerHTML = ""
-              }, 5000)
-          })
-          .catch(error => {
-              msg.innerHTML = "Error sending message. Please try again."
-              console.error('Error!', error.message)
-              btn.innerHTML = "Send Message"
-          })
-      })
+        // BULLETPROOF MOBILE MENU & DROPDOWN LOGIC
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const dropdownMenu = document.querySelector('.nav-item.dropdown');
+
+        if(mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    mobileMenuBtn.innerHTML = '✕';
+                } else {
+                    mobileMenuBtn.innerHTML = '☰';
+                    if(dropdownMenu) dropdownMenu.classList.remove('mobile-open'); 
+                }
+            });
+        }
+
+        // Tap listener for Mobile Dropdown
+        if(dropdownMenu) {
+            dropdownMenu.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900) {
+                    if(e.target.tagName !== 'A') {
+                        e.preventDefault();
+                        this.classList.toggle('mobile-open');
+                    }
+                }
+            });
+        }
+
+        // GOOGLE SHEETS FORM LOGIC
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwDp6296JSOiLzAXctG8ulREqRc6TfxZZOHxbLCTQztji-LzNoUNf3DwcYu0k03ITLsHA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        const btn = document.getElementById("submitBtn")
+      
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            btn.innerHTML = "Sending..."
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => {
+                  msg.innerHTML = "Message sent successfully!"
+                  btn.innerHTML = "Send Message"
+                  form.reset()
+                  setTimeout(function(){
+                      msg.innerHTML = ""
+                  }, 5000)
+              })
+              .catch(error => {
+                  msg.innerHTML = "Error sending message. Please try again."
+                  console.error('Error!', error.message)
+                  btn.innerHTML = "Send Message"
+              })
+        })
     </script>
 </body>
 </html>
