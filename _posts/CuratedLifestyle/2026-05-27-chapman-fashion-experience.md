@@ -2,12 +2,13 @@
 id: 3739f477-fdba-80d2-a944-ec4693f174df
 title: Chapman Fashion Experience
 created_time: 2026-06-02T14:25:00.000Z
-last_edited_time: 2026-06-03T12:11:00.000Z
+last_edited_time: 2026-06-03T13:46:00.000Z
 cover_image: >-
-  /assets/images/CuratedLifestyle/DSC_8786_8.jpeg
+  /assets/images/CuratedLifestyle/DSC_8786_0.jpeg
 status: Published
-last_synced_to_git_hub: null
+last_synced_to_git_hub: 2026-06-03T12:13:00.000Z
 website: miamix.vip
+content_type: Blog Post
 external_url: null
 channel:
   - CuratedLifestyle
@@ -31,72 +32,36 @@ status_1:
   color: green
 featured: false
 _thumbnail: >-
-  /assets/images/CuratedLifestyle/DSC_8786_8.jpeg
+  /assets/images/CuratedLifestyle/DSC_8786_0.jpeg
 
 ---
 
 Chapman Partnership Hosts Take a Walk in Her Shoes 2026 at Hotel Colonnade Coral Gables
 
-An afternoon rooted in purpose, elegance, and community impact unfolded at the iconic Hotel
+An afternoon rooted in purpose, elegance, and community impact unfolded at the iconic Hotel Colonnade Coral Gables, Autograph Collection as Chapman Partnership welcomed guests to its annual Take a Walk in Her Shoes luncheon and fashion experience.
 
-Colonnade Coral Gables, Autograph Collection as Chapman Partnership welcomed guests to its
+![](/assets/images/CuratedLifestyle/DSC_8437_1.jpeg)
 
-annual Take a Walk in Her Shoes luncheon and fashion experience.
+Bringing together more than 400 philanthropists, civic leaders, corporate partners, and advocates from across South Florida, the highly anticipated event shined a light on the realities faced by women and children experiencing homelessness in Miami-Dade County, while celebrating the transformative power of compassion, opportunity, and collective support.
 
-![](/assets/images/CuratedLifestyle/DSC_8437_4.jpeg)
+![](/assets/images/CuratedLifestyle/DSC_8943_2.jpeg)
 
-Bringing together more than 400 philanthropists, civic leaders, corporate partners, and
+![](/assets/images/CuratedLifestyle/DSC_8935_10.jpeg)
 
-advocates from across South Florida, the highly anticipated event shined a light on the realities
+![](/assets/images/CuratedLifestyle/DSC_8940_3.jpeg)
 
-faced by women and children experiencing homelessness in Miami-Dade County, while
+This year’s luncheon honored an inspiring group of women whose leadership and dedication continue to create meaningful impact throughout the community. Guests gathered for an afternoon that seamlessly blended philanthropy, fashion, and storytelling, all while supporting Chapman Partnership’s ongoing mission of providing comprehensive programs and long-term solutions for families experiencing homelessness.
 
-celebrating the transformative power of compassion, opportunity, and collective support.
+![](/assets/images/CuratedLifestyle/RGO-146_7.jpeg)
 
-![](/assets/images/CuratedLifestyle/DSC_8943_10.jpeg)
+![](/assets/images/CuratedLifestyle/RGO-102_6.jpeg)
 
-![](/assets/images/CuratedLifestyle/DSC_8935_5.jpeg)
+Throughout the event, attendees were reminded that homelessness is not defined by circumstance alone, but by the urgent need for resources, stability, guidance, and human connection. Through its work, Chapman Partnership continues to provide education, healthcare support, job placement assistance, mental health services, and housing-focused programs designed to help individuals and families rebuild their lives with dignity and hope.
 
-![](/assets/images/CuratedLifestyle/DSC_8940_2.jpeg)
+![](/assets/images/CuratedLifestyle/RGO-151_8.jpeg)
 
-This year’s luncheon honored an inspiring group of women whose leadership and dedication
+![](/assets/images/CuratedLifestyle/Linda_Lynn_Levy_Marile_Lopez_Rene_Ruiz-1_4.jpeg)
 
-continue to create meaningful impact throughout the community. Guests gathered for an
+Set against the timeless backdrop of Coral Gables, the luncheon reflected both sophistication and substance, creating a meaningful atmosphere where advocacy and community engagement took center stage. From heartfelt moments shared on stage to conversations taking place throughout the ballroom, Take a Walk in Her Shoes 2026 served as a powerful reminder of what can be accomplished when a community comes together with purpose, compassion, and a commitment to lasting change.
 
-afternoon that seamlessly blended philanthropy, fashion, and storytelling, all while supporting
-
-Chapman Partnership’s ongoing mission of providing comprehensive programs and long-term
-
-solutions for families experiencing homelessness.
-
-![](/assets/images/CuratedLifestyle/RGO-146_1.jpeg)
-
-![](/assets/images/CuratedLifestyle/RGO-102_0.jpeg)
-
-Throughout the event, attendees were reminded that homelessness is not defined by
-
-circumstance alone, but by the urgent need for resources, stability, guidance, and human
-
-connection. Through its work, Chapman Partnership continues to provide education, healthcare
-
-support, job placement assistance, mental health services, and housing-focused programs
-
-designed to help individuals and families rebuild their lives with dignity and hope.
-
-![](/assets/images/CuratedLifestyle/RGO-151_6.jpeg)
-
-![](/assets/images/CuratedLifestyle/Linda_Lynn_Levy_Marile_Lopez_Rene_Ruiz-1_9.jpeg)
-
-Set against the timeless backdrop of Coral Gables, the luncheon reflected both sophistication
-
-and substance, creating a meaningful atmosphere where advocacy and community
-
-engagement took center stage. From heartfelt moments shared on stage to conversations
-
-taking place throughout the ballroom, Take a Walk in Her Shoes 2026 served as a powerful
-
-reminder of what can be accomplished when a community comes together with purpose,
-
-compassion, and a commitment to lasting change.
-
-![](/assets/images/CuratedLifestyle/RGO-315_7.jpeg)
+![](/assets/images/CuratedLifestyle/RGO-315_5.jpeg)
