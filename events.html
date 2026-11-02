@@ -299,7 +299,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER">
-        <input type="date" id="event_date" name="event_date" class="form-input [color-scheme:dark]" required>
+        <input type="date" id="event_date" class="form-input text-white uppercase [color-scheme:dark]" required>
     </div>
     <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE & LOCATION" required>
     <div class="grid grid-cols-3 gap-4">
@@ -357,7 +357,7 @@ Email: ${getVal('r-email')}
 Phone: ${getVal('r-phone')}
 
 EVENT DETAILS
-Date: ${getVal('r-date')}
+Date: ${getVal('event_date')}
 Type/Location: ${getVal('r-location')}
 Est. Guests: ${getVal('r-guests')}
 
