@@ -81,6 +81,22 @@
 .about-bg span {
     text-shadow: 0 2px 10px rgba(0,0,0,.45);
 }
+/* ABOUT US — TIGHTER HEADING SPACING */
+
+#about > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#about > div:first-child > p:first-child {
+    margin-bottom: 12px !important;
+}
+
+#about > div:first-child > h2 {
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+}
 
 /* Mobile: graduated overlay for stacked text */
 @media (max-width: 767px) {
