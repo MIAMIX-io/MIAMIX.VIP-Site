@@ -90,6 +90,12 @@
         @media (min-width: 768px)  { .gallery-slide { flex-basis: calc((100% - 16px) / 2); } }
         @media (min-width: 1024px) { .gallery-slide { flex-basis: calc((100% - 32px) / 3); } }
 
+        /* "EVENT DATE" label so the date field reads like the other fields (iOS shows date inputs blank) */
+        .date-wrap { position: relative; }
+        .date-ph { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: #aaa; font-weight: 300;
+            font-size: 16px; pointer-events: none; z-index: 1; }
+        .date-wrap.has-value .date-ph { display: none; }
+
         /* Carousel: swipe + snap, no transform math */
         .carousel { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain; }
@@ -264,8 +270,8 @@
             <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX Events photo 1" loading="lazy" onerror="this.style.display='none'"></figure>
             <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX Events photo 2" loading="lazy" onerror="this.style.display='none'"></figure>
             <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX Events photo 3" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-4.jpeg" alt="MIAMIX Events photo 4" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-5.jpeg" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-4.jpg" alt="MIAMIX Events photo 4" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-5.jpg" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.style.display='none'"></figure>
             <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX Events photo 6" loading="lazy" onerror="this.style.display='none'"></figure>
         </div>
     </section>
@@ -302,7 +308,7 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER" autocomplete="tel">
-                        <input type="date" id="event_date" class="form-input" aria-label="Event date" required>
+                        <div class="date-wrap"><span class="date-ph" aria-hidden="true">EVENT DATE</span><input type="date" id="event_date" class="form-input" aria-label="Event date" required></div>
                     </div>
                     <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE &amp; LOCATION" required>
                     <div class="grid grid-cols-3 gap-2 sm:gap-4">
@@ -345,6 +351,11 @@
         const eventDate = document.getElementById('event_date');
         const t = new Date();
         eventDate.min = [t.getFullYear(), String(t.getMonth() + 1).padStart(2, '0'), String(t.getDate()).padStart(2, '0')].join('-');
+
+        const dateWrap = eventDate.parentElement;
+        const syncDate = () => dateWrap.classList.toggle('has-value', !!eventDate.value);
+        ['input', 'change', 'blur'].forEach(ev => eventDate.addEventListener(ev, syncDate));
+        syncDate();
 
         document.getElementById('request-form').addEventListener('submit', (e) => {
             e.preventDefault();
