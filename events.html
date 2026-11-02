@@ -1,714 +1,427 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth bg-black text-white">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>MIAMIX Events | Professional Event Staffing in Miami</title>
-    <meta name="description" content="Professional waitstaff, bartenders and hospitality staffing for private parties, corporate events, weddings and special occasions in Miami and South Florida.">
-    <meta name="theme-color" content="#000000">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MIAMIX Events">
-    <meta property="og:title" content="MIAMIX Events | Professional Event Staffing in Miami">
-    <meta property="og:description" content="Professional waitstaff and bartenders for private parties, corporate events, weddings and special occasions in Miami and South Florida.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Cocktail glass at an upscale event">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MIAMIX Events | Professional Event Staffing in Miami">
-    <meta name="twitter:description" content="Professional waitstaff and bartenders for private parties, corporate events, weddings and special occasions in Miami and South Florida.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MIAMIX Events | Professional Event Staffing in Miami</title>
+<meta name="description" content="Professional waitstaff, bartenders and hospitality staffing for private parties, corporate events, weddings and special occasions in Miami and South Florida.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MIAMIX Events">
+<meta property="og:title" content="MIAMIX Events | Professional Event Staffing in Miami">
+<meta property="og:description" content="Professional waitstaff and bartenders for private parties, corporate events, weddings and special occasions in Miami and South Florida.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cocktail glass at an upscale event">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MIAMIX Events | Professional Event Staffing in Miami">
+<meta name="twitter:description" content="Professional waitstaff and bartenders for private parties, corporate events, weddings and special occasions in Miami and South Florida.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
 
-    <!-- Tailwind script must load BEFORE its config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: { extend: {
-                fontFamily: { sans: ['Jost', 'sans-serif'] },
-                colors: { brand: { magenta: '#E12BC0', border: '#444444', secondary: '#cccccc' } }
-            } }
-        };
-    </script>
+<!-- Tailwind must load BEFORE its config -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    fontFamily: { sans: ['Jost', 'sans-serif'] },
+    colors: { brand: { magenta: '#E12BC0', border: '#444444', secondary: '#cccccc' } }
+  } } };
+</script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        html, body { max-width: 100%; overflow-x: hidden; overflow-x: clip; }
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-text-size-adjust: 100%; }
-        body { background: #000; color: #fff; font-family: 'Jost', sans-serif; -webkit-font-smoothing: antialiased; }
-        img, svg { max-width: 100%; }
-        h1, h2, h3, a, p { overflow-wrap: anywhere; }
+<style>
+:root {
+  --magenta: #E12BC0;
+  --border: #444;
+  --hero-img: url("https://images.unsplash.com/photo-1759352642144-8fdef1cc766a?auto=format&fit=crop&w=2000&q=85");
+  --about-img: url("https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&fit=crop&w=2000&q=85");
+}
 
-        /* Brand colors as plain CSS so highlights never depend on the Tailwind config loading */
-        .text-brand-magenta { color: #E12BC0; }
-        .bg-brand-magenta { background-color: #E12BC0; }
-        .border-brand-magenta { border-color: #E12BC0; }
-        .border-brand-border { border-color: #444444; }
-        .text-brand-secondary { color: #cccccc; }
-        .hover\:text-brand-magenta:hover, .group:hover .group-hover\:text-brand-magenta { color: #E12BC0; }
-        .hover\:border-brand-magenta:hover { border-color: #E12BC0; }
-        .lg\:border-brand-border { border-color: #444444; }
-        .selection\:bg-brand-magenta ::selection, .selection\:bg-brand-magenta::selection { background: #E12BC0; color: #fff; }
+html, body { max-width: 100%; overflow-x: hidden; overflow-x: clip; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-text-size-adjust: 100%; }
+body { background: #000; color: #fff; font-family: 'Jost', sans-serif; -webkit-font-smoothing: antialiased; }
+img, svg { max-width: 100%; }
+h1, h2, h3, a, p { overflow-wrap: anywhere; }
 
-        nav { background: rgba(0,0,0,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-        
-/* LUXURY TRANSPARENT MOBILE MENU */
+/* Brand colors as plain CSS so highlights never depend on the Tailwind config loading */
+.text-brand-magenta { color: var(--magenta); }
+.bg-brand-magenta { background-color: var(--magenta); }
+.border-brand-border { border-color: var(--border); }
+.text-brand-secondary { color: #ccc; }
+.hover\:text-brand-magenta:hover,
+.group:hover .group-hover\:text-brand-magenta { color: var(--magenta); }
+.lg\:border-brand-border { border-color: var(--border); }
+::selection { background: var(--magenta); color: #fff; }
 
+nav { background: rgba(0,0,0,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+/* Mobile menu */
 .menu-panel {
-    background: linear-gradient(
-        145deg,
-        rgba(20, 20, 20, 0.42) 0%,
-        rgba(0, 0, 0, 0.25) 55%,
-        rgba(0, 0, 0, 0.12) 100%
-    );
+  background: linear-gradient(145deg, rgba(20,20,20,.55), rgba(0,0,0,.35));
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 12px 35px rgba(0,0,0,.2);
+}
+.menu-panel a { text-shadow: 0 1px 10px rgba(0,0,0,.8); transition: color .25s ease; }
+.menu-panel a:hover { color: var(--magenta); }
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+/* HERO: lighter overall, darker only behind the text (left on desktop, top on mobile) */
+.hero-full { min-height: 100vh; min-height: 100dvh; }
+.hero {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.05) 100%),
+    var(--hero-img) center / cover no-repeat,
+    #000;
 }
 
-/* MENU LINKS */
-
-.menu-panel a {
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
-    transition: color .25s ease, opacity .25s ease;
-}
-
-.menu-panel a:hover {
-    color: #E12BC0;
-}
-        .menu-panel a { text-shadow: 0 1px 10px rgba(0,0,0,.8); }
-
-        /* Hero photo: Unsplash */
-        /* About + Events background photo (dark overlay keeps text readable) */
-    
-/* ABOUT + EVENTS — EDITORIAL BACKGROUND */
-
+/* ABOUT: same single image on every screen size */
 .about-bg {
-    position: relative;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,0) 85%),
+    var(--about-img) center / cover no-repeat,
+    #000;
+}
+.about-bg h2, .about-bg p { text-shadow: 0 2px 10px rgba(0,0,0,.5); }
+
+@media (max-width: 767px) {
+  .hero {
     background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.42) 0%,
-            rgba(0,0,0,.25) 50%,
-            rgba(0,0,0,.38) 100%
-        ),
-        url("https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&fit=crop&w=2000&q=85")
-        center center / cover no-repeat,
-        #000;
-}
-
-.about-bg h2,
-.about-bg p,
-.about-bg li,
-.about-bg span {
-    text-shadow: 0 2px 10px rgba(0,0,0,.45);
-}
-
-@media (max-width: 767px) {
-    .about-bg {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0,0,0,.42) 0%,
-                rgba(0,0,0,.25) 45%,
-                rgba(0,0,0,.48) 100%
-            ),
-            url("https://images.unsplash.com/photo-1597241693839-07d7fb803af1?auto=format&fit=crop&w=1200&q=85")
-            center center / cover no-repeat,
-            #000;
-    }
-}
-
-/* ABOUT US — HEADING ALIGNMENT FIX */
-
-#about > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start !important;
-    align-self: start;
-    gap: 0 !important;
-}
-
-#about > div:first-child > p:first-child {
-    margin: 0 0 12px 0 !important;
-    padding: 0 !important;
-}
-
-#about > div:first-child > h2 {
-    margin: 0 0 24px 0 !important;
-    padding: 0 !important;
-    line-height: 1.2;
-}
-
-#about > div:first-child > p:last-child {
-    margin-top: 0 !important;
-}
-
-/* Mobile: graduated overlay for stacked text */
-@media (max-width: 767px) {
-    .about-bg {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0,0,0,.42) 0%,
-                rgba(0,0,0,.25) 45%,
-                rgba(0,0,0,.48) 100%
-            ),
-            url("https://unsplash.com/photos/clear-drinking-glass-with-white-liquid-on-blue-round-table-rdJhMyb4Yuc")
-            center center / cover no-repeat,
-            #000;
-    }
-}
-
-        .hero-full { min-height: 100vh; min-height: 100dvh; }
-        .hero {
+      linear-gradient(180deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.15) 100%),
+      var(--hero-img) center / cover no-repeat,
+      #000;
+  }
+  .about-bg {
     background:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.60)
-        ),
-        url("https://images.unsplash.com/photo-1759352642144-8fdef1cc766a?auto=format&fit=crop&w=2400&q=85")
-        center center / cover no-repeat,
-        #000;
+      linear-gradient(180deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,.1) 100%),
+      var(--about-img) center / cover no-repeat,
+      #000;
+  }
 }
 
-        .form-input {
-            -webkit-appearance: none; appearance: none; display: block;
-            width: 100%; min-width: 0; max-width: 100%; height: 52px; padding: 0 16px; box-sizing: border-box;
-            background: #0a0a0a; border: 1px solid #444; border-radius: 0; color: #fff;
-            font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 400;
-            transition: border-color .2s, background .2s;
-        }
-        textarea.form-input { height: auto; padding: 14px 16px; resize: vertical; }
-        .form-input:focus { outline: none; border-color: #E12BC0; background: #000; }
-        .form-input::placeholder { color: #aaa; font-weight: 300; opacity: 1; }
-        input[type="date"].form-input { line-height: 50px; color-scheme: dark; }
-        input[type="date"].form-input::-webkit-date-and-time-value { text-align: left; min-height: 1.2em; }
-        input[type="date"].form-input::-webkit-datetime-edit { padding: 0; }
-        input[type="date"].form-input::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+/* Form */
+.form-input {
+  -webkit-appearance: none; appearance: none; display: block;
+  width: 100%; min-width: 0; max-width: 100%; height: 52px; padding: 0 16px; box-sizing: border-box;
+  background: #0a0a0a; border: 1px solid var(--border); border-radius: 0; color: #fff;
+  font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 400;
+  transition: border-color .2s, background .2s;
+}
+textarea.form-input { height: auto; padding: 14px 16px; resize: vertical; }
+.form-input:focus { outline: none; border-color: var(--magenta); background: #000; }
+.form-input::placeholder { color: #aaa; font-weight: 300; opacity: 1; }
+input[type="date"].form-input { line-height: 50px; color-scheme: dark; }
+input[type="date"].form-input::-webkit-date-and-time-value { text-align: left; min-height: 1.2em; }
+input[type="date"].form-input::-webkit-datetime-edit { padding: 0; }
+input[type="date"].form-input::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
 
-        /* Guests / Waitstaff / Bartenders share one row, even on phones */
-        .form-input.compact { padding: 0 10px; font-size: 13px; text-overflow: ellipsis; -moz-appearance: textfield; }
-        .form-input.compact::placeholder { font-size: 12px; letter-spacing: 0; }
-        .form-input.compact::-webkit-outer-spin-button, .form-input.compact::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-        @media (min-width: 640px) { .form-input.compact { padding: 0 16px; font-size: 16px; } .form-input.compact::placeholder { font-size: 16px; } }
-
-        
-/* MINIMALIST SERVICES NAVIGATION */
-
-#services #prevBtn,
-#services #nextBtn {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    background: rgba(255, 255, 255, 0.04);
-
-    color: #fff;
-    font-size: 21px;
-    font-weight: 300;
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    transition: all .3s ease;
+/* Guests / Waitstaff / Bartenders share one row, even on phones */
+.form-input.compact { padding: 0 10px; font-size: 13px; text-overflow: ellipsis; -moz-appearance: textfield; }
+.form-input.compact::placeholder { font-size: 12px; }
+.form-input.compact::-webkit-outer-spin-button,
+.form-input.compact::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+@media (min-width: 640px) {
+  .form-input.compact { padding: 0 16px; font-size: 16px; }
+  .form-input.compact::placeholder { font-size: 16px; }
 }
 
-#services #prevBtn:hover,
-#services #nextBtn:hover {
-    color: #E12BC0;
-    border-color: #E12BC0;
-    background: rgba(225, 43, 192, 0.08);
+/* "Event date" label (iOS shows empty date inputs blank) */
+.date-wrap { position: relative; }
+.date-ph { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: #aaa; font-weight: 300;
+  font-size: 16px; pointer-events: none; z-index: 1; }
+.date-wrap.has-value .date-ph { display: none; }
+
+/* Round arrow buttons (services + gallery) */
+.arrow-btn {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.45); background: rgba(0,0,0,.3);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: #fff; font-size: 21px; font-weight: 300; cursor: pointer;
+  transition: color .3s, border-color .3s, background .3s, transform .15s;
 }
+.arrow-btn:hover { color: var(--magenta); border-color: var(--magenta); background: rgba(225,43,192,.1); }
+.arrow-btn:active { transform: scale(.94); }
 
-#services #prevBtn:active,
-#services #nextBtn:active {
-    transform: scale(.94);
-}
+/* Services carousel */
+.carousel { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain; }
+.carousel::-webkit-scrollbar { display: none; }
+.carousel-slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; box-sizing: border-box;
+  padding-right: 16px; border-right: 1px solid var(--border); }
+@media (min-width: 768px)  { .carousel-slide { flex-basis: calc((100% - 16px) / 2); } }
+@media (min-width: 1024px) { .carousel-slide { flex-basis: calc((100% - 32px) / 3); } }
 
-
-/* FULL-BLEED EDITORIAL GALLERY */
-
-#gallery {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-    margin: 0;
-    background: #000;
-    overflow: hidden;
-}
-
-#gallery .gallery-heading {
-    position: absolute;
-    z-index: 5;
-    top: 7%;
-    left: 5%;
-    right: 5%;
-    max-width: 600px;
-    padding: 0;
-    transform: none;
-    pointer-events: none;
-}
-
-#gallery .gallery-heading p {
-    color: #E12BC0;
-    letter-spacing: .25em;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-#gallery .gallery-heading h2 {
-    color: #fff;
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    line-height: 1.1;
-}
-
-.gallery-wrapper {
-    position: relative;
-    width: 100%;
-    height: min(85vh, 850px);
-    min-height: 550px;
-    overflow: hidden;
-}
-
-.gallery {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    gap: 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.gallery::-webkit-scrollbar {
-    display: none;
-}
-
-.gallery-slide {
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: start;
-    overflow: hidden;
-    background: #111;
-}
-
-.gallery-slide::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(0,0,0,.65) 0%,
-        rgba(0,0,0,.2) 55%,
-        rgba(0,0,0,.05) 100%
-    );
-    pointer-events: none;
-}
-
-.gallery-slide img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 1s ease;
-}
-
-.gallery-slide:hover img {
-    transform: scale(1.025);
-}
-
-/* DISCREET NAVIGATION */
-
-/* BOTTOM-CENTER GALLERY NAVIGATION */
-
-.gallery-nav-btn {
-    position: absolute;
-    z-index: 10;
-    top: auto;
-    bottom: 35px;
-    transform: none;
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.45);
-    background: rgba(0,0,0,.3);
-    backdrop-filter: blur(8px);
-
-    color: white;
-    font-size: 22px;
-
-    opacity: .75;
-    pointer-events: auto;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-/* Position arrows side by side */
-.gallery-nav-btn.prev {
-    left: calc(50% - 75px);
-}
-
-.gallery-nav-btn.next {
-    right: calc(50% - 75px);
-}
-
-.gallery-nav-btn:hover {
-    opacity: 1;
-    color: #E12BC0;
-    border-color: #E12BC0;
-}
-
-@media (hover: none) {
-    .gallery-nav-btn {
-        opacity: .7;
-        pointer-events: auto;
-    }
-}
+/* Gallery: full-bleed, gradient on the text side so photos stay bright */
+#gallery { background: #000; overflow: hidden; }
+.gallery-wrapper { position: relative; width: 100%; height: min(85vh, 850px); min-height: 550px; overflow: hidden; }
+.gallery-heading { position: absolute; z-index: 5; top: 7%; left: 5%; right: 5%; max-width: 600px; pointer-events: none; }
+.gallery-heading p { color: var(--magenta); letter-spacing: .25em; font-size: 14px; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+.gallery-heading h2 { color: #fff; font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.1; text-shadow: 0 2px 14px rgba(0,0,0,.6); }
+.gallery { display: flex; width: 100%; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; scrollbar-width: none; }
+.gallery::-webkit-scrollbar { display: none; }
+.gallery-slide { position: relative; flex: 0 0 100%; height: 100%; scroll-snap-align: start; overflow: hidden; background: #111; margin: 0; }
+.gallery-slide::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.3) 40%, rgba(0,0,0,0) 75%); }
+.gallery-slide img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 1s ease; }
+.gallery-slide:hover img { transform: scale(1.025); }
+.gallery-nav-btn { position: absolute; z-index: 10; bottom: 35px; }
+.gallery-nav-btn.prev { left: calc(50% - 60px); }
+.gallery-nav-btn.next { right: calc(50% - 60px); }
 @media (max-width: 767px) {
-    .gallery-wrapper {
-        height: 75vh;
-        min-height: 500px;
-    }
-
-    #gallery .gallery-heading {
-        top: 7%;
-        left: 6%;
-        right: 6%;
-        padding: 0;
-    }
-
-    #gallery .gallery-heading h2 {
-        font-size: 2.5rem;
-    }
-
-    .gallery-nav-btn {
-        width: 44px;
-        height: 44px;
-        bottom: 25px;
-    }
+  .gallery-wrapper { height: 75vh; min-height: 500px; }
+  .gallery-heading { top: 7%; left: 6%; right: 6%; }
+  .gallery-heading h2 { font-size: 2.5rem; }
+  .gallery-slide::after { background: linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.2) 45%, rgba(0,0,0,0) 80%); }
+  .gallery-nav-btn { bottom: 25px; }
 }
 
-        /* "EVENT DATE" label so the date field reads like the other fields (iOS shows date inputs blank) */
-        .date-wrap { position: relative; }
-        .date-ph { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: #aaa; font-weight: 300;
-            font-size: 16px; pointer-events: none; z-index: 1; }
-        .date-wrap.has-value .date-ph { display: none; }
+/* How it works */
+.how-step { border-top: 2px solid var(--border); transition: border-color .5s ease; }
+.step-title { color: #fff; transition: color .5s ease; }
+.how-step.active { border-top-color: var(--magenta); }
+.how-step.active .step-title { color: var(--magenta); }
 
-        /* Carousel: swipe + snap, no transform math */
-        .carousel { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain; }
-        .carousel::-webkit-scrollbar { display: none; }
-        .carousel-slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; box-sizing: border-box;
-            padding-right: 16px; border-right: 1px solid #444; }
-        @media (min-width: 768px)  { .carousel-slide { flex-basis: calc((100% - 16px) / 2); } }
-        @media (min-width: 1024px) { .carousel-slide { flex-basis: calc((100% - 32px) / 3); } }
+.brand-button { border: 1px solid var(--magenta); background: var(--magenta); color: #fff; transition: all .3s ease; }
+.brand-button:hover { background: #000; color: var(--magenta); }
 
-        .how-step { border-top: 2px solid #444; transition: border-color .5s ease; }
-        .step-title { color: #fff; transition: color .5s ease; }
-        .how-step.active { border-top-color: #E12BC0; }
-        .how-step.active .step-title { color: #E12BC0; }
-
-        .brand-button { border: 1px solid #E12BC0; background: #E12BC0; color: #fff; transition: all .3s ease; }
-        .brand-button:hover { background: #000; color: #E12BC0; }
-
-        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #E12BC0; outline-offset: 3px; }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-        }
-    </style>
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html, .gallery { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+</style>
 </head>
 
-<body class="selection:bg-brand-magenta selection:text-white font-light text-base">
+<body class="font-light text-base">
 
-    <!-- NAVIGATION (no border) -->
-    <nav class="fixed top-0 left-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
-            <a href="#home" class="flex items-center" aria-label="MIAMIX Events Home">
-                <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Events" class="h-6 md:h-8 w-auto"
-                     onerror="this.outerHTML='<span class=\'text-2xl font-medium tracking-widest uppercase\'>MIAMIX</span>'">
-            </a>
-            <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm uppercase tracking-widest">
-                <a href="#home" class="hover:text-brand-magenta transition-colors">Home</a>
-                <a href="#services" class="hover:text-brand-magenta transition-colors">Services</a>
-                <a href="#about" class="hover:text-brand-magenta transition-colors">About Us</a>
-                <a href="miamix.vip/events/apply.html" class="hover:text-brand-magenta transition-colors">Work With Us</a>
-                <a href="#request" class="text-brand-magenta hover:text-white transition-colors">Request Staff</a>
-            </div>
-            <button id="mobile-menu-btn" type="button" class="md:hidden text-white uppercase tracking-widest text-sm py-2"
-                    aria-expanded="false" aria-controls="mobile-menu">Menu</button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute right-6 top-full w-56 menu-panel px-6 py-6 flex-col gap-5 text-right text-sm uppercase tracking-widest shadow-2xl">
-            <a href="#home" class="hover:text-brand-magenta">Home</a>
-            <a href="#services" class="hover:text-brand-magenta">Services</a>
-            <a href="#about" class="hover:text-brand-magenta">About Us</a>
-            <a href="events/apply.html" class="hover:text-brand-magenta">Work With Us</a>
-            <a href="#request" class="text-brand-magenta">Request Staff</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section id="home" class="hero relative flex items-center hero-full">
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20 pb-12">
-            <div class="max-w-3xl">
-                <p class="text-brand-magenta uppercase tracking-widest sm:tracking-[0.3em] text-sm mb-6 font-medium">MIAMIX Events | Miami, Florida</p>
-                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light uppercase tracking-wide sm:tracking-widest text-white mb-6 leading-tight">
-                    Exceptional<br>Service.<br>
-                    <span class="text-brand-magenta">Unforgettable<br>Events.</span>
-                </h1>
-                <p class="text-base lg:text-lg font-light text-white max-w-xl mb-10 leading-relaxed">
-                    Professional waitstaff and bartenders for private parties, corporate events, weddings, and special occasions in Miami and South Florida.
-                </p>
-                <a href="#request" class="inline-block brand-button px-9 py-4 text-sm tracking-widest uppercase">Request Staff</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 gap-6">
-            <div>
-                <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">What we do</p>
-                <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Our Services</h2>
-            </div>
-            <div class="flex gap-2">
-    <button id="prevBtn" type="button"
-        aria-label="Previous services"
-        class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">
-        &larr;
-    </button>
-
-    <button id="nextBtn" type="button"
-        aria-label="Next services"
-        class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">
-        &rarr;
-    </button>
-        </div>
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
+    <a href="#home" class="flex items-center" aria-label="MIAMIX Events Home">
+      <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Events" class="h-6 md:h-8 w-auto"
+           onerror="this.outerHTML='<span class=\'text-2xl font-medium tracking-widest uppercase\'>MIAMIX</span>'">
+    </a>
+    <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm uppercase tracking-widest">
+      <a href="#home" class="hover:text-brand-magenta transition-colors">Home</a>
+      <a href="#services" class="hover:text-brand-magenta transition-colors">Services</a>
+      <a href="#about" class="hover:text-brand-magenta transition-colors">About Us</a>
+      <a href="https://miamix.io/events/apply.html" class="hover:text-brand-magenta transition-colors">Work With Us</a>
+      <a href="#request" class="text-brand-magenta hover:text-white transition-colors">Request Staff</a>
     </div>
-    <div class="carousel" id="carousel">
-            <article class="carousel-slide group">
-                <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">01 / WAITSTAFF</span>
-                <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Waitstaff</h3>
-                <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Professional servers for private dinners, parties, corporate receptions, and special events.</p>
-                <ul class="text-brand-secondary text-sm space-y-2"><li>— Plated dinners and buffet service</li><li>— Passed hors d'oeuvres and receptions</li><li>— Table setup, clearing and guest care</li></ul>
-            </article>
-            <article class="carousel-slide group">
-                <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">02 / BARTENDERS</span>
-                <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Bartenders</h3>
-                <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Skilled bartenders delivering outstanding cocktail service and memorable guest experiences.</p>
-                <ul class="text-brand-secondary text-sm space-y-2"><li>— Full-service cocktail and wine bars</li><li>— Signature drinks and smooth bar flow</li><li>— Responsible alcohol service</li></ul>
-            </article>
-            <article class="carousel-slide group">
-                <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">03 / EVENT SUPPORT</span>
-                <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Event Support</h3>
-                <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Reliable hospitality professionals to support event operations and guest service.</p>
-                <ul class="text-brand-secondary text-sm space-y-2"><li>— Hosts, greeters and runners</li><li>— Setup, breakdown and event flow</li><li>— Coordination with planners and venues</li></ul>
-            </article>
-            <article class="carousel-slide group">
-                <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">04 / CORPORATE &amp; PRIVATE</span>
-                <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Events</h3>
-                <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Tailored staffing solutions for events of all sizes and styles, matched to your standards.</p>
-                <ul class="text-brand-secondary text-sm space-y-2"><li>— Intimate dinners to large receptions</li><li>— Attire matched to your event</li><li>— A single point of contact</li></ul>
-            </article>
-        </div>
-    </section>
+    <button id="mobile-menu-btn" type="button" class="md:hidden text-white uppercase tracking-widest text-sm py-2"
+            aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden absolute right-6 top-full w-56 menu-panel px-6 py-6 flex-col gap-5 text-right text-sm uppercase tracking-widest shadow-2xl">
+    <a href="#home" class="hover:text-brand-magenta">Home</a>
+    <a href="#services" class="hover:text-brand-magenta">Services</a>
+    <a href="#about" class="hover:text-brand-magenta">About Us</a>
+    <a href="https://miamix.io/events/apply.html" class="hover:text-brand-magenta">Work With Us</a>
+    <a href="#request" class="text-brand-magenta">Request Staff</a>
+  </div>
+</nav>
 
-    <!-- ABOUT / EVENTS -->
-<div class="about-bg border-b border-brand-border">
-    <section id="about"
-        class="py-20 md:py-28 px-6 md:px-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16">
-
-        <div>
-            <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">
-                About Us
-            </p>
-
-            <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-6 leading-snug">
-                Professional Staffing.<br>Exceptional Hospitality.
-            </h2>
-
-            <p class="text-brand-secondary leading-relaxed text-base lg:text-lg">
-                MIAMIX Events connects Miami’s events with reliable, bilingual hospitality professionals who make every occasion exceptional. More than staffing, we’re your hospitality partner, delivering polished, friendly, and attentive service with seamless coordination in English and Spanish.
-            </p>
-        </div>
-
-    </section>
-</div>
-
-    <!-- HOW IT WORKS -->
-    <section id="how-it-works-section" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">Simple. Seamless. Professional.</p>
-            <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">How It Works</h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 01</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">Tell us about your event</h3><p class="text-brand-secondary text-sm leading-relaxed">Share your event date, location, guest count, and staffing needs.</p></div>
-            <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 02</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">Receive a proposal</h3><p class="text-brand-secondary text-sm leading-relaxed">We recommend the appropriate staff and service arrangement.</p></div>
-            <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 03</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">We provide the pros</h3><p class="text-brand-secondary text-sm leading-relaxed">Our team arrives ready to deliver professional hospitality.</p></div>
-            <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 04</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">Enjoy your event</h3><p class="text-brand-secondary text-sm leading-relaxed">Focus on your guests while we help make your event run smoothly.</p></div>
-        </div>
-    </section>
-
-    <!-- WORK WITH US -->
-    <section id="work-with-us" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-            <div>
-                <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-1">Join The Team</p>
-                <p class="text-lg uppercase tracking-widest">Hospitality professional? Work with us.</p>
-            </div>
-            <a href="miamix.io/events/apply.html" class="inline-block brand-button px-9 py-4 text-sm tracking-widest uppercase text-center">Work With Us</a>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-<section id="gallery">
-
-    <div class="gallery-wrapper">
-
-        <div class="gallery-heading">
-            <p>MIAMIX EVENTS</p>
-            <h2>Events in Action</h2>
-        </div>
-
-        <button id="galPrev" class="gallery-nav-btn prev">&larr;</button>
-        <button id="galNext" class="gallery-nav-btn next">&rarr;</button>
-
-        <div class="gallery" id="gallery-track">
-
-            <figure class="gallery-slide">
-                <img src="images/gallery-1.jpg" alt="MIAMIX event hospitality">
-            </figure>
-
-            <figure class="gallery-slide">
-                <img src="images/gallery-2.jpg" alt="MIAMIX event service">
-            </figure>
-
-            <figure class="gallery-slide">
-                <img src="images/gallery-3.jpg" alt="MIAMIX private event">
-            </figure>
-
-            <figure class="gallery-slide">
-                <img src="images/gallery-4.png" alt="MIAMIX hospitality">
-            </figure>
-
-            <figure class="gallery-slide">
-                <img src="images/gallery-5.png" alt="MIAMIX event experience">
-            </figure>
-
-            <figure class="gallery-slide">
-                <img src="images/gallery-6.jpg" alt="MIAMIX event team">
-            </figure>
-
-        </div>
+<!-- HERO -->
+<section id="home" class="hero relative flex items-center hero-full">
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20 pb-12">
+    <div class="max-w-3xl">
+      <p class="text-brand-magenta uppercase tracking-widest sm:tracking-[0.3em] text-sm mb-6 font-medium">MIAMIX Events | Miami, Florida</p>
+      <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light uppercase tracking-wide sm:tracking-widest text-white mb-6 leading-tight">
+        Exceptional<br>Service.<br>
+        <span class="text-brand-magenta">Unforgettable<br>Events.</span>
+      </h1>
+      <p class="text-base lg:text-lg font-light text-white max-w-xl mb-10 leading-relaxed">
+        Professional waitstaff and bartenders for private parties, corporate events, weddings, and special occasions in Miami and South Florida.
+      </p>
+      <a href="#request" class="inline-block brand-button px-9 py-4 text-sm tracking-widest uppercase">Request Staff</a>
     </div>
+  </div>
 </section>
 
-    <!-- CONTACT / REQUEST -->
-    <section id="contact" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-            <div class="lg:col-span-5 lg:border-r lg:border-brand-border lg:pr-12">
-                <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">Get in touch</p>
-                <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-8 leading-snug">Let's talk about<br><span class="text-brand-magenta">your event.</span></h2>
-                <div class="flex items-center gap-8">
-                    <a href="mailto:info@miamix.io" class="text-white hover:text-brand-magenta transition-colors" aria-label="Email MIAMIX Events">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </a>
-                    <a href="https://wa.me/17864598797" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-magenta transition-colors" aria-label="WhatsApp MIAMIX Events">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    </a>
-                    <a href="https://instagram.com/miamix.us" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-magenta transition-colors" aria-label="Instagram MIAMIX Events">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" rx="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                    </a>
-                </div>
-            </div>
+<!-- SERVICES -->
+<section id="services" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+  <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 gap-6">
+    <div>
+      <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">What we do</p>
+      <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Our Services</h2>
+    </div>
+    <div class="flex gap-2">
+      <button id="prevBtn" type="button" class="arrow-btn" aria-label="Previous services">&larr;</button>
+      <button id="nextBtn" type="button" class="arrow-btn" aria-label="Next services">&rarr;</button>
+    </div>
+  </div>
+  <div class="carousel" id="carousel">
+    <article class="carousel-slide group">
+      <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">01 / WAITSTAFF</span>
+      <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Waitstaff</h3>
+      <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Professional servers for private dinners, parties, corporate receptions, and special events.</p>
+      <ul class="text-brand-secondary text-sm space-y-2"><li>— Plated dinners and buffet service</li><li>— Passed hors d'oeuvres and receptions</li><li>— Table setup, clearing and guest care</li></ul>
+    </article>
+    <article class="carousel-slide group">
+      <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">02 / BARTENDERS</span>
+      <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Bartenders</h3>
+      <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Skilled bartenders delivering outstanding cocktail service and memorable guest experiences.</p>
+      <ul class="text-brand-secondary text-sm space-y-2"><li>— Full-service cocktail and wine bars</li><li>— Signature drinks and smooth bar flow</li><li>— Responsible alcohol service</li></ul>
+    </article>
+    <article class="carousel-slide group">
+      <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">03 / EVENT SUPPORT</span>
+      <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Event Support</h3>
+      <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Reliable hospitality professionals to support event operations and guest service.</p>
+      <ul class="text-brand-secondary text-sm space-y-2"><li>— Hosts, greeters and runners</li><li>— Setup, breakdown and event flow</li><li>— Coordination with planners and venues</li></ul>
+    </article>
+    <article class="carousel-slide group">
+      <span class="text-brand-magenta text-sm font-medium tracking-widest block mb-3">04 / CORPORATE &amp; PRIVATE</span>
+      <h3 class="text-2xl font-normal uppercase tracking-widest mb-4 group-hover:text-brand-magenta transition-colors">Events</h3>
+      <p class="text-brand-secondary leading-relaxed mb-5 min-h-[5rem]">Tailored staffing solutions for events of all sizes and styles, matched to your standards.</p>
+      <ul class="text-brand-secondary text-sm space-y-2"><li>— Intimate dinners to large receptions</li><li>— Attire matched to your event</li><li>— A single point of contact</li></ul>
+    </article>
+  </div>
+</section>
 
-            <div id="request" class="lg:col-span-7 min-w-0">
-                <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Request Form</p>
-                <h2 class="text-2xl md:text-3xl font-normal uppercase tracking-widest mb-8">Tell us more</h2>
-                <form id="request-form" class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" id="r-name" class="form-input" placeholder="FULL NAME" autocomplete="name" required>
-                        <input type="email" id="r-email" class="form-input" placeholder="EMAIL ADDRESS" autocomplete="email" required>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER" autocomplete="tel">
-                        <div class="date-wrap"><span class="date-ph" aria-hidden="true">EVENT DATE</span><input type="date" id="event_date" class="form-input" aria-label="Event date" required></div>
-                    </div>
-                    <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE &amp; LOCATION" required>
-                    <div class="grid grid-cols-3 gap-2 sm:gap-4">
-                        <input type="number" id="r-guests" class="form-input compact" placeholder="GUESTS" min="1" inputmode="numeric">
-                        <input type="number" id="r-waitstaff" class="form-input compact" placeholder="WAITSTAFF #" min="0" inputmode="numeric">
-                        <input type="number" id="r-bartenders" class="form-input compact" placeholder="BARTENDERS #" min="0" inputmode="numeric">
-                    </div>
-                    <textarea id="r-details" class="form-input" rows="4" placeholder="ADDITIONAL DETAILS (OPTIONAL)"></textarea>
-                    <button type="submit" class="w-full bg-brand-magenta text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-colors duration-300 mt-2">Submit Request</button>
-                    <p class="text-center text-xs text-brand-secondary tracking-widest uppercase mt-3">Your email client will open to send your request.</p>
-                </form>
-            </div>
+<!-- ABOUT -->
+<div class="about-bg border-b border-brand-border">
+  <section id="about" class="py-20 md:py-28 px-6 md:px-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-start">
+    <div>
+      <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">About Us</p>
+      <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-6 leading-snug">Professional Staffing.<br>Exceptional Hospitality.</h2>
+      <p class="text-brand-secondary leading-relaxed text-base lg:text-lg">
+        MIAMIX Events connects Miami’s events with reliable, bilingual hospitality professionals who make every occasion exceptional. More than staffing, we’re your hospitality partner, delivering polished, friendly, and attentive service with seamless coordination in English and Spanish.
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works-section" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">Simple. Seamless. Professional.</p>
+    <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">How It Works</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 01</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">Tell us about your event</h3><p class="text-brand-secondary text-sm leading-relaxed">Share your event date, location, guest count, and staffing needs.</p></div>
+    <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 02</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">Receive a proposal</h3><p class="text-brand-secondary text-sm leading-relaxed">We recommend the appropriate staff and service arrangement.</p></div>
+    <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 03</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">We provide the pros</h3><p class="text-brand-secondary text-sm leading-relaxed">Our team arrives ready to deliver professional hospitality.</p></div>
+    <div class="how-step pt-5"><span class="text-white text-sm tracking-widest mb-3 block">STEP 04</span><h3 class="step-title font-normal uppercase tracking-widest mb-3 text-lg">Enjoy your event</h3><p class="text-brand-secondary text-sm leading-relaxed">Focus on your guests while we help make your event run smoothly.</p></div>
+  </div>
+</section>
+
+<!-- WORK WITH US -->
+<section id="work-with-us" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+    <div>
+      <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-1">Join The Team</p>
+      <p class="text-lg uppercase tracking-widest">Hospitality professional? Work with us.</p>
+    </div>
+    <a href="https://miamix.io/events/apply.html" class="inline-block brand-button px-9 py-4 text-sm tracking-widest uppercase text-center">Work With Us</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" aria-label="Events in action">
+  <div class="gallery-wrapper">
+    <div class="gallery-heading">
+      <p>MIAMIX EVENTS</p>
+      <h2>Events in Action</h2>
+    </div>
+    <button id="galPrev" type="button" class="arrow-btn gallery-nav-btn prev" aria-label="Previous photo">&larr;</button>
+    <button id="galNext" type="button" class="arrow-btn gallery-nav-btn next" aria-label="Next photo">&rarr;</button>
+    <div class="gallery" id="gallery-track">
+      <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX event hospitality" loading="lazy"></figure>
+      <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX event service" loading="lazy"></figure>
+      <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX private event" loading="lazy"></figure>
+      <figure class="gallery-slide"><img src="images/gallery-4.png" alt="MIAMIX hospitality" loading="lazy"></figure>
+      <figure class="gallery-slide"><img src="images/gallery-5.png" alt="MIAMIX event experience" loading="lazy"></figure>
+      <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX event team" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / REQUEST -->
+<section id="contact" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+    <div class="lg:col-span-5 lg:border-r lg:border-brand-border lg:pr-12">
+      <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">Get in touch</p>
+      <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-8 leading-snug">Let's talk about<br><span class="text-brand-magenta">your event.</span></h2>
+      <div class="flex items-center gap-8">
+        <a href="mailto:info@miamix.io" class="text-white hover:text-brand-magenta transition-colors" aria-label="Email MIAMIX Events">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <a href="https://wa.me/17864598797" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-magenta transition-colors" aria-label="WhatsApp MIAMIX Events">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+        <a href="https://instagram.com/miamix.us" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-magenta transition-colors" aria-label="Instagram MIAMIX Events">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" rx="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div id="request" class="lg:col-span-7 min-w-0">
+      <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Request Form</p>
+      <h2 class="text-2xl md:text-3xl font-normal uppercase tracking-widest mb-8">Tell us more</h2>
+      <form id="request-form" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" id="r-name" class="form-input" placeholder="FULL NAME" autocomplete="name" required>
+          <input type="email" id="r-email" class="form-input" placeholder="EMAIL ADDRESS" autocomplete="email" required>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER" autocomplete="tel">
+          <div class="date-wrap"><span class="date-ph" aria-hidden="true">EVENT DATE</span><input type="date" id="event_date" class="form-input" aria-label="Event date" required></div>
+        </div>
+        <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE &amp; LOCATION" required>
+        <div class="grid grid-cols-3 gap-2 sm:gap-4">
+          <input type="number" id="r-guests" class="form-input compact" placeholder="GUESTS" min="1" inputmode="numeric">
+          <input type="number" id="r-waitstaff" class="form-input compact" placeholder="WAITSTAFF #" min="0" inputmode="numeric">
+          <input type="number" id="r-bartenders" class="form-input compact" placeholder="BARTENDERS #" min="0" inputmode="numeric">
+        </div>
+        <textarea id="r-details" class="form-input" rows="4" placeholder="ADDITIONAL DETAILS (OPTIONAL)"></textarea>
+        <button type="submit" class="w-full bg-brand-magenta text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-colors duration-300 mt-2">Submit Request</button>
+        <p class="text-center text-xs text-brand-secondary tracking-widest uppercase mt-3">Your email client will open to send your request.</p>
+      </form>
+    </div>
+  </div>
 
-        <footer class="border-t border-brand-border pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-brand-secondary uppercase tracking-widest gap-3 text-center">
-            <p>&copy; <span id="current-year">2026</span> MIAMIX Events</p>
-            <a href="miamix.io/events/apply.html" class="hover:text-brand-magenta transition-colors">Work With Us</a>
-            <p>Professional Event Staffing.</p>
-        </footer>
-    </section>
+  <footer class="border-t border-brand-border pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-brand-secondary uppercase tracking-widest gap-3 text-center">
+    <p>&copy; <span id="current-year">2026</span> MIAMIX Events</p>
+    <a href="https://miamix.io/events/apply.html" class="hover:text-brand-magenta transition-colors">Work With Us</a>
+    <p>Professional Event Staffing.</p>
+  </footer>
+</section>
 
-    <script>
-        /* Mobile menu */
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex');
-            mobileBtn.textContent = 'MENU'; mobileBtn.setAttribute('aria-expanded', 'false');
-        }
-        mobileBtn.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex');
-                mobileBtn.textContent = 'CLOSE'; mobileBtn.setAttribute('aria-expanded', 'true');
-            } else closeMobileMenu();
-        });
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
-        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+<script>
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        /* Request form -> email */
-        const eventDate = document.getElementById('event_date');
-        const t = new Date();
-        eventDate.min = [t.getFullYear(), String(t.getMonth() + 1).padStart(2, '0'), String(t.getDate()).padStart(2, '0')].join('-');
+/* Mobile menu */
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex');
+  mobileBtn.textContent = 'MENU'; mobileBtn.setAttribute('aria-expanded', 'false');
+}
+mobileBtn.addEventListener('click', () => {
+  if (mobileMenu.classList.contains('hidden')) {
+    mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex');
+    mobileBtn.textContent = 'CLOSE'; mobileBtn.setAttribute('aria-expanded', 'true');
+  } else closeMobileMenu();
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
 
-        const dateWrap = eventDate.parentElement;
-        const syncDate = () => dateWrap.classList.toggle('has-value', !!eventDate.value);
-        ['input', 'change', 'blur'].forEach(ev => eventDate.addEventListener(ev, syncDate));
-        syncDate();
+/* Request form -> email */
+const eventDate = document.getElementById('event_date');
+const now = new Date();
+eventDate.min = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('-');
+const syncDate = () => eventDate.parentElement.classList.toggle('has-value', !!eventDate.value);
+['input', 'change', 'blur'].forEach(ev => eventDate.addEventListener(ev, syncDate));
+syncDate();
 
-        document.getElementById('request-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const v = (id) => document.getElementById(id).value.trim() || 'Not provided';
-            const subject = encodeURIComponent(`MIAMIX Events Staffing Request - ${v('r-name')}`);
-            const body = encodeURIComponent(
+document.getElementById('request-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const v = (id) => document.getElementById(id).value.trim() || 'Not provided';
+  const subject = encodeURIComponent(`MIAMIX Events Staffing Request - ${v('r-name')}`);
+  const body = encodeURIComponent(
 `Hello MIAMIX Events,
 
 I am requesting staffing for an upcoming event.
@@ -731,126 +444,59 @@ ADDITIONAL DETAILS
 ${v('r-details')}
 
 Thank you.`);
-            window.location.href = `mailto:info@miamix.io?subject=${subject}&body=${body}`;
-        });
+  window.location.href = `mailto:info@miamix.io?subject=${subject}&body=${body}`;
+});
 
-        /* Services carousel */
-        const carousel = document.getElementById('carousel');
-        let timer = null, paused = false;
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        function step(dir) {
-            const slide = carousel.firstElementChild; if (!slide) return;
-            const gap = parseFloat(getComputedStyle(carousel).gap) || 0;
-            const w = slide.getBoundingClientRect().width + gap;
-            const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 4;
-            if (dir > 0 && atEnd) carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            else if (dir < 0 && carousel.scrollLeft <= 4) carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
-            else carousel.scrollBy({ left: dir * w, behavior: 'smooth' });
-        }
-        const stop = () => { clearInterval(timer); timer = null; };
-        const start = () => { stop(); if (paused || reduced) return; timer = setInterval(() => step(1), 4500); };
-        document.getElementById('nextBtn').addEventListener('click', () => { step(1); start(); });
-        document.getElementById('prevBtn').addEventListener('click', () => { step(-1); start(); });
-        carousel.addEventListener('mouseenter', () => { paused = true; stop(); });
-        carousel.addEventListener('mouseleave', () => { paused = false; start(); });
-        carousel.addEventListener('touchstart', () => { paused = true; stop(); }, { passive: true });
-        carousel.addEventListener('touchend', () => { paused = false; setTimeout(start, 3000); }, { passive: true });
-        document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
-        start();
+/* Shared scroller: loops at both ends */
+function scroller(track) {
+  return (dir) => {
+    const slide = track.firstElementChild; if (!slide) return;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const w = slide.getBoundingClientRect().width + gap;
+    const max = track.scrollWidth - track.clientWidth;
+    if (dir > 0 && track.scrollLeft >= max - 4) track.scrollTo({ left: 0, behavior: 'smooth' });
+    else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: max, behavior: 'smooth' });
+    else track.scrollBy({ left: dir * w, behavior: 'smooth' });
+  };
+}
 
-        
-/* =========================================
-   MIAMIX EVENTS - GALLERY NAVIGATION
-========================================= */
+/* Services carousel (auto-advances, pauses on hover/touch) */
+const carousel = document.getElementById('carousel');
+const step = scroller(carousel);
+let timer = null, paused = false;
+const stop = () => { clearInterval(timer); timer = null; };
+const start = () => { stop(); if (paused || reduced) return; timer = setInterval(() => step(1), 4500); };
+document.getElementById('nextBtn').addEventListener('click', () => { step(1); start(); });
+document.getElementById('prevBtn').addEventListener('click', () => { step(-1); start(); });
+carousel.addEventListener('mouseenter', () => { paused = true; stop(); });
+carousel.addEventListener('mouseleave', () => { paused = false; start(); });
+carousel.addEventListener('touchstart', () => { paused = true; stop(); }, { passive: true });
+carousel.addEventListener('touchend', () => { paused = false; setTimeout(start, 3000); }, { passive: true });
+document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+start();
 
+/* Gallery arrows */
+const galStep = scroller(document.getElementById('gallery-track'));
+document.getElementById('galPrev').addEventListener('click', () => galStep(-1));
+document.getElementById('galNext').addEventListener('click', () => galStep(1));
+
+/* How it works highlight */
 (function () {
-
-    const track = document.getElementById('gallery-track');
-    const prevBtn = document.getElementById('galPrev');
-    const nextBtn = document.getElementById('galNext');
-
-    if (!track || !prevBtn || !nextBtn) return;
-
-    // Calculate one slide plus its actual gap
-    function getScrollAmount() {
-        const slide = track.querySelector('.gallery-slide');
-
-        if (!slide) return 400;
-
-        const gap = parseFloat(
-            getComputedStyle(track).gap
-        ) || 0;
-
-        return slide.getBoundingClientRect().width + gap;
-    }
-
-    // Navigate gallery
-    function moveGallery(direction) {
-
-        const amount = getScrollAmount();
-
-        const maxScroll =
-            track.scrollWidth - track.clientWidth;
-
-        const current = track.scrollLeft;
-
-        if (direction > 0) {
-
-            if (current >= maxScroll - 5) {
-                track.scrollTo({
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            } else {
-                track.scrollBy({
-                    left: amount,
-                    behavior: 'smooth'
-                });
-            }
-
-        } else {
-
-            if (current <= 5) {
-                track.scrollTo({
-                    left: maxScroll,
-                    behavior: 'smooth'
-                });
-            } else {
-                track.scrollBy({
-                    left: -amount,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    }
-
-    // Arrow controls
-    prevBtn.addEventListener('click', () => {
-        moveGallery(-1);
+  const section = document.getElementById('how-it-works-section');
+  const steps = section.querySelectorAll('.how-step');
+  let i = 0, iv = null;
+  const show = (n) => steps.forEach((s, k) => s.classList.toggle('active', k === n));
+  new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        show(i);
+        if (!reduced && !iv) iv = setInterval(() => { i = (i + 1) % steps.length; show(i); }, 1400);
+      } else { clearInterval(iv); iv = null; show(-1); }
     });
-
-    nextBtn.addEventListener('click', () => {
-        moveGallery(1);
-    });
-
+  }, { threshold: 0.3 }).observe(section);
 })();
-        /* How it works highlight */
-        (function () {
-            const section = document.getElementById('how-it-works-section');
-            const steps = section.querySelectorAll('.how-step');
-            let i = 0, iv = null;
-            const show = (n) => steps.forEach((s, k) => s.classList.toggle('active', k === n));
-            new IntersectionObserver((entries) => {
-                entries.forEach(en => {
-                    if (en.isIntersecting) {
-                        show(i);
-                        if (!reduced && !iv) iv = setInterval(() => { i = (i + 1) % steps.length; show(i); }, 1400);
-                    } else { clearInterval(iv); iv = null; show(-1); }
-                });
-            }, { threshold: 0.3 }).observe(section);
-        })();
 
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
