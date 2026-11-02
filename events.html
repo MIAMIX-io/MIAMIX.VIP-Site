@@ -381,8 +381,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <input type="number" id="r-bartenders" class="form-input compact" placeholder="BARTENDERS #" min="0" inputmode="numeric">
         </div>
         <textarea id="r-details" class="form-input" rows="4" placeholder="ADDITIONAL DETAILS (OPTIONAL)"></textarea>
-        <button type="submit" class="w-full bg-brand-magenta text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-colors duration-300 mt-2">Submit Request</button>
-        <p class="text-center text-xs text-brand-secondary tracking-widest uppercase mt-3">Your email client will open to send your request.</p>
+        <input type="text" id="r-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+        <button type="submit" id="r-submit" class="w-full bg-brand-magenta text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-colors duration-300 mt-2">Submit Request</button>
+        <p id="form-status" role="status" aria-live="polite" class="text-center text-sm text-brand-secondary tracking-widest uppercase mt-3 min-h-[1.25rem]"></p>
       </form>
     </div>
   </div>
@@ -421,34 +422,70 @@ const syncDate = () => eventDate.parentElement.classList.toggle('has-value', !!e
 ['input', 'change', 'blur'].forEach(ev => eventDate.addEventListener(ev, syncDate));
 syncDate();
 
-document.getElementById('request-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const v = (id) => document.getElementById(id).value.trim() || 'Not provided';
-  const subject = encodeURIComponent(`MIAMIX Events Staffing Request - ${v('r-name')}`);
+/* Request form -> Google Sheet (Apps Script), with email fallback */
+const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyfEC_AxQz_3cA2zsGEIjB0ABBA1iS-BE2qXGUK90iJIO4M_9GTNBetYDN_o2R_ONGKIA/exec';
+const form = document.getElementById('request-form');
+const statusEl = document.getElementById('form-status');
+const submitBtn = document.getElementById('r-submit');
+const val = (id) => document.getElementById(id).value.trim();
+
+function mailtoFallback(d) {
+  const nv = (x) => x || 'Not provided';
+  const subject = encodeURIComponent(`MIAMIX Events Staffing Request - ${nv(d.name)}`);
   const body = encodeURIComponent(
 `Hello MIAMIX Events,
 
 I am requesting staffing for an upcoming event.
 
 CLIENT DETAILS
-Name: ${v('r-name')}
-Email: ${v('r-email')}
-Phone: ${v('r-phone')}
+Name: ${nv(d.name)}
+Email: ${nv(d.email)}
+Phone: ${nv(d.phone)}
 
 EVENT DETAILS
-Date: ${v('event_date')}
-Type / Location: ${v('r-location')}
-Estimated Guests: ${v('r-guests')}
+Date: ${nv(d.eventDate)}
+Type / Location: ${nv(d.location)}
+Estimated Guests: ${nv(d.guests)}
 
 STAFFING REQUIREMENTS
-Waitstaff: ${v('r-waitstaff')}
-Bartenders: ${v('r-bartenders')}
+Waitstaff: ${nv(d.waitstaff)}
+Bartenders: ${nv(d.bartenders)}
 
 ADDITIONAL DETAILS
-${v('r-details')}
+${nv(d.details)}
 
 Thank you.`);
   window.location.href = `mailto:info@miamix.io?subject=${subject}&body=${body}`;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const d = {
+    name: val('r-name'), email: val('r-email'), phone: val('r-phone'),
+    eventDate: val('event_date'), location: val('r-location'), guests: val('r-guests'),
+    waitstaff: val('r-waitstaff'), bartenders: val('r-bartenders'), details: val('r-details'),
+    website: val('r-website')
+  };
+  if (!SHEET_ENDPOINT) return mailtoFallback(d);
+
+  submitBtn.disabled = true; submitBtn.style.opacity = '.6';
+  statusEl.style.color = ''; statusEl.textContent = 'Sending...';
+  try {
+    // text/plain avoids a CORS preflight, which Apps Script does not answer
+    await fetch(SHEET_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(d)
+    });
+    form.reset(); syncDate();
+    statusEl.style.color = '#E12BC0';
+    statusEl.textContent = 'Thank you. We will be in touch shortly.';
+  } catch (err) {
+    statusEl.textContent = 'Could not send. Opening your email app instead.';
+    setTimeout(() => mailtoFallback(d), 800);
+  } finally {
+    submitBtn.disabled = false; submitBtn.style.opacity = '';
+  }
 });
 
 /* Shared scroller: loops at both ends */
