@@ -292,34 +292,26 @@
                 <h2 class="text-2xl font-normal uppercase tracking-widest mb-6">Tell us about your event</h2>
                 
                 <form id="request-form" class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" id="r-name" class="form-input" placeholder="FULL NAME" required>
-                        <input type="email" id="r-email" class="form-input" placeholder="EMAIL ADDRESS" required>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER">
-                        <div>
-    <label for="event_date" class="block text-brand-secondary text-sm tracking-widest uppercase mb-2">Event Date</label>
-    <input 
-        type="date" 
-        id="event_date" 
-        name="event_date" 
-        class="w-full bg-transparent border-b border-brand-border text-white text-xl font-light py-3 focus:outline-none focus:border-brand-magenta transition-colors duration-300 [color-scheme:dark]"
-        required
-    >
-</div>
-                    </div>
-                    <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE & LOCATION" required>
-                    <div class="grid grid-cols-3 gap-4">
-                        <input type="number" id="r-guests" class="form-input" placeholder="GUESTS">
-                        <input type="number" id="r-waitstaff" class="form-input" placeholder="WAITSTAFF #">
-                        <input type="number" id="r-bartenders" class="form-input" placeholder="BARTENDERS #">
-                    </div>
-                    <button type="button" onclick="generateMailTo()" class="w-full bg-brand-magenta text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-colors mt-2">
-                        Submit Request
-                    </button>
-                    <p class="text-center text-xs text-brand-secondary tracking-widest uppercase mt-2">Opens your email client to send request.</p>
-                </form>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" id="r-name" class="form-input" placeholder="FULL NAME" required>
+        <input type="email" id="r-email" class="form-input" placeholder="EMAIL ADDRESS" required>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER">
+        <input type="date" id="event_date" name="event_date" class="form-input [color-scheme:dark]" required>
+    </div>
+    <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE & LOCATION" required>
+    <div class="grid grid-cols-3 gap-4">
+        <input type="number" id="r-guests" class="form-input" placeholder="GUESTS">
+        <input type="number" id="r-waitstaff" class="form-input" placeholder="WAITSTAFF #">
+        <input type="number" id="r-bartenders" class="form-input" placeholder="BARTENDERS #">
+    </div>
+    <button type="button" onclick="generateMailTo()" class="w-full bg-brand-magenta text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-colors mt-2">
+        Submit Request
+    </button>
+    <p class="text-center text-xs text-brand-secondary tracking-widest uppercase mt-2">Opens your email client to send request.</p>
+</form>
+
             </div>
         </div>
 
