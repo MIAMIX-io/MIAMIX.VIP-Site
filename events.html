@@ -56,54 +56,42 @@ h1, h2, h3, a, p { overflow-wrap: anywhere; }
 .lg\:border-brand-border { border-color: var(--border); }
 ::selection { background: var(--magenta); color: #fff; }
 
-nav { background: rgba(0,0,0,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-
-/* Mobile menu */
-.menu-panel {
-  background: linear-gradient(145deg, rgba(20,20,20,.55), rgba(0,0,0,.35));
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 12px 35px rgba(0,0,0,.2);
+/* NAV: transparent, soft gradient shadow */
+nav {
+  background: linear-gradient(180deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,0) 100%);
+  padding-bottom: 28px;
 }
-.menu-panel a { text-shadow: 0 1px 10px rgba(0,0,0,.8); transition: color .25s ease; }
-.menu-panel a:hover { color: var(--magenta); }
+nav::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 30%, transparent 100%);
+}
+#mobile-menu-btn { text-shadow: 0 2px 14px rgba(0,0,0,.9), 0 0 3px rgba(0,0,0,.6); }
 
-/* HERO: lighter overall, darker only behind the text (left on desktop, top on mobile) */
-.hero-full { min-height: 100vh; min-height: 100dvh; }
+/* HERO: full screen, drifting overcast gradient */
+.hero-full { min-height: 100vh; min-height: 100lvh; }
 .hero {
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.05) 100%),
-    var(--hero-img) center / cover no-repeat,
-    #000;
+  position: relative; isolation: isolate; overflow: hidden;
+  background: var(--hero-img) center / cover no-repeat, #000;
 }
-
-/* ABOUT: same single image on every screen size */
-.about-bg {
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,0) 85%),
-    var(--about-img) center / cover no-repeat,
-    #000;
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(105deg,
+    rgba(8,10,16,.85) 0%, rgba(40,46,58,.5) 30%,
+    rgba(8,10,16,.8) 60%, rgba(40,46,58,.45) 100%);
+  background-size: 250% 100%;
+  backdrop-filter: saturate(.7) brightness(.9);
+  -webkit-backdrop-filter: saturate(.7) brightness(.9);
+  animation: hero-drift 20s ease-in-out infinite alternate;
 }
-.about-bg h2, .about-bg p { text-shadow: 0 2px 10px rgba(0,0,0,.5); }
-
-@media (max-width: 767px) {
-  .hero {
-    background:
-      linear-gradient(180deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.15) 100%),
-      var(--hero-img) center / cover no-repeat,
-      #000;
-  }
-  /* Text sits on solid black; the photo lives in its own band below, fading in */
-  .about-bg {
-  background:
-    linear-gradient(180deg, #000 0%, #000 calc(100% - 400px), rgba(0,0,0,0) calc(100% - 260px)),
-    var(--about-img) right bottom 30px / auto 660px no-repeat,
-    #000;
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,.3) 65%, #000 100%);
 }
-#about { padding-bottom: 300px; padding-top: 4rem; }
-  #about h2 { margin-bottom: 2rem; line-height: 1.35; }
-  #about p:last-child { line-height: 1.85; }
-}
+.hero h1, .hero p { text-shadow: 0 2px 18px rgba(0,0,0,.55); }
+@keyframes hero-drift { from { background-position: 0% 0; } to { background-position: 100% 0; } }
+@media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
 
 /* Form */
 .form-input {
