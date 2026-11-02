@@ -296,7 +296,16 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER">
-                        <input type="text" id="r-date" class="form-input uppercase" placeholder="EVENT DATE (MM/DD/YYYY)" required>
+                        <div>
+    <label for="event_date" class="block text-brand-secondary text-sm tracking-widest uppercase mb-2">Event Date</label>
+    <input 
+        type="date" 
+        id="event_date" 
+        name="event_date" 
+        class="w-full bg-transparent border-b border-brand-border text-white text-xl font-light py-3 focus:outline-none focus:border-brand-magenta transition-colors duration-300 [color-scheme:dark]"
+        required
+    >
+</div>
                     </div>
                     <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE & LOCATION" required>
                     <div class="grid grid-cols-3 gap-4">
