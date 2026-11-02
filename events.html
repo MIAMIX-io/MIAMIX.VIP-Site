@@ -92,106 +92,157 @@
         .form-input.compact::-webkit-outer-spin-button, .form-input.compact::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         @media (min-width: 640px) { .form-input.compact { padding: 0 16px; font-size: 16px; } .form-input.compact::placeholder { font-size: 16px; } }
 
-        /* Gallery Container & Wrapper */
+        
+/* =========================================
+   MIAMIX EVENTS - IMAGE GALLERY
+========================================= */
+
 .gallery-wrapper {
-  position: relative;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .gallery {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  overscroll-behavior-x: contain;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    padding-bottom: 4px;
 }
+
 .gallery::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-/* Larger slide cards */
+/* Landscape gallery images */
+
 .gallery-slide {
-  flex: 0 0 92%;
-  scroll-snap-align: center;
-  aspect-ratio: 16 / 9; /* Switch to 16/9 or 3/2 for a much larger visual presence */
-  position: relative;
-  background: #0a0a0a;
-  border: 1px solid #333;
-  overflow: hidden;
-  border-radius: 4px;
+    flex: 0 0 92%;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    scroll-snap-align: center;
+    overflow: hidden;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 3px;
 }
+
 .gallery-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
 }
 
-/* 1 full card + preview on tablets, 2 large cards on desktops */
+.gallery-slide:hover img {
+    transform: scale(1.025);
+}
+
+/* Tablet */
+
 @media (min-width: 768px) {
-  .gallery-slide {
-    flex-basis: calc((100% - 20px) / 2);
-  }
-}
-@media (min-width: 1280px) {
-  /* Show only 2 large items per view on large monitors, or 2.2 for a peek effect */
-  .gallery-slide {
-    flex-basis: calc((100% - 24px) / 2);
-  }
+    .gallery-slide {
+        flex-basis: calc((100% - 20px) / 2);
+    }
 }
 
-/* Hidden Overlay Arrows */
+/* Desktop */
+
+@media (min-width: 1280px) {
+    .gallery-slide {
+        flex-basis: calc((100% - 40px) / 2);
+    }
+}
+
+/* Hidden navigation arrows */
+
 .gallery-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 48px;
-  height: 48px;
-  background: rgba(10, 10, 10, 0.65);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, background 0.2s ease, border-color 0.2s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 22px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    cursor: pointer;
+
+    transition:
+        opacity .3s ease,
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
 }
 
 .gallery-nav-btn.prev {
-  left: 16px;
-}
-.gallery-nav-btn.next {
-  right: 16px;
+    left: 14px;
 }
 
-/* Reveal arrows when hovering over the gallery wrapper */
-.gallery-wrapper:hover .gallery-nav-btn {
-  opacity: 1;
-  pointer-events: auto;
+.gallery-nav-btn.next {
+    right: 14px;
 }
+
+/* Reveal arrows on hover */
+
+.gallery-wrapper:hover .gallery-nav-btn,
+.gallery-wrapper:focus-within .gallery-nav-btn {
+    opacity: .8;
+    pointer-events: auto;
+}
+
+/* Arrow hover */
 
 .gallery-nav-btn:hover {
-  background: rgba(10, 10, 10, 0.9);
-  border-color: #ff007f; /* your brand magenta */
-  color: #ff007f;
+    opacity: 1;
+    background: #000;
+    border-color: #E12BC0;
+    color: #E12BC0;
 }
 
-/* Always keep arrows accessible or visible on touchscreens */
+/* Touchscreen devices */
+
 @media (hover: none) {
-  .gallery-nav-btn {
-    opacity: 0.7;
-    pointer-events: auto;
-  }
+    .gallery-nav-btn {
+        opacity: .65;
+        pointer-events: auto;
+        width: 38px;
+        height: 38px;
+    }
 }
 
+/* Reduced motion */
 
+@media (prefers-reduced-motion: reduce) {
+    .gallery,
+    .gallery-slide img {
+        scroll-behavior: auto;
+        transition: none;
+    }
+}
         /* "EVENT DATE" label so the date field reads like the other fields (iOS shows date inputs blank) */
         .date-wrap { position: relative; }
         .date-ph { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: #aaa; font-weight: 300;
@@ -368,12 +419,12 @@
         <button id="galNext" type="button" aria-label="Next photos" class="gallery-nav-btn next">&rarr;</button>
 
         <div class="gallery" id="gallery-track">
-            <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX Events photo 1" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX Events photo 2" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX Events photo 3" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-4.png" alt="MIAMIX Events photo 4" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-5.png" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.style.display='none'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX Events photo 6" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX Events photo 1" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX Events photo 2" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX Events photo 3" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-4.png" alt="MIAMIX Events photo 4" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-5.png" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX Events photo 6" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
         </div>
     </div>
 </section>
@@ -513,50 +564,82 @@ Thank you.`);
         document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
         start();
 
-        /* Gallery carousel */
-        (function () {
-            const track = document.getElementById('gallery-track');
-const prevBtn = document.getElementById('galPrev');
-const nextBtn = document.getElementById('galNext');
+        
+/* =========================================
+   MIAMIX EVENTS - GALLERY NAVIGATION
+========================================= */
 
-if (track && prevBtn && nextBtn) {
-  const getScrollAmount = () => {
-    const slide = track.querySelector('.gallery-slide');
-    return slide ? slide.offsetWidth + 20 : 400; // slide width + gap
-  };
+(function () {
 
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-  });
+    const track = document.getElementById('gallery-track');
+    const prevBtn = document.getElementById('galPrev');
+    const nextBtn = document.getElementById('galNext');
 
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-  });
-}
+    if (!track || !prevBtn || !nextBtn) return;
 
-            const el = document.getElementById('gallery-track');
-            let timer = null, hold = false;
-            function go(dir) {
-                const slide = el.firstElementChild; if (!slide) return;
-                const gap = parseFloat(getComputedStyle(el).gap) || 0;
-                const w = slide.getBoundingClientRect().width + gap;
-                const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-                if (dir > 0 && atEnd) el.scrollTo({ left: 0, behavior: 'smooth' });
-                else if (dir < 0 && el.scrollLeft <= 4) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
-                else el.scrollBy({ left: dir * w, behavior: 'smooth' });
+    // Calculate one slide plus its actual gap
+    function getScrollAmount() {
+        const slide = track.querySelector('.gallery-slide');
+
+        if (!slide) return 400;
+
+        const gap = parseFloat(
+            getComputedStyle(track).gap
+        ) || 0;
+
+        return slide.getBoundingClientRect().width + gap;
+    }
+
+    // Navigate gallery
+    function moveGallery(direction) {
+
+        const amount = getScrollAmount();
+
+        const maxScroll =
+            track.scrollWidth - track.clientWidth;
+
+        const current = track.scrollLeft;
+
+        if (direction > 0) {
+
+            if (current >= maxScroll - 5) {
+                track.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                track.scrollBy({
+                    left: amount,
+                    behavior: 'smooth'
+                });
             }
-            const halt = () => { clearInterval(timer); timer = null; };
-            const run = () => { halt(); if (hold || reduced) return; timer = setInterval(() => go(1), 4000); };
-            document.getElementById('galNext').addEventListener('click', () => { go(1); run(); });
-            document.getElementById('galPrev').addEventListener('click', () => { go(-1); run(); });
-            el.addEventListener('mouseenter', () => { hold = true; halt(); });
-            el.addEventListener('mouseleave', () => { hold = false; run(); });
-            el.addEventListener('touchstart', () => { hold = true; halt(); }, { passive: true });
-            el.addEventListener('touchend', () => { hold = false; setTimeout(run, 3000); }, { passive: true });
-            document.addEventListener('visibilitychange', () => document.hidden ? halt() : run());
-            run();
-        })();
 
+        } else {
+
+            if (current <= 5) {
+                track.scrollTo({
+                    left: maxScroll,
+                    behavior: 'smooth'
+                });
+            } else {
+                track.scrollBy({
+                    left: -amount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+
+    // Arrow controls
+    prevBtn.addEventListener('click', () => {
+        moveGallery(-1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        moveGallery(1);
+    });
+
+})();
         /* How it works highlight */
         (function () {
             const section = document.getElementById('how-it-works-section');
