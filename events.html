@@ -140,23 +140,26 @@
 #gallery .gallery-heading {
     position: absolute;
     z-index: 5;
-    top: 50%;
-    left: 8%;
-    transform: translateY(-50%);
+    top: 7%;
+    left: 5%;
+    right: 5%;
     max-width: 600px;
-    padding: 30px;
+    padding: 0;
+    transform: none;
     pointer-events: none;
 }
 
 #gallery .gallery-heading p {
     color: #E12BC0;
     letter-spacing: .25em;
+    font-size: 14px;
+    margin-bottom: 12px;
 }
 
 #gallery .gallery-heading h2 {
     color: #fff;
-    font-size: clamp(2.5rem, 6vw, 5.5rem);
-    line-height: 1;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.1;
 }
 
 .gallery-wrapper {
@@ -220,35 +223,47 @@
 
 /* DISCREET NAVIGATION */
 
+/* BOTTOM-CENTER GALLERY NAVIGATION */
+
 .gallery-nav-btn {
     position: absolute;
     z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
+    top: auto;
+    bottom: 35px;
+    transform: none;
+
     width: 48px;
     height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.35);
+    border: 1px solid rgba(255,255,255,.45);
     background: rgba(0,0,0,.3);
     backdrop-filter: blur(8px);
+
     color: white;
     font-size: 22px;
-    opacity: 0;
-    pointer-events: none;
+
+    opacity: .75;
+    pointer-events: auto;
     cursor: pointer;
     transition: all .3s ease;
 }
 
-.gallery-nav-btn.prev { left: 30px; }
-.gallery-nav-btn.next { right: 30px; }
+/* Position arrows side by side */
+.gallery-nav-btn.prev {
+    left: calc(50% - 75px);
+}
 
-.gallery-wrapper:hover .gallery-nav-btn,
-.gallery-wrapper:focus-within .gallery-nav-btn {
-    opacity: .8;
-    pointer-events: auto;
+.gallery-nav-btn.next {
+    right: calc(50% - 75px);
 }
 
 .gallery-nav-btn:hover {
+    opacity: 1;
     color: #E12BC0;
     border-color: #E12BC0;
 }
@@ -259,7 +274,6 @@
         pointer-events: auto;
     }
 }
-
 @media (max-width: 767px) {
     .gallery-wrapper {
         height: 75vh;
@@ -267,14 +281,20 @@
     }
 
     #gallery .gallery-heading {
-        left: 4%;
-        right: 4%;
-        padding: 20px;
+        top: 7%;
+        left: 6%;
+        right: 6%;
+        padding: 0;
+    }
+
+    #gallery .gallery-heading h2 {
+        font-size: 2.5rem;
     }
 
     .gallery-nav-btn {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+        bottom: 25px;
     }
 }
 
