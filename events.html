@@ -110,21 +110,30 @@
 .about-bg span {
     text-shadow: 0 2px 10px rgba(0,0,0,.45);
 }
-/* ABOUT US — TIGHTER HEADING SPACING */
+
+/* ABOUT US — HEADING ALIGNMENT FIX */
 
 #about > div:first-child {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-start !important;
+    align-self: start;
+    gap: 0 !important;
 }
 
 #about > div:first-child > p:first-child {
-    margin-bottom: 12px !important;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
 }
 
 #about > div:first-child > h2 {
+    margin: 0 0 24px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2;
+}
+
+#about > div:first-child > p:last-child {
     margin-top: 0 !important;
-    margin-bottom: 24px !important;
 }
 
 /* Mobile: graduated overlay for stacked text */
