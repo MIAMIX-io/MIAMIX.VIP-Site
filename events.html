@@ -95,11 +95,19 @@ nav::before {
 
 /* Mobile menu */
 .menu-panel {
-  background: linear-gradient(145deg, rgba(20,20,20,.55), rgba(0,0,0,.35));
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 12px 35px rgba(0,0,0,.2);
+  background: radial-gradient(ellipse 120% 100% at 100% 0%,
+    rgba(0,0,0,.65) 0%, rgba(0,0,0,.4) 45%, rgba(0,0,0,0) 85%);
+  border: 0;
+  box-shadow: none !important;
+  padding: 28px 28px 44px !important;
 }
+.menu-panel::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: radial-gradient(ellipse 120% 100% at 100% 0%, #000 30%, transparent 85%);
+  mask-image: radial-gradient(ellipse 120% 100% at 100% 0%, #000 30%, transparent 85%);
+}
+
 .menu-panel a { text-shadow: 0 1px 10px rgba(0,0,0,.8); transition: color .25s ease; }
 .menu-panel a:hover { color: var(--magenta); }
 
@@ -238,7 +246,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <button id="mobile-menu-btn" type="button" class="md:hidden text-white uppercase tracking-widest text-sm py-2"
             aria-expanded="false" aria-controls="mobile-menu">Menu</button>
   </div>
-  <div id="mobile-menu" class="hidden md:hidden absolute right-6 top-full w-56 menu-panel px-6 py-6 flex-col gap-5 text-right text-sm uppercase tracking-widest shadow-2xl">
+  <div id="mobile-menu" class="hidden md:hidden absolute right-6 top-full w-56 menu-panel px-6 py-6 flex-col gap-5 text-right text-sm uppercase tracking-widest">
     <a href="#home" class="hover:text-brand-magenta">Home</a>
     <a href="#services" class="hover:text-brand-magenta">Services</a>
     <a href="#about" class="hover:text-brand-magenta">About Us</a>
