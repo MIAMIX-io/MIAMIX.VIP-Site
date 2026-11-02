@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work With Us | MIAMIX Events</title>
+<meta name="description" content="Apply to join the MIAMIX Events team. Servers, bartenders and event support across Miami and South Florida.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{--acc:#E12BC0;--line:#444;--mute:#ccc;--field:#0a0a0a}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:#000;color:#fff;font:300 17px/1.65 'Jost',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+[hidden]{display:none!important}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+h1,h2{font-weight:400;text-transform:uppercase;letter-spacing:.12em;margin:0;line-height:1.2}
+h1{font-size:clamp(1.8rem,6.5vw,3rem)}
+h2{font-size:1.4rem;margin-bottom:6px}
+p{margin:0 0 1em}
+.eyebrow{color:var(--acc);font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;margin-bottom:14px}
+
+header .wrap{max-width:1160px;display:flex;align-items:center;justify-content:space-between;min-height:76px;padding-top:env(safe-area-inset-top,0)}
+.logo img{height:28px;width:auto;display:block}
+.logo .fb{font-weight:500;letter-spacing:.2em;font-size:1.3rem}
+.back{font-size:.85rem;text-transform:uppercase;letter-spacing:.2em;text-decoration:none}
+.back:hover{color:var(--acc)}
+
+.intro{padding:clamp(28px,6vw,56px) 0 10px}
+.intro p{color:var(--mute);max-width:56ch;margin-top:16px}
+
+.prog{margin:26px 0 30px}
+.prog small{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+.track{height:3px;background:var(--line);margin-top:10px}
+.track i{display:block;height:100%;width:33%;background:var(--acc);transition:width .3s}
+
+.step{display:grid;gap:18px}
+.row{display:grid;gap:18px}
+@media(min-width:560px){.row{grid-template-columns:1fr 1fr}}
+label,legend{display:grid;gap:8px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.opt{color:#aaa;text-transform:none;letter-spacing:0;font-size:.8rem}
+input,select,textarea{-webkit-appearance:none;appearance:none;display:block;width:100%;min-width:0;height:52px;padding:0 16px;margin:0;background:var(--field);border:1px solid var(--line);border-radius:0;color:#fff;font:400 16px 'Jost',sans-serif;letter-spacing:0;text-transform:none}
+input::placeholder{color:#aaa;font-weight:300;opacity:1}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc);background:#000}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' fill='none' stroke='%23aaa' stroke-width='2'/></svg>");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+textarea{height:auto;min-height:100px;padding:14px 16px;resize:vertical}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chips label{display:block;position:relative;font-size:.85rem;letter-spacing:.1em}
+.chips input{position:absolute;opacity:0;width:1px;height:1px;left:0;top:0}
+.chips span{display:block;padding:12px 18px;border:1px solid var(--line);cursor:pointer;transition:all .15s}
+.chips span:hover{border-color:var(--acc)}
+.chips input:checked+span{background:var(--acc);border-color:var(--acc);color:#fff}
+.chips input:focus-visible+span{outline:2px solid var(--acc);outline-offset:3px}
+.err{display:none;color:#ff7aa8;font-size:.9rem;margin-top:8px}
+.group.bad .err{display:block}
+.group.bad .chips span{border-color:#ff7aa8}
+
+.drop{display:grid;place-items:center;gap:6px;text-align:center;padding:30px 18px;border:1px dashed #888;cursor:pointer;background:var(--field);position:relative;text-transform:none;letter-spacing:0}
+.drop:hover{border-color:var(--acc)}
+.drop b{font-weight:500;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;overflow-wrap:anywhere}
+.drop small{color:#aaa;font-size:.85rem}
+.drop input{position:absolute;opacity:0;width:1px;height:1px}
+.drop.has{border-style:solid;border-color:var(--acc)}
+
+.note{border-left:3px solid var(--acc);padding:4px 0 4px 16px;color:var(--mute);font-size:.92rem}
+.check{grid-template-columns:24px 1fr;gap:12px;align-items:start;font-size:.95rem;letter-spacing:0;text-transform:none;line-height:1.5}
+.check input{width:22px;height:22px;-webkit-appearance:auto;appearance:auto;accent-color:var(--acc);margin-top:2px}
+
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.btn{display:inline-block;font:500 .85rem 'Jost',sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:17px 30px;background:var(--acc);color:#fff;border:1px solid var(--acc);text-decoration:none;cursor:pointer;transition:all .25s;text-align:center}
+.btn:hover{background:#000;color:var(--acc)}
+.btn.ghost{background:transparent;border-color:#fff}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc)}
+.btn[disabled]{opacity:.55;pointer-events:none}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+#msg{display:none;padding:14px 16px;border-left:3px solid var(--acc);background:var(--field);margin-top:18px}
+.done{display:none}
+.done h2{margin:14px 0}
+
+main{padding-bottom:70px}
+footer{border-top:1px solid var(--line);padding:26px 0 calc(26px + env(safe-area-inset-bottom,0));font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap">
+  <a class="logo" href="events.html" aria-label="MIAMIX Events home">
+   <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Events"
+        onerror="this.outerHTML='<span class=\'fb\'>MIAMIX</span>'">
+  </a>
+  <a class="back" href="events.html">Back to site</a>
+ </div>
+</header>
+
+<div class="intro">
+ <div class="wrap">
+  <p class="eyebrow">Work with us</p>
+  <h1>Join the MIAMIX team</h1>
+  <p>Three quick steps, about three minutes. Tell us about yourself, attach your resume, and we’ll reach out when an event fits.</p>
+ </div>
+</div>
+
+<main>
+ <div class="wrap">
+  <div class="prog" id="prog" aria-live="polite">
+   <small id="plabel">Step 1 of 3: About you</small>
+   <div class="track"><i id="pbar"></i></div>
+  </div>
+
+  <form id="app" novalidate>
+   <div class="hp" aria-hidden="true"><label>Company<input name="company" tabindex="-1" autocomplete="off"></label></div>
+
+   <!-- STEP 1 -->
+   <div class="step" data-title="About you">
+    <h2>About you</h2>
+    <div class="row">
+     <label>First name<input name="first_name" required autocomplete="given-name"></label>
+     <label>Last name<input name="last_name" required autocomplete="family-name"></label>
+    </div>
+    <div class="row">
+     <label>Email<input name="email" type="email" required autocomplete="email" inputmode="email"></label>
+     <label>Mobile phone<input name="phone" type="tel" required autocomplete="tel" inputmode="tel"></label>
+    </div>
+    <label>City<input name="city" required autocomplete="address-level2"></label>
+    <fieldset class="group">
+     <legend>Are you at least 18 years old?</legend>
+     <div class="chips"><label><input type="radio" name="age_18" value="Yes" required><span>Yes</span></label><label><input type="radio" name="age_18" value="No"><span>No</span></label></div>
+    </fieldset>
+    <fieldset class="group">
+     <legend>Legally authorized to work in the U.S.?</legend>
+     <div class="chips"><label><input type="radio" name="work_auth" value="Yes" required><span>Yes</span></label><label><input type="radio" name="work_auth" value="No"><span>No</span></label></div>
+    </fieldset>
+    <fieldset class="group">
+     <legend>Reliable transportation to events?</legend>
+     <div class="chips"><label><input type="radio" name="transport" value="Yes" required><span>Yes</span></label><label><input type="radio" name="transport" value="No"><span>No</span></label></div>
+    </fieldset>
+   </div>
+
+   <!-- STEP 2 -->
+   <div class="step" data-title="Experience and availability" hidden>
+    <h2>Experience and availability</h2>
+    <fieldset class="group" data-min="1">
+     <legend>Roles you’re interested in</legend>
+     <div class="chips">
+      <label><input type="checkbox" name="roles" value="Waitstaff"><span>Waitstaff</span></label>
+      <label><input type="checkbox" name="roles" value="Bartender"><span>Bartender</span></label>
+      <label><input type="checkbox" name="roles" value="Event support"><span>Event support</span></label>
+      <label><input type="checkbox" name="roles" value="Other"><span>Other</span></label>
+     </div>
+     <div class="err">Please choose at least one role.</div>
+    </fieldset>
+    <div class="row">
+     <label>Years of experience
+      <select name="years" required><option value="">Select</option><option>Less than 1</option><option>1 to 2</option><option>3 to 5</option><option>6 to 10</option><option>More than 10</option></select>
+     </label>
+     <label>Languages <span class="opt">(optional)</span><input name="languages" placeholder="English, Spanish"></label>
+    </div>
+    <fieldset class="group">
+     <legend>Certifications <span class="opt">(optional)</span></legend>
+     <div class="chips">
+      <label><input type="checkbox" name="certs" value="Food handler"><span>Food handler</span></label>
+      <label><input type="checkbox" name="certs" value="Alcohol service"><span>Alcohol service</span></label>
+     </div>
+    </fieldset>
+    <fieldset class="group" data-min="1">
+     <legend>Days you’re generally available</legend>
+     <div class="chips">
+      <label><input type="checkbox" name="days" value="Mon"><span>Mon</span></label>
+      <label><input type="checkbox" name="days" value="Tue"><span>Tue</span></label>
+      <label><input type="checkbox" name="days" value="Wed"><span>Wed</span></label>
+      <label><input type="checkbox" name="days" value="Thu"><span>Thu</span></label>
+      <label><input type="checkbox" name="days" value="Fri"><span>Fri</span></label>
+      <label><input type="checkbox" name="days" value="Sat"><span>Sat</span></label>
+      <label><input type="checkbox" name="days" value="Sun"><span>Sun</span></label>
+     </div>
+     <div class="err">Please choose at least one day.</div>
+    </fieldset>
+    <fieldset class="group" data-min="1">
+     <legend>Shifts you can work</legend>
+     <div class="chips">
+      <label><input type="checkbox" name="shifts" value="Mornings"><span>Mornings</span></label>
+      <label><input type="checkbox" name="shifts" value="Afternoons"><span>Afternoons</span></label>
+      <label><input type="checkbox" name="shifts" value="Evenings"><span>Evenings</span></label>
+      <label><input type="checkbox" name="shifts" value="Late nights"><span>Late nights</span></label>
+     </div>
+     <div class="err">Please choose at least one shift.</div>
+    </fieldset>
+   </div>
+
+   <!-- STEP 3 -->
+   <div class="step" data-title="Resume and send" hidden>
+    <h2>Resume and send</h2>
+    <label class="drop" id="drop">
+     <b id="dtitle">Tap to upload your resume</b>
+     <small id="dsub">PDF, DOC or DOCX, up to 5 MB</small>
+     <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+    </label>
+    <div class="err" id="ferr"></div>
+    <label>Anything else we should know <span class="opt">(optional)</span><textarea name="about" placeholder="Venues you’ve worked, specialties, events you love"></textarea></label>
+    <div class="note">We don’t ask for your Social Security number, date of birth or ID documents here. Required employment forms are collected securely if you’re placed.</div>
+    <label class="check"><input type="checkbox" name="certify" value="Yes" required><span>I certify the information in this application is true and complete to the best of my knowledge.</span></label>
+    <label class="check"><input type="checkbox" name="contact_consent" value="Yes" required><span>I agree that MIAMIX Events may contact me by email, call and text about work opportunities. Message and data rates may apply, and I can opt out anytime.</span></label>
+   </div>
+
+   <div class="nav">
+    <button class="btn ghost" type="button" id="prev" hidden>Back</button>
+    <button class="btn" type="button" id="next" style="margin-left:auto">Continue</button>
+    <button class="btn" type="submit" id="send" hidden style="margin-left:auto">Submit application</button>
+   </div>
+   <div id="msg" role="alert"></div>
+  </form>
+
+  <div class="done" id="done" tabindex="-1">
+   <p class="eyebrow">Application received</p>
+   <h2>Thank you for applying</h2>
+   <p style="color:var(--mute)">Our team reviews every application and will reach out by email or text when an event fits.</p>
+   <a class="btn" href="events.html">Back to site</a>
+  </div>
+ </div>
+</main>
+
+<footer>&copy; <span id="yr">2026</span> MIAMIX Events &middot; <a href="mailto:info@miamix.io">info@miamix.io</a></footer>
+
+<script>
+/* ==== SETUP: paste your form service URL here (Formspree, Web3Forms, etc.) ==== */
+var ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx" or "https://api.web3forms.com/submit"
+var EXTRA_FIELDS = {}; // e.g. { access_key: "YOUR_WEB3FORMS_KEY" }
+var MAX_MB = 5;
+var CONTACT = "info@miamix.io";
+
+var form = document.getElementById('app'),
+    steps = [].slice.call(form.querySelectorAll('.step')), cur = 0,
+    prev = document.getElementById('prev'), next = document.getElementById('next'),
+    send = document.getElementById('send'), msg = document.getElementById('msg');
+
+function show(n) {
+  cur = n;
+  steps.forEach(function (s, k) { s.hidden = (k !== n); });
+  document.getElementById('pbar').style.width = ((n + 1) / steps.length * 100) + '%';
+  document.getElementById('plabel').textContent = 'Step ' + (n + 1) + ' of ' + steps.length + ': ' + steps[n].dataset.title;
+  prev.hidden = (n === 0);
+  next.hidden = (n === steps.length - 1);
+  send.hidden = (n !== steps.length - 1);
+  msg.style.display = 'none';
+  document.getElementById('prog').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function stepOK(step) {
+  var groups = step.querySelectorAll('.group[data-min]');
+  for (var g = 0; g < groups.length; g++) {
+    var ok = groups[g].querySelectorAll('input:checked').length >= +groups[g].dataset.min;
+    groups[g].classList.toggle('bad', !ok);
+    if (!ok) { groups[g].scrollIntoView({ behavior: 'smooth', block: 'center' }); return false; }
+  }
+  var els = step.querySelectorAll('input,select,textarea');
+  for (var i = 0; i < els.length; i++) {
+    if (els[i].name === 'company') continue;
+    if (!els[i].checkValidity()) { els[i].reportValidity(); return false; }
+  }
+  return true;
+}
+
+next.addEventListener('click', function () { if (stepOK(steps[cur])) show(cur + 1); });
+prev.addEventListener('click', function () { show(cur - 1); });
+form.addEventListener('change', function (e) {
+  var g = e.target.closest && e.target.closest('.group');
+  if (g) g.classList.remove('bad');
+});
+
+/* Resume picker */
+var file = document.getElementById('resume'), drop = document.getElementById('drop'), ferr = document.getElementById('ferr');
+file.addEventListener('change', function () {
+  ferr.style.display = 'none'; ferr.textContent = '';
+  var f = file.files[0];
+  if (!f) { drop.classList.remove('has'); document.getElementById('dtitle').textContent = 'Tap to upload your resume'; return; }
+  var okType = /\.(pdf|docx?)$/i.test(f.name);
+  if (!okType || f.size > MAX_MB * 1024 * 1024) {
+    file.value = ''; drop.classList.remove('has');
+    ferr.textContent = !okType ? 'Please upload a PDF, DOC or DOCX file.' : 'That file is over ' + MAX_MB + ' MB. Please upload a smaller one.';
+    ferr.style.display = 'block';
+    document.getElementById('dtitle').textContent = 'Tap to upload your resume';
+    return;
+  }
+  drop.classList.add('has');
+  document.getElementById('dtitle').textContent = f.name;
+  document.getElementById('dsub').textContent = (f.size / 1024 / 1024).toFixed(2) + ' MB. Tap to replace.';
+});
+
+function fail(t) { msg.textContent = t; msg.style.display = 'block'; send.disabled = false; send.textContent = 'Submit application'; }
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (!stepOK(steps[cur])) return;
+  if (form.company.value) { finish(); return; } /* bots */
+  if (!ENDPOINT) { fail('This form isn’t connected yet. Please email your resume to ' + CONTACT + '.'); return; }
+  send.disabled = true; send.textContent = 'Sending...';
+  var fd = new FormData(form);
+  fd.delete('company');
+  fd.append('submitted_at', new Date().toISOString());
+  fd.append('page', location.href);
+  fd.append('_subject', 'New MIAMIX application: ' + form.first_name.value + ' ' + form.last_name.value);
+  Object.keys(EXTRA_FIELDS).forEach(function (k) { fd.append(k, EXTRA_FIELDS[k]); });
+  fetch(ENDPOINT, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+    .then(function (r) { if (r.ok) finish(); else fail('Something went wrong sending your application. Please try again or email ' + CONTACT + '.'); })
+    .catch(function () { fail('We couldn’t reach the server. Check your connection and try again, or email ' + CONTACT + '.'); });
+});
+
+function finish() {
+  form.style.display = 'none'; document.getElementById('prog').style.display = 'none';
+  var d = document.getElementById('done'); d.style.display = 'block'; d.focus();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.getElementById('yr').textContent = new Date().getFullYear();
+show(0);
+</script>
+</body>
+</html>
