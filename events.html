@@ -58,14 +58,46 @@
 
         /* Hero photo: Unsplash (building with palm trees) */
         /* About + Events background photo (dark overlay keeps text readable) */
-        .about-bg {
-            background:
-                linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-                url("https://plus.unsplash.com/premium_photo-1670333183316-ab697ddd9b13?fm=jpg&q=70&w=2000&auto=format&fit=crop") center / cover no-repeat,
-                #000;
-        }
+        .
+/* ABOUT + EVENTS — EDITORIAL BACKGROUND */
 
-        .about-bg h2, .about-bg p, .about-bg li, .about-bg span { text-shadow: 0 1px 14px rgba(0,0,0,.75); }
+.about-bg {
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.42) 0%,
+            rgba(0,0,0,.25) 50%,
+            rgba(0,0,0,.38) 100%
+        ),
+        url("https://plus.unsplash.com/premium_photo-1670333183316-ab697ddd9b13?fm=jpg&q=70&w=2000&auto=format&fit=crop")
+        center center / cover no-repeat,
+        #000;
+}
+
+.about-bg h2,
+.about-bg p,
+.about-bg li,
+.about-bg span {
+    text-shadow: 0 2px 10px rgba(0,0,0,.45);
+}
+
+/* Mobile: graduated overlay for stacked text */
+@media (max-width: 767px) {
+    .about-bg {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.42) 0%,
+                rgba(0,0,0,.25) 45%,
+                rgba(0,0,0,.48) 100%
+            ),
+            url("https://plus.unsplash.com/premium_photo-1670333183316-ab697ddd9b13?fm=jpg&q=70&w=2000&auto=format&fit=crop")
+            center center / cover no-repeat,
+            #000;
+    }
+}
+
         .hero-full { min-height: 100vh; min-height: 100dvh; }
         .hero {
             background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1668975144560-6418ff2c15fb?fm=jpg&q=70&w=2000&auto=format&fit=crop") center / cover no-repeat, #000;
@@ -366,7 +398,7 @@
 
     <!-- ABOUT / EVENTS -->
     <div class="about-bg border-b border-brand-border">
-    <section id="about" class="py-16 md:py-24 px-6 md:px-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+    <section id="about" class="py-20 md:py-28 px-6 md:px-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16"
         <div>
             <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-3">About Us</p>
             <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-6 leading-snug">Professional Staffing.<br>Exceptional Hospitality.</h2>
