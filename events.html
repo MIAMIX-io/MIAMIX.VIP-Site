@@ -29,6 +29,17 @@
         img, svg { max-width: 100%; }
         h1, h2, h3, a, p { overflow-wrap: anywhere; }
 
+        /* Brand colors as plain CSS so highlights never depend on the Tailwind config loading */
+        .text-brand-magenta { color: #E12BC0; }
+        .bg-brand-magenta { background-color: #E12BC0; }
+        .border-brand-magenta { border-color: #E12BC0; }
+        .border-brand-border { border-color: #444444; }
+        .text-brand-secondary { color: #cccccc; }
+        .hover\:text-brand-magenta:hover, .group:hover .group-hover\:text-brand-magenta { color: #E12BC0; }
+        .hover\:border-brand-magenta:hover { border-color: #E12BC0; }
+        .lg\:border-brand-border { border-color: #444444; }
+        .selection\:bg-brand-magenta ::selection, .selection\:bg-brand-magenta::selection { background: #E12BC0; color: #fff; }
+
         nav { background: rgba(0,0,0,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
         /* Hero photo: Unsplash (building with palm trees) */
