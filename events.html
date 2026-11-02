@@ -170,6 +170,43 @@
         @media (min-width: 640px) { .form-input.compact { padding: 0 16px; font-size: 16px; } .form-input.compact::placeholder { font-size: 16px; } }
 
         
+/* MINIMALIST SERVICES NAVIGATION */
+
+#services #prevBtn,
+#services #nextBtn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #fff;
+    font-size: 21px;
+    font-weight: 300;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition: all .3s ease;
+}
+
+#services #prevBtn:hover,
+#services #nextBtn:hover {
+    color: #E12BC0;
+    border-color: #E12BC0;
+    background: rgba(225, 43, 192, 0.08);
+}
+
+#services #prevBtn:active,
+#services #nextBtn:active {
+    transform: scale(.94);
+}
+
 
 /* FULL-BLEED EDITORIAL GALLERY */
 
@@ -428,10 +465,18 @@
                 <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Our Services</h2>
             </div>
             <div class="flex gap-2">
-                <button id="prevBtn" type="button" aria-label="Previous services" class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">&larr;</button>
-                <button id="nextBtn" type="button" aria-label="Next services" class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">&rarr;</button>
-            </div>
-        </div>
+    <button id="prevBtn" type="button"
+        aria-label="Previous services"
+        class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">
+        &larr;
+    </button>
+
+    <button id="nextBtn" type="button"
+        aria-label="Next services"
+        class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">
+        &rarr;
+    </button>
+</div>
 
         <div class="carousel" id="carousel">
             <article class="carousel-slide group">
