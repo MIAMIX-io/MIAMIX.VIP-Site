@@ -358,9 +358,16 @@
         <input type="email" id="r-email" class="form-input" placeholder="EMAIL ADDRESS" required>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER">
-        <input type="date" id="event_date" class="form-input text-white uppercase [color-scheme:dark]" required>
-    </div>
+    <input type="tel" id="r-phone" class="form-input" placeholder="PHONE NUMBER">
+    <input 
+        type="text" 
+        id="event_date" 
+        class="form-input [color-scheme:dark]" 
+        placeholder="EVENT DATE" 
+        onfocus="(this.type='date')" 
+        onblur="if(!this.value) this.type='text'" 
+        required
+</div>
     <input type="text" id="r-location" class="form-input" placeholder="EVENT TYPE & LOCATION" required>
     <div class="grid grid-cols-3 gap-4">
         <input type="number" id="r-guests" class="form-input" placeholder="GUESTS">
