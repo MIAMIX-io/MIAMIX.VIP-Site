@@ -77,6 +77,16 @@
         .form-input.compact::-webkit-outer-spin-button, .form-input.compact::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         @media (min-width: 640px) { .form-input.compact { padding: 0 16px; font-size: 16px; } .form-input.compact::placeholder { font-size: 16px; } }
 
+        /* Photo gallery carousel */
+        .gallery { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain; }
+        .gallery::-webkit-scrollbar { display: none; }
+        .gallery-slide { flex: 0 0 85%; scroll-snap-align: start; aspect-ratio: 4 / 3; position: relative;
+            background: #0a0a0a; border: 1px solid #444; overflow: hidden; }
+        .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        @media (min-width: 768px)  { .gallery-slide { flex-basis: calc((100% - 16px) / 2); } }
+        @media (min-width: 1024px) { .gallery-slide { flex-basis: calc((100% - 32px) / 3); } }
+
         /* Carousel: swipe + snap, no transform math */
         .carousel { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain; }
@@ -234,6 +244,29 @@
         </div>
     </section>
 
+    <!-- GALLERY -->
+    <section id="gallery" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-8 gap-6">
+            <div>
+                <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Gallery</p>
+                <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Events In Action</h2>
+            </div>
+            <div class="flex gap-2">
+                <button id="galPrev" type="button" aria-label="Previous photos" class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">&larr;</button>
+                <button id="galNext" type="button" aria-label="Next photos" class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">&rarr;</button>
+            </div>
+        </div>
+        <div class="gallery" id="gallery-track">
+            <!-- Add photos as images/gallery-1.jpg ... gallery-6.jpg (or add/remove slides) -->
+            <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX Events photo 1" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX Events photo 2" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX Events photo 3" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-4.jpg" alt="MIAMIX Events photo 4" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-5.jpg" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.style.display='none'"></figure>
+            <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX Events photo 6" loading="lazy" onerror="this.style.display='none'"></figure>
+        </div>
+    </section>
+
     <!-- CONTACT / REQUEST -->
     <section id="contact" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
@@ -363,6 +396,31 @@ Thank you.`);
         carousel.addEventListener('touchend', () => { paused = false; setTimeout(start, 3000); }, { passive: true });
         document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
         start();
+
+        /* Gallery carousel */
+        (function () {
+            const el = document.getElementById('gallery-track');
+            let timer = null, hold = false;
+            function go(dir) {
+                const slide = el.firstElementChild; if (!slide) return;
+                const gap = parseFloat(getComputedStyle(el).gap) || 0;
+                const w = slide.getBoundingClientRect().width + gap;
+                const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+                if (dir > 0 && atEnd) el.scrollTo({ left: 0, behavior: 'smooth' });
+                else if (dir < 0 && el.scrollLeft <= 4) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+                else el.scrollBy({ left: dir * w, behavior: 'smooth' });
+            }
+            const halt = () => { clearInterval(timer); timer = null; };
+            const run = () => { halt(); if (hold || reduced) return; timer = setInterval(() => go(1), 4000); };
+            document.getElementById('galNext').addEventListener('click', () => { go(1); run(); });
+            document.getElementById('galPrev').addEventListener('click', () => { go(-1); run(); });
+            el.addEventListener('mouseenter', () => { hold = true; halt(); });
+            el.addEventListener('mouseleave', () => { hold = false; run(); });
+            el.addEventListener('touchstart', () => { hold = true; halt(); }, { passive: true });
+            el.addEventListener('touchend', () => { hold = false; setTimeout(run, 3000); }, { passive: true });
+            document.addEventListener('visibilitychange', () => document.hidden ? halt() : run());
+            run();
+        })();
 
         /* How it works highlight */
         (function () {
