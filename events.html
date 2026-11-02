@@ -13,6 +13,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     
+    // How It Works cascading pink highlight animation
+(function initHowItWorks() {
+    const section = document.getElementById('how-it-works-section');
+    if (!section) return;
+
+    const steps = section.querySelectorAll('.how-step');
+    const titles = section.querySelectorAll('.step-title');
+    let currentStep = 0;
+    let stepInterval = null;
+
+    function highlightStep(index) {
+        steps.forEach((step, i) => {
+            const title = titles[i];
+            if (i === index) {
+                step.style.borderColor = '#E12BC0';
+                if (title) title.style.color = '#E12BC0';
+            } else {
+                step.style.borderColor = '#444444';
+                if (title) title.style.color = '#ffffff';
+            }
+        });
+    }
+
+    function clearHighlights() {
+        steps.forEach((step, i) => {
+            step.style.borderColor = '#444444';
+            if (titles[i]) titles[i].style.color = '#ffffff';
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                highlightStep(currentStep);
+                if (!stepInterval) {
+                    stepInterval = setInterval(() => {
+                        currentStep = (currentStep + 1) % steps.length;
+                        highlightStep(currentStep);
+                    }, 1400); // Transitions to next step every 1.4s
+                }
+            } else {
+                clearInterval(stepInterval);
+                stepInterval = null;
+                clearHighlights();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+})();
+
     <script>
     tailwind.config = {
         theme: {
