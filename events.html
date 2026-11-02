@@ -93,9 +93,28 @@
         @media (min-width: 640px) { .form-input.compact { padding: 0 16px; font-size: 16px; } .form-input.compact::placeholder { font-size: 16px; } }
 
         
+
 /* =========================================
-   MIAMIX EVENTS - IMAGE GALLERY
+   FULL-WIDTH EDITORIAL IMAGE GALLERY
 ========================================= */
+
+#gallery {
+    width: 100%;
+    max-width: none;
+    padding: 90px 0;
+    background: #000;
+    overflow: hidden;
+}
+
+/* Gallery heading */
+
+#gallery .gallery-heading {
+    max-width: 1600px;
+    margin: 0 auto 35px;
+    padding: 0 5%;
+}
+
+/* Gallery wrapper */
 
 .gallery-wrapper {
     position: relative;
@@ -103,34 +122,34 @@
     overflow: hidden;
 }
 
+/* Horizontal image track */
+
 .gallery {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
-    padding-bottom: 4px;
+    padding: 0 3%;
 }
 
 .gallery::-webkit-scrollbar {
     display: none;
 }
 
-/* Landscape gallery images */
+/* Large landscape images */
 
 .gallery-slide {
-    flex: 0 0 92%;
+    flex: 0 0 85%;
     min-width: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     position: relative;
     scroll-snap-align: center;
     overflow: hidden;
-    background: #0a0a0a;
-    border: 1px solid #333;
-    border-radius: 3px;
+    background: #111;
 }
 
 .gallery-slide img {
@@ -138,7 +157,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .6s ease;
+    transition: transform .7s ease;
 }
 
 .gallery-slide:hover img {
@@ -148,20 +167,40 @@
 /* Tablet */
 
 @media (min-width: 768px) {
+    .gallery {
+        gap: 16px;
+        padding: 0 4%;
+    }
+
     .gallery-slide {
-        flex-basis: calc((100% - 20px) / 2);
+        flex-basis: 72%;
+        aspect-ratio: 16 / 9;
     }
 }
 
 /* Desktop */
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
+    .gallery {
+        gap: 20px;
+        padding: 0 5%;
+    }
+
     .gallery-slide {
-        flex-basis: calc((100% - 40px) / 2);
+        flex-basis: 65%;
+        aspect-ratio: 16 / 9;
     }
 }
 
-/* Hidden navigation arrows */
+/* Very large screens */
+
+@media (min-width: 1600px) {
+    .gallery-slide {
+        flex-basis: 58%;
+    }
+}
+
+/* Hidden arrows */
 
 .gallery-nav-btn {
     position: absolute;
@@ -169,44 +208,36 @@
     transform: translateY(-50%);
     z-index: 10;
 
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: rgba(0, 0, 0, .65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    border: 1px solid rgba(255,255,255,.2);
     border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.3);
 
-    color: #fff;
-    font-size: 22px;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 23px;
 
     opacity: 0;
     pointer-events: none;
-
     cursor: pointer;
 
-    transition:
-        opacity .3s ease,
-        background .3s ease,
-        color .3s ease,
-        border-color .3s ease;
+    transition: all .3s ease;
 }
 
 .gallery-nav-btn.prev {
-    left: 14px;
+    left: 25px;
 }
 
 .gallery-nav-btn.next {
-    right: 14px;
+    right: 25px;
 }
-
-/* Reveal arrows on hover */
 
 .gallery-wrapper:hover .gallery-nav-btn,
 .gallery-wrapper:focus-within .gallery-nav-btn {
@@ -214,35 +245,23 @@
     pointer-events: auto;
 }
 
-/* Arrow hover */
-
 .gallery-nav-btn:hover {
     opacity: 1;
-    background: #000;
-    border-color: #E12BC0;
     color: #E12BC0;
+    border-color: #E12BC0;
 }
 
-/* Touchscreen devices */
+/* Touchscreens */
 
 @media (hover: none) {
     .gallery-nav-btn {
+        width: 40px;
+        height: 40px;
         opacity: .65;
         pointer-events: auto;
-        width: 38px;
-        height: 38px;
     }
 }
 
-/* Reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-    .gallery,
-    .gallery-slide img {
-        scroll-behavior: auto;
-        transition: none;
-    }
-}
         /* "EVENT DATE" label so the date field reads like the other fields (iOS shows date inputs blank) */
         .date-wrap { position: relative; }
         .date-ph { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: #aaa; font-weight: 300;
@@ -408,7 +427,7 @@
 
     <!-- GALLERY -->
 <section id="gallery" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-    <div class="mb-8">
+    <div class="gallery-heading">
         <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Gallery</p>
         <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Events In Action</h2>
     </div>
