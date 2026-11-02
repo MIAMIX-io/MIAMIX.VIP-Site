@@ -92,15 +92,105 @@
         .form-input.compact::-webkit-outer-spin-button, .form-input.compact::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         @media (min-width: 640px) { .form-input.compact { padding: 0 16px; font-size: 16px; } .form-input.compact::placeholder { font-size: 16px; } }
 
-        /* Photo gallery carousel */
-        .gallery { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain; }
-        .gallery::-webkit-scrollbar { display: none; }
-        .gallery-slide { flex: 0 0 85%; scroll-snap-align: start; aspect-ratio: 4 / 3; position: relative;
-            background: #0a0a0a; border: 1px solid #444; overflow: hidden; }
-        .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        @media (min-width: 768px)  { .gallery-slide { flex-basis: calc((100% - 16px) / 2); } }
-        @media (min-width: 1024px) { .gallery-slide { flex-basis: calc((100% - 32px) / 3); } }
+        /* Gallery Container & Wrapper */
+.gallery-wrapper {
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Larger slide cards */
+.gallery-slide {
+  flex: 0 0 92%;
+  scroll-snap-align: center;
+  aspect-ratio: 16 / 9; /* Switch to 16/9 or 3/2 for a much larger visual presence */
+  position: relative;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 1 full card + preview on tablets, 2 large cards on desktops */
+@media (min-width: 768px) {
+  .gallery-slide {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+}
+@media (min-width: 1280px) {
+  /* Show only 2 large items per view on large monitors, or 2.2 for a peek effect */
+  .gallery-slide {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+/* Hidden Overlay Arrows */
+.gallery-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery-nav-btn.prev {
+  left: 16px;
+}
+.gallery-nav-btn.next {
+  right: 16px;
+}
+
+/* Reveal arrows when hovering over the gallery wrapper */
+.gallery-wrapper:hover .gallery-nav-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-nav-btn:hover {
+  background: rgba(10, 10, 10, 0.9);
+  border-color: #ff007f; /* your brand magenta */
+  color: #ff007f;
+}
+
+/* Always keep arrows accessible or visible on touchscreens */
+@media (hover: none) {
+  .gallery-nav-btn {
+    opacity: 0.7;
+    pointer-events: auto;
+  }
+}
+
 
         /* "EVENT DATE" label so the date field reads like the other fields (iOS shows date inputs blank) */
         .date-wrap { position: relative; }
@@ -266,19 +356,18 @@
     </section>
 
     <!-- GALLERY -->
-    <section id="gallery" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-8 gap-6">
-            <div>
-                <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Gallery</p>
-                <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Events In Action</h2>
-            </div>
-            <div class="flex gap-2">
-                <button id="galPrev" type="button" aria-label="Previous photos" class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">&larr;</button>
-                <button id="galNext" type="button" aria-label="Next photos" class="border border-brand-border w-12 h-12 flex items-center justify-center text-white hover:border-brand-magenta hover:text-brand-magenta transition-colors text-xl">&rarr;</button>
-            </div>
-        </div>
+<section id="gallery" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+    <div class="mb-8">
+        <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Gallery</p>
+        <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Events In Action</h2>
+    </div>
+
+    <!-- Gallery Wrapper holding track & floating hidden buttons -->
+    <div class="gallery-wrapper">
+        <button id="galPrev" type="button" aria-label="Previous photos" class="gallery-nav-btn prev">&larr;</button>
+        <button id="galNext" type="button" aria-label="Next photos" class="gallery-nav-btn next">&rarr;</button>
+
         <div class="gallery" id="gallery-track">
-            <!-- Add photos as images/gallery-1.jpg ... gallery-6.jpg (or add/remove slides) -->
             <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX Events photo 1" loading="lazy" onerror="this.style.display='none'"></figure>
             <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX Events photo 2" loading="lazy" onerror="this.style.display='none'"></figure>
             <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX Events photo 3" loading="lazy" onerror="this.style.display='none'"></figure>
@@ -286,7 +375,8 @@
             <figure class="gallery-slide"><img src="images/gallery-5.png" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.style.display='none'"></figure>
             <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX Events photo 6" loading="lazy" onerror="this.style.display='none'"></figure>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- CONTACT / REQUEST -->
     <section id="contact" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
@@ -425,6 +515,25 @@ Thank you.`);
 
         /* Gallery carousel */
         (function () {
+            const track = document.getElementById('gallery-track');
+const prevBtn = document.getElementById('galPrev');
+const nextBtn = document.getElementById('galNext');
+
+if (track && prevBtn && nextBtn) {
+  const getScrollAmount = () => {
+    const slide = track.querySelector('.gallery-slide');
+    return slide ? slide.offsetWidth + 20 : 400; // slide width + gap
+  };
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+}
+
             const el = document.getElementById('gallery-track');
             let timer = null, hold = false;
             function go(dir) {
