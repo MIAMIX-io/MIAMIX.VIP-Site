@@ -43,8 +43,9 @@
         nav { background: rgba(0,0,0,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
         /* Hero photo: Unsplash (building with palm trees) */
+        .hero-full { min-height: 100vh; min-height: 100dvh; }
         .hero {
-            background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://unsplash.com/photos/gx95hd8kkIs/download?force=true&w=1920") center / cover no-repeat, #000;
+            background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1668975144560-6418ff2c15fb?fm=jpg&q=70&w=2000&auto=format&fit=crop") center / cover no-repeat, #000;
         }
 
         .form-input {
@@ -82,8 +83,8 @@
         .how-step.active { border-top-color: #E12BC0; }
         .how-step.active .step-title { color: #E12BC0; }
 
-        .brand-button { border: 1px solid #E12BC0; color: #E12BC0; transition: all .3s ease; }
-        .brand-button:hover { background: #E12BC0; color: #fff; }
+        .brand-button { border: 1px solid #E12BC0; background: #E12BC0; color: #fff; transition: all .3s ease; }
+        .brand-button:hover { background: #000; color: #E12BC0; }
 
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #E12BC0; outline-offset: 3px; }
         @media (prefers-reduced-motion: reduce) {
@@ -112,7 +113,7 @@
             <button id="mobile-menu-btn" type="button" class="md:hidden text-white uppercase tracking-widest text-sm py-2"
                     aria-expanded="false" aria-controls="mobile-menu">Menu</button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-6 pt-2 flex-col gap-5 text-sm uppercase tracking-widest">
+        <div id="mobile-menu" class="hidden md:hidden absolute right-6 top-full w-56 bg-black/95 px-6 py-6 flex-col gap-5 text-right text-sm uppercase tracking-widest shadow-2xl">
             <a href="#home" class="hover:text-brand-magenta">Home</a>
             <a href="#services" class="hover:text-brand-magenta">Services</a>
             <a href="#about" class="hover:text-brand-magenta">About Us</a>
@@ -123,7 +124,7 @@
     </nav>
 
     <!-- HERO -->
-    <section id="home" class="hero relative flex items-center min-h-[650px] min-h-[100svh]">
+    <section id="home" class="hero relative flex items-center hero-full">
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20 pb-12">
             <div class="max-w-3xl">
                 <p class="text-brand-magenta uppercase tracking-widest sm:tracking-[0.3em] text-sm mb-6 font-medium">MIAMIX Events | Miami, Florida</p>
