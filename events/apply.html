@@ -245,8 +245,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 calc(26px + env(safe-area
 
 <script>
 /* ==== SETUP: paste your form service URL here (Formspree, Web3Forms, etc.) ==== */
-var ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx" or "https://api.web3forms.com/submit"
-var EXTRA_FIELDS = {}; // e.g. { access_key: "YOUR_WEB3FORMS_KEY" }
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbyfEC_AxQz_3cA2zsGEIjB0ABBA1iS-BE2qXGUK90iJIO4M_9GTNBetYDN_o2R_ONGKIA/exec";
 var MAX_MB = 5;
 var CONTACT = "info@miamix.io";
 
@@ -310,22 +309,50 @@ file.addEventListener('change', function () {
 
 function fail(t) { msg.textContent = t; msg.style.display = 'block'; send.disabled = false; send.textContent = 'Submit application'; }
 
+function toBase64(f) {
+  return new Promise(function (res, rej) {
+    var r = new FileReader();
+    r.onload = function () { res(String(r.result).split(',')[1]); };
+    r.onerror = rej;
+    r.readAsDataURL(f);
+  });
+}
+function one(n) { var x = form.querySelector('[name="' + n + '"]:checked'); return x ? x.value : ''; }
+function many(n) { return [].slice.call(form.querySelectorAll('[name="' + n + '"]:checked')).map(function (x) { return x.value; }); }
+function v(n) { return form.elements[n].value.trim(); }
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   if (!stepOK(steps[cur])) return;
   if (form.company.value) { finish(); return; } /* bots */
-  if (!ENDPOINT) { fail('This form isn’t connected yet. Please email your resume to ' + CONTACT + '.'); return; }
   send.disabled = true; send.textContent = 'Sending...';
-  var fd = new FormData(form);
-  fd.delete('company');
-  fd.append('submitted_at', new Date().toISOString());
-  fd.append('page', location.href);
-  fd.append('_subject', 'New MIAMIX application: ' + form.first_name.value + ' ' + form.last_name.value);
-  Object.keys(EXTRA_FIELDS).forEach(function (k) { fd.append(k, EXTRA_FIELDS[k]); });
-  fetch(ENDPOINT, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
-    .then(function (r) { if (r.ok) finish(); else fail('Something went wrong sending your application. Please try again or email ' + CONTACT + '.'); })
-    .catch(function () { fail('We couldn’t reach the server. Check your connection and try again, or email ' + CONTACT + '.'); });
-});
+  var f = file.files[0];
+  toBase64(f).then(function (b64) {
+    var payload = {
+      type: 'application',
+      first_name: v('first_name'), last_name: v('last_name'),
+      email: v('email'), phone: v('phone'), city: v('city'),
+      age_18: one('age_18'), work_auth: one('work_auth'), transport: one('transport'),
+      roles: many('roles'), years: v('years'), languages: v('languages'),
+      certs: many('certs'), days: many('days'), shifts: many('shifts'),
+      about: v('about'),
+      resume: { name: f.name, type: f.type, data: b64 }
+    };
+    return fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (j) {
+    if (j && j.ok) finish();
+    else fail('Something went wrong sending your application. Please try again or email ' + CONTACT + '.');
+  })
+    .catch(function () {
+    fail('We couldn’t reach the server. Check your connection and try again, or email ' + CONTACT + '.');
+  });
+});   // <-- add this line
 
 function finish() {
   form.style.display = 'none'; document.getElementById('prog').style.display = 'none';
