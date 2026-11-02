@@ -94,150 +94,121 @@
 
         
 
-/* =========================================
-   FULL-WIDTH EDITORIAL IMAGE GALLERY
-========================================= */
+/* FULL-BLEED EDITORIAL GALLERY */
 
 #gallery {
     width: 100%;
     max-width: none;
-    padding: 90px 0;
+    padding: 0;
+    margin: 0;
     background: #000;
     overflow: hidden;
 }
 
-/* Gallery heading */
-
 #gallery .gallery-heading {
-    max-width: 1600px;
-    margin: 0 auto 35px;
-    padding: 0 5%;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    padding: 30px;
+    pointer-events: none;
 }
 
-/* Gallery wrapper */
+#gallery .gallery-heading p {
+    color: #E12BC0;
+    letter-spacing: .25em;
+}
+
+#gallery .gallery-heading h2 {
+    color: #fff;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1;
+}
 
 .gallery-wrapper {
     position: relative;
     width: 100%;
+    height: min(85vh, 850px);
+    min-height: 550px;
     overflow: hidden;
 }
 
-/* Horizontal image track */
-
 .gallery {
     display: flex;
-    gap: 12px;
+    width: 100%;
+    height: 100%;
+    gap: 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    overscroll-behavior-x: contain;
-    padding: 0 3%;
 }
 
 .gallery::-webkit-scrollbar {
     display: none;
 }
 
-/* Large landscape images */
-
 .gallery-slide {
-    flex: 0 0 85%;
-    min-width: 0;
-    aspect-ratio: 16 / 10;
     position: relative;
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
     overflow: hidden;
     background: #111;
 }
 
+.gallery-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.65) 0%,
+        rgba(0,0,0,.2) 55%,
+        rgba(0,0,0,.05) 100%
+    );
+    pointer-events: none;
+}
+
 .gallery-slide img {
-    display: block;
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
-    transition: transform .7s ease;
+    object-position: center;
+    transition: transform 1s ease;
 }
 
 .gallery-slide:hover img {
     transform: scale(1.025);
 }
 
-/* Tablet */
-
-@media (min-width: 768px) {
-    .gallery {
-        gap: 16px;
-        padding: 0 4%;
-    }
-
-    .gallery-slide {
-        flex-basis: 72%;
-        aspect-ratio: 16 / 9;
-    }
-}
-
-/* Desktop */
-
-@media (min-width: 1200px) {
-    .gallery {
-        gap: 20px;
-        padding: 0 5%;
-    }
-
-    .gallery-slide {
-        flex-basis: 65%;
-        aspect-ratio: 16 / 9;
-    }
-}
-
-/* Very large screens */
-
-@media (min-width: 1600px) {
-    .gallery-slide {
-        flex-basis: 58%;
-    }
-}
-
-/* Hidden arrows */
+/* DISCREET NAVIGATION */
 
 .gallery-nav-btn {
     position: absolute;
+    z-index: 10;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
-
     width: 48px;
     height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.3);
-
-    background: rgba(0,0,0,.55);
-    backdrop-filter: blur(10px);
-
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(0,0,0,.3);
+    backdrop-filter: blur(8px);
     color: white;
-    font-size: 23px;
-
+    font-size: 22px;
     opacity: 0;
     pointer-events: none;
     cursor: pointer;
-
     transition: all .3s ease;
 }
 
-.gallery-nav-btn.prev {
-    left: 25px;
-}
-
-.gallery-nav-btn.next {
-    right: 25px;
-}
+.gallery-nav-btn.prev { left: 30px; }
+.gallery-nav-btn.next { right: 30px; }
 
 .gallery-wrapper:hover .gallery-nav-btn,
 .gallery-wrapper:focus-within .gallery-nav-btn {
@@ -246,19 +217,32 @@
 }
 
 .gallery-nav-btn:hover {
-    opacity: 1;
     color: #E12BC0;
     border-color: #E12BC0;
 }
 
-/* Touchscreens */
-
 @media (hover: none) {
+    .gallery-nav-btn {
+        opacity: .7;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-wrapper {
+        height: 75vh;
+        min-height: 500px;
+    }
+
+    #gallery .gallery-heading {
+        left: 4%;
+        right: 4%;
+        padding: 20px;
+    }
+
     .gallery-nav-btn {
         width: 40px;
         height: 40px;
-        opacity: .65;
-        pointer-events: auto;
     }
 }
 
@@ -426,24 +410,44 @@
     </section>
 
     <!-- GALLERY -->
-<section id="gallery" class="py-16 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-    <div class="gallery-heading">
-        <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Gallery</p>
-        <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Events In Action</h2>
-    </div>
+<section id="gallery">
 
-    <!-- Gallery Wrapper holding track & floating hidden buttons -->
     <div class="gallery-wrapper">
-        <button id="galPrev" type="button" aria-label="Previous photos" class="gallery-nav-btn prev">&larr;</button>
-        <button id="galNext" type="button" aria-label="Next photos" class="gallery-nav-btn next">&rarr;</button>
+
+        <div class="gallery-heading">
+            <p>MIAMIX EVENTS</p>
+            <h2>Events in Action</h2>
+        </div>
+
+        <button id="galPrev" class="gallery-nav-btn prev">&larr;</button>
+        <button id="galNext" class="gallery-nav-btn next">&rarr;</button>
 
         <div class="gallery" id="gallery-track">
-            <figure class="gallery-slide"><img src="images/gallery-1.jpg" alt="MIAMIX Events photo 1" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-2.jpg" alt="MIAMIX Events photo 2" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-3.jpg" alt="MIAMIX Events photo 3" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-4.png" alt="MIAMIX Events photo 4" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-5.png" alt="MIAMIX Events photo 5" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
-            <figure class="gallery-slide"><img src="images/gallery-6.jpg" alt="MIAMIX Events photo 6" loading="lazy" onerror="this.closest('figure').remove()'"></figure>
+
+            <figure class="gallery-slide">
+                <img src="images/gallery-1.jpg" alt="MIAMIX event hospitality">
+            </figure>
+
+            <figure class="gallery-slide">
+                <img src="images/gallery-2.jpg" alt="MIAMIX event service">
+            </figure>
+
+            <figure class="gallery-slide">
+                <img src="images/gallery-3.jpg" alt="MIAMIX private event">
+            </figure>
+
+            <figure class="gallery-slide">
+                <img src="images/gallery-4.png" alt="MIAMIX hospitality">
+            </figure>
+
+            <figure class="gallery-slide">
+                <img src="images/gallery-5.png" alt="MIAMIX event experience">
+            </figure>
+
+            <figure class="gallery-slide">
+                <img src="images/gallery-6.jpg" alt="MIAMIX event team">
+            </figure>
+
         </div>
     </div>
 </section>
