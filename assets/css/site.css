@@ -50,6 +50,20 @@ header {
 
 .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; font-weight: 200; cursor: pointer; z-index: 2002; }
 
+.brand-button {
+  border: 1px solid var(--magenta);
+  background: var(--magenta);
+  color: #fff;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease;
+}
+.brand-button:hover,
+.brand-button:active,
+.brand-button:focus-visible {
+  background: #000;
+  color: var(--magenta);
+}
+
 /* --- FOOTER --- */
 footer {
     text-align: center; padding: 60px 20px;
