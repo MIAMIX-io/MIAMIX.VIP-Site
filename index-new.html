@@ -21,7 +21,7 @@ sitemap: false
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="{{ home.hero.image }}">
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/home.css">
@@ -108,6 +108,7 @@ sitemap: false
 
     <!-- SERVICES -->
     <section class="services-wrapper" id="services">
+        <!-- Delete this <video> tag to show only the photo set by --services-img in home.css -->
         <video class="services-video-bg" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
             <source src="/video/MIAMIX_logoEdits-4.mp4" type="video/mp4">
         </video>
@@ -120,24 +121,12 @@ sitemap: false
                 <p>{{ home.services.intro }}</p>
             </div>
 
-            <div class="services-grid">
+            <div class="svc-list">
                 {%- for item in home.services.items %}
-                <a class="service-card" href="{{ item.link }}">
-                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        {%- case item.icon -%}
-                        {%- when 'video' -%}
-                            <rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/>
-                        {%- when 'content' -%}
-                            <rect x="3" y="3.5" width="18" height="17" rx="3"/><circle cx="8.5" cy="9" r="1.7"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/>
-                        {%- when 'strategy' -%}
-                            <path d="M3.5 20.5h17"/><path d="M5.5 16l4-4.5 3.5 3L19 6.5"/><path d="M15 6.5h4v4"/>
-                        {%- when 'events' -%}
-                            <path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.5 6.8 19.2l1-5.9L3.5 9.2l5.9-.8z"/>
-                        {%- endcase -%}
-                    </svg>
-                    <h3>{{ item.title }}</h3>
-                    <p>{{ item.text }}</p>
-                    <span class="service-link">Learn more &rarr;</span>
+                <a class="svc-row" href="{{ item.link }}">
+                    <h3 class="svc-title">{{ item.title }}</h3>
+                    <p class="svc-text">{{ item.text }}</p>
+                    <span class="svc-more">Learn more</span>
                 </a>
                 {%- endfor %}
             </div>
