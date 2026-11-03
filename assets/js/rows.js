@@ -4,6 +4,9 @@
  * - A row loops endlessly only when its posts are wider than the screen;
  *   shorter rows stay a normal static shelf, so you never see the same poster twice side by side.
  * - Loop = three copies of the posts; scrollLeft is kept inside the middle copy.
+ * - The loop "jump" happens only once native scrolling has stopped (or if the very
+ *   edge is hit). Changing scrollLeft mid-swipe cancels the browser's momentum and
+ *   caused the glitching on fast flicks.
  */
 (function () {
     'use strict';
@@ -24,6 +27,8 @@
         var start = 0;     // scrollLeft where the middle copy begins
         var lastWidth = 0;
         var anim = null;
+        var idleTimer = null;
+        var touching = false;
 
         function makeClone(node) {
             var c = node.cloneNode(true);
@@ -74,6 +79,21 @@
             return 0;
         }
 
+        // Native scrolling (touch / wheel / trackpad): wait until it has settled
+        // before jumping, so we never interrupt the browser's momentum.
+        function onScroll() {
+            if (!looping) return;
+            var x = track.scrollLeft;
+            var max = track.scrollWidth - track.clientWidth;
+            if (x <= 2 || x >= max - 2) { wrap(); return; }   // hit a hard edge: jump now
+            clearTimeout(idleTimer);
+            idleTimer = setTimeout(settle, 140);
+        }
+        function settle() {
+            if (touching || dragging) { idleTimer = setTimeout(settle, 140); return; }
+            wrap();
+        }
+
         function updateButtons() {
             var canScroll = looping || track.scrollWidth > track.clientWidth + 2;
             if (prev) prev.hidden = !canScroll;
@@ -113,10 +133,12 @@
         if (prev) prev.addEventListener('click', function () { animateBy(-pageAmount()); });
         if (next) next.addEventListener('click', function () { animateBy(pageAmount()); });
 
-        track.addEventListener('scroll', wrap, { passive: true });
+        track.addEventListener('scroll', onScroll, { passive: true });
         // User input (wheel / touch / drag) should interrupt a running button animation.
         track.addEventListener('wheel', cancelAnim, { passive: true });
-        track.addEventListener('touchstart', cancelAnim, { passive: true });
+        track.addEventListener('touchstart', function () { touching = true; cancelAnim(); }, { passive: true });
+        track.addEventListener('touchend', function () { touching = false; }, { passive: true });
+        track.addEventListener('touchcancel', function () { touching = false; }, { passive: true });
 
         // Mouse drag (touch uses native scrolling).
         var dragging = false, moved = 0, startX = 0, startLeft = 0;
