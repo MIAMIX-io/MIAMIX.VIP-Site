@@ -1,0 +1,167 @@
+---
+layout: null
+permalink: /index-new/
+sitemap: false
+---
+{%- comment -%}
+  TEST COPY of the new homepage. Preview at /index-new/ and, when happy,
+  replace index.html with this file's contents (keep the front matter at the top).
+  Content settings live in _data/home.yml and _data/channels.yml.
+{%- endcomment -%}
+{%- assign home = site.data.home -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex"><!-- remove when this becomes index.html -->
+    <title>MIAMIX - VIP</title>
+    <meta name="description" content="MIAMIX VIP: curated stories on sports, travel, hospitality, culture, fashion and more from Miami.">
+
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="{{ home.hero.image }}">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+</head>
+<body>
+
+    {% include header.html %}
+
+    <!-- HERO -->
+    <section class="hero" style="--hero-image: url('{{ home.hero.image }}');">
+        <h1>{{ home.hero.title }}</h1>
+        <p>{{ home.hero.subtitle }}</p>
+        {%- if home.hero.cta_url %}
+        <a href="{{ home.hero.cta_url }}" class="hero-btn">{{ home.hero.cta_text | default: "Learn more" }}</a>
+        {%- endif %}
+    </section>
+
+    <main class="rows">
+
+        <!-- LATEST: newest posts across every channel, one card per story, image posts only -->
+        {%- assign sorted_posts = site.posts | sort: 'date' | reverse -%}
+        {%- assign latest = '' | split: '' -%}
+        {%- assign seen = '|' -%}
+        {%- for post in sorted_posts -%}
+            {%- assign stem = post.path | split: '/' | last | remove: '.md' -%}
+            {%- assign key = '|' | append: post.title | append: '|' -%}
+            {%- if site.data.thumbs contains stem -%}
+                {%- unless seen contains key -%}
+                    {%- assign latest = latest | push: post -%}
+                    {%- assign seen = seen | append: post.title | append: '|' -%}
+                {%- endunless -%}
+            {%- endif -%}
+            {%- if latest.size >= home.latest.count -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if latest.size > 0 -%}
+            {% include row.html id="latest" eyebrow=home.latest.eyebrow title=home.latest.title tagline=home.latest.tagline accent=home.latest.accent posts=latest %}
+        {%- endif -%}
+
+        <!-- FEATURED PARTNERS: posts marked Featured in Notion (or the old Carousel / Partner placements) -->
+        {%- assign featured_all = site.posts | where_exp: "item", "item.featured == true or item.grid_placement == 'Carousel' or item.grid_placement == 'Partner'" | sort: 'date' | reverse -%}
+        {%- assign featured = '' | split: '' -%}
+        {%- assign seen = '|' -%}
+        {%- for post in featured_all -%}
+            {%- assign key = '|' | append: post.title | append: '|' -%}
+            {%- unless seen contains key -%}
+                {%- assign featured = featured | push: post -%}
+                {%- assign seen = seen | append: post.title | append: '|' -%}
+            {%- endunless -%}
+        {%- endfor -%}
+        {%- if featured.size > 0 -%}
+            {% include row.html id="featured" variant="featured" titles="brand" eyebrow=home.featured.eyebrow title=home.featured.title tagline=home.featured.tagline accent=home.featured.accent posts=featured %}
+        {%- endif -%}
+
+        <!-- CHANNEL ROWS: one shelf per entry in _data/channels.yml; empty shelves hide themselves -->
+        {%- for row in site.data.channels.rows -%}
+            {%- if row.show == false -%}{%- continue -%}{%- endif -%}
+            {%- assign collected = '' | split: '' -%}
+            {%- for ch in row.channels -%}
+                {%- assign matched = site.posts | where_exp: "item", "item.channel contains ch" -%}
+                {%- assign collected = collected | concat: matched -%}
+            {%- endfor -%}
+            {%- assign collected = collected | sort: 'date' | reverse -%}
+
+            {%- assign row_posts = '' | split: '' -%}
+            {%- assign seen = '|' -%}
+            {%- for post in collected -%}
+                {%- assign key = '|' | append: post.title | append: '|' -%}
+                {%- unless seen contains key -%}
+                    {%- assign row_posts = row_posts | push: post -%}
+                    {%- assign seen = seen | append: post.title | append: '|' -%}
+                {%- endunless -%}
+            {%- endfor -%}
+
+            {%- if row_posts.size > 0 -%}
+                {% include row.html id=row.id eyebrow=row.eyebrow title=row.title tagline=row.tagline accent=row.accent url=row.url posts=row_posts %}
+            {%- endif -%}
+        {%- endfor -%}
+
+    </main>
+
+    <!-- SERVICES -->
+    <section class="services-wrapper" id="services">
+        <video class="services-video-bg" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
+            <source src="/video/MIAMIX_logoEdits-4.mp4" type="video/mp4">
+        </video>
+        <div class="services-overlay"></div>
+
+        <div class="services-inner">
+            <div class="services-head">
+                <span class="services-eyebrow">{{ home.services.eyebrow }}</span>
+                <h2>{{ home.services.title }}</h2>
+                <p>{{ home.services.intro }}</p>
+            </div>
+
+            <div class="services-grid">
+                {%- for item in home.services.items %}
+                <a class="service-card" href="{{ item.link }}">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        {%- case item.icon -%}
+                        {%- when 'video' -%}
+                            <rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/>
+                        {%- when 'content' -%}
+                            <rect x="3" y="3.5" width="18" height="17" rx="3"/><circle cx="8.5" cy="9" r="1.7"/><path d="M3.5 17l5-4.5 3.5 3 3-2.5 5.5 4.5"/>
+                        {%- when 'strategy' -%}
+                            <path d="M3.5 20.5h17"/><path d="M5.5 16l4-4.5 3.5 3L19 6.5"/><path d="M15 6.5h4v4"/>
+                        {%- when 'events' -%}
+                            <path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.5 6.8 19.2l1-5.9L3.5 9.2l5.9-.8z"/>
+                        {%- endcase -%}
+                    </svg>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.text }}</p>
+                    <span class="service-link">Learn more &rarr;</span>
+                </a>
+                {%- endfor %}
+            </div>
+
+            <div class="services-foot">
+                {%- assign brand_names = '' | split: '' -%}
+                {%- for post in featured -%}
+                    {%- if post.business_name and post.business_name != '' -%}
+                        {%- assign brand_names = brand_names | push: post.business_name -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                {%- assign brand_names = brand_names | uniq -%}
+                {%- if brand_names.size > 0 %}
+                <p class="services-proof">
+                    <strong>In our stories:</strong>
+                    {%- for name in brand_names %}{{ name }}{% unless forloop.last %}<span class="sep">/</span>{% endunless %}{% endfor %}
+                </p>
+                {%- else %}
+                <span></span>
+                {%- endif %}
+                <a class="cta-btn" href="{{ home.services.cta_url }}">{{ home.services.cta_text }}</a>
+            </div>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/rows.js" defer></script>
+</body>
+</html>
