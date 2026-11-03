@@ -27,11 +27,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIAMIX - {{ channel_name }}</title>
+    <title>MIAMIX - {{ channel_name | escape }}</title>
     <meta name="description" content="{{ description }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MIAMIX VIP">
-    <meta property="og:title" content="MIAMIX - {{ channel_name }}">
+    <meta property="og:title" content="MIAMIX - {{ channel_name | escape }}">
     <meta property="og:description" content="{{ description }}">
     <meta property="og:image" content="{{ hero_image }}">
     <meta name="twitter:card" content="summary_large_image">
@@ -82,7 +82,7 @@
             {%- endfor %}
         </div>
         {%- else %}
-        <p class="empty-state">New {{ channel_name | downcase }} stories are on the way. Join the list below to hear first.</p>
+        <p class="empty-state">New {{ channel_name | downcase | escape }} stories are on the way. Join the list below to hear first.</p>
         {%- endif %}
     </main>
 
@@ -90,7 +90,7 @@
     <section class="optin-section">
         <div class="optin-box">
             <h2>Get On The List</h2>
-            <p>Subscribe to the MIAMIX {{ channel_name }} channel for the latest VIP updates, premium event access, and exclusive content.</p>
+            <p>Subscribe to the MIAMIX {{ channel_name | escape }} channel for the latest VIP updates, premium event access, and exclusive content.</p>
             <form class="optin-form" id="optin-form">
                 <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" aria-label="First name" required>
                 <input type="text" name="last_name" placeholder="Last name" autocomplete="family-name" aria-label="Last name" required>
