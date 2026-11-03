@@ -60,42 +60,35 @@ sitemap: false
             {% include row.html id="latest" eyebrow=home.latest.eyebrow title=home.latest.title tagline=home.latest.tagline accent=home.latest.accent posts=latest %}
         {%- endif -%}
 
-        <section id="partners" class="partners py-16 md:py-20 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
-  <div class="mb-10">
-    <p class="text-brand-magenta font-medium tracking-[0.3em] uppercase text-sm mb-2">Spotlight</p>
-    <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-4">Featured Partners</h2>
-    <p class="text-brand-secondary">Brands and organizations we're proud to showcase.</p>
+        <!--
+  FEATURED PARTNERS (logo wall) - paste in place of the current <section id="partners"> in index-new.
+  1) Save featured-partners.css as /assets/css/partners.css and add to <head>, after home.css:
+       <link rel="stylesheet" href="/assets/css/partners.css">
+  2) Upload the images/partners/ folder to /images/partners/ on the site.
+  3) To make a logo clickable, change its <div class="logo-tile"> to <a class="logo-tile" href="...">.
+-->
+<section id="partners" class="partners">
+  <div class="partners-head">
+    <span class="partners-eyebrow">Spotlight</span>
+    <h2>Featured Partners</h2>
+    <p class="partners-tag">Brands and organizations we're proud to showcase.</p>
   </div>
 
-  <div class="partner-row">
-    <a class="partner-card" href="https://miamix.vip/miami-freedom-park/">
-      <div class="logo-tile">
-        <img src="images/partners/inter-miami.svg" alt="Inter Miami" loading="lazy"
-             onerror="this.outerHTML='<span class=\'wordmark\'>Inter Miami</span>'">
-      </div>
-      <span class="cat">Inter Miami</span>
-      <span class="name">Inter Miami</span>
-    </a>
-
-    <a class="partner-card" href="https://miamix.vip/bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/">
-      <div class="logo-tile">
-        <img src="images/partners/bw-hair-studio.svg" alt="BW Hair Studio" loading="lazy"
-             onerror="this.outerHTML='<span class=\'wordmark\'>BW Hair Studio</span>'">
-      </div>
-      <span class="cat">Fashion &amp; Lifestyle</span>
-      <span class="name">BW Hair Studio</span>
-    </a>
-
-    <a class="partner-card" href="https://miamix.vip/faena-miami/">
-      <div class="logo-tile">
-        <img src="images/partners/faena-miami.svg" alt="Faena Miami" loading="lazy"
-             onerror="this.outerHTML='<span class=\'wordmark\'>Faena Miami</span>'">
-      </div>
-      <span class="cat">Hospitality</span>
-      <span class="name">Faena Miami</span>
-    </a>
+  <div class="logo-grid">
+    <a class="logo-tile" href="/miami-freedom-park/" aria-label="Inter Miami"><img src="/images/partners/inter-miami.png" alt="Inter Miami" loading="lazy"></a>
+    <div class="logo-tile"><img src="/images/partners/afa.png" alt="AFA - Argentine Football Association" loading="lazy"></div>
+    <div class="logo-tile"><img src="/images/partners/riders-miami.png" alt="Riders Miami Motorsports" loading="lazy"></div>
+    <a class="logo-tile" href="/aerolineas-argentinas/" aria-label="Aerolíneas Argentinas"><img src="/images/partners/aerolineas-argentinas.png" alt="Aerolíneas Argentinas" loading="lazy"></a>
+    <div class="logo-tile"><img src="/images/partners/salta.png" alt="Salta Argentina" loading="lazy"></div>
+    <div class="logo-tile"><img src="/images/partners/brightline.png" alt="Brightline" loading="lazy"></div>
+    <div class="logo-tile"><img src="/images/partners/lennox-hotels.png" alt="Lennox Hotels" loading="lazy"></div>
+    <div class="logo-tile"><img src="/images/partners/paradores.png" alt="Paradores" loading="lazy"></div>
+    <a class="logo-tile" href="/bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/" aria-label="BW Hair Studio &amp; Spa"><img src="/images/partners/bw-hair-studio.png" alt="BW Hair Studio &amp; Spa" loading="lazy"></a>
+    <div class="logo-tile"><img src="/images/partners/sabrina-contigo.png" alt="Sabrina Contigo" loading="lazy"></div>
+    <div class="logo-tile"><img src="/images/partners/small.png" alt="Partner logo (sun and clouds)" loading="lazy"></div>
   </div>
 </section>
+
         <!-- CHANNEL ROWS: one shelf per entry in _data/channels.yml; empty shelves hide themselves -->
         {%- for row in site.data.channels.rows -%}
             {%- if row.show == false -%}{%- continue -%}{%- endif -%}
