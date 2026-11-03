@@ -117,7 +117,8 @@ nav {
 }
 .about-bg h2, .about-bg p { text-shadow: 0 2px 10px rgba(0,0,0,.5); }
 
-@media (max-width: 767px) {
+/* Phones AND tablets: text on top, photo anchored below (the side-by-side layout only starts at 1024px) */
+@media (max-width: 1023px) {
   .about-bg {
     background:
       linear-gradient(180deg, #000 0%, #000 calc(100% - 400px), rgba(0,0,0,0) calc(100% - 260px)),
@@ -127,6 +128,17 @@ nav {
   #about { padding-bottom: 400px; padding-top: 4rem; }
   #about h2 { margin-bottom: 2rem; line-height: 1.35; }
   #about p:last-child { line-height: 1.85; }
+  #about > div { max-width: 40rem; }
+}
+/* Tablets: a taller photo area so the subject is not cut off */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-bg {
+    background:
+      linear-gradient(180deg, #000 0%, #000 calc(100% - 560px), rgba(0,0,0,0) calc(100% - 380px)),
+      var(--about-img) center bottom / auto 760px no-repeat,
+      #000;
+  }
+  #about { padding-bottom: 560px; padding-top: 5rem; }
 }
 
 /* Form */
@@ -389,8 +401,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <a href="mailto:info@miamix.vip" class="text-white hover:text-brand-magenta transition-colors" aria-label="Email MIAMIX Events">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </a>
+        <a href="sms:+17864598797" class="text-white hover:text-brand-magenta transition-colors" aria-label="Text MIAMIX Events">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path stroke-linecap="round" d="M8 10h8M8 13h5"/></svg>
+        </a>
         <a href="https://wa.me/17864598797" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-magenta transition-colors" aria-label="WhatsApp MIAMIX Events">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.3 8.8c.2 2.3 2.6 4.8 5 5l1.2-1.1-1.7-1-.8.6c-.8-.3-1.6-1.1-1.9-1.9l.6-.8-1-1.7z"/></svg>
         </a>
         <a href="https://instagram.com/miamix.us" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-magenta transition-colors" aria-label="Instagram MIAMIX Events">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" rx="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
