@@ -1,0 +1,22 @@
+{%- comment -%}
+  One portrait "poster" card.
+  Params: post (required), accent (hex), title (optional override), clone (optional, "true" for aria-hidden copies - not used server-side)
+{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign stem = p.path | split: '/' | last | remove: '.md' -%}
+{%- assign ch = p.channel | first -%}
+{%- assign label = site.data.channels.labels[ch] | default: ch -%}
+{%- assign card_title = include.title | default: p.page_title | default: p.title -%}
+<a class="poster" href="{{ p.url | relative_url }}" style="--accent: {{ include.accent | default: '#d9008d' }};" draggable="false">
+    <span class="poster-img">
+        {%- if site.data.thumbs contains stem -%}
+        <img src="/assets/thumbs/{{ stem }}.webp" alt="" width="300" height="400" loading="lazy" decoding="async" draggable="false">
+        {%- else -%}
+        <span class="poster-fallback"><span>{{ label }}</span></span>
+        {%- endif -%}
+    </span>
+    <span class="poster-meta">
+        <span class="poster-eyebrow">{{ label }}</span>
+        <span class="poster-title">{{ card_title }}</span>
+    </span>
+</a>

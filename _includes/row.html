@@ -1,0 +1,39 @@
+{%- comment -%}
+  A streaming-style shelf.
+  Params: id, eyebrow, title, tagline, accent, url (optional "See all"), posts (array), variant (optional), titles (optional: "brand" to show business names)
+{%- endcomment -%}
+{%- assign first_post = include.posts | first -%}
+{%- assign first_stem = first_post.path | split: '/' | last | remove: '.md' -%}
+<section class="row{% if include.variant %} row--{{ include.variant }}{% endif %}" id="{{ include.id }}" data-row aria-labelledby="{{ include.id }}-title" style="--accent: {{ include.accent | default: '#d9008d' }};">
+    {%- if site.data.thumbs contains first_stem %}
+    <div class="row-bg" style="background-image: url('/assets/thumbs/{{ first_stem }}.webp');" aria-hidden="true"></div>
+    {%- endif %}
+
+    <div class="row-head">
+        <div class="row-heading">
+            <span class="row-eyebrow">{{ include.eyebrow }}</span>
+            <h2 class="row-title" id="{{ include.id }}-title">{{ include.title }}</h2>
+            {%- if include.tagline %}
+            <p class="row-tagline">{{ include.tagline }}</p>
+            {%- endif %}
+        </div>
+        {%- if include.url %}
+        <a class="row-all" href="{{ include.url }}">See all <span aria-hidden="true">&rarr;</span></a>
+        {%- endif %}
+    </div>
+
+    <div class="row-viewport">
+        <button class="row-btn row-btn--prev" type="button" aria-label="Scroll {{ include.title }} left" hidden>&#8249;</button>
+        <div class="row-track">
+            {%- for post in include.posts %}
+                {%- if include.titles == 'brand' %}
+                    {%- assign brand_title = post.business_name | default: post.page_title %}
+                    {%- include poster.html post=post accent=include.accent title=brand_title %}
+                {%- else %}
+                    {%- include poster.html post=post accent=include.accent %}
+                {%- endif %}
+            {%- endfor %}
+        </div>
+        <button class="row-btn row-btn--next" type="button" aria-label="Scroll {{ include.title }} right" hidden>&#8250;</button>
+    </div>
+</section>
