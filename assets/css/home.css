@@ -170,6 +170,22 @@
     text-transform: uppercase; text-decoration: none; transition: background .3s ease, color .3s ease; }
 .services-wrapper .cta-btn:hover { background: #000; color: var(--magenta); }
 
+/* --- ALTERNATING ROWS: black / brand pink (overrides per-channel accents) --- */
+.rows > .row:nth-child(odd) { --accent: var(--primary-pink) !important; }
+.rows > .row:nth-child(even) {
+    --accent: #000 !important;
+    background: var(--primary-pink);
+    color: #000;
+}
+.rows > .row:nth-child(even)::before,
+.rows > .row:nth-child(even) .row-bg { display: none; }
+.rows > .row:nth-child(even) .row-tagline,
+.rows > .row:nth-child(even) .row-all,
+.rows > .row:nth-child(even) .poster-eyebrow,
+.rows > .row:nth-child(even) .poster:hover .poster-eyebrow { color: #000; }
+.rows > .row:nth-child(even) .poster-img { border-color: #000; }
+.rows > .row:nth-child(even) .poster:hover .poster-title { text-decoration: underline; text-underline-offset: 4px; }
+
 /* --- RESPONSIVE --- */
 @media (min-width: 901px) {
     .services-wrapper { padding: 120px 48px 96px; }
