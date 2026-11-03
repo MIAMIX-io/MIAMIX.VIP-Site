@@ -61,7 +61,11 @@ sitemap: false
         {%- endif -%}
 
         <!-- FEATURED PARTNERS: posts marked Featured in Notion (or the old Carousel / Partner placements) -->
-        {%- assign featured_all = site.posts | where_exp: "item", "item.featured == true or item.grid_placement == 'Carousel' or item.grid_placement == 'Partner'" | sort: 'date' | reverse -%}
+        {%- comment %} GitHub Pages' Jekyll 3.10 where_exp can't use "or", so look each one up and combine {% endcomment -%}
+        {%- assign feat_checked = site.posts | where: "featured", true -%}
+        {%- assign feat_carousel = site.posts | where: "grid_placement", "Carousel" -%}
+        {%- assign feat_partner = site.posts | where: "grid_placement", "Partner" -%}
+        {%- assign featured_all = feat_checked | concat: feat_carousel | concat: feat_partner | sort: 'date' | reverse -%}
         {%- assign featured = '' | split: '' -%}
         {%- assign seen = '|' -%}
         {%- for post in featured_all -%}
@@ -80,7 +84,7 @@ sitemap: false
             {%- if row.show == false -%}{%- continue -%}{%- endif -%}
             {%- assign collected = '' | split: '' -%}
             {%- for ch in row.channels -%}
-                {%- assign matched = site.posts | where_exp: "item", "item.channel contains ch" -%}
+                {%- assign matched = site.posts | where: "channel", ch -%}
                 {%- assign collected = collected | concat: matched -%}
             {%- endfor -%}
             {%- assign collected = collected | sort: 'date' | reverse -%}
