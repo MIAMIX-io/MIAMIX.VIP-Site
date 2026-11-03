@@ -11,6 +11,29 @@
   --ch-text: #fff;
   --ch-muted: #aaa;
   --ch-line: #222;
+  --card-bg: #111;
+  --card-shadow: 0 10px 25px rgba(0,0,0,.5);
+  --optin-bg: rgba(255,255,255,.05);
+  --input-bg: #000;
+  --input-text: #fff;
+  --input-line: #333;
+  --btn-text: #fff;
+  /* --accent-ink (optional): darker accent for text on light themes; falls back to --accent */
+}
+
+/* Light theme: add class="light" to <body class="channel light"> */
+body.channel.light {
+  --ch-bg: #e8e6e1;
+  --ch-text: #333;
+  --ch-muted: #666;
+  --ch-line: rgba(0,0,0,.1);
+  --card-bg: #d9d6cf;
+  --card-shadow: 0 10px 25px rgba(0,0,0,.15);
+  --optin-bg: rgba(0,0,0,.05);
+  --input-bg: #fff;
+  --input-text: #333;
+  --input-line: #ccc;
+  --btn-text: #1f2616;
 }
 
 body.channel {
@@ -65,7 +88,7 @@ body.channel a { color: inherit; text-decoration: none; }
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-.section-title span { color: var(--accent); }
+.section-title span { color: var(--accent-ink, var(--accent)); }
 
 .card-grid {
   display: grid;
@@ -81,9 +104,9 @@ body.channel a { color: inherit; text-decoration: none; }
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 12px;
-  background: #111;
+  background: var(--card-bg);
   border: 1px solid var(--ch-line);
-  box-shadow: 0 10px 25px rgba(0,0,0,.5);
+  box-shadow: var(--card-shadow);
 }
 .card-media img {
   position: absolute; inset: 0;
@@ -119,8 +142,8 @@ body.channel a { color: inherit; text-decoration: none; }
 @media (hover: hover) {
   .card:hover .card-media img { transform: scale(1.05); }
   .card:hover .card-video { opacity: .7; }
-  .card:hover h3 { color: var(--accent); }
-  .card:hover .card-more { color: #fff; }
+  .card:hover h3 { color: var(--accent-ink, var(--accent)); }
+  .card:hover .card-more { color: var(--ch-text); }
 }
 
 .empty-state { text-align: center; color: var(--ch-muted); padding: 40px 0; }
@@ -131,7 +154,7 @@ body.channel a { color: inherit; text-decoration: none; }
   width: 100%; max-width: 800px;
   padding: 40px 28px;
   text-align: center;
-  background: rgba(255,255,255,.05);
+  background: var(--optin-bg);
   border: 1px solid var(--accent);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,.5);
@@ -142,7 +165,7 @@ body.channel a { color: inherit; text-decoration: none; }
   font-weight: 600;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink, var(--accent));
 }
 .optin-box p { margin: 0 0 24px; font-size: .95rem; line-height: 1.6; opacity: .85; }
 .optin-form { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -150,8 +173,8 @@ body.channel a { color: inherit; text-decoration: none; }
   flex: 1 1 160px; max-width: 220px; min-width: 0;
   padding: 13px 15px;
   font: 400 16px 'Montserrat', sans-serif;   /* 16px stops iOS zoom */
-  color: #fff; background: #000;
-  border: 1px solid #333; border-radius: 4px;
+  color: var(--input-text); background: var(--input-bg);
+  border: 1px solid var(--input-line); border-radius: 4px;
   transition: border-color .3s;
 }
 .optin-form input:focus { outline: none; border-color: var(--accent); }
@@ -159,14 +182,14 @@ body.channel a { color: inherit; text-decoration: none; }
   padding: 13px 28px;
   font: 700 .85rem 'Montserrat', sans-serif;
   letter-spacing: .08em; text-transform: uppercase;
-  color: #fff; background: var(--accent);
+  color: var(--btn-text); background: var(--accent);
   border: 0; border-radius: 4px; cursor: pointer;
   transition: opacity .3s;
 }
 .optin-form button:hover { opacity: .85; }
 .optin-form button:disabled { opacity: .5; cursor: default; }
 .optin-form .hp { position: absolute; left: -9999px; height: 0; width: 0; opacity: 0; }
-.optin-status { min-height: 1.4em; margin: 16px 0 0 !important; font-size: .85rem !important; color: var(--accent); opacity: 1 !important; }
+.optin-status { min-height: 1.4em; margin: 16px 0 0 !important; font-size: .85rem !important; color: var(--accent-ink, var(--accent)); opacity: 1 !important; }
 
 /* ---------- FOCUS + MOTION ---------- */
 body.channel a:focus-visible,
