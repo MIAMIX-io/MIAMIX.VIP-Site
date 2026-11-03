@@ -4,12 +4,16 @@
 # of the names in `channels`. To merge thin channels, list several; to retire a
 # row, delete it or set `show: false`. Rows with no posts hide themselves.
 #
+# Row colors: rows alternate deep black / stone grey in /assets/css/home.css.
+# Brand pink is the only accent, so every `accent` below is the same pink.
+# (home.css forces pink anyway; the value is kept so row.html always has one.)
+#
 # Fields
 #   id        anchor id for the row (also used for CSS)
 #   eyebrow   small label above the title
 #   title     the big editorial title
 #   tagline   one line under the title
-#   accent    row accent color (hex)
+#   accent    brand pink (leave as is)
 #   channels  Notion channel names feeding this row
 #   url       "See all" destination
 #   banner    optional image path for the row backdrop (defaults to newest post)
@@ -38,7 +42,7 @@ rows:
     eyebrow: "Travel & Leisure"
     title: "Departures"
     tagline: "Airlines, cruises and getaways, all boarding from Miami."
-    accent: "#12b5cb"
+    accent: "#d9008d"
     channels: [Travel]
     url: /travel
 
@@ -46,7 +50,7 @@ rows:
     eyebrow: "Hospitality"
     title: "Table for Miami"
     tagline: "Where to eat, stay and be seen."
-    accent: "#e0a800"
+    accent: "#d9008d"
     channels: [Hospitality]
     url: /hospitality
 
@@ -54,7 +58,7 @@ rows:
     eyebrow: "Culture & Art"
     title: "Made in Miami"
     tagline: "The artists, stages and stories shaping the scene."
-    accent: "#8e5cf0"
+    accent: "#d9008d"
     channels: [Culture]
     url: /culture
 
@@ -62,7 +66,7 @@ rows:
     eyebrow: "Fashion & Lifestyle"
     title: "The Style Edit"
     tagline: "Looks, labels and the people behind them."
-    accent: "#ff7a59"
+    accent: "#d9008d"
     channels: [Fashion]
     url: /fashion
 
@@ -70,7 +74,7 @@ rows:
     eyebrow: "Curated Lifestyle"
     title: "Curated by Romina"
     tagline: "Luxury with soul, from MIAMIX partner Romina Nabhen."
-    accent: "#f08fb2"
+    accent: "#d9008d"
     channels: [CuratedLifestyle]
     url: /curated-lifestyle
 
@@ -78,6 +82,6 @@ rows:
     eyebrow: "Health, Wellness & Nonprofit"
     title: "Feel Good, Do Good"
     tagline: "Wellness stories and the foundations giving back."
-    accent: "#3ddc97"
+    accent: "#d9008d"
     channels: [Health, Nonprofit]
     url: /health
