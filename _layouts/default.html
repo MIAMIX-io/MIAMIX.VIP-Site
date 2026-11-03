@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.page_title | default: page.title | prepend: "MIAMIX - " }}</title>
+  <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/channel.css">
+  {% for c in page.css %}<link rel="stylesheet" href="/assets/css/{{ c }}.css">{% endfor %}
+</head>
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
