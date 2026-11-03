@@ -1,0 +1,37 @@
+{%- comment -%}
+  Reusable channel landing page (full HTML document).
+  Params: channel (Notion channel name), eyebrow, title, subtitle (optional), image (hero photo URL),
+          optin_text (optional), page_title (optional <title>)
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ include.page_title | default: include.eyebrow | prepend: "MIAMIX - " }}</title>
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/channel.css">
+</head>
+<body>
+
+    {% include header.html %}
+
+    <section class="ch-hero" style="--ch-image: url('{{ include.image }}');">
+        <p class="ch-eyebrow">{{ include.eyebrow }}</p>
+        <h1>{{ include.title }}</h1>
+        {%- if include.subtitle %}
+        <p class="ch-sub">{{ include.subtitle }}</p>
+        {%- endif %}
+    </section>
+
+    {% include channel-bands.html channel=include.channel optin_text=include.optin_text start=0 %}
+
+    {% include footer.html %}
+
+    <script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
