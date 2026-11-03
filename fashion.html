@@ -1,365 +1,160 @@
 ---
 ---
+{%- comment -%}
+  Fashion & Lifestyle channel. Styles live in /assets/css/channel.css.
+  To make another channel page, copy this file and change the four
+  assigns below plus the hero text and opt-in copy.
+{%- endcomment -%}
+{%- assign channel_key = "Fashion" -%}
+{%- assign channel_name = "Fashion & Lifestyle" -%}
+{%- assign accent = "#E12BC0" -%}
+{%- assign hero_image = "https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?auto=format&fit=crop&w=2000&q=80" -%}
+{%- assign description = "Fashion and lifestyle stories from Miami: style, designers, shopping and the people shaping the look of the city." -%}
+
+{%- comment %} Posts for this channel, newest first, one card per title {% endcomment -%}
+{%- assign matched = site.posts | where_exp: "item", "item.channel contains channel_key" | sort: "date" | reverse -%}
+{%- assign cards = '' | split: '' -%}
+{%- assign seen = '|' -%}
+{%- for post in matched -%}
+    {%- assign key = '|' | append: post.title | append: '|' -%}
+    {%- unless seen contains key -%}
+        {%- assign cards = cards | push: post -%}
+        {%- assign seen = seen | append: post.title | append: '|' -%}
+    {%- endunless -%}
+{%- endfor -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIAMIX - Fashion & Lifestyle</title>
-    
+    <title>MIAMIX - {{ channel_name }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MIAMIX VIP">
+    <meta property="og:title" content="MIAMIX - {{ channel_name }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ hero_image }}">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Neon pink from your settings */
-            --channel-color: #ff00ff; 
-            --channel-bg: #000000;
-            --primary-pink: #d9008d;
-            --text-main: #ffffff;
-            --bg-black: #000000;
-            --bg-dark-grey: #111111;
-            --text-muted: #aaaaaa;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--channel-bg); color: var(--text-main); overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
-
-        /* --- DESKTOP NAVIGATION CSS --- */
-        header {
-            position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
-            align-items: center; padding: 15px 40px; background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-        }
-        .logo { display: flex; align-items: center; z-index: 2002; }
-        .logo img { height: 40px; width: auto; display: block; }
-        
-        /* RESTORED DESKTOP MENU STYLING */
-        .nav-center { display: flex; gap: 30px; font-size: 14px; letter-spacing: 1px; list-style: none; }
-        .nav-item { position: relative; cursor: pointer; color: var(--text-muted); transition: color 0.3s; padding: 25px 0; }
-        .nav-item:hover { color: var(--primary-pink); }
-
-        /* RESTORED DESKTOP DROPDOWN */
-        .dropdown-menu {
-            display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-black);
-            min-width: 250px; padding: 10px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.9);
-            border-top: 3px solid var(--primary-pink); z-index: 2000; 
-        }
-        .dropdown-menu li { list-style: none; }
-        .dropdown-menu a { display: block; padding: 12px 20px; color: var(--primary-pink); font-size: 13px; text-transform: uppercase; }
-        .dropdown-menu a:hover { background-color: #1a1a1a; }
-        .nav-item.dropdown:hover .dropdown-menu { display: block; }
-
-        .nav-right { display: flex; align-items: center; gap: 15px; }
-        .social-icons { display: flex; gap: 15px; }
-        .social-icon { width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
-        .social-icon:hover { transform: scale(1.1); }
-        .social-icon img { width: 100%; height: 100%; object-fit: contain; }
-
-        .mobile-menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; z-index: 2002; }
-
-        /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
-        @media (max-width: 900px) {
-            header { padding: 15px 20px; }
-            .mobile-menu-toggle { display: block; }
-            .nav-right { display: none; }
-            
-            /* MENU LAYOUT FIXES FOR MOBILE ONLY */
-            .nav-center {
-                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
-                background-color: var(--bg-dark-grey); flex-direction: column; 
-                justify-content: flex-start; /* Aligns to top instead of center */
-                align-items: center; transition: right 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-                z-index: 2001; 
-                padding-top: 70px; /* Reduced from 100px to pull menu up */
-                padding-bottom: 30px; gap: 0; 
-                overflow-y: auto; /* Ensures the menu can scroll */
-                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            }
-            .nav-center.active { right: 0; }
-            
-            /* OVERRIDE DESKTOP PADDING FOR MOBILE ONLY */
-            .nav-item { 
-                padding: 15px 0 !important; 
-                font-size: 18px; 
-                width: 100%; 
-                text-align: center; 
-                margin: 0;
-            } 
-            
-            /* Mobile Dropdown Fix */
-            .nav-item.dropdown {
-                position: relative;
-            }
-            .nav-item.dropdown .dropdown-menu { 
-                display: none; 
-                position: static; 
-                box-shadow: none; 
-                border-top: none; 
-                background: #111; 
-                width: 100%; 
-                margin-top: 15px; 
-                padding: 10px 0;
-            }
-            .nav-item.dropdown.mobile-open .dropdown-menu { 
-                display: block; 
-            }
-            .dropdown-menu a { 
-                padding: 12px 20px; 
-                font-size: 14px;
-            }
-            
-            /* FIX HERO FOR MOBILE */
-            .channel-hero {
-                min-height: 50vh;
-                padding-top: 100px; /* Pushes content below header */
-                background-attachment: scroll !important; /* Fixes massive zoom bug on iOS */
-            }
-        }
-        
-        /* --- HERO SECTION --- */
-        .channel-hero {
-            position: relative; height: 60vh; 
-            /* Fashion Hero Image */
-            background-image: url('https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover; background-position: top; display: flex;
-            align-items: center; justify-content: center; text-align: center; margin-top: 70px;
-        }
-        .channel-hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
-        }
-        .channel-hero h1 {
-            position: relative; z-index: 2; font-size: 5vw; font-weight: 300; letter-spacing: 2px;
-            color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); text-transform: uppercase;
-        }
-        .channel-hero h1 span { font-weight: 700; color: var(--channel-color); }
-
-        /* CURVED DIVIDER */
-        .curve-divider {
-            position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 3;
-        }
-        .curve-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
-        .curve-divider .shape-fill { fill: var(--channel-bg); }
-
-        /* --- CHANNEL GRID (MODERN EDITORIAL STYLE) --- */
-        .channel-content { padding: 80px 60px; }
-        .section-title { text-align: center; font-size: 24px; color: var(--text-main); margin-bottom: 50px; letter-spacing: 2px; text-transform: uppercase; }
-        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } }
-        @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; gap: 30px; } }
-
-        .card { 
-            background-color: transparent; 
-            border: none; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 15px; 
-        }
-        
-        .card-media {
-            position: relative;
-            aspect-ratio: 3/4;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border: 1px solid #222;
-        }
-        
-        .card-media img { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; z-index: 1; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-        }
-        .card:hover .card-media img { transform: scale(1.05); }
-        
-        /* VIDEO OVERLAY FOR CARDS */
-        .card-video-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2;
-            pointer-events: none; opacity: 0; mix-blend-mode: screen; transition: opacity 0.5s ease;
-        }
-        .card:hover .card-video-overlay { opacity: 0.7; }
-
-        .card-content { 
-            padding: 5px 10px; 
-            text-align: left; 
-        }
-        .card h3 { 
-            font-size: 18px; margin-bottom: 8px; color: #fff; font-weight: 600; line-height: 1.4; 
-            transition: color 0.3s ease; 
-        }
-        .card:hover h3 { color: var(--primary-pink); }
-        
-        .card p { 
-            font-size: 12px; color: var(--text-muted); text-transform: uppercase; 
-            letter-spacing: 1px; font-weight: 600; transition: color 0.3s ease; 
-        }
-        .card:hover p { color: #fff; }
-        
-        /* --- OPT-IN / SUBSCRIBE SECTION --- */
-        .optin-section { padding: 40px 20px 80px 20px; display: flex; justify-content: center; }
-        .optin-box {
-            background: rgba(255,255,255,0.05); border: 1px solid var(--channel-color); border-radius: 10px;
-            padding: 40px; max-width: 800px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .optin-box h2 { margin-bottom: 15px; font-weight: 600; color: var(--channel-color); font-size: 28px; text-transform: uppercase; }
-        .optin-box p { font-size: 15px; margin-bottom: 25px; opacity: 0.8; }
-        .optin-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .optin-form input { padding: 12px 15px; border: 1px solid #333; background: #000; color: #fff; border-radius: 4px; outline: none; flex-grow: 1; max-width: 200px; transition: border 0.3s; }
-        .optin-form input:focus { border-color: var(--channel-color); }
-        .optin-form button {
-            padding: 12px 25px; background: var(--channel-color); color: #000; border: none;
-            border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s; text-transform: uppercase;
-        }
-        .optin-form button:hover { opacity: 0.8; }
-
-        /* --- FOOTER CSS --- */
-        footer {
-            text-align: center; padding: 60px 20px; background-color: var(--bg-black);
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1652290761253-35c071df19eb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover; background-position: center;
-        }
-        .footer-logo img { height: 80px; width: auto; margin: 0 auto 20px auto; display: block; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="{{ hero_image }}">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/channel.css">
 </head>
-<body>
+<body class="channel" style="--accent: {{ accent }}; --hero-image: url('{{ hero_image }}');">
 
-    <header>
-        <a href="/" class="logo">
-            <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
-        </a>
-        
-        <button class="mobile-menu-toggle" id="mobileMenuBtn">☰</button>
+    {% include header.html %}
 
-        <ul class="nav-center" id="navMenu">
-            <li class="nav-item dropdown">
-                CHANNELS <span style="font-size: 10px;">▼</span>
-                <ul class="dropdown-menu">
-                    <li><a href="/sports">Sports & Entertainment</a></li>
-                    <li><a href="/fashion">Fashion & Lifestyle</a></li>
-                    <li><a href="/health">Health & Wellness</a></li>
-                    <li><a href="/culture">Culture & Art</a></li>
-                    <li><a href="/travel">Travel & Leisure</a></li>
-                    <li><a href="/hospitality">Hospitality</a></li>
-                    <li><a href="/nonprofit">Nonprofit</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
-            <li class="nav-item"><a href="/inter-miami">INTER MIAMI</a></li>
-            <li class="nav-item"><a href="/contact">CONTACT</a></li>
-        </ul>
-        <div class="nav-right">
-            <div class="social-icons">
-                <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
-                    <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
-                </a>
-                <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
-                    <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
-                </a>
-                <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
-                    <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
-                </a>
-            </div>
-        </div>
-    </header>
-
+    <!-- HERO -->
     <section class="channel-hero">
         <h1>Strike a <br><span>pose</span></h1>
-        
-        <div class="curve-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z" class="shape-fill"></path>
+        <div class="curve-divider" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z"/>
             </svg>
         </div>
     </section>
 
-    <section class="channel-content">
+    <!-- ARTICLES -->
+    <main class="channel-content">
         <h2 class="section-title">Latest <span>Articles</span></h2>
+
+        {%- if cards.size > 0 %}
         <div class="card-grid">
-            
-            {% assign fashion_posts = site.posts | where_exp: "item", "item.channel contains 'Fashion'" | sort: "date" | reverse %}
-            {% for post in fashion_posts %}
-                <div class="card">
-                    <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%; text-decoration: none;">
-                        
-                        <div class="card-media">
-                            <img src="{{ post.cover_image | default: post.thumbnail }}" alt="{{ post.page_title }}">
-                            
-                            <video class="card-video-overlay" autoplay loop muted playsinline>
-                                <source src="/video/MIAMIX-1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <div class="card-content">
-                            <h3>{{ post.page_title }}</h3>
-                            <p>Read Article &rarr;</p>
-                        </div>
-                    </a>
+            {%- for post in cards %}
+            {%- assign img = post.cover_image | default: post.thumbnail -%}
+            {%- assign label = post.page_title | default: post.title %}
+            <a class="card" href="{{ post.url | relative_url }}">
+                <div class="card-media">
+                    {%- if img %}
+                    <img src="{{ img }}" alt="{{ label | escape }}" loading="lazy" decoding="async">
+                    {%- endif %}
+                    <video class="card-video" muted loop playsinline preload="none" aria-hidden="true" data-src="/video/MIAMIX-1.mp4"></video>
                 </div>
-            {% endfor %}
+                <div class="card-body">
+                    <h3>{{ label }}</h3>
+                    <span class="card-more">Read article &rarr;</span>
+                </div>
+            </a>
+            {%- endfor %}
         </div>
-    </section>
+        {%- else %}
+        <p class="empty-state">New {{ channel_name | downcase }} stories are on the way. Join the list below to hear first.</p>
+        {%- endif %}
+    </main>
 
+    <!-- OPT-IN -->
     <section class="optin-section">
         <div class="optin-box">
             <h2>Get On The List</h2>
-            <p>Subscribe to the MIAMIX Fashion & Lifestyle channel for the latest VIP updates, premium event access, and exclusive content.</p>
-            <form class="optin-form">
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
-                <input type="email" placeholder="Email Address">
-                <button type="submit">SUBMIT</button>
+            <p>Subscribe to the MIAMIX {{ channel_name }} channel for the latest VIP updates, premium event access, and exclusive content.</p>
+            <form class="optin-form" id="optin-form">
+                <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" aria-label="First name" required>
+                <input type="text" name="last_name" placeholder="Last name" autocomplete="family-name" aria-label="Last name" required>
+                <input type="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" aria-label="Email address" required>
+                <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" id="optin-btn">Join the list</button>
             </form>
+            <p class="optin-status" id="optin-status" role="status" aria-live="polite"></p>
         </div>
     </section>
-    
-    <footer>
-        <div class="footer-logo">
-            <img src="/images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX Gold Logo">
-        </div>
-        <div class="social-icons" style="justify-content: center;">
-            <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" class="social-icon">
-                <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
-            </a>
-            <a href="https://www.instagram.com/miamix.us/" target="_blank" class="social-icon">
-                <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
-            </a>
-            <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" class="social-icon">
-                <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
-            </a>
-        </div>
-    </footer>
 
+    {% include footer.html %}
+
+    <script src="/assets/js/nav.js" defer></script>
     <script>
-        // BULLETPROOF MOBILE MENU & DROPDOWN LOGIC
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        const dropdownMenu = document.querySelector('.nav-item.dropdown');
-
-        if(mobileMenuBtn && navMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                if (navMenu.classList.contains('active')) {
-                    mobileMenuBtn.innerHTML = '✕';
-                } else {
-                    mobileMenuBtn.innerHTML = '☰';
-                    // Auto-close dropdown when main menu closes
-                    if(dropdownMenu) dropdownMenu.classList.remove('mobile-open'); 
-                }
+    (function () {
+        /* Hover video: only on devices that can hover, and only loaded on first hover */
+        var cards = document.querySelectorAll('.card');
+        if (window.matchMedia('(hover: hover)').matches) {
+            cards.forEach(function (card) {
+                var v = card.querySelector('.card-video');
+                if (!v) return;
+                card.addEventListener('mouseenter', function () {
+                    if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
+                    var p = v.play(); if (p && p.catch) p.catch(function () {});
+                });
+                card.addEventListener('mouseleave', function () { v.pause(); });
             });
+        } else {
+            document.querySelectorAll('.card-video').forEach(function (v) { v.remove(); });
         }
 
-        // Tap listener for Mobile Dropdown
-        if(dropdownMenu) {
-            dropdownMenu.addEventListener('click', function(e) {
-                if (window.innerWidth <= 900) {
-                    // Only toggle if they click the word "CHANNELS" (not the actual sub-links)
-                    if(e.target.tagName !== 'A') {
-                        e.preventDefault();
-                        this.classList.toggle('mobile-open');
-                    }
-                }
-            });
-        }
+        /* Opt-in form -> Google Sheet ("Subscribers" tab) */
+        var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyfEC_AxQz_3cA2zsGEIjB0ABBA1iS-BE2qXGUK90iJIO4M_9GTNBetYDN_o2R_ONGKIA/exec';
+        var CHANNEL = '{{ channel_name }}';
+        var form = document.getElementById('optin-form');
+        var btn = document.getElementById('optin-btn');
+        var status = document.getElementById('optin-status');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) { form.reportValidity(); return; }
+            var payload = {
+                type: 'subscribe',
+                first_name: form.first_name.value.trim(),
+                last_name: form.last_name.value.trim(),
+                email: form.email.value.trim(),
+                channel: CHANNEL,
+                page: location.pathname,
+                website: form.website.value
+            };
+            btn.disabled = true; status.textContent = 'Sending...';
+            fetch(ENDPOINT, {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            }).then(function () {
+                form.reset();
+                status.textContent = 'You\u2019re on the list. Watch your inbox.';
+            }).catch(function () {
+                status.textContent = 'Could not send. Check your connection and try again.';
+            }).then(function () { btn.disabled = false; });
+        });
+    })();
     </script>
 </body>
 </html>
