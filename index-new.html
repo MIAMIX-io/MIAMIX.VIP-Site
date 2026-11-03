@@ -60,25 +60,42 @@ sitemap: false
             {% include row.html id="latest" eyebrow=home.latest.eyebrow title=home.latest.title tagline=home.latest.tagline accent=home.latest.accent posts=latest %}
         {%- endif -%}
 
-        <!-- FEATURED PARTNERS: posts marked Featured in Notion (or the old Carousel / Partner placements) -->
-        {%- comment %} GitHub Pages' Jekyll 3.10 where_exp can't use "or", so look each one up and combine {% endcomment -%}
-        {%- assign feat_checked = site.posts | where: "featured", true -%}
-        {%- assign feat_carousel = site.posts | where: "grid_placement", "Carousel" -%}
-        {%- assign feat_partner = site.posts | where: "grid_placement", "Partner" -%}
-        {%- assign featured_all = feat_checked | concat: feat_carousel | concat: feat_partner | sort: 'date' | reverse -%}
-        {%- assign featured = '' | split: '' -%}
-        {%- assign seen = '|' -%}
-        {%- for post in featured_all -%}
-            {%- assign key = '|' | append: post.title | append: '|' -%}
-            {%- unless seen contains key -%}
-                {%- assign featured = featured | push: post -%}
-                {%- assign seen = seen | append: post.title | append: '|' -%}
-            {%- endunless -%}
-        {%- endfor -%}
-        {%- if featured.size > 0 -%}
-            {% include row.html id="featured" variant="featured" titles="brand" eyebrow=home.featured.eyebrow title=home.featured.title tagline=home.featured.tagline accent=home.featured.accent posts=featured %}
-        {%- endif -%}
+        <section id="partners" class="partners py-16 md:py-20 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+  <div class="mb-10">
+    <p class="text-brand-magenta font-medium tracking-[0.3em] uppercase text-sm mb-2">Spotlight</p>
+    <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-4">Featured Partners</h2>
+    <p class="text-brand-secondary">Brands and organizations we're proud to showcase.</p>
+  </div>
 
+  <div class="partner-row">
+    <a class="partner-card" href="https://miamix.vip/miami-freedom-park/">
+      <div class="logo-tile">
+        <img src="images/partners/inter-miami.svg" alt="Inter Miami" loading="lazy"
+             onerror="this.outerHTML='<span class=\'wordmark\'>Inter Miami</span>'">
+      </div>
+      <span class="cat">Inter Miami</span>
+      <span class="name">Inter Miami</span>
+    </a>
+
+    <a class="partner-card" href="https://miamix.vip/bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/">
+      <div class="logo-tile">
+        <img src="images/partners/bw-hair-studio.svg" alt="BW Hair Studio" loading="lazy"
+             onerror="this.outerHTML='<span class=\'wordmark\'>BW Hair Studio</span>'">
+      </div>
+      <span class="cat">Fashion &amp; Lifestyle</span>
+      <span class="name">BW Hair Studio</span>
+    </a>
+
+    <a class="partner-card" href="https://miamix.vip/faena-miami/">
+      <div class="logo-tile">
+        <img src="images/partners/faena-miami.svg" alt="Faena Miami" loading="lazy"
+             onerror="this.outerHTML='<span class=\'wordmark\'>Faena Miami</span>'">
+      </div>
+      <span class="cat">Hospitality</span>
+      <span class="name">Faena Miami</span>
+    </a>
+  </div>
+</section>
         <!-- CHANNEL ROWS: one shelf per entry in _data/channels.yml; empty shelves hide themselves -->
         {%- for row in site.data.channels.rows -%}
             {%- if row.show == false -%}{%- continue -%}{%- endif -%}
