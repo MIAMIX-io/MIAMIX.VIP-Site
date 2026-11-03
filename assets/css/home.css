@@ -181,7 +181,7 @@
 .rows .poster:hover .poster-img,
 .rows .poster:focus-visible .poster-img {
     border-color: var(--primary-pink);
-    box-shadow: 0 16px 36px color-mix(in srgb, var(--primary-pink) 45%, transparent);
+    box-shadow: 0 8px 22px color-mix(in srgb, var(--primary-pink) 45%, transparent);
 }
 
 /* --- RESPONSIVE --- */
