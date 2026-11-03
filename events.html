@@ -515,17 +515,43 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-/* Shared scroller: loops at both ends */
+/* Shared endless scroller: clones slides on both sides, then jumps back invisibly */
 function scroller(track) {
-  return (dir) => {
-    const slide = track.firstElementChild; if (!slide) return;
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    const w = slide.getBoundingClientRect().width + gap;
-    const max = track.scrollWidth - track.clientWidth;
-    if (dir > 0 && track.scrollLeft >= max - 4) track.scrollTo({ left: 0, behavior: 'smooth' });
-    else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: max, behavior: 'smooth' });
-    else track.scrollBy({ left: dir * w, behavior: 'smooth' });
+  const slides = [...track.children];
+  const n = slides.length;
+  const clone = (s) => { const c = s.cloneNode(true); c.setAttribute('aria-hidden', 'true'); return c; };
+  slides.forEach(s => track.appendChild(clone(s)));
+  slides.slice().reverse().forEach(s => track.insertBefore(clone(s), track.firstChild));
+
+  const slideStep = () => {
+    const real = track.children[n];
+    return track.children[n + 1].offsetLeft - real.offsetLeft;
   };
+  const setW = () => slideStep() * n;
+
+  const jump = (left) => {
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+    track.scrollLeft = left;
+    void track.offsetWidth;                 // force reflow
+    track.style.scrollSnapType = '';
+    track.style.scrollBehavior = '';
+  };
+
+  const settle = () => {
+    const w = setW(), p = track.scrollLeft;
+    if (p >= 2 * w - 2) jump(p - w);
+    else if (p < w - 2) jump(p + w);
+  };
+
+  let t = null;
+  track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(settle, 120); }, { passive: true });
+  const home = () => jump(setW());
+  window.addEventListener('load', home);
+  window.addEventListener('resize', home);
+  home();
+
+  return (dir) => track.scrollBy({ left: dir * slideStep(), behavior: 'smooth' });
 }
 
 /* Services carousel (auto-advances, pauses on hover/touch) */
