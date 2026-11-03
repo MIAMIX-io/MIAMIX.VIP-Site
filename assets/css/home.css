@@ -170,21 +170,19 @@
     text-transform: uppercase; text-decoration: none; transition: background .3s ease, color .3s ease; }
 .services-wrapper .cta-btn:hover { background: #000; color: var(--magenta); }
 
-/* --- ALTERNATING ROWS: black / brand pink (overrides per-channel accents) --- */
-.rows > .row:nth-child(odd) { --accent: var(--primary-pink) !important; }
-.rows > .row:nth-child(even) {
-    --accent: #000 !important;
-    background: var(--primary-pink);
-    color: #000;
+/* --- ALTERNATING ROWS: deep black / stone grey. Pink is reserved for accents, shadows and borders --- */
+.rows .row, .rows .poster { --accent: var(--primary-pink) !important; }
+
+.rows > .row:nth-child(odd)  { background: #000; }
+.rows > .row:nth-child(even) { background: #2b2a28; }
+
+.rows > .row + .row { border-top: 1px solid var(--primary-pink); }
+.rows .poster-img { border-color: color-mix(in srgb, var(--primary-pink) 55%, transparent); }
+.rows .poster:hover .poster-img,
+.rows .poster:focus-visible .poster-img {
+    border-color: var(--primary-pink);
+    box-shadow: 0 16px 36px color-mix(in srgb, var(--primary-pink) 45%, transparent);
 }
-.rows > .row:nth-child(even)::before,
-.rows > .row:nth-child(even) .row-bg { display: none; }
-.rows > .row:nth-child(even) .row-tagline,
-.rows > .row:nth-child(even) .row-all,
-.rows > .row:nth-child(even) .poster-eyebrow,
-.rows > .row:nth-child(even) .poster:hover .poster-eyebrow { color: #000; }
-.rows > .row:nth-child(even) .poster-img { border-color: #000; }
-.rows > .row:nth-child(even) .poster:hover .poster-title { text-decoration: underline; text-underline-offset: 4px; }
 
 /* --- RESPONSIVE --- */
 @media (min-width: 901px) {
