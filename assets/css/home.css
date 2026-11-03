@@ -221,3 +221,6 @@
     html { scroll-behavior: auto; }
     .poster-img, .cta-btn, .row-btn, .services-wrapper * { transition: none !important; }
 }
+.row-bg { display: none; }
+.row-track { -webkit-mask-image: none; mask-image: none; }
+.poster-img { will-change: transform; }
