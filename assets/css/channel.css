@@ -78,3 +78,8 @@
 @media (prefers-reduced-motion: reduce) {
     .ch-media, .ch-title, .optin-form button { transition: none; }
 }
+
+/* Optional heading above the first band of posts */
+.ch-heading { max-width: 1200px; margin: 0 auto 40px; font-weight: 200; font-size: clamp(1.5rem, 3vw, 2.25rem);
+    letter-spacing: .1em; text-transform: uppercase; }
+.ch-heading::after { content: ""; display: block; width: 56px; height: 1px; background: var(--primary-pink); margin-top: 16px; }
