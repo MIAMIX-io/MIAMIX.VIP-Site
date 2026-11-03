@@ -1,164 +1,148 @@
----
----
-{%- comment -%}
-  Health & Wellness channel. Styles live in /assets/css/channel.css.
-  Light theme: body gets the "light" class. accent_ink is a darker green
-  used only for text on the beige background (the soft green itself is
-  too pale to read as text).
-{%- endcomment -%}
-{%- assign channel_key = "Health" -%}
-{%- assign channel_name = "Health & Wellness" -%}
-{%- assign accent = "#a4b085" -%}
-{%- assign accent_ink = "#6f7f4d" -%}
-{%- assign theme = "light" -%}
-{%- assign hero_image = "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=2000&q=80" -%}
-{%- assign description = "Health and wellness stories from Miami: fitness, nutrition, mind and body, and the people and places keeping the city well." -%}
-{%- assign optin_copy = "Subscribe to the MIAMIX Health & Wellness channel for the latest lifestyle updates, exclusive events, and premium content." -%}
-
-{%- comment %} Posts for this channel, newest first, one card per title {% endcomment -%}
-{%- assign matched = site.posts | where_exp: "item", "item.channel contains channel_key" | sort: "date" | reverse -%}
-{%- assign cards = '' | split: '' -%}
-{%- assign seen = '|' -%}
-{%- for post in matched -%}
-    {%- assign key = '|' | append: post.title | append: '|' -%}
-    {%- unless seen contains key -%}
-        {%- assign cards = cards | push: post -%}
-        {%- assign seen = seen | append: post.title | append: '|' -%}
-    {%- endunless -%}
-{%- endfor -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth bg-black text-white">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIAMIX - {{ channel_name | escape }}</title>
-    <meta name="description" content="{{ description }}">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MIAMIX VIP">
-    <meta property="og:title" content="MIAMIX - {{ channel_name | escape }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="{{ hero_image }}">
-    <meta name="twitter:card" content="summary_large_image">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MIAMIX - Health &amp; Wellness</title>
+<meta name="description" content="Health and wellness stories from Miami: fitness, nutrition, mind and body, and the people and places keeping the city well.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MIAMIX VIP">
+<meta property="og:title" content="MIAMIX - Health &amp; Wellness">
+<meta property="og:description" content="Health and wellness stories from Miami: fitness, nutrition, mind and body, and the people and places keeping the city well.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&amp;fit=crop&amp;w=2000&amp;q=80">
+<meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="{{ hero_image }}">
-    <link rel="stylesheet" href="/assets/css/site.css">
-    <link rel="stylesheet" href="/assets/css/channel.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    fontFamily: { sans: ['Jost', 'sans-serif'] },
+    colors: { brand: { magenta: '#E12BC0', border: '#444444', secondary: '#cccccc' } }
+  } } };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="health.css">
 </head>
-<body class="channel{% if theme == 'light' %} light{% endif %}" style="--accent: {{ accent }};{% if accent_ink %} --accent-ink: {{ accent_ink }};{% endif %} --hero-image: url('{{ hero_image }}');">
 
-    {% include header.html %}
+<body class="font-light text-base">
 
-    <!-- HERO -->
-    <section class="channel-hero">
-        <h1>MIAMIX <br><span>{{ channel_name | escape }}</span></h1>
-        <div class="curve-divider" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.86,30.34,147.93,52.26,224.27,62.33,257.65,66.7,289.47,62.68,321.39,56.44Z"/>
-            </svg>
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
+    <a href="https://miamix.vip/" class="flex items-center" aria-label="MIAMIX Home">
+      <img src="https://miamix.vip/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX" class="h-6 md:h-8 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm uppercase tracking-widest">
+      <details class="channels">
+        <summary>Channels &#9662;</summary>
+        <div class="channels-menu">
+          <a href="https://miamix.vip/sports">Sports &amp; Entertainment</a>
+          <a href="https://miamix.vip/fashion">Fashion &amp; Lifestyle</a>
+          <a href="https://miamix.vip/health" class="text-brand-magenta">Health &amp; Wellness</a>
+          <a href="https://miamix.vip/culture">Culture &amp; Art</a>
+          <a href="https://miamix.vip/travel">Travel &amp; Leisure</a>
+          <a href="https://miamix.vip/hospitality">Hospitality</a>
+          <a href="https://miamix.vip/nonprofit">Nonprofit</a>
         </div>
-    </section>
+      </details>
+      <a href="https://miamix.vip/curated-lifestyle" class="hover:text-brand-magenta transition-colors">Curated Lifestyle</a>
+      <a href="https://miamix.vip/inter-miami" class="hover:text-brand-magenta transition-colors">Inter Miami</a>
+      <a href="https://miamix.vip/contact" class="text-brand-magenta hover:text-white transition-colors">Contact</a>
+    </div>
+    <button id="mobile-menu-btn" type="button" class="md:hidden text-white uppercase tracking-widest text-sm py-2"
+            aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden absolute right-6 top-full w-64 menu-panel px-6 py-6 flex-col gap-4 text-right text-sm uppercase tracking-widest shadow-2xl">
+    <a href="https://miamix.vip/sports">Sports &amp; Entertainment</a>
+    <a href="https://miamix.vip/fashion">Fashion &amp; Lifestyle</a>
+    <a href="https://miamix.vip/health" class="text-brand-magenta">Health &amp; Wellness</a>
+    <a href="https://miamix.vip/culture">Culture &amp; Art</a>
+    <a href="https://miamix.vip/travel">Travel &amp; Leisure</a>
+    <a href="https://miamix.vip/hospitality">Hospitality</a>
+    <a href="https://miamix.vip/nonprofit">Nonprofit</a>
+    <a href="https://miamix.vip/curated-lifestyle">Curated Lifestyle</a>
+    <a href="https://miamix.vip/inter-miami">Inter Miami</a>
+    <a href="https://miamix.vip/contact" class="text-brand-magenta">Contact</a>
+  </div>
+</nav>
 
-    <!-- ARTICLES -->
-    <main class="channel-content">
-        <h2 class="section-title">Latest <span>Articles</span></h2>
+<!-- HERO -->
+<header class="page-hero relative">
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-14">
+    <p class="text-brand-magenta uppercase tracking-widest sm:tracking-[0.3em] text-sm mb-5 font-medium">MIAMIX | Channel</p>
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-light uppercase tracking-wide sm:tracking-widest leading-tight">
+      Health<br><span class="text-brand-magenta">&amp; Wellness</span>
+    </h1>
+    <p class="text-base lg:text-lg text-white max-w-xl mt-6 leading-relaxed">
+      Fitness, nutrition, mind and body, and the people and places keeping Miami well.
+    </p>
+  </div>
+</header>
 
-        {%- if cards.size > 0 %}
-        <div class="card-grid">
-            {%- for post in cards %}
-            {%- assign img = post.cover_image | default: post.thumbnail -%}
-            {%- assign label = post.page_title | default: post.title %}
-            <a class="card" href="{{ post.url | relative_url }}">
-                <div class="card-media">
-                    {%- if img %}
-                    <img src="{{ img }}" alt="{{ label | escape }}" loading="lazy" decoding="async">
-                    {%- endif %}
-                    <video class="card-video" muted loop playsinline preload="none" aria-hidden="true" data-src="/video/MIAMIX-1.mp4"></video>
-                </div>
-                <div class="card-body">
-                    <h3>{{ label }}</h3>
-                    <span class="card-more">Read article &rarr;</span>
-                </div>
-            </a>
-            {%- endfor %}
-        </div>
-        {%- else %}
-        <p class="empty-state">New {{ channel_name | downcase | escape }} stories are on the way. Join the list below to hear first.</p>
-        {%- endif %}
-    </main>
+<!-- ARTICLES -->
+<section id="articles" class="py-16 md:py-20 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+  <div class="mb-12">
+    <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Just dropped</p>
+    <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest">Latest Articles</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+    <a class="article-card" href="https://miamix.vip/mara-rodr-guez-art-well-being-and-teaching-in-harmony/">
+      <div class="thumb"><img src="https://miamix.vip/assets/thumbs/2026-01-15-mara-rodr-guez-art-well-being-and-teaching-in-harmony.webp" alt="Mara Rodríguez" loading="lazy"></div>
+      <h3 class="text-xl md:text-2xl font-normal uppercase tracking-widest mt-6 mb-3 leading-snug">Mara Rodríguez: art, well&#8209;being, and teaching in harmony</h3>
+      <span class="more text-brand-magenta text-sm uppercase tracking-widest">Read article &rarr;</span>
+    </a>
+    <a class="article-card" href="https://miamix.vip/soledad-cristiano-more-than-fitness/">
+      <div class="thumb"><img src="https://miamix.vip/assets/thumbs/2025-11-07-soledad-cristiano-more-than-fitness.webp" alt="Soledad Cristiano" loading="lazy"></div>
+      <h3 class="text-xl md:text-2xl font-normal uppercase tracking-widest mt-6 mb-3 leading-snug">Soledad Cristiano: More than Fitness</h3>
+      <span class="more text-brand-magenta text-sm uppercase tracking-widest">Read article &rarr;</span>
+    </a>
+  </div>
+</section>
 
-    <!-- OPT-IN -->
-    <section class="optin-section">
-        <div class="optin-box">
-            <h2>Get On The List</h2>
-            <p>{{ optin_copy | escape }}</p>
-            <form class="optin-form" id="optin-form">
-                <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" aria-label="First name" required>
-                <input type="text" name="last_name" placeholder="Last name" autocomplete="family-name" aria-label="Last name" required>
-                <input type="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" aria-label="Email address" required>
-                <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <button type="submit" id="optin-btn">Join the list</button>
-            </form>
-            <p class="optin-status" id="optin-status" role="status" aria-live="polite"></p>
-        </div>
-    </section>
+<!-- SUBSCRIBE -->
+<section id="subscribe" class="py-16 md:py-20 px-6 md:px-10 border-b border-brand-border max-w-7xl mx-auto">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <div class="max-w-2xl">
+      <p class="text-brand-magenta font-medium tracking-widest uppercase text-sm mb-2">Stay in the loop</p>
+      <h2 class="text-3xl md:text-4xl font-normal uppercase tracking-widest mb-4">Get On The List</h2>
+      <p class="text-brand-secondary leading-relaxed text-base lg:text-lg">
+        Subscribe to the MIAMIX Health &amp; Wellness channel for the latest lifestyle updates, exclusive events, and premium content.
+      </p>
+    </div>
+    <!-- TODO: point this at your list sign-up (Mailchimp, Sheet form, etc.) -->
+    <a href="https://miamix.vip/contact" class="inline-block brand-button px-9 py-4 text-sm tracking-widest uppercase text-center">Join the list</a>
+  </div>
+</section>
 
-    {% include footer.html %}
+<!-- FOOTER -->
+<footer class="px-6 md:px-10 py-14 max-w-7xl mx-auto flex flex-col items-center gap-8 text-center">
+  <img src="https://miamix.vip/images/MIAMIX-LandscapeBanner-BrandGold-White-TransparentV3.png" alt="MIAMIX" class="h-12 w-auto">
+  <div class="social flex items-center gap-6">
+    <a href="https://www.youtube.com/@MIAMIXUS" target="_blank" rel="noopener noreferrer" aria-label="MIAMIX on YouTube"><img src="https://miamix.vip/images/MIAMIX_SocialLogos-3%20%281%29.png" alt=""></a>
+    <a href="https://www.instagram.com/miamix.us/" target="_blank" rel="noopener noreferrer" aria-label="MIAMIX on Instagram"><img src="https://miamix.vip/images/MIAMIX_SocialLogos-1%20%281%29.png" alt=""></a>
+    <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="MIAMIX on LinkedIn"><img src="https://miamix.vip/images/MIAMIX_SocialLogos-2%20%281%29.png" alt=""></a>
+  </div>
+  <p class="text-sm text-brand-secondary uppercase tracking-widest">&copy; <span id="current-year">2026</span> MIAMIX. All rights reserved.</p>
+</footer>
 
-    <script src="/assets/js/nav.js" defer></script>
-    <script>
-    (function () {
-        /* Hover video: only on devices that can hover, and only loaded on first hover */
-        var cards = document.querySelectorAll('.card');
-        if (window.matchMedia('(hover: hover)').matches) {
-            cards.forEach(function (card) {
-                var v = card.querySelector('.card-video');
-                if (!v) return;
-                card.addEventListener('mouseenter', function () {
-                    if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
-                    var p = v.play(); if (p && p.catch) p.catch(function () {});
-                });
-                card.addEventListener('mouseleave', function () { v.pause(); });
-            });
-        } else {
-            document.querySelectorAll('.card-video').forEach(function (v) { v.remove(); });
-        }
-
-        /* Opt-in form -> Google Sheet ("Subscribers" tab) */
-        var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyfEC_AxQz_3cA2zsGEIjB0ABBA1iS-BE2qXGUK90iJIO4M_9GTNBetYDN_o2R_ONGKIA/exec';
-        var CHANNEL = '{{ channel_name }}';
-        var form = document.getElementById('optin-form');
-        var btn = document.getElementById('optin-btn');
-        var status = document.getElementById('optin-status');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            if (!form.checkValidity()) { form.reportValidity(); return; }
-            var payload = {
-                type: 'subscribe',
-                first_name: form.first_name.value.trim(),
-                last_name: form.last_name.value.trim(),
-                email: form.email.value.trim(),
-                channel: CHANNEL,
-                page: location.pathname,
-                website: form.website.value
-            };
-            btn.disabled = true; status.textContent = 'Sending...';
-            fetch(ENDPOINT, {
-                method: 'POST', mode: 'no-cors',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(payload)
-            }).then(function () {
-                form.reset();
-                status.textContent = 'You\u2019re on the list. Watch your inbox.';
-            }).catch(function () {
-                status.textContent = 'Could not send. Check your connection and try again.';
-            }).then(function () { btn.disabled = false; });
-        });
-    })();
-    </script>
+<script>
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex');
+  mobileBtn.textContent = 'MENU'; mobileBtn.setAttribute('aria-expanded', 'false');
+}
+mobileBtn.addEventListener('click', () => {
+  if (mobileMenu.classList.contains('hidden')) {
+    mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex');
+    mobileBtn.textContent = 'CLOSE'; mobileBtn.setAttribute('aria-expanded', 'true');
+  } else closeMobileMenu();
+});
+window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
