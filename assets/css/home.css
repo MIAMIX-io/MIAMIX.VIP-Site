@@ -224,3 +224,9 @@
 .row-bg { display: none; }
 .row-track { -webkit-mask-image: none; mask-image: none; }
 .poster-img { will-change: transform; }
+
+/* Cap fast swipes: carousel stops on each poster instead of flying past */
+.row-track { scroll-snap-type: x mandatory; scroll-padding-inline: 60px; }
+.poster { scroll-snap-align: start; scroll-snap-stop: always; }
+.row-track.is-dragging { scroll-snap-type: none; } /* keeps mouse-dragging smooth on desktop */
+@media (max-width: 900px) { .row-track { scroll-padding-inline: 20px; } }
