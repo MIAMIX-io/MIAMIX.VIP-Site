@@ -1,11 +1,11 @@
 # Homepage settings. Edit here instead of the HTML.
 
 hero:
-  title: "Inter Miami"
-  subtitle: "Launches In Freedom Park"
-  cta_text: "Read the story"
-  cta_url: /miami-freedom-park/
-  image: /assets/hero/home-hero.webp
+  title: "SOBEWFF 2027"
+  subtitle: "South Beach Wine & Food Festival"
+  cta_text: "Get Tickets Now"
+  cta_url: /https://sobewff.org
+  image: /assets/hero/SBFW-hero.jpeg
 
 latest:
   eyebrow: "Just Dropped"
