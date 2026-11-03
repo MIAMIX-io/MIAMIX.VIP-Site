@@ -12,7 +12,7 @@
 #   id        anchor id for the row (also used for CSS)
 #   eyebrow   small label above the title
 #   title     the big editorial title
-#   tagline   one line under the title
+#   tagline   short paragraph under the title (about two sentences)
 #   accent    brand pink (leave as is)
 #   channels  Notion channel names feeding this row
 #   url       "See all" destination
@@ -33,7 +33,7 @@ rows:
   - id: game-day
     eyebrow: "Sports & Entertainment"
     title: "Game Day, Miami Style"
-    tagline: "From the pitch to the paddock, the moments that move the city."
+    tagline: "From Inter Miami nights to race weekends and fight cards, the games, athletes and moments that bring Miami to its feet. Front-row access to the energy that makes this city a sports capital."
     accent: "#d9008d"
     channels: [Sports]
     url: /sports
@@ -41,7 +41,7 @@ rows:
   - id: departures
     eyebrow: "Travel & Leisure"
     title: "Departures"
-    tagline: "Airlines, cruises and getaways, all boarding from Miami."
+    tagline: "Miami is the gateway to everywhere. Airlines, cruises, resorts and weekend escapes, curated for travelers who care how the journey feels as much as where it ends."
     accent: "#d9008d"
     channels: [Travel]
     url: /travel
@@ -49,7 +49,7 @@ rows:
   - id: table-for-miami
     eyebrow: "Hospitality"
     title: "Table for Miami"
-    tagline: "Where to eat, stay and be seen."
+    tagline: "The restaurants, bars and hotels that define Miami hospitality, and the people who run them. Where to eat well, stay in style and be part of the room."
     accent: "#d9008d"
     channels: [Hospitality]
     url: /hospitality
@@ -57,7 +57,7 @@ rows:
   - id: made-in-miami
     eyebrow: "Culture & Art"
     title: "Made in Miami"
-    tagline: "The artists, stages and stories shaping the scene."
+    tagline: "Galleries, stages, studios and street corners. Meet the artists, makers and venues shaping Miami's creative identity, and the stories behind the work."
     accent: "#d9008d"
     channels: [Culture]
     url: /culture
@@ -65,7 +65,7 @@ rows:
   - id: style-edit
     eyebrow: "Fashion & Lifestyle"
     title: "The Style Edit"
-    tagline: "Looks, labels and the people behind them."
+    tagline: "Designers, boutiques and stylists setting the tone from Brickell to the Beach. The looks, the labels and the craft behind how Miami dresses."
     accent: "#d9008d"
     channels: [Fashion]
     url: /fashion
@@ -73,7 +73,7 @@ rows:
   - id: curated
     eyebrow: "Curated Lifestyle"
     title: "Curated by Romina"
-    tagline: "Luxury with soul, from MIAMIX partner Romina Nabhen."
+    tagline: "Luxury with soul, handpicked by MIAMIX partner Romina Nabhen. A personal edit of experiences, brands and places chosen for quality, character and taste."
     accent: "#d9008d"
     channels: [CuratedLifestyle]
     url: /curated-lifestyle
@@ -81,7 +81,7 @@ rows:
   - id: feel-good
     eyebrow: "Health, Wellness & Nonprofit"
     title: "Feel Good, Do Good"
-    tagline: "Wellness stories and the foundations giving back."
+    tagline: "Wellness practices, health pioneers and the nonprofits strengthening our community. Stories about feeling better, and about the people and foundations helping others do the same."
     accent: "#d9008d"
     channels: [Health, Nonprofit]
     url: /health
