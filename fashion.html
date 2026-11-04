@@ -1,10 +1,5 @@
 ---
 ---
-{%- comment -%}
-  Fashion & Lifestyle channel. Styles live in /assets/css/channel.css.
-  To make another channel page, copy this file and change the four
-  assigns below plus the hero text and opt-in copy.
-{%- endcomment -%}
 {%- assign channel_key = "Fashion" -%}
 {%- assign channel_name = "Fashion & Lifestyle" -%}
 {%- assign accent = "#E12BC0" -%}
@@ -85,22 +80,7 @@
         <p class="empty-state">New {{ channel_name | downcase | escape }} stories are on the way. Join the list below to hear first.</p>
         {%- endif %}
     </main>
-
-    <!-- OPT-IN -->
-    <section class="optin-section">
-        <div class="optin-box">
-            <h2>Get On The List</h2>
-            <p>Subscribe to the MIAMIX {{ channel_name | escape }} channel for the latest VIP updates, premium event access, and exclusive content.</p>
-            <form class="optin-form" id="optin-form">
-                <input type="text" name="first_name" placeholder="First name" autocomplete="given-name" aria-label="First name" required>
-                <input type="text" name="last_name" placeholder="Last name" autocomplete="family-name" aria-label="Last name" required>
-                <input type="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" aria-label="Email address" required>
-                <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <button type="submit" id="optin-btn">Join the list</button>
-            </form>
-            <p class="optin-status" id="optin-status" role="status" aria-live="polite"></p>
-        </div>
-    </section>
+    <section>
 
     {% include footer.html %}
 
@@ -122,38 +102,6 @@
         } else {
             document.querySelectorAll('.card-video').forEach(function (v) { v.remove(); });
         }
-
-        /* Opt-in form -> Google Sheet ("Subscribers" tab) */
-        var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyfEC_AxQz_3cA2zsGEIjB0ABBA1iS-BE2qXGUK90iJIO4M_9GTNBetYDN_o2R_ONGKIA/exec';
-        var CHANNEL = '{{ channel_name }}';
-        var form = document.getElementById('optin-form');
-        var btn = document.getElementById('optin-btn');
-        var status = document.getElementById('optin-status');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            if (!form.checkValidity()) { form.reportValidity(); return; }
-            var payload = {
-                type: 'subscribe',
-                first_name: form.first_name.value.trim(),
-                last_name: form.last_name.value.trim(),
-                email: form.email.value.trim(),
-                channel: CHANNEL,
-                page: location.pathname,
-                website: form.website.value
-            };
-            btn.disabled = true; status.textContent = 'Sending...';
-            fetch(ENDPOINT, {
-                method: 'POST', mode: 'no-cors',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(payload)
-            }).then(function () {
-                form.reset();
-                status.textContent = 'You\u2019re on the list. Watch your inbox.';
-            }).catch(function () {
-                status.textContent = 'Could not send. Check your connection and try again.';
-            }).then(function () { btn.disabled = false; });
-        });
     })();
     </script>
 </body>
