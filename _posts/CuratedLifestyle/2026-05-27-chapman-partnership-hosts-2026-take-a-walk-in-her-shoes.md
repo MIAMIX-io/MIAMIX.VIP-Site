@@ -1,40 +1,17 @@
 ---
-id: 3739f477-fdba-80d2-a944-ec4693f174df
 title: Chapman Partnership Hosts 2026 Take a Walk in Her Shoes
-created_time: 2026-06-02T14:25:00.000Z
-last_edited_time: 2026-06-04T16:05:00.000Z
+page_title: "Your Post Title Here"
+date: 2026-06-02T14:25:00.000Z
 cover_image: >-
   /assets/images/CuratedLifestyle/DSC_8786_4.jpeg
-status: Published
-last_synced_to_git_hub: 2026-06-04T13:02:00.000Z
-grid_placement: Grid A
-website: miamix.vip
-content_type: Blog Post
 external_url: null
 channel:
   - CuratedLifestyle
-date: 2026-05-27T00:00:00.000Z
-reviewer: []
-language: English
-author:
-  - object: user
-    id: 26dd872b-594c-8186-a4a4-000211f577f7
-    name: Robert Eldridge
-    avatar_url: >-
-      https://s3-us-west-2.amazonaws.com/public.notion-static.com/95b74146-930b-4ce9-8813-a269b41f01d6/Untitled_(4).png
-    type: person
-    person:
-      email: robert@miamix.io
-sync_to_git_hub: true
-page_title: Chapman Partnership Hosts 2026 Take a Walk in Her Shoes
-status_1:
-  id: 3c789af7-6f1b-478a-acbb-5e70017ffc83
-  name: Done
-  color: green
+business_name: "null"
+author: "Romina Nabhen"
 featured: false
 _thumbnail: >-
   /assets/images/CuratedLifestyle/DSC_8786_4.jpeg
-
 ---
 
 Chapman Partnership Hosts Take a Walk in Her Shoes 2026 at Hotel Colonnade Coral Gables
