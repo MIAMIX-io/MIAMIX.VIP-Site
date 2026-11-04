@@ -1,5 +1,6 @@
 ---
 title: The Modern Mother’s Day Edit
+page_title: null
 cover_image: >-
   /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
 external_url: www.victoriassecret.com
