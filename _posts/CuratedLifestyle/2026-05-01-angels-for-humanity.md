@@ -14,6 +14,8 @@ featured: false
 _thumbnail: >-
   /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
 
+---
+
 ## **Tea for a Cause Brings a Garden of Versailles Theme to the Biltmore**
 
 On Sunday, April 26, 2026, Angels for Humanity hosted its annual Tea for a Cause at the iconic Biltmore Hotel in Coral Gables, welcoming a distinguished community for an afternoon where elegance and purpose came together with intention. Now in its fifth year, the event introduced a Gardens of Versailles theme, thoughtfully woven into the setting to create a refined and immersive experience within the hotel.
