@@ -57,6 +57,14 @@ header {
     .nav-item.dropdown .dropdown-menu { position: static; display: none; margin-top: 12px; padding: 0; background: none; box-shadow: none; border: 0; min-width: 0; }
     .nav-item.dropdown.mobile-open .dropdown-menu { display: block; }
     .dropdown-menu a { padding: 10px 0; font-size: .75rem; text-align: right; }
+    
+    @media (max-width: 900px) {
+  .mobile-menu-toggle {
+    background: none; border: 0; box-shadow: none;
+    -webkit-appearance: none; appearance: none;
+    padding: 12px 0; margin: -12px 0; line-height: 24px;
+  }
+  .mobile-menu-toggle::after { line-height: 24px; }
 }
 
 /* --- FOOTER --- */
