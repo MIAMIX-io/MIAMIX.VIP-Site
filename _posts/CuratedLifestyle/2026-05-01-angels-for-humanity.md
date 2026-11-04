@@ -12,7 +12,6 @@ author: "Romina Nabhen"
 featured: false
 _thumbnail: >-
   /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
-
 ---
 
 ## **Tea for a Cause Brings a Garden of Versailles Theme to the Biltmore**
