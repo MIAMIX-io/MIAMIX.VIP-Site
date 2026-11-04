@@ -54,28 +54,42 @@ layout: null
             {% include row.html id="latest" eyebrow=home.latest.eyebrow title=home.latest.title tagline=home.latest.tagline accent=home.latest.accent posts=latest %}
         {%- endif -%}
 
-        <!-- FEATURED PARTNERS (logo wall). Clickable logos use <a>, the rest use <div>. -->
-        <section id="partners" class="partners">
-            <div class="partners-head">
-                <span class="partners-eyebrow">Spotlight</span>
-                <h2>Featured Partners</h2>
-                <p class="partners-tag">Brands and organizations we're proud to showcase.</p>
-            </div>
+<section id="partners" class="partners" aria-label="Featured partners">
+    <div class="partners-head">
+        <span class="partners-eyebrow">Spotlight</span>
+        <h2>Featured Partners</h2>
+        <p class="partners-tag">Brands and organizations we're proud to showcase.</p>
+    </div>
 
-            <div class="logo-grid">
-                <a class="logo-tile" href="/miami-freedom-park/" aria-label="Inter Miami"><img src="/images/partners/inter-miami.png" alt="Inter Miami" loading="lazy"></a>
-                <div class="logo-tile"><img src="/images/partners/afa.png" alt="AFA - Argentine Football Association" loading="lazy"></div>
-                <div class="logo-tile"><img src="/images/partners/riders-miami.png" alt="Riders Miami Motorsports" loading="lazy"></div>
-                <a class="logo-tile" href="/aerolineas-argentinas/" aria-label="Aerolíneas Argentinas"><img src="/images/partners/aerolineas-argentinas.png" alt="Aerolíneas Argentinas" loading="lazy"></a>
-                <div class="logo-tile"><img src="/images/partners/salta.png" alt="Salta Argentina" loading="lazy"></div>
-                <div class="logo-tile"><img src="/images/partners/brightline.png" alt="Brightline" loading="lazy"></div>
-                <div class="logo-tile"><img src="/images/partners/lennox-hotels.png" alt="Lennox Hotels" loading="lazy"></div>
-                <div class="logo-tile"><img src="/images/partners/paradores.png" alt="Paradores" loading="lazy"></div>
-                <a class="logo-tile" href="/bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/" aria-label="BW Hair Studio &amp; Spa"><img src="/images/partners/bw-hair-studio.png" alt="BW Hair Studio &amp; Spa" loading="lazy"></a>
-                <div class="logo-tile"><img src="/images/partners/sabrina-contigo.png" alt="Sabrina Contigo" loading="lazy"></div>
-                <div class="logo-tile"><img src="/images/partners/small.png" alt="Partner logo (sun and clouds)" loading="lazy"></div>
+    <div class="marquee">
+        {%- for r in (0..1) %}
+        <div class="marquee-row{% if r == 1 %} marquee-row--rev{% endif %}">
+            <div class="marquee-track">
+                {%- for pass in (1..6) -%}
+                    {%- for p in site.data.partners -%}
+                        {%- assign side = forloop.index0 | modulo: 2 -%}
+                        {%- if side != r -%}{%- continue -%}{%- endif -%}
+                        {%- capture cls %}logo-tile{% if p.light %} logo-tile--light{% endif %}{% endcapture -%}
+                        {%- if pass == 1 -%}
+                            {%- if p.url -%}
+                <a class="{{ cls }}" href="{{ p.url }}" aria-label="{{ p.name | escape }}"><img src="{{ p.image }}" alt="{{ p.name | escape }}" loading="lazy"></a>
+                            {%- else -%}
+                <div class="{{ cls }}"><img src="{{ p.image }}" alt="{{ p.name | escape }}" loading="lazy"></div>
+                            {%- endif -%}
+                        {%- else -%}
+                            {%- if p.url -%}
+                <a class="{{ cls }}" href="{{ p.url }}" aria-hidden="true" tabindex="-1"><img src="{{ p.image }}" alt="" loading="lazy"></a>
+                            {%- else -%}
+                <div class="{{ cls }}" aria-hidden="true"><img src="{{ p.image }}" alt="" loading="lazy"></div>
+                            {%- endif -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endfor %}
             </div>
-        </section>
+        </div>
+        {%- endfor %}
+    </div>
+</section>
 
         <!-- CHANNEL ROWS: one shelf per entry in _data/channels.yml; empty shelves hide themselves -->
         {%- for row in site.data.channels.rows -%}
