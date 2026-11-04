@@ -245,3 +245,4 @@ section.hero { padding: 120px 60px 64px; }
 @media (max-width: 900px) {
   section.hero { padding: 112px 24px 48px; }
 }
+.hero { min-height: 100vh; min-height: 100dvh; }
