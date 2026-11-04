@@ -19,6 +19,7 @@
 #   banner    optional image path for the row backdrop (defaults to newest post)
 
 labels:
+  CuratedLifestyle: "Curated Lifestyle"
   Sports: "Sports & Entertainment"
   Fashion: "Fashion & Lifestyle"
   Health: "Health & Wellness"
@@ -26,10 +27,17 @@ labels:
   Travel: "Travel & Leisure"
   Hospitality: "Hospitality"
   Nonprofit: "Nonprofit"
-  CuratedLifestyle: "Curated Lifestyle"
   InterMIA: "Inter Miami"
 
 rows:
+  - id: curated
+    eyebrow: "Curated Lifestyle"
+    title: "Curated by Romina"
+    tagline: "Luxury with soul, handpicked by MIAMIX partner Romina Nabhen. A personal edit of experiences, brands and places chosen for quality, character and taste."
+    accent: "#d9008d"
+    channels: [CuratedLifestyle]
+    url: /curated-lifestyle
+
   - id: game-day
     eyebrow: "Sports & Entertainment"
     title: "Game Day, Miami Style"
@@ -69,14 +77,6 @@ rows:
     accent: "#d9008d"
     channels: [Fashion]
     url: /fashion
-
-  - id: curated
-    eyebrow: "Curated Lifestyle"
-    title: "Curated by Romina"
-    tagline: "Luxury with soul, handpicked by MIAMIX partner Romina Nabhen. A personal edit of experiences, brands and places chosen for quality, character and taste."
-    accent: "#d9008d"
-    channels: [CuratedLifestyle]
-    url: /curated-lifestyle
 
   - id: feel-good
     eyebrow: "Health, Wellness & Nonprofit"
