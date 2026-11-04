@@ -1,31 +1,13 @@
 ---
-id: 3569f477-fdba-80ee-be38-cbd9dd333449
 title: The Modern Mother’s Day Edit
-created_time: 2026-05-04T15:10:00.000Z
-last_edited_time: 2026-06-04T12:20:00.000Z
 cover_image: >-
   /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
-status: Published
-last_synced_to_git_hub: 2026-05-10T13:19:00.000Z
-grid_placement: Grid B
-website: miamix.vip
-content_type: Blog Post
 external_url: www.victoriassecret.com
 channel:
   - CuratedLifestyle
 date: 2026-05-06T00:00:00.000Z
-reviewer: []
 business_name: Victoria Secret
-language: English
-author:
-  - object: user
-    id: 274d872b-594c-81ec-b615-0002abcb7376
-sync_to_git_hub: true
 page_title: The Modern Mother’s Day Edit
-status_1:
-  id: 4c5647c2-60e6-4904-be74-cda62e3359d8
-  name: Not started
-  color: default
 featured: false
 _thumbnail: >-
   /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
