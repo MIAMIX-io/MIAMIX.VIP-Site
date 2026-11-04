@@ -1,0 +1,28 @@
+# _data/partners.yml : one entry per logo. url is optional (makes the tile clickable).
+# light: true puts the logo on a light tile (use for dark logos like Lennox).
+- name: "Inter Miami"
+  image: /images/partners/inter-miami.png
+  url: /miami-freedom-park/
+- name: "AFA - Argentine Football Association"
+  image: /images/partners/afa.png
+- name: "Riders Miami Motorsports"
+  image: /images/partners/riders-miami.png
+- name: "Aerolíneas Argentinas"
+  image: /images/partners/aerolineas-argentinas.png
+  url: /aerolineas-argentinas/
+- name: "Salta Argentina"
+  image: /images/partners/salta.png
+- name: "Brightline"
+  image: /images/partners/brightline.png
+- name: "Lennox Hotels"
+  image: /images/partners/lennox-hotels.png
+  light: true
+- name: "Paradores"
+  image: /images/partners/paradores.png
+- name: "BW Hair Studio & Spa"
+  image: /images/partners/bw-hair-studio.png
+  url: /bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/
+- name: "Sabrina Contigo"
+  image: /images/partners/sabrina-contigo.png
+- name: "Partner"
+  image: /images/partners/small.png
