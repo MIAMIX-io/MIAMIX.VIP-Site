@@ -3,14 +3,14 @@ title: "Your Post Title Here"
 page_title: "Your Post Title Here"
 date: 2026-11-04T00:00:00.000Z
 cover_image: /assets/images/CuratedLifestyle/cover-image.png
-_thumbnail: /assets/images/CuratedLifestyle/thumbnail-image.png
-content_type: Blog Post
 external_url: "link/goes/here"
 channel:
   - CuratedLifestyle
 business_name: "business_name here"
 author: "Your Name"
 featured: false
+_thumbnail: >-
+  /assets/images/CuratedLifestyle/thumbnail-image.jpg
 ---
 
 ## **Heading 1**
