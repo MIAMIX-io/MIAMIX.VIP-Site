@@ -1,35 +1,18 @@
 ---
-id: 35c9f477-fdba-80d7-bb26-e533d312f6b6
 title: Angels for Humanity
-created_time: 2026-05-10T00:10:00.000Z
-last_edited_time: 2026-05-10T00:15:00.000Z
+page_title: Angels for Humanity
+date: 2026-05-10T00:10:00.000Z
 cover_image: >-
   /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
-status: Published
-last_synced_to_git_hub: null
-grid_placement: None
-website: miamix.vip
 content_type: Blog Post
 external_url: null
 channel:
   - CuratedLifestyle
-date: 2026-05-01T00:00:00.000Z
-reviewer: []
-language: English
-author:
-  - object: user
-    id: 274d872b-594c-81ec-b615-0002abcb7376
-    name: Cristhian Gassmann
-    avatar_url: null
-    type: person
-    person:
-      email: cristhian@miamix.io
-sync_to_git_hub: true
-page_title: Angels for Humanity
+business_name: null
+author: "Romina Nabhen"
+featured: false
 _thumbnail: >-
   /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
-
----
 
 ## **Tea for a Cause Brings a Garden of Versailles Theme to the Biltmore**
 
