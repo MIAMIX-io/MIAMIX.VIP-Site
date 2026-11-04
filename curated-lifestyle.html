@@ -1,5 +1,5 @@
----
----
+Here is the updated HTML code.
+I added a <style> block in the <head> to introduce padding to your .wrap and .gallery-grid containers, which will pull your text and images away from the edges of the screen. I also built a responsive horizontal scrolling carousel section just above the footer to house the Curated Lifestyle posts.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,104 @@
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/channel.css">
     <link rel="stylesheet" href="/assets/css/creator.css">
+    
+    <style>
+        /* Structural Padding Fixes */
+        .wrap {
+            padding: 0 24px; /* Prevents text from hitting the screen edge */
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        
+        .gallery-grid {
+            padding: 24px; 
+            gap: 16px; /* Adds breathing room between your gallery images */
+        }
+        
+        .creator-hero .wrap, .bio .wrap {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        /* Post Carousel Styling */
+        .carousel-section {
+            padding: 60px 0;
+            background-color: #f7f7f7; /* Stone/light background */
+        }
+        
+        .carousel-section h2 {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 0 24px;
+        }
+
+        .carousel-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 24px;
+            padding: 0 24px 24px 24px; /* Bottom padding for scrollbar/shadows */
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .carousel-track::-webkit-scrollbar {
+            display: none; /* Hide scrollbar in Chrome/Safari */
+        }
+
+        .carousel-item {
+            flex: 0 0 320px; /* Fixed width for each post card */
+            scroll-snap-align: start;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+        
+        .carousel-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-content {
+            padding: 20px;
+        }
+        
+        .carousel-content span.date {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .carousel-content h3 {
+            margin: 0 0 12px 0;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
+
+        .carousel-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #555;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
 
@@ -60,8 +158,49 @@
         </div>
     </section>
 
+    <!-- New Carousel Gallery Section -->
+    <section class="carousel-section">
+        <h2>Curated Lifestyle Posts</h2>
+        <div class="carousel-track">
+            
+            <!-- Post Item 1 -->
+            <a href="/curated-lifestyle/post-url-1" class="carousel-item">
+                <img src="/assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png" alt="The Modern Mother's Day Edit" loading="lazy">
+                <div class="carousel-content">
+                    <span class="date">May 6, 2026</span>
+                    <h3>The Modern Mother’s Day Edit</h3>
+                    <p>Mother’s Day is an invitation to slow down and choose with intention. It is not about how much is given, but how thoughtfully it is considered.</p>
+                </div>
+            </a>
+
+            <!-- Post Item 2 -->
+            <a href="/curated-lifestyle/post-url-2" class="carousel-item">
+                <img src="/path-to-cover-image.jpg" alt="Post Title" loading="lazy">
+                <div class="carousel-content">
+                    <span class="date">April 20, 2026</span>
+                    <h3>Title of Next Post</h3>
+                    <p>A brief excerpt of the post content goes here to give readers a preview of the lifestyle article.</p>
+                </div>
+            </a>
+            
+            <!-- Post Item 3 -->
+            <a href="/curated-lifestyle/post-url-3" class="carousel-item">
+                <img src="/path-to-cover-image.jpg" alt="Post Title" loading="lazy">
+                <div class="carousel-content">
+                    <span class="date">March 15, 2026</span>
+                    <h3>Another Lifestyle Article</h3>
+                    <p>A brief excerpt of the post content goes here to give readers a preview of the lifestyle article.</p>
+                </div>
+            </a>
+
+            <!-- Add more <a class="carousel-item"> blocks as needed -->
+
+        </div>
+    </section>
+
     {% include footer.html %}
 
     <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>
+
