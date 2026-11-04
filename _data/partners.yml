@@ -1,5 +1,6 @@
 # _data/partners.yml : one entry per logo. url is optional (makes the tile clickable).
-# light: true puts the logo on a light tile (use for dark logos like Lennox).
+# light: true puts the logo on a light tile (use for dark logos like Lennox and Paradores).
+# Rows alternate: 1st, 3rd, 5th... go in the top row; 2nd, 4th, 6th... in the bottom row.
 - name: "Inter Miami"
   image: /images/partners/inter-miami.png
   url: /miami-freedom-park/
@@ -19,6 +20,7 @@
   light: true
 - name: "Paradores"
   image: /images/partners/paradores.png
+  light: true
 - name: "BW Hair Studio & Spa"
   image: /images/partners/bw-hair-studio.png
   url: /bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/
