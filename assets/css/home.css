@@ -6,7 +6,7 @@
 /* --- HERO --- */
 .hero {
     position: relative; isolation: isolate; overflow: hidden;
-    height: auto; min-height: 100vh; min-height: calc(100lvh + 120px);   /* extends under the toolbar */
+    height: auto; min-height: 100vh; min-height: calc(100lvh + 100px);   /* extends under the toolbar */
     justify-content: flex-start; padding: 120px 60px 64px;  /* text starts near the top */
     background: var(--hero-image) center / cover no-repeat, #000;
 }
