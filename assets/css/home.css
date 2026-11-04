@@ -242,3 +242,7 @@
 .poster { scroll-snap-align: start; scroll-snap-stop: always; }
 .row-track.is-dragging { scroll-snap-type: none; } /* keeps mouse-dragging smooth on desktop */
 @media (max-width: 900px) { .row-track { scroll-padding-inline: 20px; } }
+section.hero { padding: 120px 60px 64px; }
+@media (max-width: 900px) {
+  section.hero { padding: 112px 24px 48px; }
+}
