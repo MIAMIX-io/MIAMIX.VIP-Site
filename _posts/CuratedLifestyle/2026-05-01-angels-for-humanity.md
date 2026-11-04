@@ -4,7 +4,6 @@ page_title: Angels for Humanity
 date: 2026-05-10T00:10:00.000Z
 cover_image: >-
   /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
-content_type: Blog Post
 external_url: null
 channel:
   - CuratedLifestyle
