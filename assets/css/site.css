@@ -102,3 +102,7 @@ footer {
     html { scroll-behavior: auto; }
     .nav-center, .nav-item, .social-icon { transition: none; }
 }
+.social-icons { display: flex; gap: 18px; align-items: center; }
+.social-icon { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; }
+.social-icon img { width: 100%; height: 100%; object-fit: contain; }
+footer .social-icons { justify-content: center; margin-top: 8px; }
