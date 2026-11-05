@@ -1,6 +1,6 @@
 ---
 title: Chapman Partnership Hosts 2026 Take a Walk in Her Shoes
-page_title: "Your Post Title Here"
+page_title: Chapman Partnership Hosts 2026 Take a Walk in Her Shoes
 date: 2026-06-02T14:25:00.000Z
 cover_image: >-
   /assets/images/CuratedLifestyle/DSC_8786_4.jpeg
