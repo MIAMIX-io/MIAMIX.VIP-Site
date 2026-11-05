@@ -54,55 +54,32 @@
     </section>
 
     <!-- ARTICLES -->
-    <main class="channel-content">
+    <main class="carousel-section">
         <h2 class="section-title">Latest <span>Articles</span></h2>
 
         {%- if cards.size > 0 %}
-        <div class="card-grid">
-            {%- for post in cards %}
-            {%- assign img = post.cover_image | default: post.thumbnail -%}
-            {%- assign label = post.page_title | default: post.title %}
-            <a class="card" href="{{ post.url | relative_url }}">
-                <div class="card-media">
-                    {%- if img %}
-                    <img src="{{ img }}" alt="{{ label | escape }}" loading="lazy" decoding="async">
-                    {%- endif %}
-                    <video class="card-video" muted loop playsinline preload="none" aria-hidden="true" data-src="/video/MIAMIX-1.mp4"></video>
-                </div>
-                <div class="card-body">
-                    <h3>{{ label }}</h3>
-                    <span class="card-more">Read article &rarr;</span>
-                </div>
-            </a>
-            {%- endfor %}
+<div class="carousel-track">
+    {%- for post in cards %}
+    {%- assign img = post.cover_image | default: post.thumbnail -%}
+    {%- assign label = post.page_title | default: post.title %}
+    <a class="carousel-item" href="{{ post.url | relative_url }}">
+        {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy" decoding="async">{% endif %}
+        <div class="carousel-content">
+            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+            <h3>{{ label }}</h3>
+            <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
         </div>
-        {%- else %}
-        <p class="empty-state">New {{ channel_name | downcase | escape }} stories are on the way. Join the list below to hear first.</p>
-        {%- endif %}
+    </a>
+    {%- endfor %}
+</div>
+{%- else %}
+<p class="empty-state">New {{ channel_name | downcase | escape }} stories are on the way.</p>
+{%- endif %}
     </main>
-    <section>
 
-    {% include footer.html %}
+        {% include footer.html %}
 
     <script src="/assets/js/nav.js" defer></script>
-    <script>
-    (function () {
-        /* Hover video: only on devices that can hover, and only loaded on first hover */
-        var cards = document.querySelectorAll('.card');
-        if (window.matchMedia('(hover: hover)').matches) {
-            cards.forEach(function (card) {
-                var v = card.querySelector('.card-video');
-                if (!v) return;
-                card.addEventListener('mouseenter', function () {
-                    if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
-                    var p = v.play(); if (p && p.catch) p.catch(function () {});
-                });
-                card.addEventListener('mouseleave', function () { v.pause(); });
-            });
-        } else {
-            document.querySelectorAll('.card-video').forEach(function (v) { v.remove(); });
-        }
-    })();
-    </script>
 </body>
 </html>
+
