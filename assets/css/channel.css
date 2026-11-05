@@ -71,13 +71,7 @@ body.channel a { color: inherit; text-decoration: none; }
 }
 .channel-hero h1 span { font-weight: 700; color: var(--hero-accent, var(--accent)); }
 
-.curve-divider {
-  position: absolute; left: 0; bottom: -1px; width: 100%;
-  overflow: hidden; line-height: 0;
-}
-.curve-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
-.curve-divider path { fill: var(--ch-bg); }
-
+linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 55%, #000 100%),
 
 /* ---------- POST CAROUSEL (shared) ---------- */
 .carousel-section {
