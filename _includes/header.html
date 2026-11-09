@@ -1,29 +1,45 @@
 <header>
+    <!-- Brand Logo -->
     <a href="/" class="logo">
-        <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX Logo">
+        <img src="/images/MIAMIX-logo.png" alt="MIAMIX">
     </a>
 
-    <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+    <!-- Mobile Hamburger Toggle (hidden on desktop via site.css) -->
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation"></button>
 
-    <ul class="nav-center" id="navMenu">
-        <li class="nav-item dropdown">
-            CHANNELS <span style="font-size: 10px;">▼</span>
-            <ul class="dropdown-menu">
-                <li><a href="/sports">Sports &amp; Entertainment</a></li>
-                <li><a href="/fashion">Fashion &amp; Lifestyle</a></li>
-                <li><a href="/health">Health &amp; Wellness</a></li>
-                <li><a href="/culture">Culture &amp; Art</a></li>
-                <li><a href="/travel">Travel &amp; Leisure</a></li>
-                <li><a href="/hospitality">Hospitality</a></li>
-                <li><a href="/nonprofit">Nonprofit</a></li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
-        <li class="nav-item"><a href="/inter-miami">INTER MIAMI</a></li>
-        <li class="nav-item"><a href="/contact">CONTACT</a></li>
-    </ul>
+    <!-- Navigation Menu -->
+    <nav class="nav-center">
+        <ul>
+            <li class="nav-item dropdown">
+                <button type="button" class="dropdown-trigger">
+                    CHANNELS <span class="arrow">▼</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/channels/sports-entertainment">Sports & Entertainment</a></li>
+                    <li><a href="/channels/fashion-lifestyle">Fashion & Lifestyle</a></li>
+                    <li><a href="/channels/health-wellness">Health & Wellness</a></li>
+                    <li><a href="/channels/culture-art">Culture & Art</a></li>
+                    <li><a href="/channels/travel-leisure">Travel & Leisure</a></li>
+                    <li><a href="/channels/hospitality">Hospitality</a></li>
+                    <li><a href="/channels/nonprofit">Nonprofit</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
+            <li class="nav-item"><a href="/inter-miami">INTER MIAMI</a></li>
+            <li class="nav-item"><a href="/contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
-    <div class="nav-right">
-        {% include social-icons.html %}
+    <!-- Social Media Links -->
+    <div class="nav-right social-icons">
+        <a href="https://youtube.com" class="social-icon" target="_blank" rel="noopener" aria-label="YouTube">
+            <img src="/images/icon-youtube.svg" alt="YouTube">
+        </a>
+        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="/images/icon-instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="/images/icon-linkedin.svg" alt="LinkedIn">
+        </a>
     </div>
 </header>
