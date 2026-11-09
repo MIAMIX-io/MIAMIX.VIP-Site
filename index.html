@@ -26,11 +26,17 @@ layout: null
 
     <!-- HERO -->
     <section class="hero" style="--hero-image: url('{{ home.hero.image }}');">
-        <h1>{{ home.hero.title }}</h1>
-        <p>{{ home.hero.subtitle }}</p>
-        {%- if home.hero.cta_url %}
-        <a href="{{ home.hero.cta_url }}" class="hero-btn">{{ home.hero.cta_text | default: "Learn more" }}</a>
-        {%- endif %}
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            {%- if home.hero.eyebrow %}
+            <span class="hero-badge">{{ home.hero.eyebrow }}</span>
+            {%- endif %}
+            <h1>{{ home.hero.title }}</h1>
+            <p>{{ home.hero.subtitle }}</p>
+            {%- if home.hero.cta_url %}
+            <a href="{{ home.hero.cta_url }}" class="hero-btn">{{ home.hero.cta_text | default: "Learn more" }}</a>
+            {%- endif %}
+        </div>
     </section>
 
     <main class="rows">
