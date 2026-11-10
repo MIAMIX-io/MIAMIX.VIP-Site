@@ -1,7 +1,7 @@
 {%- comment -%}
-  Reusable channel landing page. No Notion.
-  Params: channel, eyebrow, title, subtitle (optional), image, optin_text (optional), page_title (optional)
-  Grid + opt-in come from channel-bands.html, which reads site.posts.
+  Reusable channel landing page. No Notion, no subscribe.
+  Params: channel, eyebrow, title, subtitle (optional), image, page_title (optional)
+  Grid comes from channel-bands.html, which reads site.posts.
 {%- endcomment -%}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    {% include channel-bands.html channel=include.channel optin_text=include.optin_text start=0 %}
+    {% include channel-bands.html channel=include.channel start=0 %}
 
     {% include footer.html %}
 
