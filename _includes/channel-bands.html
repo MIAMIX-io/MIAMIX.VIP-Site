@@ -1,6 +1,6 @@
 {%- comment -%}
-  Post bands + sign-up band, alternating deep black / stone grey.
-  Params: channel, optin_text (optional), heading (optional, shown above first band),
+  Post bands, alternating deep black / stone grey.
+  Params: channel, heading (optional, shown above first band),
           start (0 = first band black, 1 = first band stone; use it to continue a page's rotation)
 {%- endcomment -%}
 {%- assign s = include.start | default: 0 -%}
@@ -23,7 +23,6 @@
     {%- if include.heading %}<h2 class="ch-heading">{{ include.heading }}</h2>{% endif %}
     <p class="ch-empty">New stories are on the way.</p>
 </section>
-{%- assign end_tone = s | plus: 1 | modulo: 2 -%}
 {%- else %}
 {%- for i in (1..bands) %}
     {%- assign idx = forloop.index0 -%}
@@ -58,18 +57,4 @@
     </div>
 </section>
 {%- endfor %}
-{%- assign end_tone = bands | plus: s | modulo: 2 -%}
 {%- endif %}
-
-<section class="band optin {% if end_tone == 0 %}band--black{% else %}band--stone{% endif %}">
-    <div class="optin-inner">
-        <h2>Get on the list</h2>
-        <p>{{ include.optin_text | default: "Subscribe for the latest stories, spotlights and events from MIAMIX." }}</p>
-        <form class="optin-form">
-            <input type="text" placeholder="First name" aria-label="First name" autocomplete="given-name">
-            <input type="text" placeholder="Last name" aria-label="Last name" autocomplete="family-name">
-            <input type="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</section>
