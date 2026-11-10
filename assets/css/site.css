@@ -314,3 +314,28 @@ footer .social-icons { justify-content: center; margin-top: 8px; }
   .main-nav.open .dropdown { display: none; position: static; box-shadow: none; padding: 8px 0 0 12px; }
   .main-nav.open .has-dropdown.open .dropdown { display: block; }
 }
+/* HEADER - unified names */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(0,0,0,0.88); }
+.header-inner { display: flex !important; flex-direction: row !important; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 12px 20px; position: relative; }
+.logo { flex-shrink: 0; }
+.logo img { height: 36px; width: auto; display: block; }
+.main-nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; align-items: center; }
+.main-nav a { color: #fff; text-decoration: none; font-family: Jost, sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; }
+.main-nav .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #000; border-top: 2px solid #E12BC0; list-style: none; padding: 12px 0; min-width: 200px; }
+.main-nav .has-dropdown { position: relative; }
+.main-nav .has-dropdown:hover .dropdown, .main-nav .has-dropdown:focus-within .dropdown { display: block; }
+.main-nav .dropdown li { display: block; padding: 8px 20px; }
+.header-socials { display: flex; gap: 12px; align-items: center; flex-shrink: 0; }
+.header-socials img { height: 22px; width: auto; display: block; }
+.menu-btn { display: none; }
+
+@media (max-width: 900px) {
+  .header-socials { display: none !important; }
+  .main-nav { display: none; }
+  .menu-btn { display: flex !important; align-items: center; gap: 8px; background: none; border: 0; color: #fff; font-family: Jost, sans-serif; font-size: 14px; letter-spacing: 2px; cursor: pointer; margin-left: auto; flex-shrink: 0; }
+  .main-nav.open { display: block; position: absolute; top: 100%; right: 0; left: auto; width: 280px; background: #000; border-top: 2px solid #E12BC0; padding: 16px 20px 20px; }
+  .main-nav.open ul { display: block; }
+  .main-nav.open li { display: block; margin: 12px 0; }
+  .main-nav.open .dropdown { display: none; position: static; border: 0; padding: 8px 0 0 14px; }
+  .main-nav.open .has-dropdown.open .dropdown { display: block; }
+}
