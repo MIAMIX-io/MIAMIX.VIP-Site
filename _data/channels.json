@@ -1,79 +1,87 @@
 {
   "labels": {
-    "Culture": "Culture and Art",
     "CuratedLifestyle": "Curated Lifestyle",
-    "Fashion": "Fashion and Lifestyle",
-    "Health": "Health and Wellness",
+    "InterMIA": "【entity-Inter Miami¦canonical_name=Inter Miami】",
+    "Travel": "Travel",
     "Hospitality": "Hospitality",
-    "InterMIA": "InterMIA",
-    "Nonprofit": "Nonprofit",
-    "Sports": "Sports and Entertainment",
-    "Travel": "Travel and Leisure"
+    "Fashion": "Fashion",
+    "Culture": "Cultural",
+    "Health": "Health",
+    "Sports": "Sports",
+    "Nonprofit": "Nonprofit"
   },
   "rows": [
     {
-      "id": "sports",
-      "eyebrow": "Sports and Entertainment",
-      "title": "Game Day, Miami Style",
-      "tagline": "Highlights, athletes and the energy of game day.",
-      "accent": "#E12BC0",
-      "url": "/sports",
-      "channels": ["Sports"]
-    },
-    {
-      "id": "fashion",
-      "eyebrow": "Fashion and Lifestyle",
-      "title": "Strike a Pose",
-      "tagline": "Runways, designers and the looks defining Miami.",
-      "accent": "#E12BC0",
-      "url": "/fashion",
-      "channels": ["Fashion"]
-    },
-    {
-      "id": "culture",
-      "eyebrow": "Culture and Art",
-      "title": "Art, Soul and Story",
-      "tagline": "Artists, theatre and stories that shape Miami.",
-      "accent": "#E12BC0",
-      "url": "/culture",
-      "channels": ["Culture"]
-    },
-    {
-      "id": "travel",
-      "eyebrow": "Travel and Leisure",
-      "title": "Departures",
-      "tagline": "Trips, stays and escapes worth the flight.",
-      "accent": "#E12BC0",
-      "url": "/travel",
-      "channels": ["Travel"]
-    },
-    {
-      "id": "hospitality",
-      "eyebrow": "Hospitality",
-      "title": "MIAMIX Hospitality",
-      "tagline": "Tables, stays and service worth remembering.",
-      "accent": "#E12BC0",
-      "url": "/hospitality",
-      "channels": ["Hospitality"]
-    },
-    {
-      "id": "feel-good",
-      "eyebrow": "Feel Good",
-      "title": "Wellness and Giving",
-      "tagline": "Health, wellness and the people giving back.",
-      "accent": "#E12BC0",
-      "url": "/health",
-      "channels": ["Health", "Nonprofit"]
+      "id": "curated",
+      "channel": "CuratedLifestyle",
+      "title": "Curated Lifestyle",
+      "url": "/curated-lifestyle",
+      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=2000&q=80",
+      "show": true
     },
     {
       "id": "inter-miami",
-      "show": false,
-      "eyebrow": "InterMIA",
-      "title": "InterMIA",
-      "tagline": "Matchdays and club stories.",
-      "accent": "#E12BC0",
+      "channel": "InterMIA",
+      "title": "【entity-Inter Miami¦canonical_name=Inter Miami】",
       "url": "/inter-miami",
-      "channels": ["InterMIA"]
+      "image": "https://images.unsplash.com/photo-1459865264687-3b2e8e9e1d5a?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "travel",
+      "channel": "Travel",
+      "title": "Departures",
+      "url": "/travel",
+      "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "hospitality",
+      "channel": "Hospitality",
+      "title": "MIAMIX Hospitality",
+      "url": "/hospitality",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "fashion",
+      "channel": "Fashion",
+      "title": "Strike A Pose",
+      "url": "/fashion",
+      "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "culture",
+      "channel": "Culture",
+      "title": "Artist - Mix",
+      "url": "/culture",
+      "image": "https://images.unsplash.com/photo-1731779583826-8a5c1a0b0e1a?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "health",
+      "channel": "Health",
+      "title": "Health & Wellness",
+      "url": "/health",
+      "image": "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "sports",
+      "channel": "Sports",
+      "title": "Game Day, Miami Style",
+      "url": "/sports",
+      "image": "https://images.unsplash.com/photo-1731870881782-1948058d9ce1?auto=format&fit=crop&w=2000&q=80",
+      "show": true
+    },
+    {
+      "id": "nonprofit",
+      "channel": "Nonprofit",
+      "title": "Make a Difference",
+      "url": "/nonprofit",
+      "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=2000&q=80",
+      "show": false
     }
   ]
 }
