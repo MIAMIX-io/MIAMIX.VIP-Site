@@ -23,12 +23,13 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 /* --- HEADER / DESKTOP NAV --- */
 header {
     position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
-    align-items: center; padding: 14px 40px; color: #fff; z-index: 1000;
+    align-items: center; gap: 24px; padding: 14px 40px; color: #fff; z-index: 1000;
     background: rgba(20, 20, 22, .55);
     backdrop-filter: blur(24px) saturate(1.2);
     -webkit-backdrop-filter: blur(24px) saturate(1.2);
     border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
+.logo { flex-shrink: 0; }
 .logo img { height: 32px; width: auto; display: block; }
 
 /* Desktop Navigation Layout */
@@ -36,6 +37,9 @@ header {
     display: flex;
     align-items: center;
     gap: 32px;
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 0;
 }
 .nav-center ul {
     display: flex;
@@ -70,6 +74,15 @@ header {
 .nav-item.dropdown {
     position: relative;
 }
+/* Bridge the gap so moving the mouse down to the menu does not close it */
+.nav-item.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    height: 16px;
+}
 .nav-item.dropdown .dropdown-menu {
     display: none;
     position: absolute;
@@ -86,7 +99,9 @@ header {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(225, 43, 192, 0.15);
     z-index: 1010;
 }
-.nav-item.dropdown:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu,
+.nav-item.dropdown.open .dropdown-menu {
     display: block;
 }
 .dropdown-menu li {
@@ -115,6 +130,7 @@ header {
     display: flex;
     align-items: center;
     gap: 18px;
+    flex-shrink: 0;
 }
 .mobile-menu-toggle {
     display: none; /* Hide hamburger toggle on desktop */
@@ -196,6 +212,17 @@ header {
     color: var(--primary-pink);
     box-shadow: 0 0 30px rgba(225, 43, 192, 0.7);
     transform: translateY(-2px);
+}
+
+/* --- MID-DESKTOP: 901-1150px — tighten nav before mobile breakpoint --- */
+@media (min-width: 901px) and (max-width: 1150px) {
+    header { padding: 12px 24px; gap: 16px; }
+    .logo img { height: 28px; }
+    .nav-center { gap: 20px; }
+    .nav-center ul { gap: 18px; }
+    .nav-item { font-size: 0.72rem; letter-spacing: 0.1em; }
+    .nav-right { gap: 12px; }
+    .social-icon { width: 24px; height: 24px; }
 }
 
 /* --- MOBILE RESPONSIVE NAV --- */
