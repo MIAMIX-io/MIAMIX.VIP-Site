@@ -39,6 +39,12 @@
 @media (max-width: 900px) { .hero { padding: 112px 24px 48px; } }
 @media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
 
+/* Desktop: focus on the bottom of the hero image */
+@media (min-width: 901px) {
+    .hero {
+        background-position: center bottom;
+    }
+}
 /* --- ROWS (streaming-style shelves) --- */
 .rows { padding-bottom: 20px; }
 .row { position: relative; padding: 56px 0 28px; overflow: hidden; --accent: var(--primary-pink); }
