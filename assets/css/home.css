@@ -234,3 +234,31 @@
     html { scroll-behavior: auto; }
     .poster-img, .cta-btn, .row-btn, .services-wrapper * { transition: none !important; }
 }
+/* HERO - text + button TOP-LEFT under nav / logo */
+.hero {
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  padding: 110px 60px 64px !important;
+}
+.hero-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 8px !important;
+  text-align: left !important;
+  align-self: flex-start !important;
+}
+.hero-content h1,
+.hero-content p,
+.hero-content .hero-badge {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.hero-btn {
+  align-self: flex-start !important;
+  margin-left: 0 !important;
+}
+@media (max-width: 900px) {
+  .hero { padding: 96px 20px 40px !important; }
+}
