@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.remove('open');
     btn.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('menu-open');
+    // Also close any open Channels dropdown
+    nav.querySelectorAll('.has-dropdown.open').forEach((item) => {
+      item.classList.remove('open');
+      const t = item.querySelector(':scope > button, :scope > a');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
   };
 
   btn.addEventListener('click', (e) => {
@@ -14,10 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const isOpen = nav.classList.toggle('open');
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     document.body.classList.toggle('menu-open', isOpen);
+    if (!isOpen) closeMenu();
   });
 
-  // Close when a link is tapped
+  // Close when a real link is tapped — NOT the Channels trigger on mobile
   nav.querySelectorAll('a').forEach((a) => {
+    // Channels trigger: let the dropdown handler below own it on mobile
+    if (a.parentElement && a.parentElement.classList.contains('has-dropdown') && window.innerWidth <= 900) {
+      return;
+    }
     a.addEventListener('click', closeMenu);
   });
 
@@ -28,15 +39,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // CHANNELS dropdown on mobile
-  const dropdownBtn = nav.querySelector('.has-dropdown > button, .has-dropdown > a');
-  const dropdown = nav.querySelector('.has-dropdown .dropdown');
-  if (dropdownBtn && dropdown) {
-    dropdownBtn.addEventListener('click', (e) => {
+  // Escape closes
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // CHANNELS dropdown on mobile — toggle .open on the PARENT, not the dropdown
+  const dropdownTriggers = nav.querySelectorAll('.has-dropdown > button, .has-dropdown > a');
+  dropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
       if (window.innerWidth <= 900) {
         e.preventDefault();
-        dropdown.classList.toggle('open');
+        e.stopPropagation();
+        const parent = trigger.closest('.has-dropdown');
+        if (!parent) return;
+        const isOpen = parent.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
     });
-  }
+  });
 });
