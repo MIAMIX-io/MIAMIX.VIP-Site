@@ -77,3 +77,42 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
 @media (max-width: 600px) {
   .card-grid { grid-template-columns: 1fr; gap: 20px; }
 }
+/* === CHANNEL HERO: DRAMATIC FULL-SCREEN - MUST BE LAST IN channel.css === */
+.ch-hero {
+  min-height: 100svh !important;
+  min-height: 100dvh !important;
+  height: 100svh !important;
+  height: 100dvh !important;
+  align-items: flex-end !important;
+  padding: 0 0 64px !important;
+}
+.ch-hero::after {
+  background: linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,.15) 100%) !important;
+}
+.ch-hero-content,
+.ch-hero .hero-panel {
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-left: none !important;
+  box-shadow: none !important;
+  padding: 0 24px !important;
+}
+.ch-hero-subtitle,
+.ch-hero p {
+  display: none !important;
+}
+.ch-hero h1 {
+  font-size: clamp(2.6rem, 9vw, 5.2rem) !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,.7) !important;
+  margin: 0 !important;
+}
+.ch-hero .ch-hero-eyebrow {
+  margin-bottom: 12px !important;
+  text-shadow: 0 1px 12px rgba(0,0,0,.7) !important;
+}
+
+@media (min-width: 900px) {
+  .ch-hero-content { padding: 0 60px !important; }
+}
