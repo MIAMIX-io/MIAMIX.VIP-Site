@@ -93,3 +93,34 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
 @media (max-width: 900px) {
   .channel-intro { padding: 48px 24px 0; }
 }
+
+/* MOBILE GALLERY FIX - stack cards, no side-by-side black gap */
+@media (max-width: 768px) {
+  .ch-grid, .band-grid, .channel-grid, .posts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .ch-card, .band-card, .channel-card, .post-card, .card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-direction: column !important;
+    overflow: hidden;
+  }
+  .ch-card-image, .band-card-image, .channel-card-image, .post-card-image,
+  .ch-card img, .band-card img, .channel-card img, .post-card img, .card img {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+  .ch-card-body, .band-card-body, .channel-card-body, .post-card-body, .card-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 16px 16px 20px !important;
+  }
+}
