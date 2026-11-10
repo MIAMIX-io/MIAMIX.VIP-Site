@@ -1,90 +1,12 @@
 ---
 ---
-{%- assign channel_key = "Fashion" -%}
-{%- assign channel_name = "Fashion & Lifestyle" -%}
-{%- assign accent = "#E12BC0" -%}
-{%- assign hero_image = "https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?auto=format&fit=crop&w=2000&q=80" -%}
-{%- assign description = "Fashion and lifestyle stories from Miami: style, designers, shopping and the people shaping the look of the city." -%}
-
-{%- comment %} Posts for this channel, newest first, one card per title {% endcomment -%}
-{%- assign matched = site.posts | where_exp: "item", "item.channel contains channel_key" | sort: "date" | reverse -%}
-{%- assign cards = '' | split: '' -%}
-{%- assign seen = '|' -%}
-{%- for post in matched -%}
-    {%- assign key = '|' | append: post.title | append: '|' -%}
-    {%- unless seen contains key -%}
-        {%- assign cards = cards | push: post -%}
-        {%- assign seen = seen | append: post.title | append: '|' -%}
-    {%- endunless -%}
-{%- endfor -%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIAMIX - {{ channel_name | escape }}</title>
-    <meta name="description" content="{{ description }}">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MIAMIX VIP">
-    <meta property="og:title" content="MIAMIX - {{ channel_name | escape }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="{{ hero_image }}">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="{{ hero_image }}">
-    <link rel="stylesheet" href="/assets/css/site.css">
-    <link rel="stylesheet" href="/assets/css/channel.css">
-</head>
-<body class="channel" style="--accent: {{ accent }}; --hero-image: url('{{ hero_image }}');">
-
-    {% include header.html %}
-
-    <!-- HERO -->
-    <section class="channel-hero">
-        <h1>Strike a <br><span>pose</span></h1>
-      
-    </section>
-
-    <section class="channel-intro">
-        <div class="intro-inner">
-            <p class="intro-eyebrow">About <span>MIAMIX Fashion</span></p>
-            <h2>Style, with a Miami point of view.</h2>
-            <p>MIAMIX Fashion follows the designers, creatives and personalities shaping how Miami dresses. From runway moments and pageant stages to boutique openings and behind-the-scenes studio stories, we spotlight the talent and craft behind the look of the city.</p>
-            <p>Each story is written to inspire and to connect readers with the people, brands and events defining style in South Florida and beyond.</p>
-        </div>
-    </section>
-    
-    <!-- ARTICLES -->
-    <main class="carousel-section">
-        <h2 class="section-title">Latest <span>Articles</span></h2>
-
-        {%- if cards.size > 0 %}
-<div class="carousel-track">
-    {%- for post in cards %}
-    {%- assign img = post.cover_image | default: post.thumbnail -%}
-    {%- assign label = post.page_title | default: post.title %}
-    <a class="carousel-item" href="{{ post.url | relative_url }}">
-        {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy" decoding="async">{% endif %}
-        <div class="carousel-content">
-            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
-            <h3>{{ label }}</h3>
-            <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-        </div>
-    </a>
-    {%- endfor %}
-</div>
-{%- else %}
-<p class="empty-state">New {{ channel_name | downcase | escape }} stories are on the way.</p>
-{%- endif %}
-    </main>
-
-        {% include footer.html %}
-
-    <script src="/assets/js/nav.js" defer></script>
-</body>
-</html>
-
+{% include channel-page.html
+  channel="Fashion"
+  eyebrow="Fashion & Lifestyle"
+  title="Strike a Pose"
+  subtitle="Fashion and lifestyle stories from Miami: style, designers, shopping and the people shaping the look of the city."
+  image="https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?auto=format&fit=crop&w=2000&q=80"
+  intro_heading="Style, with a Miami point of view."
+  intro_text="MIAMIX Fashion follows the designers, creatives and personalities shaping how Miami dresses. From runway moments and pageant stages to boutique openings and behind-the-scenes studio stories, we spotlight the talent and craft behind the look of the city. Each story is written to inspire and to connect readers with the people, brands and events defining style in South Florida and beyond."
+  page_title="MIAMIX - Fashion & Lifestyle"
+%}
