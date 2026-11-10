@@ -9,7 +9,7 @@ layout: null
     <title>MIAMIX - Curated Lifestyle by Romina</title>
     <meta name="description" content="Curated Lifestyle by Romina Nabhen — fashion, beauty and lifestyle stories with intention, elegance and soul.">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MIAMIX VIP">
+    <meta property="og:site_name" content="MIAMIX">
     <meta property="og:title" content="MIAMIX - Curated Lifestyle by Romina">
     <meta property="og:description" content="Curated Lifestyle by Romina Nabhen — fashion, beauty and lifestyle stories with intention, elegance and soul.">
     <meta property="og:image" content="/images/romina-hero.JPG">
@@ -17,18 +17,69 @@ layout: null
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/channel.css">
     <link rel="stylesheet" href="/assets/css/creator.css">
     <style>
-        /* Scoped to this page only — never touch header/footer .wrap */
         .curated-page .wrap { padding-left: 24px; padding-right: 24px; }
-        .curated-page .creator-hero .wrap,
-        .curated-page .bio .wrap { padding-top: 40px; padding-bottom: 40px; }
-        .curated-page .gallery-grid { padding: 0; }
+        /* HERO - Robert layout, MIAMIX colors */
+        .romina-hero { padding: 140px 0 60px; background: #000; }
+        .romina-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: end; }
+        .romina-eyebrow { color: #E12BC0; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 18px; }
+        .romina-name { font-family: 'Jost', sans-serif; font-weight: 200; font-size: clamp(52px, 7vw, 88px); line-height: .95; letter-spacing: .02em; text-transform: uppercase; color: #fff; margin: 0 0 22px; }
+        .romina-name span { color: #E12BC0; display: block; }
+        .romina-tagline { font-size: 22px; line-height: 1.4; color: #fff; font-weight: 300; margin-bottom: 20px; }
+        .romina-intro { font-size: 18px; line-height: 1.8; color: #ddd; font-weight: 300; margin-bottom: 24px; }
+        .romina-meta { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 22px; }
+        .romina-cta { display: inline-block; color: #fff; border: 1px solid #E12BC0; padding: 12px 22px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+        .romina-cta:hover { background: #E12BC0; }
+        /* Portrait with offset pink frame - like Robert's coral frame */
+        .portrait-wrap { position: relative; margin: 0 16px 16px 0; }
+        .portrait-wrap::after { content: ""; position: absolute; inset: 18px -16px -16px 18px; border: 2px solid #E12BC0; z-index: 0; pointer-events: none; }
+        .portrait-wrap img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+        /* Gallery - now 2 photos, img2 moved down */
+        .romina-strip { padding: 40px 0; }
+        .romina-strip .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .romina-strip .gallery-grid img { width: 100%; height: 420px; object-fit: cover; display: block; }
+        /* Bio */
+        .bio { padding: 60px 0; }
+        .bio-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: start; }
+        .bio-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+        .bio h2 { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 42px; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 22px; }
+        .bio p { font-size: 18px; line-height: 1.8; color: #ddd; font-weight: 300; margin-bottom: 22px; }
+        .bio .quote { font-size: 22px; line-height: 1.6; font-style: italic; color: #fff; border-left: 3px solid #E12BC0; padding-left: 20px; margin: 32px 0; }
+        /* Mid-break photo - the moved photo for visual balance */
+        .mid-break { background: #000; padding: 20px 0 60px; }
+        .mid-break-figure { margin: 0; }
+        .mid-break-figure img { width: 100%; height: 520px; object-fit: cover; display: block; }
+        .mid-break-figure figcaption { font-size: 20px; line-height: 1.6; font-style: italic; color: #fff; border-left: 3px solid #E12BC0; padding-left: 20px; margin-top: 22px; max-width: 700px; }
+        .bio-single { max-width: 760px; margin: 0 auto; }
+        /* Posts grid - replaces fragile carousel */
+        .curated-stories { background: #111; padding: 60px 0 80px; }
+        .curated-stories h2 { font-family: 'Jost', sans-serif; font-weight: 200; font-size: clamp(32px, 4vw, 48px); letter-spacing: .05em; text-transform: uppercase; text-align: center; margin-bottom: 10px; }
+        .curated-stories .stories-sub { text-align: center; color: #aaa; margin-bottom: 36px; font-weight: 300; }
+        .curated-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .curated-card { display: block; background: #000; border: 1px solid #222; border-radius: 12px; overflow: hidden; }
+        .curated-card:hover { border-color: #E12BC0; }
+        .curated-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+        .curated-card-body { padding: 20px; }
+        .curated-card .date { color: #E12BC0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+        .curated-card h3 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 22px; line-height: 1.3; text-transform: uppercase; letter-spacing: .04em; margin: 10px 0 10px; color: #fff; }
+        .curated-card p { color: #aaa; font-size: 15px; line-height: 1.6; font-weight: 300; margin: 0; }
+        .curated-card .read { display: inline-block; margin-top: 14px; color: #E12BC0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+        @media (max-width: 900px) {
+            .romina-hero-grid, .bio-grid { grid-template-columns: 1fr; gap: 36px; }
+            .romina-hero { padding-top: 120px; }
+            .curated-grid { grid-template-columns: 1fr 1fr; }
+            .romina-strip .gallery-grid img { height: 300px; }
+            .mid-break-figure img { height: 360px; }
+        }
         @media (max-width: 600px) {
             .curated-page .wrap { padding-left: 20px; padding-right: 20px; }
+            .curated-grid, .romina-strip .gallery-grid { grid-template-columns: 1fr; }
+            .romina-strip .gallery-grid img { height: 280px; }
+            .bio h2 { font-size: 32px; }
         }
     </style>
 </head>
@@ -37,86 +88,103 @@ layout: null
     {% include header.html %}
 
     <main>
-        <!-- Hero: black -->
-        <section class="band band--black creator-hero">
-            <div class="wrap">
+        <!-- Hero: Robert layout - big name, short intro, portrait with offset frame -->
+        <section class="band band--black romina-hero">
+            <div class="wrap romina-hero-grid">
                 <div>
-                    <h1>Curated Lifestyle<br>by Romina</h1>
-                    <p>In a world where trends change overnight, Romina Nabhen stands as a steady, conscious voice deeply connected to the essence of true luxury. A Luxury Brand Strategist, media personality, Founder and CEO of RCN Curated Luxury, Romina has dedicated over twenty-seven years to helping brands and individuals tell stories with heart, beauty, and an elegance that transcends fleeting trends.</p>
-                    <p>Her journey began in modeling, a stage that allowed her to discover the power of visual narrative and the transformative capacity of style. Those early years in front of the camera gave her an intuitive understanding of how image, authenticity, and presence intertwine to create impact. Over time, Romina brought those learnings into television, editorial, and corporate realms, developing a unique strategic vision within the luxury universe.</p>
+                    <span class="romina-eyebrow">Curated Lifestyle</span>
+                    <h1 class="romina-name">Romina<br><span>Nabhen</span></h1>
+                    <p class="romina-tagline">Luxury with intention. Style with soul.</p>
+                    <p class="romina-intro">In a world where trends change overnight, Romina Nabhen stands as a steady, conscious voice deeply connected to the essence of true luxury. A Luxury Brand Strategist, media personality, Founder and CEO of RCN Curated Luxury, Romina has dedicated over twenty-seven years to helping brands and individuals tell stories with heart, beauty, and an elegance that transcends fleeting trends.</p>
+                    <p class="romina-meta">Miami &middot; RCN Curated Luxury &middot; MIAMIX Partner</p>
+                    <a class="romina-cta" href="#stories">Read her stories ↓</a>
                 </div>
-                <img class="portrait" src="/images/romina-hero.JPG" alt="Romina Nabhen headshot">
+                <div class="portrait-wrap">
+                    <img src="/images/romina-hero.JPG" alt="Romina Nabhen headshot">
+                </div>
             </div>
         </section>
 
-        <!-- Gallery: stone -->
-        <section class="band band--stone">
+        <!-- Gallery: 2 photos now - img2 moved down to break up bio -->
+        <section class="band band--stone romina-strip">
             <div class="wrap gallery-grid">
                 <img src="/images/romina-img1.png" alt="Romina gallery image 1" loading="lazy">
-                <img src="/images/romina-img2.JPG" alt="Romina gallery image 2" loading="lazy">
                 <img src="/images/rominapic.jpg" alt="Romina gallery image 3" loading="lazy">
             </div>
         </section>
 
-        <!-- Bio: black -->
+        <!-- Bio part 1 -->
         <section class="band band--black bio">
-            <div class="wrap">
+            <div class="wrap bio-grid">
                 <img class="bio-photo" src="/images/romina-italia.jpg" alt="Romina editorial portrait" loading="lazy">
                 <div>
                     <h2>Meet Romina</h2>
+                    <p>Her journey began in modeling, a stage that allowed her to discover the power of visual narrative and the transformative capacity of style. Those early years in front of the camera gave her an intuitive understanding of how image, authenticity, and presence intertwine to create impact. Over time, Romina brought those learnings into television, editorial, and corporate realms, developing a unique strategic vision within the luxury universe.</p>
                     <p>In every chapter of her career, Romina has demonstrated an exceptional ability to unite creativity and business from a sensitive, results-oriented approach. That philosophy led her to found RCN Curated Luxury, where she offers business development, strategic partnerships, art direction, style consulting, media training, and editorial storytelling for a select group of global clients. Her mission is clear: create visibility with soul and credibility with purpose, ensuring that every brand reflects not only excellence but essence.</p>
-
                     <p class="quote">"True luxury is not about excess. It's about alignment, about the quiet confidence of knowing who you are and curating everything around you from that truth."</p>
-
                     <p>This vision is reflected in every project she leads, where intention is always as important as aesthetics.</p>
-
-                    <p>Through her podcast My LIFE | Mi VIDA on 【entity-Spotify¦canonical_name=Spotify】 and her project The Seasonal Review, Romina invites her audience into a space where style, reflection, and sensitivity coexist naturally. Her partnership collaboration with MIAMIX contributes special articles focused on Fashion, Beauty &amp; Lifestyle, aligned with her contemporary and deeply human perspective on luxury.</p>
-
-                    <p>Her presence also stands out in women's leadership initiatives. As Platform Partner and CEO Circle Member of Miami Women Who Rock, Romina is part of a community dedicated to inspiration, philanthropy, and empowerment. She was recently featured on 【entity-Telemundo¦canonical_name=Telemundo】 National as an expert voice on reinvention, and profiled in The Book of Rockstar Leaders, a book recognizing visionary entrepreneurs driving Miami's development.</p>
-
-                    <p class="quote">"Luxury is how you live between the big milestones: in conversations, in connections, and in those quiet moments you choose to make beautiful."</p>
-
-                    <p>Today, Romina Nabhen continues expanding her impact with projects, collaborations, and experiences that celebrate the beauty of living with intention. Whether through a global strategy, an elegant event, or an intimate conversation, her work reflects what she embodies: purpose, art, and an elegance that endures.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Posts: dynamic carousel, no placeholders, no sign-up -->
-        {%- assign all_curated = site.posts | where_exp: "item", "item.channel contains 'Curated'" | sort: "date" | reverse -%}
+        <!-- Mid-break: moved photo for visual balance -->
+        <section class="mid-break">
+            <div class="wrap">
+                <figure class="mid-break-figure">
+                    <img src="/images/romina-img2.JPG" alt="Romina portrait" loading="lazy">
+                    <figcaption>"Luxury is how you live between the big milestones: in conversations, in connections, and in those quiet moments you choose to make beautiful."</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Bio part 2 -->
+        <section class="band band--black bio" style="padding-top:0;">
+            <div class="wrap bio-single">
+                <p>Through her podcast My LIFE | Mi VIDA on Spotify and her project The Seasonal Review, Romina invites her audience into a space where style, reflection, and sensitivity coexist naturally. Her partnership collaboration with MIAMIX contributes special articles focused on Fashion, Beauty &amp; Lifestyle, aligned with her contemporary and deeply human perspective on luxury.</p>
+                <p>Her presence also stands out in women's leadership initiatives. As Platform Partner and CEO Circle Member of Miami Women Who Rock, Romina is part of a community dedicated to inspiration, philanthropy, and empowerment. She was recently featured on Telemundo National as an expert voice on reinvention, and profiled in The Book of Rockstar Leaders, a book recognizing visionary entrepreneurs driving Miami's development.</p>
+                <p>Today, Romina Nabhen continues expanding her impact with projects, collaborations, and experiences that celebrate the beauty of living with intention. Whether through a global strategy, an elegant event, or an intimate conversation, her work reflects what she embodies: purpose, art, and an elegance that endures.</p>
+            </div>
+        </section>
+
+        <!-- Posts: fixed filter + grid, no carousel -->
         {%- assign curated = '' | split: '' -%}
         {%- assign seen = '|' -%}
-        {%- for post in all_curated -%}
-            {%- assign key = '|' | append: post.title | append: '|' -%}
-            {%- unless seen contains key -%}
-                {%- assign curated = curated | push: post -%}
-                {%- assign seen = seen | append: post.title | append: '|' -%}
-            {%- endunless -%}
+        {%- for post in site.posts -%}
+            {%- assign ch = post.channel | join: ',' -%}
+            {%- if ch contains 'Curated' -%}
+                {%- assign key = '|' | append: post.title | append: '|' -%}
+                {%- unless seen contains key -%}
+                    {%- assign curated = curated | push: post -%}
+                    {%- assign seen = seen | append: post.title | append: '|' -%}
+                {%- endunless -%}
+            {%- endif -%}
         {%- endfor -%}
+        {%- assign curated = curated | sort: "date" | reverse -%}
 
-        <section class="carousel-section">
-            <h2 class="section-title">Curated Lifestyle Posts</h2>
-            {%- if curated.size > 0 %}
-            <div class="carousel-track">
-                {%- for post in curated %}
-                {%- assign stem = post.path | split: '/' | last | remove: '.md' -%}
-                {%- assign label = post.page_title | default: post.title %}
-                <a href="{{ post.url | relative_url }}" class="carousel-item">
-                    {%- if site.data.thumbs contains stem %}
-                    <img src="/assets/thumbs/{{ stem }}.webp" alt="{{ label | escape }}" loading="lazy">
-                    {%- elsif post.cover_image or post.thumbnail %}
-                    <img src="{{ post.cover_image | default: post.thumbnail }}" alt="{{ label | escape }}" loading="lazy">
-                    {%- endif %}
-                    <div class="carousel-content">
-                        <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
-                        <h3>{{ label }}</h3>
-                        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
-                    </div>
-                </a>
-                {%- endfor %}
+        <section class="curated-stories" id="stories">
+            <div class="wrap">
+                <h2>Curated Lifestyle Posts</h2>
+                <p class="stories-sub">Fashion, beauty and lifestyle stories by Romina.</p>
+                {%- if curated.size > 0 %}
+                <div class="curated-grid">
+                    {%- for post in curated %}
+                    {%- assign label = post.page_title | default: post.title -%}
+                    {%- assign img = post.cover_image | default: post.thumbnail | default: post.cover -%}
+                    <a href="{{ post.url | relative_url }}" class="curated-card">
+                        {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy">{% endif %}
+                        <div class="curated-card-body">
+                            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                            <h3>{{ label }}</h3>
+                            <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+                            <span class="read">Read Story →</span>
+                        </div>
+                    </a>
+                    {%- endfor %}
+                </div>
+                {%- else %}
+                <p style="text-align:center; color:#aaa;">New stories are on the way.</p>
+                {%- endif %}
             </div>
-            {%- else %}
-            <p class="empty-state" style="padding: 0 24px 24px; text-align: center;">New stories are on the way.</p>
-            {%- endif %}
         </section>
     </main>
 
