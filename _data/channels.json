@@ -13,74 +13,92 @@
   "rows": [
     {
       "id": "curated",
-      "channel": "CuratedLifestyle",
+      "eyebrow": "Curated Lifestyle",
       "title": "Curated Lifestyle",
+      "tagline": "Luxury with intention. Style with soul.",
+      "accent": "#E12BC0",
       "url": "/curated-lifestyle",
-      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["CuratedLifestyle", "Curated Lifestyle", "Curated"],
       "show": true
     },
     {
       "id": "inter-miami",
-      "channel": "InterMIA",
-      "title": "【entity-Inter Miami¦canonical_name=Inter Miami】",
+      "eyebrow": "【entity-Inter Miami¦canonical_name=Inter Miami】",
+      "title": "The Heron's Nest",
+      "tagline": "【entity-Inter Miami¦canonical_name=Inter Miami】 stories, match nights and moments from the Heron's Nest.",
+      "accent": "#E12BC0",
       "url": "/inter-miami",
-      "image": "https://images.unsplash.com/photo-1459865264687-3b2e8e9e1d5a?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["InterMIA", "【entity-Inter Miami¦canonical_name=Inter Miami】", "【entity-Inter Miami CF¦canonical_name=Inter Miami CF】"],
       "show": true
     },
     {
       "id": "travel",
-      "channel": "Travel",
+      "eyebrow": "Travel",
       "title": "Departures",
+      "tagline": "Travel points, mile-high stories and escapes from Miami.",
+      "accent": "#E12BC0",
       "url": "/travel",
-      "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Travel"],
       "show": true
     },
     {
       "id": "hospitality",
-      "channel": "Hospitality",
-      "title": "MIAMIX Hospitality",
+      "eyebrow": "Hospitality",
+      "title": "Table For Miami",
+      "tagline": "Restaurants, chefs, hotels and the tables that define Miami.",
+      "accent": "#E12BC0",
       "url": "/hospitality",
-      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Hospitality"],
       "show": true
     },
     {
       "id": "fashion",
-      "channel": "Fashion",
+      "eyebrow": "Fashion & Lifestyle",
       "title": "Strike A Pose",
+      "tagline": "Fashion and lifestyle stories from Miami: style, designers, shopping and the people shaping the look of the city.",
+      "accent": "#E12BC0",
       "url": "/fashion",
-      "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Fashion"],
       "show": true
     },
     {
       "id": "culture",
-      "channel": "Culture",
+      "eyebrow": "Culture",
       "title": "Artist - Mix",
+      "tagline": "Art exhibits, artist spotlights, and exclusive events in Miami.",
+      "accent": "#E12BC0",
       "url": "/culture",
-      "image": "https://images.unsplash.com/photo-1731779583826-8a5c1a0b0e1a?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Culture", "Cultural"],
       "show": true
     },
     {
       "id": "health",
-      "channel": "Health",
-      "title": "Health & Wellness",
+      "eyebrow": "Health & Wellness",
+      "title": "Feel Good",
+      "tagline": "Health, wellness and feel-good stories from Miami.",
+      "accent": "#E12BC0",
       "url": "/health",
-      "image": "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Health", "Health & Wellness"],
       "show": true
     },
     {
       "id": "sports",
-      "channel": "Sports",
+      "eyebrow": "Sports & Entertainment",
       "title": "Game Day, Miami Style",
+      "tagline": "From Inter Miami nights to race weekends and fight cards, the games, athletes and moments that bring Miami to its feet.",
+      "accent": "#E12BC0",
       "url": "/sports",
-      "image": "https://images.unsplash.com/photo-1731870881782-1948058d9ce1?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Sports"],
       "show": true
     },
     {
       "id": "nonprofit",
-      "channel": "Nonprofit",
+      "eyebrow": "Nonprofit",
       "title": "Make a Difference",
+      "tagline": "Nonprofit stories and people making a difference in Miami.",
+      "accent": "#E12BC0",
       "url": "/nonprofit",
-      "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=2000&q=80",
+      "channels": ["Nonprofit"],
       "show": false
     }
   ]
