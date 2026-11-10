@@ -1,27 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var btn = document.getElementById('mobileMenuBtn');
-  var nav = document.getElementById('navMenu');
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('.main-nav');
   if (!btn || !nav) return;
-  btn.addEventListener('click', function(e) {
+
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
+  btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.classList.toggle('open', open);
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', isOpen);
   });
-  var drops = nav.querySelectorAll('.has-dropdown > button, .has-dropdown > a');
-  drops.forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        a.parentElement.classList.toggle('open');
-      }
-    });
+
+  // Close when a link is tapped
+  nav.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', closeMenu);
   });
-  document.addEventListener('click', function(e) {
-    if (!nav.contains(e.target) && !btn.contains(e.target)) {
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.classList.remove('open');
+
+  // Close when tapping outside
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+      closeMenu();
     }
   });
+
+  // CHANNELS dropdown on mobile
+  const dropdownBtn = nav.querySelector('.has-dropdown > button, .has-dropdown > a');
+  const dropdown = nav.querySelector('.has-dropdown .dropdown');
+  if (dropdownBtn && dropdown) {
+    dropdownBtn.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        dropdown.classList.toggle('open');
+      }
+    });
+  }
 });
