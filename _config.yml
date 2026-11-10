@@ -1,18 +1,6 @@
 name: MIAMIX VIP
 title: MIAMIX VIP
-description: "MIAMIX — Curated stories on sports, fashion, culture, travel, hospitality, health and Miami lifestyle."
+description: "MIAMIX - Curated stories on sports, fashion, culture, travel, hospitality, health and Miami lifestyle."
 url: "https://miamix.io"
-
-# Automatically apply the post.html layout to everything in the _posts folder
-defaults:
-    - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-# Post URL is https://miamix.io/<slug>/
-# slug comes from the slug: field in each post, or the filename.
-# WARNING: slugs must be unique across ALL channels — two posts with the
-# same slug will collide at the same URL.
+defaults: [{scope: {path: "", type: "posts"}, values: {layout: "post"}}]
 permalink: /:slug/
