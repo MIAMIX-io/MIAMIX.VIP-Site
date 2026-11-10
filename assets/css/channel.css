@@ -3,21 +3,6 @@
 
 body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-serif; font-weight: 300; }
 
-/* ---------- HEADER / NAV - override for channel pages ---------- */
-.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(0,0,0,0.88); }
-.header-inner { display: flex !important; flex-direction: row !important; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 12px 20px; position: relative; }
-.logo { flex-shrink: 0; }
-.logo img { height: 36px; width: auto; display: block; }
-.main-nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; align-items: center; }
-.main-nav a { color: #fff; text-decoration: none; font-family: Jost, sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; }
-.main-nav .has-dropdown { position: relative; }
-.main-nav .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #000; border-top: 2px solid #E12BC0; list-style: none; padding: 12px 0; min-width: 200px; }
-.main-nav .has-dropdown:hover .dropdown, .main-nav .has-dropdown:focus-within .dropdown { display: block; }
-.main-nav .dropdown li { display: block; padding: 8px 20px; }
-.header-socials { display: flex; gap: 12px; align-items: center; flex-shrink: 0; }
-.header-socials img { height: 22px; width: auto; display: block; }
-.menu-btn { display: none; }
-
 /* HERO - larger, readable */
 .ch-hero {
   position: relative;
@@ -57,19 +42,13 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
   background: rgba(0,0,0,.35); padding: 10px 14px; border-radius: 8px;
 }
 
-/* INTRO - bigger, better spacing */
-.channel-intro { padding: 80px 40px 20px; background: #000; }
-.intro-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+/* ---------- CHANNEL INTRO (optional, e.g. Fashion) ---------- */
+.channel-intro { padding: 64px 40px 0; }
+.intro-inner { max-width: 900px; margin: 0 auto; text-align: center; }
 .intro-eyebrow { margin: 0 0 12px; color: #E12BC0; font-size: .85rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
 .intro-eyebrow span { color: #fff; }
-.intro-inner h2 { margin: 0 0 18px; font-weight: 200; font-size: clamp(1.8rem, 4.5vw, 2.6rem); letter-spacing: .12em; text-transform: uppercase; line-height: 1.2; }
-.intro-inner p { margin: 0; color: #e6e6e6; font-size: 1.1rem; line-height: 1.85; }
-
-@media (max-width: 900px) {
-  .ch-hero { min-height: 78vh; padding: 120px 20px 40px; }
-  .ch-hero-content { padding: 20px 18px; margin: 0; }
-  .channel-intro { padding: 60px 20px 10px; }
-}
+.intro-inner h2 { margin: 0 0 18px; font-weight: 200; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: .12em; text-transform: uppercase; line-height: 1.2; }
+.intro-inner p:last-child { margin: 0; color: #e6e6e6; font-size: 1.05rem; line-height: 1.8; }
 
 /* ---------- GRID - styled containers ---------- */
 .channel-content { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
@@ -87,106 +66,14 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
 .card-read { font-size: 11px; color: #E12BC0; letter-spacing: 2px; margin-top: 6px; }
 .channel-empty { text-align: center; color: #aaa; font-size: 1rem; letter-spacing: .04em; padding: 40px 0; }
 
-/* ---------- CHANNEL INTRO (optional, e.g. Fashion) ---------- */
-.channel-intro { padding: 64px 40px 0; }
-.intro-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-.intro-eyebrow { margin: 0 0 12px; color: #E12BC0; font-size: .85rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
-.intro-eyebrow span { color: #fff; }
-.intro-inner h2 { margin: 0 0 18px; font-weight: 200; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: .12em; text-transform: uppercase; line-height: 1.2; }
-.intro-inner p:last-child { margin: 0; color: #e6e6e6; font-size: 1.05rem; line-height: 1.8; }
-
-/* ---------- MOBILE ---------- */
+/* ---------- MOBILE - hero + grid only, nav lives in site.css ---------- */
 @media (max-width: 900px) {
-  .header-socials { display: none !important; }
-  .main-nav { display: none; }
-  .menu-btn { display: flex !important; align-items: center; gap: 8px; background: none; border: 0; color: #fff; font-family: Jost, sans-serif; font-size: 14px; letter-spacing: 2px; cursor: pointer; margin-left: auto; flex-shrink: 0; }
-  .main-nav.open { display: block; position: absolute; top: 100%; right: 0; left: auto; width: 280px; background: #000; border-top: 2px solid #E12BC0; padding: 16px 20px 20px; }
-  .main-nav.open ul { display: block; }
-  .main-nav.open li { display: block; margin: 12px 0; }
-  .main-nav.open .dropdown { display: none; position: static; border: 0; padding: 8px 0 0 14px; }
-  .main-nav.open .has-dropdown.open .dropdown { display: block; }
   .ch-hero { min-height: 50vh; padding: 110px 24px 60px; }
+  .ch-hero-content { padding: 20px 18px; margin: 0; }
+  .channel-intro { padding: 48px 24px 0; }
   .channel-content { padding: 60px 24px; }
   .card-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .channel-intro { padding: 48px 24px 0; }
 }
 @media (max-width: 600px) {
   .card-grid { grid-template-columns: 1fr; gap: 20px; }
-}
-/* HEADER FIX - logo left, menu right, no centering */
-.site-header, header { display: block !important; width: 100% !important; }
-.header-inner {
-  display: flex !important; flex-direction: row !important;
-  align-items: center !important; justify-content: space-between !important;
-  width: 100% !important; max-width: 1200px !important;
-  margin: 0 auto !important; padding: 12px 20px !important;
-  position: relative !important; text-align: left !important;
-}
-.logo { flex: 0 0 auto !important; margin-right: auto !important; text-align: left !important; display: flex !important; justify-content: flex-start !important; }
-.logo img { margin: 0 !important; height: 32px !important; width: auto !important; }
-.main-nav, .nav-center { flex: 1 1 auto !important; display: flex !important; justify-content: center !important; }
-.menu-btn, .mobile-menu-toggle { flex: 0 0 auto !important; margin-left: auto !important; }
-
-@media (max-width: 900px) {
-  .header-inner { padding: 12px 20px !important; }
-  .logo img { height: 28px !important; }
-  .header-socials, .nav-right { display: none !important; }
-  .main-nav, .nav-center { display: none !important; }
-  .main-nav.open, .nav-center.active { display: block !important; position: absolute !important; top: 100% !important; right: 0 !important; left: auto !important; width: 280px !important; background: #000 !important; border-top: 2px solid #E12BC0 !important; padding: 16px 20px 20px !important; }
-  .menu-btn, .mobile-menu-toggle { display: flex !important; margin-left: auto !important; }
-}
-/* MOBILE NAV - compact side panel, NOT full-screen + tight Channels spacing */
-@media (max-width: 900px) {
-  .main-nav {
-    position: absolute !important;
-    top: 100% !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 300px !important;
-    max-width: 85vw !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: calc(100dvh - 70px) !important;
-    overflow-y: auto !important;
-    background: #000 !important;
-    border-top: 2px solid #E12BC0 !important;
-    border-left: 1px solid #222 !important;
-    padding: 12px 20px 16px !important;
-    display: none !important;
-    transform: none !important;
-  }
-  .main-nav.open { display: block !important; }
-
-  /* Top-level links: no gap, 10px padding */
-  .main-nav ul {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .main-nav li { margin: 0 !important; padding: 0 !important; }
-  .main-nav a {
-    display: block !important;
-    padding: 10px 0 !important;
-    line-height: 1.25 !important;
-  }
-
-  /* Channels dropdown: no gap, 7px padding, tight indent */
-  .main-nav .dropdown {
-    position: static !important;
-    display: none !important;
-    width: auto !important;
-    background: transparent !important;
-    border: none !important;
-    border-left: 1px solid #E12BC0 !important;
-    padding: 4px 0 4px 14px !important;
-    margin: 0 0 4px 0 !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  .main-nav .has-dropdown.open .dropdown { display: block !important; }
-  .main-nav .dropdown li { margin: 0 !important; padding: 0 !important; }
-  .main-nav .dropdown a { padding: 7px 0 !important; font-size: 14px !important; }
 }
