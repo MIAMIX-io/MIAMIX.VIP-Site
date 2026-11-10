@@ -100,7 +100,7 @@
     <div class="post-hero" style="background-image: url('{{ hero_img }}');">
         <div class="post-hero-overlay"></div>
         <div class="post-hero-content">
-            <span class="article-cat">{{ page.channel | join: ", " }}</span>
+            <span class="article-cat">{{ page.channel | join: ", " | replace: "CuratedLifestyle", "Curated Lifestyle" | replace: "InterMIA", "Inter Miami" | replace: "Curated", "Curated Lifestyle" }}</span>
             <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
             <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
         </div>
@@ -108,7 +108,7 @@
     {% else %}
     <div class="post-hero no-cover">
         <div class="post-hero-content">
-            <span class="article-cat">{{ page.channel | join: ", " }}</span>
+            <span class="article-cat">{{ page.channel | join: ", " | replace: "CuratedLifestyle", "Curated Lifestyle" | replace: "InterMIA", "Inter Miami" | replace: "Curated", "Curated Lifestyle" }}</span>
             <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
             <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
         </div>
