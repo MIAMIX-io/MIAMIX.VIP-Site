@@ -1,7 +1,8 @@
 {%- comment -%}
   Reusable channel landing page. No Notion, no subscribe.
-  Params: channel, eyebrow, title, subtitle (optional), image, page_title (optional)
-  Grid comes from channel-bands.html, which reads site.posts.
+  Params: channel, eyebrow, title, subtitle (optional), image, page_title (optional),
+          intro_heading (optional), intro_text (optional)
+  Grid + opt-in removed, grid comes from channel-bands.html, which reads site.posts.
 {%- endcomment -%}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +10,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ include.page_title | default: include.eyebrow | prepend: "MIAMIX - " }}</title>
+    <meta name="description" content="{{ include.subtitle | default: include.eyebrow }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MIAMIX">
+    <meta property="og:title" content="{{ include.page_title | default: include.eyebrow | prepend: 'MIAMIX - ' }}">
+    <meta property="og:description" content="{{ include.subtitle | default: include.eyebrow }}">
+    <meta property="og:image" content="{{ include.image }}">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="{{ include.image }}">
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/channel.css">
 </head>
@@ -29,6 +38,16 @@
             {%- endif %}
         </div>
     </section>
+
+    {%- if include.intro_heading or include.intro_text %}
+    <section class="channel-intro">
+        <div class="intro-inner">
+            <p class="intro-eyebrow">About <span>{{ include.eyebrow }}</span></p>
+            {%- if include.intro_heading %}<h2>{{ include.intro_heading }}</h2>{% endif %}
+            {%- if include.intro_text %}<p>{{ include.intro_text }}</p>{% endif %}
+        </div>
+    </section>
+    {%- endif %}
 
     {% include channel-bands.html channel=include.channel start=0 %}
 
