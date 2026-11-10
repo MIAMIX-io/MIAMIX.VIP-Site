@@ -1,21 +1,9 @@
 {%- comment -%}
   Reusable channel landing page (full HTML document).
-  Params: channel (Notion channel name), eyebrow, title, subtitle (optional), image (hero photo URL),
-          optin_text (optional), page_title (optional <title>)
-  Bands of 6 posts alternate deep black / stone grey; the sign-up band continues the rotation.
+  Params: channel (must match post front matter `channel`), eyebrow, title, subtitle (optional),
+          image (hero photo URL), optin_text (optional), page_title (optional <title>)
+  Posts come from Jekyll site.posts, NOT Notion.
 {%- endcomment -%}
-{%- assign all_posts = site.posts | where: "channel", include.channel | sort: "date" | reverse -%}
-{%- assign posts = '' | split: '' -%}
-{%- assign seen = '|' -%}
-{%- for post in all_posts -%}
-    {%- assign key = '|' | append: post.title | append: '|' -%}
-    {%- unless seen contains key -%}
-        {%- assign posts = posts | push: post -%}
-        {%- assign seen = seen | append: post.title | append: '|' -%}
-    {%- endunless -%}
-{%- endfor -%}
-{%- assign per = 6 -%}
-{%- assign bands = posts.size | plus: 5 | divided_by: per -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,71 +13,63 @@
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/channel.css">
 </head>
-<body class="channel">
+<body>
 
     {% include header.html %}
 
     <section class="ch-hero" style="--ch-image: url('{{ include.image }}');">
-        <p class="ch-eyebrow">{{ include.eyebrow }}</p>
-        <h1>{{ include.title }}</h1>
-        {%- if include.subtitle %}
-        <p class="ch-sub">{{ include.subtitle }}</p>
-        {%- endif %}
-    </section>
-
-    {%- if bands == 0 %}
-    <section class="band band--black">
-        <p class="ch-empty">New stories are on the way.</p>
-    </section>
-    {%- assign end_tone = 1 -%}
-    {%- else %}
-    {%- for i in (1..bands) %}
-        {%- assign idx = forloop.index0 -%}
-        {%- assign offset = idx | times: per -%}
-        {%- assign tone = idx | modulo: 2 %}
-    <section class="band {% if tone == 0 %}band--black{% else %}band--stone{% endif %}">
-        <div class="ch-grid">
-            {%- for post in posts limit: per offset: offset %}
-                {%- assign stem = post.path | split: '/' | last | remove: '.md' -%}
-                {%- assign pch = post.channel | first -%}
-                {%- assign label = site.data.channels.labels[pch] | default: pch -%}
-                {%- assign card_title = post.page_title | default: post.title %}
-            <a class="ch-card" href="{{ post.url | relative_url }}">
-                <span class="ch-media">
-                    {%- if site.data.thumbs contains stem %}
-                    <img src="/assets/thumbs/{{ stem }}.webp" alt="" width="300" height="400" loading="lazy" decoding="async">
-                    {%- elsif post.cover_image or post.thumbnail %}
-                    <img src="{{ post.cover_image | default: post.thumbnail }}" alt="" loading="lazy" decoding="async">
-                    {%- else %}
-                    <span class="ch-fallback"><span>{{ label }}</span></span>
-                    {%- endif %}
-                </span>
-                <span class="ch-meta">
-                    <span class="ch-label">{{ label }}</span>
-                    <span class="ch-title">{{ card_title }}</span>
-                </span>
-            </a>
-            {%- endfor %}
+        <div class="ch-hero-content">
+            <p class="ch-eyebrow">{{ include.eyebrow }}</p>
+            <h1 class="ch-hero-title">{{ include.title }}</h1>
+            {%- if include.subtitle %}
+            <p class="ch-sub">{{ include.subtitle }}</p>
+            {%- endif %}
         </div>
     </section>
-    {%- endfor %}
-    {%- assign end_tone = bands | modulo: 2 -%}
-    {%- endif %}
 
-    <section class="band optin {% if end_tone == 0 %}band--black{% else %}band--stone{% endif %}">
-        <div class="optin-inner">
-            <h2>Get on the list</h2>
-            <p>{{ include.optin_text | default: "Subscribe for the latest stories, spotlights and events from MIAMIX." }}</p>
+    <main class="channel-content">
+        <div class="card-grid">
+            {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+            {% for post in sorted_posts %}
+                {% if post.channel contains include.channel %}
+                <article class="card">
+                    <a href="{{ post.url | relative_url }}">
+                        <div class="card-media">
+                            <img src="{{ post.cover_image | default: post.thumbnail | default: '/images/MIAMIX-favicon-2.png' }}" alt="{{ post.page_title | default: post.title }}">
+                        </div>
+                        <div class="card-content">
+                            <h3>{{ post.page_title | default: post.title }}</h3>
+                            <p>Read Article &rarr;</p>
+                        </div>
+                    </a>
+                </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        {% assign has_posts = false %}
+        {% for post in site.posts %}{% if post.channel contains include.channel %}{% assign has_posts = true %}{% endif %}{% endfor %}
+        {% if has_posts == false %}
+        <p class="channel-empty">No stories yet in this channel. Check back soon.</p>
+        {% endif %}
+    </main>
+
+    <section class="optin-section">
+        <div class="optin-box">
+            <p class="eyebrow">Get on the list</p>
+            <h2>Stay in the mix</h2>
+            <p>{{ include.optin_text | default: "Subscribe for the latest stories, drops, and exclusive events from this channel." }}</p>
             <form class="optin-form">
-                <input type="text" placeholder="First name" aria-label="First name" autocomplete="given-name">
-                <input type="text" placeholder="Last name" aria-label="Last name" autocomplete="family-name">
-                <input type="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+                <input type="text" name="first_name" placeholder="First Name" aria-label="First name">
+                <input type="text" name="last_name" placeholder="Last Name" aria-label="Last name">
+                <input type="email" name="email" placeholder="Email Address" aria-label="Email address" required>
                 <button type="submit">Submit</button>
             </form>
+            <p class="optin-small">No spam. Unsubscribe anytime.</p>
         </div>
     </section>
 
