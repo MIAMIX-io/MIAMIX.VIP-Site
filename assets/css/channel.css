@@ -57,7 +57,7 @@ body.channel a { color: inherit; text-decoration: none; }
   text-align: center;
   background:
     linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.65) 100%),
-    var(--hero-image) var(--hero-pos, center top) / cover no-repeat,
+    var(--ch-image, var(--hero-image)) var(--hero-pos, center top) / cover no-repeat,
     #000;
 }
 .channel-hero h1 {
@@ -71,7 +71,6 @@ body.channel a { color: inherit; text-decoration: none; }
 }
 .channel-hero h1 span { font-weight: 700; color: var(--hero-accent, var(--accent)); }
 
-linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 55%, #000 100%),
 
 /* ---------- CHANNEL INTRO ---------- */
 .channel-intro { padding: 30px 24px 70px; background: #000; }
@@ -213,4 +212,73 @@ body.channel input:focus-visible { outline: 2px solid var(--accent); outline-off
   .channel-hero { min-height: 50vh; padding: 110px 20px 90px; }
   .channel-content { padding: 50px 20px 40px; }
   .card-grid { gap: 30px; }
+}
+
+/* ---------- CHANNEL-PAGE.HTML — actual classes used (were unstyled) ---------- */
+/* channel-page.html uses .ch-hero + --ch-image, NOT .channel-hero */
+.ch-hero {
+  position: relative;
+  min-height: min(68vh, 640px);
+  padding: 150px 24px 90px; /* clears fixed header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.7) 100%),
+    var(--ch-image) center / cover no-repeat,
+    #000;
+}
+.ch-eyebrow {
+  margin: 0; font-size: .8rem; font-weight: 400; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--primary-pink, #E12BC0);
+  text-shadow: 0 2px 12px rgba(0,0,0,.7);
+}
+.ch-hero h1 {
+  margin: 0; font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 200;
+  line-height: 1.05; letter-spacing: .06em; text-transform: uppercase; color: #fff;
+  text-shadow: 0 2px 18px rgba(0,0,0,.6);
+}
+.ch-sub { margin: 0; max-width: 640px; font-size: 1.05rem; font-weight: 300; line-height: 1.7; color: #e6e6e6; }
+
+/* Bands + grid used by channel-page.html / channel-bands.html */
+.band { padding: 56px 24px; }
+.band--black { background: #000; }
+.band--stone { background: #2b2a28; }
+.ch-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  max-width: 1200px; margin: 0 auto;
+}
+.ch-card { display: flex; flex-direction: column; gap: 0; color: inherit; text-decoration: none; }
+.ch-media { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; background: #111; border: 1px solid #333; }
+.ch-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ch-fallback { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 18px; background: linear-gradient(160deg, #1b1b1b, #000); }
+.ch-fallback span { font-size: .8rem; letter-spacing: .25em; text-transform: uppercase; }
+.ch-meta { display: block; padding: 14px 0 0; }
+.ch-label { display: block; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; color: #bdbdbd; margin-bottom: 8px; }
+.ch-title { display: block; font-size: 1.05rem; font-weight: 300; line-height: 1.4; }
+.ch-empty { text-align: center; color: #bdbdbd; padding: 20px 0; }
+.ch-heading { text-align: center; font-weight: 200; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 32px; }
+
+/* Opt-in band */
+.optin-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.optin-inner h2 { font-weight: 200; font-size: clamp(1.75rem, 3.6vw, 2.75rem); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 14px; }
+.optin-inner p { color: #d4d4d4; line-height: 1.7; margin: 0 0 28px; }
+.optin-form { display: grid; grid-template-columns: 1fr 1fr 1.2fr auto; gap: 12px; }
+.optin-form input { height: 52px; padding: 0 16px; background: #000; border: 1px solid #444; color: #fff; font: 400 16px 'Jost', sans-serif; min-width: 0; }
+.optin-form input::placeholder { color: #aaa; }
+.optin-form button { padding: 0 28px; height: 52px; background: var(--accent); border: 1px solid var(--accent); color: #fff; font: 500 .85rem 'Jost', sans-serif; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+.optin-form button:hover { background: #000; color: var(--accent); }
+
+@media (max-width: 900px) {
+  .ch-hero { min-height: 56vh; padding: 130px 20px 70px; }
+  .ch-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .optin-form { grid-template-columns: 1fr 1fr; }
+  .optin-form button { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .ch-grid { grid-template-columns: 1fr; }
+  .optin-form { grid-template-columns: 1fr; }
 }
