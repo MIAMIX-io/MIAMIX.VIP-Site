@@ -173,3 +173,54 @@ footer .social-icon img { width: 100%; height: 100%; object-fit: contain; }
     padding: 9px 0 !important;
   }
 }
+/* MOBILE NAV - full-screen overlay, fixes bleed on ALL sub pages */
+@media (max-width: 900px) {
+  .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+  .menu-btn { position: relative; z-index: 1002; }
+  .main-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    height: 100vh !important;
+    padding: 90px 28px 40px !important;
+    background: #000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 0 !important;
+    overflow-y: auto !important;
+    transform: translateX(100%) !important;
+    visibility: hidden !important;
+    transition: transform .3s ease !important;
+    z-index: 1001 !important;
+    border-top: none !important;
+  }
+  .main-nav.open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+  }
+  /* CHANNELS dropdown inside the full-screen menu */
+  .main-nav .dropdown {
+    position: static !important;
+    width: 100% !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-top: 2px solid #E12BC0 !important;
+    padding-top: 8px !important;
+    margin-top: 8px !important;
+  }
+  .main-nav .dropdown a {
+    text-transform: none !important;
+    letter-spacing: .05em !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    padding: 10px 0 !important;
+  }
+  body.menu-open { overflow: hidden !important; }
+}
