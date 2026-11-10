@@ -3,11 +3,12 @@
 
 .hero, .rows, .services-wrapper { font-family: 'Jost', 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased; }
 
-/* --- HERO --- */
+/* --- HERO - one definition --- */
 .hero {
     position: relative; isolation: isolate; overflow: hidden;
-    height: auto; min-height: min(92vh, 860px); min-height: min(92svh, 860px);
-    justify-content: flex-start; padding: 120px 60px 64px;  /* text starts near the top */
+    display: flex; align-items: flex-end;
+    min-height: 100svh; min-height: 100dvh;
+    padding: 120px 60px 64px;
     background: var(--hero-image) 90% / cover no-repeat, #000;
 }
 .hero::before {   /* overcast layer — sits ABOVE the photo, BELOW the text */
@@ -23,7 +24,7 @@
 /* Homepage hero content: left-aligned, above overlays.
    index.html uses .hero-badge + plain h1/p, NOT .hero-eyebrow/.hero-title,
    so style those exact selectors here. */
-.hero-content { position: relative; z-index: 2; max-width: 760px; margin: 0; text-align: left; }
+.hero-content { position: relative; z-index: 2; max-width: 760px; margin: 0; text-align: left; padding-bottom: 20px; }
 .hero-content .hero-badge { display: inline-block; margin-bottom: 20px; font-size: .9rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--primary-pink, #E12BC0); }
 .hero-content h1 { margin: 0 0 16px; font-size: clamp(2.75rem, 6vw, 4.8rem); font-weight: 200; letter-spacing: .05em; line-height: 1.05; text-transform: uppercase; color: #fff; }
 .hero-content p { margin: 0 0 8px; font-size: clamp(1rem, 1.6vw, 1.3rem); font-weight: 300; font-style: italic; line-height: 1.6; letter-spacing: .04em; color: #e6e6e6; }
@@ -36,15 +37,13 @@
 }
 .hero-btn:hover { background: #000; color: var(--primary-pink, #E12BC0); }
 @keyframes hero-drift { from { background-position: 0% 0; } to { background-position: 100% 0; } }
-@media (max-width: 900px) { .hero { padding: 112px 24px 48px; } }
 @media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
 
 /* Desktop: focus on the bottom of the hero image */
 @media (min-width: 901px) {
-    .hero {
-        background-position: 90%;
-    }
+    .hero { background-position: 90%; }
 }
+
 /* --- ROWS (streaming-style shelves) --- */
 .rows { padding-bottom: 20px; }
 .row { position: relative; padding: 56px 0 28px; overflow: hidden; --accent: var(--primary-pink); }
@@ -52,12 +51,7 @@
     content: ""; position: absolute; inset: 0; pointer-events: none;
     background: radial-gradient(900px 320px at 6% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
 }
-.row-bg {
-    position: absolute; inset: -40px; background-size: cover; background-position: center;
-    opacity: .12; filter: blur(34px) saturate(1.4); pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
-            mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
-}
+.row-bg { display: none; }
 .row + .row { border-top: 1px solid #444; }
 
 .row-head {
@@ -87,12 +81,11 @@
     position: relative; display: flex; gap: 20px; padding: 28px 60px 36px;
     overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch;
     cursor: grab; overscroll-behavior-x: contain;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-    /* deliberately no scroll-snap: free, endless scrolling */
+    scroll-snap-type: x mandatory; scroll-padding-inline: 60px;
+    -webkit-mask-image: none; mask-image: none;
 }
 .row-track::-webkit-scrollbar { display: none; }
-.row-track.is-dragging { cursor: grabbing; user-select: none; }
+.row-track.is-dragging { cursor: grabbing; user-select: none; scroll-snap-type: none; }
 .row-track.is-dragging a { pointer-events: none; }
 
 .row-btn {
@@ -110,10 +103,10 @@
 @media (hover: none) { .row-btn { display: none !important; } }
 
 /* --- POSTER CARDS --- */
-.poster { display: block; flex: 0 0 auto; width: 240px; -webkit-user-drag: none; }
+.poster { display: block; flex: 0 0 auto; width: 240px; -webkit-user-drag: none; scroll-snap-align: start; scroll-snap-stop: always; }
 .poster-img {
     position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 0; overflow: hidden;
-    background: #111; border: 1px solid #444;
+    background: #111; border: 1px solid #444; will-change: transform;
     transition: transform .4s cubic-bezier(.25,.46,.45,.94), border-color .4s ease;
 }
 .poster-img img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
@@ -217,17 +210,14 @@
 }
 
 @media (max-width: 900px) {
+    .hero { padding: 140px 20px 80px; }
     .hero h1 { font-size: 2.25rem; line-height: 1.15; }
     .hero p { font-size: 1.05rem; margin-bottom: 25px; }
     .hero-btn { position: relative; bottom: auto; right: auto; display: inline-block; align-self: flex-start; }
 
     .row { padding: 40px 0 16px; }
     .row-head { padding: 0 20px; }
-    .row-track { padding: 22px 20px 28px; gap: 14px; }
-    .row-track {
-        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
-                mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
-    }
+    .row-track { padding: 22px 20px 28px; gap: 14px; scroll-padding-inline: 20px; }
     .poster { width: 170px; }
     .poster-title { font-size: .95rem; }
     .row--featured .poster { width: 220px; }
@@ -244,68 +234,3 @@
     html { scroll-behavior: auto; }
     .poster-img, .cta-btn, .row-btn, .services-wrapper * { transition: none !important; }
 }
-.row-bg { display: none; }
-.row-track { -webkit-mask-image: none; mask-image: none; }
-.poster-img { will-change: transform; }
-
-/* Cap fast swipes: carousel stops on each poster instead of flying past */
-.row-track { scroll-snap-type: x mandatory; scroll-padding-inline: 60px; }
-.poster { scroll-snap-align: start; scroll-snap-stop: always; }
-.row-track.is-dragging { scroll-snap-type: none; } /* keeps mouse-dragging smooth on desktop */
-@media (max-width: 900px) { .row-track { scroll-padding-inline: 20px; } }
-section.hero { padding: 120px 60px 64px; }
-@media (max-width: 900px) {
-  section.hero { padding: 112px 24px 48px; }
-}
-/* HEADER FIX - logo left, menu right, no centering */
-.site-header, header { display: block !important; width: 100% !important; }
-.header-inner {
-  display: flex !important; flex-direction: row !important;
-  align-items: center !important; justify-content: space-between !important;
-  width: 100% !important; max-width: 1200px !important;
-  margin: 0 auto !important; padding: 12px 20px !important;
-  position: relative !important; text-align: left !important;
-}
-.logo { flex: 0 0 auto !important; margin-right: auto !important; text-align: left !important; display: flex !important; justify-content: flex-start !important; }
-.logo img { margin: 0 !important; height: 32px !important; width: auto !important; }
-.main-nav, .nav-center { flex: 1 1 auto !important; display: flex !important; justify-content: center !important; }
-.menu-btn, .mobile-menu-toggle { flex: 0 0 auto !important; margin-left: auto !important; }
-
-@media (max-width: 900px) {
-  .header-inner { padding: 12px 20px !important; }
-  .logo img { height: 28px !important; }
-  .header-socials, .nav-right { display: none !important; }
-  .main-nav, .nav-center { display: none !important; }
-  .main-nav.open, .nav-center.active { display: block !important; position: absolute !important; top: 100% !important; right: 0 !important; left: auto !important; width: 280px !important; background: #000 !important; border-top: 2px solid #E12BC0 !important; padding: 16px 20px 20px !important; }
-  .menu-btn, .mobile-menu-toggle { display: flex !important; margin-left: auto !important; }
-}
-
-/* HOME HERO - fill screen on mobile like Events */
-@media (max-width: 900px) {
-  .hero {
-    min-height: 100svh !important; height: 100svh !important;
-    padding: 140px 20px 60px !important;
-    display: flex !important; align-items: flex-end !important;
-    background-position: center 80% !important;
-  }
-  .hero-content { padding-bottom: 20px; }
-}
-/* HOME HERO - fill screen, no peek of next section */
-.hero {
-  min-height: 100svh !important;
-  height: 100svh !important;
-  min-height: 100dvh !important;
-  height: 100dvh !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  overflow: hidden !important;
-}
-@media (max-width: 768px) {
-  .hero {
-    min-height: 100dvh !important;
-    height: 100dvh !important;
-    padding: 140px 20px 80px !important;
-    background-position: center 80% !important;
-  }
-}
-
