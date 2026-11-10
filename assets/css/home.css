@@ -290,4 +290,22 @@ section.hero { padding: 120px 60px 64px; }
   }
   .hero-content { padding-bottom: 20px; }
 }
+/* HOME HERO - fill screen, no peek of next section */
+.hero {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  min-height: 100dvh !important;
+  height: 100dvh !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  overflow: hidden !important;
+}
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    padding: 140px 20px 80px !important;
+    background-position: center 80% !important;
+  }
+}
 
