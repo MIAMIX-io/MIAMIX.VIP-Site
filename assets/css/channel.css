@@ -82,3 +82,14 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
   .card-grid { grid-template-columns: 1fr; gap: 30px; }
   .optin-form input { max-width: none; width: 100%; }
 }
+
+/* ---------- CHANNEL INTRO (optional, e.g. Fashion) ---------- */
+.channel-intro { padding: 64px 40px 0; }
+.intro-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.intro-eyebrow { margin: 0 0 12px; color: #E12BC0; font-size: .85rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+.intro-eyebrow span { color: #fff; }
+.intro-inner h2 { margin: 0 0 18px; font-weight: 200; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: .12em; text-transform: uppercase; line-height: 1.2; }
+.intro-inner p:last-child { margin: 0; color: #e6e6e6; font-size: 1.05rem; line-height: 1.8; }
+@media (max-width: 900px) {
+  .channel-intro { padding: 48px 24px 0; }
+}
