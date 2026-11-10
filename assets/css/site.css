@@ -145,7 +145,7 @@ header {
     text-align: center;
     padding: 120px 20px 60px;
     background-size: cover;
-    background-position: center 80%;
+    background-position: center 90%;
     overflow: hidden;
 }
 .hero::before {
