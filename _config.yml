@@ -1,14 +1,18 @@
 name: MIAMIX VIP
-description: MIAMIX Curated Lifestyle
+title: MIAMIX VIP
+description: "MIAMIX — Curated stories on sports, fashion, culture, travel, hospitality, health and Miami lifestyle."
 url: "https://miamix.io"
 
 # Automatically apply the post.html layout to everything in the _posts folder
 defaults:
-  - scope:
+    - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
 
-# This uses your custom Notion 'URL Slug' property to build the web address
+# Post URL is https://miamix.io/<slug>/
+# slug comes from the slug: field in each post, or the filename.
+# WARNING: slugs must be unique across ALL channels — two posts with the
+# same slug will collide at the same URL.
 permalink: /:slug/
