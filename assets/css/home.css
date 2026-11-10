@@ -10,8 +10,8 @@
     box-sizing: border-box; margin: 0;
     /* Full screen. lvh = the full height including the area under the mobile browser toolbar,
        so the next section can never show through at the bottom. */
-    min-height: 100vh; min-height: 100lvh;
-    padding: 110px 60px 64px;
+    min-height: calc(100vh + 120px); min-height: calc(100lvh + 120px);   /* +120px bleed so the next section stays hidden behind the toolbar */
+    padding: 110px 60px 184px;
     background: var(--hero-image) 90% / cover no-repeat, #000;
 }
 .hero::before {   /* overcast layer — sits ABOVE the photo, BELOW the text */
@@ -213,7 +213,7 @@
 }
 
 @media (max-width: 900px) {
-    .hero { padding: 96px 20px 40px; }
+    .hero { padding: 96px 20px 160px; }
     .hero h1 { font-size: 2.25rem; line-height: 1.15; }
     .hero p { font-size: 1.05rem; margin-bottom: 25px; }
     .hero-btn { position: relative; bottom: auto; right: auto; display: inline-block; align-self: flex-start; }
