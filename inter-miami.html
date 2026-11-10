@@ -11,36 +11,43 @@ layout: null
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MIAMIX">
     <meta property="og:title" content="MIAMIX - Inter Miami">
-    <meta property="og:description" content="【entity-Inter Miami CF¦canonical_name=INTER MIAMI CF】 - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
+    <meta property="og:description" content="Inter Miami CF - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
     <meta property="og:image" content="/images/partners/inter-miami.png">
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/channel.css">
     <style>
         .inter-page { background: #000; color: #fff; font-family: 'Jost', sans-serif; font-weight: 300; }
         .inter-page .wrap { max-width: 1100px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
-        /* HERO - like your screenshot: crest left, title right */
-        .inter-hero { background: #000; padding: 130px 0 48px; border-bottom: 3px solid #E12BC0; }
-        .inter-hero-inner { display: flex; align-items: center; gap: 36px; }
-        .inter-crest { width: 160px; height: 160px; object-fit: contain; flex-shrink: 0; }
-        .inter-hero h1 { font-weight: 200; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; letter-spacing: .04em; text-transform: uppercase; margin: 0; }
-        .inter-hero h1 span { background: #E12BC0; padding: 2px 14px 4px; display: inline-block; color: #fff; }
-        .inter-hero .subtitle { font-size: 20px; letter-spacing: 1px; color: #fff; margin-top: 12px; font-weight: 300; }
-        .inter-hero .tagline { color: #aaa; font-size: 15px; margin-top: 8px; }
-        /* VIDEOS - like screenshot: large on top, 2 small below */
-        .video-section { background: #111; padding: 36px 0 44px; border-bottom: 3px solid #E12BC0; }
+        /* HERO - faint grass back, like original */
+        .inter-hero { position: relative; background: #000; padding: 150px 0 70px; border-bottom: 3px solid #E12BC0; overflow: hidden; }
+        .inter-hero::before { content: ""; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center 70%; opacity: .18; }
+        .inter-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.78) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,.95) 100%); }
+        .inter-hero-inner { position: relative; z-index: 2; display: flex; align-items: center; gap: 36px; }
+        .inter-crest { width: 160px; height: 160px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 10px 30px rgba(0,0,0,.8)); }
+        /* HEADER TEXT - more stylized */
+        .inter-hero h1 { font-weight: 200; font-size: clamp(40px, 8vw, 72px); line-height: .95; letter-spacing: .04em; text-transform: uppercase; margin: 0; }
+        .inter-hero h1 .white { color: #fff; }
+        .inter-hero h1 .pink { color: #E12BC0; font-weight: 400; text-shadow: 0 0 32px rgba(225,43,192,.65); }
+        .inter-hero h1 .outline { color: transparent; -webkit-text-stroke: 1.5px #fff; font-weight: 300; }
+        .inter-hero .pink-bar { width: 72px; height: 4px; background: #E12BC0; margin: 16px 0 14px; }
+        .inter-hero .subtitle { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: 2px; color: #fff; margin: 0; font-weight: 300; font-style: italic; }
+        .inter-hero .subtitle .line { width: 28px; height: 1px; background: rgba(255,255,255,.5); display: inline-block; }
+        .inter-hero .tagline { color: #ccc; font-size: 15px; margin-top: 10px; letter-spacing: .5px; }
+        /* VIDEOS - fixed spacing so posts can't get cut off */
+        .video-section { background: #111; padding: 36px 0 60px; border-bottom: 3px solid #E12BC0; overflow: hidden; clear: both; }
         .video-label { color: #E12BC0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-        .video-main { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; background: #000; }
-        .video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-        .video-row iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; background: #000; }
-        /* POSTS - alternating black bands like screenshot */
-        .inter-posts { padding: 0 0 60px; }
+        .video-main { width: 100%; aspect-ratio: 16 / 9; min-height: 240px; border: 0; display: block; background: #000; }
+        .video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .video-row iframe { width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border: 0; display: block; background: #000; }
+        /* POSTS - clear top, no overlap */
+        .inter-posts { padding: 50px 0 60px; background: #000; position: relative; z-index: 1; clear: both; }
         .inter-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; border-bottom: 1px solid #222; }
         .inter-post:nth-child(even) .inter-post-img { order: 2; }
-        .inter-post-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+        .inter-post-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top center; }
         .inter-post-img-placeholder { width: 100%; aspect-ratio: 4 / 3; background: linear-gradient(135deg, #111, #2a0a22); display: flex; align-items: center; justify-content: center; color: #E12BC0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
         .inter-post-body { padding: 36px; }
         .inter-post-body .eyebrow { color: #E12BC0; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; display: block; }
@@ -50,13 +57,16 @@ layout: null
         .inter-post-body p { color: #bbb; font-size: 16px; line-height: 1.7; margin: 0 0 16px; }
         .inter-post-body .read { color: #E12BC0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
         @media (max-width: 768px) {
-            .inter-hero { padding-top: 110px; }
+            .inter-hero { padding-top: 120px; padding-bottom: 50px; }
             .inter-hero-inner { flex-direction: column; text-align: center; gap: 20px; }
             .inter-crest { width: 120px; height: 120px; }
-            .inter-hero h1 { font-size: 32px; }
+            .inter-hero h1 { font-size: 42px; }
+            .inter-hero .pink-bar { margin-left: auto; margin-right: auto; }
+            .inter-hero .subtitle { justify-content: center; }
             .video-row, .inter-post { grid-template-columns: 1fr; }
             .inter-post:nth-child(even) .inter-post-img { order: 0; }
             .inter-post-body { padding: 24px 0 36px; }
+            .video-section { padding-bottom: 44px; }
         }
     </style>
 </head>
@@ -65,13 +75,14 @@ layout: null
     {% include header.html %}
 
     <main>
-        <!-- Hero: crest + title like original -->
+        <!-- Hero: faint grass + stylized header -->
         <section class="inter-hero">
             <div class="wrap inter-hero-inner">
                 <img class="inter-crest" src="/images/partners/inter-miami.png" alt="Inter Miami CF crest">
                 <div>
-                    <h1>INTER&nbsp;MIAMI&nbsp;CF</h1>
-                    <p class="subtitle">The Heron's Nest</p>
+                    <h1><span class="white">INTER</span> <span class="pink">MIAMI</span> <span class="outline">CF</span></h1>
+                    <div class="pink-bar"></div>
+                    <p class="subtitle"><span class="line"></span> The Heron's Nest <span class="line"></span></p>
                     <p class="tagline">Matchday, videos and stories from Chase Stadium and beyond.</p>
                 </div>
             </div>
@@ -89,7 +100,7 @@ layout: null
             </div>
         </section>
 
-        <!-- Posts: dynamic, alternating like screenshot -->
+        <!-- Posts -->
         {%- assign inter_posts = '' | split: '' -%}
         {%- assign seen = '|' -%}
         {%- for post in site.posts -%}
