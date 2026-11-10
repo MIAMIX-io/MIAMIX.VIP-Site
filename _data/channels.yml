@@ -1,81 +1,56 @@
-# MIAMIX homepage rows + card labels.
-# Used by:
-#   index.html        -> site.data.channels.rows (one shelf per row)
-#   channel-bands.html -> site.data.channels.labels (card label for post.channel)
-#
-# Rules that keep this file parsing:
-#   - 2-space indent, no tabs
-#   - channels: items at 6 spaces (not 4)
-#   - quote any string with :, &, #, or an apostrophe
-#   - to hide a row, use show: false — do not comment out half a row
-
 labels:
-  Culture: "Culture & Art"
+  Culture: "Culture and Art"
   CuratedLifestyle: "Curated Lifestyle"
-  Fashion: "Fashion & Lifestyle"
-  Health: "Health & Wellness"
+  Fashion: "Fashion and Lifestyle"
+  Health: "Health and Wellness"
   Hospitality: "Hospitality"
   InterMIA: "InterMIA"
   Nonprofit: "Nonprofit"
-  Sports: "Sports & Entertainment"
-  Travel: "Travel & Leisure"
-
+  Sports: "Sports and Entertainment"
+  Travel: "Travel and Leisure"
 rows:
     - id: "sports"
-    eyebrow: "Sports & Entertainment"
+    eyebrow: "Sports and Entertainment"
     title: "Game Day, Miami Style"
     tagline: "Highlights, athletes and the energy of game day."
     accent: "#E12BC0"
     url: "/channels/sports-entertainment"
-    channels:
-            - "Sports"
-
+    channels: ["Sports"]
     - id: "fashion"
-    eyebrow: "Fashion & Lifestyle"
+    eyebrow: "Fashion and Lifestyle"
     title: "Strike a Pose"
     tagline: "Runways, designers and the looks defining Miami."
     accent: "#E12BC0"
     url: "/channels/fashion-lifestyle"
-    channels:
-            - "Fashion"
-
+    channels: ["Fashion"]
     - id: "culture"
-    eyebrow: "Culture & Art"
-    title: "Art, Soul & Story"
+    eyebrow: "Culture and Art"
+    title: "Art, Soul and Story"
     tagline: "Artists, theatre and stories that shape Miami."
     accent: "#E12BC0"
     url: "/channels/culture-art"
-    channels:
-            - "Culture"
-
+    channels: ["Culture"]
     - id: "travel"
-    eyebrow: "Travel & Leisure"
+    eyebrow: "Travel and Leisure"
     title: "Departures"
     tagline: "Trips, stays and escapes worth the flight."
     accent: "#E12BC0"
     url: "/channels/travel-leisure"
-    channels:
-            - "Travel"
-
+    channels: ["Travel"]
     - id: "hospitality"
     eyebrow: "Hospitality"
     title: "MIAMIX Hospitality"
     tagline: "Tables, stays and service worth remembering."
     accent: "#E12BC0"
     url: "/channels/hospitality"
-    channels:
-            - "Hospitality"
-
+    channels: ["Hospitality"]
     - id: "feel-good"
     eyebrow: "Feel Good"
-    title: "Wellness & Giving"
+    title: "Wellness and Giving"
     tagline: "Health, wellness and the people giving back."
     accent: "#E12BC0"
     url: "/channels/health-wellness"
-    channels:
-            - "Health"
-            - "Nonprofit"
-
+    channels: ["Health", "Nonprofit"]
     - id: "inter-miami"
     show: false
     eyebrow: "InterMIA"
@@ -83,5 +58,4 @@ rows:
     tagline: "Matchdays and club stories."
     accent: "#E12BC0"
     url: "/inter-miami"
-    channels:
-            - "InterMIA"
+    channels: ["InterMIA"]
