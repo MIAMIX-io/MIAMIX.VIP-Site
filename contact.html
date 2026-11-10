@@ -30,7 +30,7 @@
             <div class="contact-details">
                 <div class="contact-detail-row">
                     <span class="contact-detail-label">Email</span>
-                    <a href="mailto:hello@miamix.io">hello@miamix.io</a>
+                    <a href="mailto:info@miamix.io">info@miamix.io</a>
                 </div>
                 <div class="contact-detail-row">
                     <span class="contact-detail-label">WhatsApp</span>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="contact-icons">
-                <a href="mailto:hello@miamix.io" aria-label="Email MIAMIX">
+                <a href="mailto:info@miamix.io" aria-label="Email MIAMIX">
                     <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </a>
                 <a href="https://wa.me/17864598797" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp MIAMIX">
@@ -81,7 +81,7 @@
                 </div>
                 <div class="field">
                     <label for="cf-message">Message</label>
-                    <textarea id="cf-message" name="message" rows="5" placeholder="HOW CAN WE HELP?" aria-label="Message" required></textarea>
+                    <textarea id="cf-message" name="message" rows="3" placeholder="HOW CAN WE HELP?" aria-label="Message" required></textarea>
                 </div>
                 <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="contact-submit" id="contact-btn">Send message</button>
@@ -125,7 +125,7 @@
                 })
                 .catch(function (err) {
                     console.error('Contact form error', err);
-                    say('Could not send. Please try again or email hello@miamix.io.');
+                    say('Could not send. Please try again or email info@miamix.io.');
                 })
                 .then(function () { btn.disabled = false; btn.textContent = 'Send message'; });
         });
