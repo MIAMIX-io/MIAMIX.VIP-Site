@@ -133,3 +133,52 @@ footer .social-icon img { width: 100%; height: 100%; object-fit: contain; }
     html { scroll-behavior: auto; }
     .nav-item { transition: none; }
 }
+/* === FIX: CHANNELS alignment - MUST BE LAST IN site.css === */
+.main-nav .nav-trigger {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  text-align: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+@media (max-width: 900px) {
+  .main-nav ul,
+  .main-nav li,
+  .main-nav .nav-item,
+  .main-nav .has-dropdown {
+    text-align: right !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  .main-nav a,
+  .main-nav .nav-trigger {
+    display: block !important;
+    width: 100% !important;
+    text-align: right !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: .9rem !important;
+    font-weight: 300 !important;
+    letter-spacing: .2em !important;
+    text-transform: uppercase !important;
+    color: #fff !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+  .main-nav .has-dropdown .dropdown {
+    text-align: right !important;
+    padding: 0 !important;
+  }
+  .main-nav .has-dropdown .dropdown a {
+    padding: 7px 0 !important;
+    font-size: .85rem !important;
+  }
+}
