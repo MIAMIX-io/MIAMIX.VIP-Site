@@ -1,24 +1,29 @@
 {% assign posts = site.posts | where: "channel", include.channel | sort: "date" | reverse %}
-<div class="mx-grid">
-{% assign seen = "" %}
-{% for post in posts %}
-  {% unless seen contains post.title %}
-  {% assign seen = seen | append: post.title | append: "|" %}
-  {% assign thumb = site.data.thumbs[post.slug] | default: post.cover_image | default: post.thumbnail | default: post.image %}
-  {% assign label = site.data.channels.labels[post.channel] | default: post.channel %}
-  <article class="mx-card">
-    <a href="{{ post.url | relative_url }}" class="mx-card-link">
-      {% if thumb %}
-      <div class="mx-card-img"><img src="{{ thumb }}" alt="{{ post.title | escape }}" loading="lazy"></div>
-      {% endif %}
-      <div class="mx-card-body">
-        <p class="mx-eyebrow">{{ label }}</p>
-        <h3 class="mx-card-title">{{ post.title }}</h3>
-        <p class="mx-card-sub">{{ post.subtitle | default: post.excerpt | strip_html | truncate: 140 }}</p>
-        <span class="mx-read">READ STORY &rarr;</span>
-      </div>
-    </a>
-  </article>
-  {% endunless %}
-{% endfor %}
+<div class="channel-content">
+  <div class="card-grid">
+  {% assign seen = "" %}
+  {% for post in posts %}
+    {% unless seen contains post.title %}
+    {% assign seen = seen | append: post.title | append: "|" %}
+    {% assign thumb = site.data.thumbs[post.slug] | default: post.cover_image | default: post.thumbnail | default: post.image %}
+    {% assign label = site.data.channels.labels[post.channel] | default: post.channel %}
+    <article class="card">
+      <a href="{{ post.url | relative_url }}">
+        {% if thumb %}
+        <div class="card-media"><img src="{{ thumb }}" alt="{{ post.title | escape }}" loading="lazy"></div>
+        {% endif %}
+        <div class="card-content">
+          <p class="card-eyebrow">{{ label }}</p>
+          <h3 class="card-title">{{ post.title }}</h3>
+          <p class="card-sub">{{ post.subtitle | default: post.excerpt | strip_html | truncate: 140 }}</p>
+          <span class="card-read">READ STORY &rarr;</span>
+        </div>
+      </a>
+    </article>
+    {% endunless %}
+  {% endfor %}
+  </div>
+  {% if posts.size == 0 %}
+  <p class="channel-empty">New stories are on the way.</p>
+  {% endif %}
 </div>
