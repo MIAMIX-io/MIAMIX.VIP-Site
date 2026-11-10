@@ -1,6 +1,6 @@
 name: MIAMIX VIP
 description: MIAMIX Curated Lifestyle
-url: "https://miamix.vip"
+url: "https://miamix.io"
 
 # Automatically apply the post.html layout to everything in the _posts folder
 defaults:

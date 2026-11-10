@@ -6,7 +6,7 @@ last_edited_time: 2026-05-10T13:01:00.000Z
 status: Published
 last_synced_to_git_hub: null
 grid_placement: None
-website: miamix.vip
+website: miamix.io
 content_type: Blog Post
 external_url: https://www.miamix.io/sports-miamix-member/seleccion-arg-miami
 channel:

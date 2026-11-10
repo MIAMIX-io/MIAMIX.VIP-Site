@@ -8,7 +8,7 @@ cover_image: >-
 status: Published
 last_synced_to_git_hub: null
 grid_placement: None
-website: miamix.vip
+website: miamix.io
 content_type: Blog Post
 external_url: https://catenazapata.com/
 channel:

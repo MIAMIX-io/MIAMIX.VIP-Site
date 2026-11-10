@@ -8,7 +8,7 @@ cover_image: >-
 status: Published
 last_synced_to_git_hub: 2026-05-10T08:35:00.000Z
 grid_placement: Grid B
-website: miamix.vip
+website: miamix.io
 content_type: Blog Post
 external_url: null
 channel:

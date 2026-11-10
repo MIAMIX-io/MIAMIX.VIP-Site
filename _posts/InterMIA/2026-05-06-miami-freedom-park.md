@@ -8,7 +8,7 @@ cover_image: >-
 status: Published
 last_synced_to_git_hub: 2026-05-10T13:10:00.000Z
 grid_placement: Partner
-website: miamix.vip
+website: miamix.io
 content_type: Blog Post
 external_url: https://www.intermiamicf.com/
 channel:
