@@ -1,45 +1,29 @@
-<header>
-    <!-- Brand Logo -->
-    <a href="/" class="logo">
-        <img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX">
-    </a>
-
-    <!-- Mobile Hamburger Toggle (hidden on desktop via site.css) -->
-    <button class="mobile-menu-toggle" aria-label="Toggle navigation"></button>
-
-    <!-- Navigation Menu -->
-    <nav class="nav-center">
-        <ul>
-            <li class="nav-item dropdown">
-                <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                    CHANNELS <span class="arrow">▼</span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="/sports">Sports & Entertainment</a></li>
-                    <li><a href="/fashion">Fashion & Lifestyle</a></li>
-                    <li><a href="/health">Health & Wellness</a></li>
-                    <li><a href="/culture">Culture & Art</a></li>
-                    <li><a href="/travel">Travel & Leisure</a></li>
-                    <li><a href="/hospitality">Hospitality</a></li>
-                    <li><a href="/nonprofit">Nonprofit</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="/curated-lifestyle">CURATED LIFESTYLE</a></li>
-            <li class="nav-item"><a href="/inter-miami">INTER&nbsp;MIAMI</a></li>
-            <li class="nav-item"><a href="/contact">CONTACT</a></li>
-        </ul>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/images/MIAMIX-LandscapeHeader-BrandPinkV3-Transparent.png" alt="MIAMIX"></a>
+    <nav class="main-nav" id="navMenu">
+      <ul>
+        <li class="nav-item"><a href="/inter-miami">INTER&nbsp;MIAMI</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="/curated-lifestyle" aria-haspopup="true" aria-expanded="false">CURATED&nbsp;LIFESTYLE</a>
+          <ul class="dropdown">
+            <li><a href="/sports">Sports</a></li>
+            <li><a href="/fashion">Fashion</a></li>
+            <li><a href="/culture">Culture</a></li>
+            <li><a href="/travel">Travel</a></li>
+            <li><a href="/hospitality">Hospitality</a></li>
+            <li><a href="/health">Health</a></li>
+            <li><a href="/nonprofit">Nonprofit</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="/contact">CONTACT</a></li>
+      </ul>
     </nav>
-
-    <!-- Social Media Links -->
-    <div class="nav-right social-icons">
-        <a href="https://www.youtube.com/@MIAMIXUS" class="social-icon" target="_blank" rel="noopener" aria-label="MIAMIX on YouTube">
-            <img src="/images/MIAMIX_SocialLogos-3 (1).png" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/miamix.us/" class="social-icon" target="_blank" rel="noopener" aria-label="MIAMIX on Instagram">
-            <img src="/images/MIAMIX_SocialLogos-1 (1).png" alt="Instagram">
-        </a>
-        <a href="https://www.linkedin.com/company/miamix-io/?viewAsMember=true" class="social-icon" target="_blank" rel="noopener" aria-label="MIAMIX on LinkedIn">
-            <img src="/images/MIAMIX_SocialLogos-2 (1).png" alt="LinkedIn">
-        </a>
+    <div class="header-socials">
+      <a href="https://www.youtube.com/@MIAMIXUS" aria-label="YouTube"><img src="/images/youtube.png" alt="YouTube"></a>
+      <a href="https://www.instagram.com/miamix.us" aria-label="Instagram"><img src="/images/instagram.png" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/company/miamix-us" aria-label="LinkedIn"><img src="/images/linkedin.png" alt="LinkedIn"></a>
     </div>
+    <button class="menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">MENU <span aria-hidden="true">&#9776;</span></button>
+  </div>
 </header>
