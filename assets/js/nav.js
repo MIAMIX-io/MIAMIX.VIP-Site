@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.classList.toggle('open', open);
   });
-  var drops = nav.querySelectorAll('.has-dropdown > a');
+  var drops = nav.querySelectorAll('.has-dropdown > button, .has-dropdown > a');
   drops.forEach(function(a) {
     a.addEventListener('click', function(e) {
       if (window.innerWidth <= 900) {
