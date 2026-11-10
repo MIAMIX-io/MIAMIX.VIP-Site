@@ -1,27 +1,27 @@
-/* MIAMIX mobile menu + dropdown. */
-(function () {
-    'use strict';
-    var btn = document.getElementById('mobileMenuBtn');
-    var menu = document.getElementById('navMenu');
-    var dropdown = document.querySelector('.nav-item.dropdown');
-
-    if (btn && menu) {
-        btn.addEventListener('click', function () {
-            var open = menu.classList.toggle('active');
-            btn.innerHTML = open ? '✕' : '☰';
-            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-            if (!open && dropdown) dropdown.classList.remove('mobile-open');
-        });
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('mobileMenuBtn');
+  var nav = document.getElementById('navMenu');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.classList.toggle('open', open);
+  });
+  var drops = nav.querySelectorAll('.has-dropdown > a');
+  drops.forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        a.parentElement.classList.toggle('open');
+      }
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('open');
     }
-
-    if (dropdown) {
-        dropdown.addEventListener('click', function (e) {
-            // On mobile, tapping "CHANNELS" toggles the list; tapping a link just navigates.
-            if (window.innerWidth <= 900 && e.target.tagName !== 'A') {
-                e.preventDefault();
-                dropdown.classList.toggle('mobile-open');
-            }
-        });
-    }
-})();
+  });
+});
