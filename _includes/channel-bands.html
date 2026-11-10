@@ -1,60 +1,24 @@
-{%- comment -%}
-  Post bands, alternating deep black / stone grey.
-  Params: channel, heading (optional, shown above first band),
-          start (0 = first band black, 1 = first band stone; use it to continue a page's rotation)
-{%- endcomment -%}
-{%- assign s = include.start | default: 0 -%}
-{%- assign all_posts = site.posts | where: "channel", include.channel | sort: "date" | reverse -%}
-{%- assign posts = '' | split: '' -%}
-{%- assign seen = '|' -%}
-{%- for post in all_posts -%}
-    {%- assign key = '|' | append: post.title | append: '|' -%}
-    {%- unless seen contains key -%}
-        {%- assign posts = posts | push: post -%}
-        {%- assign seen = seen | append: post.title | append: '|' -%}
-    {%- endunless -%}
-{%- endfor -%}
-{%- assign per = 6 -%}
-{%- assign bands = posts.size | plus: 5 | divided_by: per -%}
-
-{%- if bands == 0 %}
-{%- assign t0 = s | modulo: 2 %}
-<section class="band {% if t0 == 0 %}band--black{% else %}band--stone{% endif %}">
-    {%- if include.heading %}<h2 class="ch-heading">{{ include.heading }}</h2>{% endif %}
-    <p class="ch-empty">New stories are on the way.</p>
-</section>
-{%- else %}
-{%- for i in (1..bands) %}
-    {%- assign idx = forloop.index0 -%}
-    {%- assign offset = idx | times: per -%}
-    {%- assign tone = idx | plus: s | modulo: 2 %}
-<section class="band {% if tone == 0 %}band--black{% else %}band--stone{% endif %}">
-    {%- if include.heading and idx == 0 %}
-    <h2 class="ch-heading">{{ include.heading }}</h2>
-    {%- endif %}
-    <div class="ch-grid">
-        {%- for post in posts limit: per offset: offset %}
-            {%- assign stem = post.path | split: '/' | last | remove: '.md' -%}
-            {%- assign pch = post.channel | first -%}
-            {%- assign label = site.data.channels.labels[pch] | default: pch -%}
-            {%- assign card_title = post.page_title | default: post.title %}
-        <a class="ch-card" href="{{ post.url | relative_url }}">
-            <span class="ch-media">
-                {%- if site.data.thumbs contains stem %}
-                <img src="/assets/thumbs/{{ stem }}.webp" alt="" width="300" height="400" loading="lazy" decoding="async">
-                {%- elsif post.cover_image or post.thumbnail %}
-                <img src="{{ post.cover_image | default: post.thumbnail }}" alt="" loading="lazy" decoding="async">
-                {%- else %}
-                <span class="ch-fallback"><span>{{ label }}</span></span>
-                {%- endif %}
-            </span>
-            <span class="ch-meta">
-                <span class="ch-label">{{ label }}</span>
-                <span class="ch-title">{{ card_title }}</span>
-            </span>
-        </a>
-        {%- endfor %}
-    </div>
-</section>
-{%- endfor %}
-{%- endif %}
+{% assign posts = site.posts | where: "channel", include.channel | sort: "date" | reverse %}
+<div class="mx-grid">
+{% assign seen = "" %}
+{% for post in posts %}
+  {% unless seen contains post.title %}
+  {% assign seen = seen | append: post.title | append: "|" %}
+  {% assign thumb = site.data.thumbs[post.slug] | default: post.cover_image | default: post.thumbnail | default: post.image %}
+  {% assign label = site.data.channels.labels[post.channel] | default: post.channel %}
+  <article class="mx-card">
+    <a href="{{ post.url | relative_url }}" class="mx-card-link">
+      {% if thumb %}
+      <div class="mx-card-img"><img src="{{ thumb }}" alt="{{ post.title | escape }}" loading="lazy"></div>
+      {% endif %}
+      <div class="mx-card-body">
+        <p class="mx-eyebrow">{{ label }}</p>
+        <h3 class="mx-card-title">{{ post.title }}</h3>
+        <p class="mx-card-sub">{{ post.subtitle | default: post.excerpt | strip_html | truncate: 140 }}</p>
+        <span class="mx-read">READ STORY &rarr;</span>
+      </div>
+    </a>
+  </article>
+  {% endunless %}
+{% endfor %}
+</div>
