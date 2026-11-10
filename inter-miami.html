@@ -1,11 +1,138 @@
 ---
-permalink: /inter-miami/
+layout: null
 ---
-{% include channel-page.html
-  channel="InterMIA"
-  eyebrow="Inter Miami"
-  title="Inter Miami"
-  subtitle="Team updates, matchday moments, players, and VIP access from Miami's club."
-  image="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=2000&q=80"
-  page_title="MIAMIX - Inter Miami"
-%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAMIX - Inter Miami</title>
+    <meta name="description" content="【entity-Inter Miami CF¦canonical_name=INTER MIAMI CF】 - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MIAMIX">
+    <meta property="og:title" content="MIAMIX - Inter Miami">
+    <meta property="og:description" content="【entity-Inter Miami CF¦canonical_name=INTER MIAMI CF】 - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
+    <meta property="og:image" content="/images/partners/inter-miami.png">
+    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/channel.css">
+    <style>
+        .inter-page { background: #000; color: #fff; font-family: 'Jost', sans-serif; font-weight: 300; }
+        .inter-page .wrap { max-width: 1100px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+        /* HERO - like your screenshot: crest left, title right */
+        .inter-hero { background: #000; padding: 130px 0 48px; border-bottom: 3px solid #E12BC0; }
+        .inter-hero-inner { display: flex; align-items: center; gap: 36px; }
+        .inter-crest { width: 160px; height: 160px; object-fit: contain; flex-shrink: 0; }
+        .inter-hero h1 { font-weight: 200; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; letter-spacing: .04em; text-transform: uppercase; margin: 0; }
+        .inter-hero h1 span { background: #E12BC0; padding: 2px 14px 4px; display: inline-block; color: #fff; }
+        .inter-hero .subtitle { font-size: 20px; letter-spacing: 1px; color: #fff; margin-top: 12px; font-weight: 300; }
+        .inter-hero .tagline { color: #aaa; font-size: 15px; margin-top: 8px; }
+        /* VIDEOS - like screenshot: large on top, 2 small below */
+        .video-section { background: #111; padding: 36px 0 44px; border-bottom: 3px solid #E12BC0; }
+        .video-label { color: #E12BC0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .video-main { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; background: #000; }
+        .video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        .video-row iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; background: #000; }
+        /* POSTS - alternating black bands like screenshot */
+        .inter-posts { padding: 0 0 60px; }
+        .inter-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; border-bottom: 1px solid #222; }
+        .inter-post:nth-child(even) .inter-post-img { order: 2; }
+        .inter-post-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+        .inter-post-img-placeholder { width: 100%; aspect-ratio: 4 / 3; background: linear-gradient(135deg, #111, #2a0a22); display: flex; align-items: center; justify-content: center; color: #E12BC0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
+        .inter-post-body { padding: 36px; }
+        .inter-post-body .eyebrow { color: #E12BC0; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; display: block; }
+        .inter-post-body h2 { font-weight: 200; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 12px; }
+        .inter-post-body h2 a { color: #fff; }
+        .inter-post-body h2 a:hover { color: #E12BC0; }
+        .inter-post-body p { color: #bbb; font-size: 16px; line-height: 1.7; margin: 0 0 16px; }
+        .inter-post-body .read { color: #E12BC0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+        @media (max-width: 768px) {
+            .inter-hero { padding-top: 110px; }
+            .inter-hero-inner { flex-direction: column; text-align: center; gap: 20px; }
+            .inter-crest { width: 120px; height: 120px; }
+            .inter-hero h1 { font-size: 32px; }
+            .video-row, .inter-post { grid-template-columns: 1fr; }
+            .inter-post:nth-child(even) .inter-post-img { order: 0; }
+            .inter-post-body { padding: 24px 0 36px; }
+        }
+    </style>
+</head>
+<body class="inter-page">
+
+    {% include header.html %}
+
+    <main>
+        <!-- Hero: crest + title like original -->
+        <section class="inter-hero">
+            <div class="wrap inter-hero-inner">
+                <img class="inter-crest" src="/images/partners/inter-miami.png" alt="Inter Miami CF crest">
+                <div>
+                    <h1>INTER&nbsp;MIAMI&nbsp;CF</h1>
+                    <p class="subtitle">The Heron's Nest</p>
+                    <p class="tagline">Matchday, videos and stories from Chase Stadium and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos: 1 large + 2 small -->
+        <section class="video-section">
+            <div class="wrap">
+                <p class="video-label">Watch</p>
+                <iframe class="video-main" src="https://www.youtube.com/embed/IQ-rMH5KYbo" title="Inter Miami - Main Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                <div class="video-row">
+                    <iframe src="https://www.youtube.com/embed/Xgv07tbSU_0" title="Inter Miami - Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/WMg8Vz5ejNk" title="Inter Miami - Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posts: dynamic, alternating like screenshot -->
+        {%- assign inter_posts = '' | split: '' -%}
+        {%- assign seen = '|' -%}
+        {%- for post in site.posts -%}
+            {%- assign ch = post.channel | join: ',' -%}
+            {%- if ch contains 'Inter' -%}
+                {%- assign key = '|' | append: post.title | append: '|' -%}
+                {%- unless seen contains key -%}
+                    {%- assign inter_posts = inter_posts | push: post -%}
+                    {%- assign seen = seen | append: post.title | append: '|' -%}
+                {%- endunless -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- assign inter_posts = inter_posts | sort: "date" | reverse -%}
+
+        <section class="inter-posts">
+            <div class="wrap">
+                {%- if inter_posts.size > 0 %}
+                    {%- for post in inter_posts %}
+                    {%- assign label = post.page_title | default: post.title -%}
+                    {%- assign img = post.cover_image | default: post.thumbnail | default: post.cover -%}
+                    <article class="inter-post">
+                        {%- if img %}
+                        <a href="{{ post.url | relative_url }}"><img class="inter-post-img" src="{{ img }}" alt="{{ label | escape }}" loading="lazy"></a>
+                        {%- else %}
+                        <a href="{{ post.url | relative_url }}"><div class="inter-post-img-placeholder">Inter&nbsp;Miami</div></a>
+                        {%- endif %}
+                        <div class="inter-post-body">
+                            <span class="eyebrow">Inter&nbsp;Miami &middot; {{ post.date | date: "%B %-d, %Y" }}</span>
+                            <h2><a href="{{ post.url | relative_url }}">{{ label }}</a></h2>
+                            <p>{{ post.excerpt | strip_html | truncate: 220 }}</p>
+                            <a class="read" href="{{ post.url | relative_url }}">Read Story →</a>
+                        </div>
+                    </article>
+                    {%- endfor %}
+                {%- else %}
+                <p style="text-align:center; color:#aaa; padding: 40px 0;">New Inter Miami stories are on the way.</p>
+                {%- endif %}
+            </div>
+        </section>
+    </main>
+
+    {% include footer.html %}
+
+    <script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
