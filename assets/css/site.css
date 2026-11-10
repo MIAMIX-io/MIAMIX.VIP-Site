@@ -276,3 +276,41 @@ footer {
 .social-icon { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; }
 .social-icon img { width: 100%; height: 100%; object-fit: contain; }
 footer .social-icons { justify-content: center; margin-top: 8px; }
+
+/* MOBILE NAV - menu on right, no socials */
+.menu-btn { display: none; }
+
+@media (max-width: 900px) {
+  .header-inner { justify-content: space-between; }
+  .header-socials { display: none !important; }
+  .menu-btn {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-family: Jost, sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .main-nav { display: none; }
+  .main-nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: 260px;
+    background: #000;
+    border-top: 2px solid #E12BC0;
+    padding: 16px 20px 20px;
+    z-index: 100;
+  }
+  .main-nav.open ul { display: block; }
+  .main-nav.open li { display: block; margin: 12px 0; }
+  .main-nav.open .dropdown { display: none; position: static; box-shadow: none; padding: 8px 0 0 12px; }
+  .main-nav.open .has-dropdown.open .dropdown { display: block; }
+}
