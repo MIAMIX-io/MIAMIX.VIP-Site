@@ -262,3 +262,27 @@
 @media (max-width: 900px) {
   .hero { padding: 96px 20px 40px !important; }
 }
+/* === HERO: FORCE FULL SCREEN - MUST BE LAST IN home.css === */
+.hero {
+  height: 100vh !important;
+  height: 100svh !important;
+  height: 100dvh !important;
+  min-height: 100svh !important;
+  min-height: 100dvh !important;
+  max-height: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: 100svh !important;
+    height: 100dvh !important;
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+    padding: 96px 20px 40px !important;
+  }
+}
