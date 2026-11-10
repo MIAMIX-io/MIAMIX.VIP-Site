@@ -17,7 +17,7 @@
       "title": "Game Day, Miami Style",
       "tagline": "Highlights, athletes and the energy of game day.",
       "accent": "#E12BC0",
-      "url": "/channels/sports-entertainment",
+      "url": "/sports",
       "channels": ["Sports"]
     },
     {
@@ -26,7 +26,7 @@
       "title": "Strike a Pose",
       "tagline": "Runways, designers and the looks defining Miami.",
       "accent": "#E12BC0",
-      "url": "/channels/fashion-lifestyle",
+      "url": "/fashion",
       "channels": ["Fashion"]
     },
     {
@@ -35,7 +35,7 @@
       "title": "Art, Soul and Story",
       "tagline": "Artists, theatre and stories that shape Miami.",
       "accent": "#E12BC0",
-      "url": "/channels/culture-art",
+      "url": "/culture",
       "channels": ["Culture"]
     },
     {
@@ -44,7 +44,7 @@
       "title": "Departures",
       "tagline": "Trips, stays and escapes worth the flight.",
       "accent": "#E12BC0",
-      "url": "/channels/travel-leisure",
+      "url": "/travel",
       "channels": ["Travel"]
     },
     {
@@ -53,7 +53,7 @@
       "title": "MIAMIX Hospitality",
       "tagline": "Tables, stays and service worth remembering.",
       "accent": "#E12BC0",
-      "url": "/channels/hospitality",
+      "url": "/hospitality",
       "channels": ["Hospitality"]
     },
     {
@@ -62,7 +62,7 @@
       "title": "Wellness and Giving",
       "tagline": "Health, wellness and the people giving back.",
       "accent": "#E12BC0",
-      "url": "/channels/health-wellness",
+      "url": "/health",
       "channels": ["Health", "Nonprofit"]
     },
     {
