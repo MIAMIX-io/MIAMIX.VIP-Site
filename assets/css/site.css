@@ -86,44 +86,34 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
     .header-socials { gap: 12px; }
 }
 
-/* --- MOBILE NAV - ONE definition: full-screen overlay --- */
+/* --- MOBILE NAV - ONE definition: compact side panel, tight spacing --- */
 @media (max-width: 900px) {
     .header-inner { padding: 12px 20px; }
     .logo img { height: 28px; }
-    .header-socials, .nav-right { display: none; }
+    .header-socials { display: none; }
     .menu-btn { display: flex; position: relative; z-index: 1002; }
 
     .main-nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      width: 100%; height: 100dvh; height: 100vh;
-      padding: 90px 28px 40px;
+      display: none;
+      position: absolute; top: 100%; right: 0; left: auto;
+      width: 300px; max-width: 85vw;
+      max-height: calc(100dvh - 70px); overflow-y: auto;
       background: #000;
-      display: flex; flex-direction: column; align-items: flex-end;
-      overflow-y: auto;
-      transform: translateX(100%);
-      visibility: hidden;
-      transition: transform .3s ease, visibility .3s;
-      z-index: 1001;
+      border-top: 2px solid #E12BC0; border-left: 1px solid #222;
+      padding: 12px 20px 16px;
     }
-    /* Must repeat position/width here - .open is more specific, it wins */
-    .main-nav.open {
-      transform: translateX(0);
-      visibility: visible;
-      position: fixed; top: 0; left: 0; right: 0;
-      width: 100%; height: 100dvh; height: 100vh;
-      padding: 90px 28px 40px;
-      background: #000;
-    }
+    .main-nav.open { display: block; }
     .main-nav > ul { display: flex; flex-direction: column; align-items: flex-end; gap: 0; width: 100%; }
-    .main-nav .nav-item { display: block; margin: 12px 0; text-align: right; width: 100%; }
+    .main-nav .nav-item { display: block; margin: 0; text-align: right; width: 100%; }
+    .main-nav .nav-item a, .main-nav .nav-item button { display: block; padding: 10px 0; line-height: 1.25; text-align: right; }
     .main-nav .dropdown {
       display: none; position: static; transform: none;
-      margin-top: 8px; padding: 8px 0 0; background: transparent;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
-      border: 0; border-top: 2px solid #E12BC0; box-shadow: none; min-width: 0; width: 100%;
+      margin: 0 0 4px 0; padding: 4px 0 4px 14px; background: transparent;
+      border: 0; border-left: 1px solid #E12BC0; box-shadow: none; min-width: 0; width: 100%;
     }
     .main-nav .has-dropdown.open .dropdown { display: block; }
-    .main-nav .dropdown a { padding: 10px 0; font-size: 14px; text-align: right; }
+    .main-nav .dropdown li { margin: 0; padding: 0; }
+    .main-nav .dropdown a { padding: 7px 0; font-size: 14px; text-align: right; }
     body.menu-open { overflow: hidden; }
 }
 
@@ -142,59 +132,4 @@ footer .social-icon img { width: 100%; height: 100%; object-fit: contain; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .nav-item { transition: none; }
-}
-/* MOBILE NAV - compact side panel, NOT full-screen + tight Channels spacing */
-@media (max-width: 900px) {
-  .main-nav {
-    position: absolute !important;
-    top: 100% !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 300px !important;
-    max-width: 85vw !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: calc(100dvh - 70px) !important;
-    overflow-y: auto !important;
-    background: #000 !important;
-    border-top: 2px solid #E12BC0 !important;
-    border-left: 1px solid #222 !important;
-    padding: 12px 20px 16px !important;
-    display: none !important;
-    transform: none !important;
-  }
-  .main-nav.open { display: block !important; }
-
-  /* Top-level links: no gap, 10px padding */
-  .main-nav ul {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .main-nav li { margin: 0 !important; padding: 0 !important; }
-  .main-nav a {
-    display: block !important;
-    padding: 10px 0 !important;
-    line-height: 1.25 !important;
-  }
-
-  /* Channels dropdown: no gap, 7px padding, tight indent */
-  .main-nav .dropdown {
-    position: static !important;
-    display: none !important;
-    width: auto !important;
-    background: transparent !important;
-    border: none !important;
-    border-left: 1px solid #E12BC0 !important;
-    padding: 4px 0 4px 14px !important;
-    margin: 0 0 4px 0 !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  .main-nav .has-dropdown.open .dropdown { display: block !important; }
-  .main-nav .dropdown li { margin: 0 !important; padding: 0 !important; }
-  .main-nav .dropdown a { padding: 7px 0 !important; font-size: 14px !important; }
 }
