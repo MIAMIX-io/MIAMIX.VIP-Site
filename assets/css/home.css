@@ -8,7 +8,7 @@
     position: relative; isolation: isolate; overflow: hidden;
     height: auto; min-height: min(92vh, 860px); min-height: min(92svh, 860px);
     justify-content: flex-start; padding: 120px 60px 64px;  /* text starts near the top */
-    background: var(--hero-image) center bottom / cover no-repeat, #000;
+    background: var(--hero-image) 80% / cover no-repeat, #000;
 }
 .hero::before {   /* overcast layer — sits ABOVE the photo, BELOW the text */
     content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -42,7 +42,7 @@
 /* Desktop: focus on the bottom of the hero image */
 @media (min-width: 901px) {
     .hero {
-        background-position: center bottom;
+        background-position: 80%;
     }
 }
 /* --- ROWS (streaming-style shelves) --- */
