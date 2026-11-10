@@ -6,9 +6,12 @@
 /* --- HERO - one definition --- */
 .hero {
     position: relative; isolation: isolate; overflow: hidden;
-    display: flex; align-items: flex-end;
-    min-height: 100svh; min-height: 100dvh;
-    padding: 120px 60px 64px;
+    display: flex; align-items: flex-start; justify-content: flex-start; text-align: left;
+    box-sizing: border-box; margin: 0;
+    /* Full screen. lvh = the full height including the area under the mobile browser toolbar,
+       so the next section can never show through at the bottom. */
+    min-height: 100vh; min-height: 100lvh;
+    padding: 110px 60px 64px;
     background: var(--hero-image) 90% / cover no-repeat, #000;
 }
 .hero::before {   /* overcast layer — sits ABOVE the photo, BELOW the text */
@@ -24,14 +27,14 @@
 /* Homepage hero content: left-aligned, above overlays.
    index.html uses .hero-badge + plain h1/p, NOT .hero-eyebrow/.hero-title,
    so style those exact selectors here. */
-.hero-content { position: relative; z-index: 2; max-width: 760px; margin: 0; text-align: left; padding-bottom: 20px; }
+.hero-content { position: relative; z-index: 2; max-width: 760px; margin: 0; padding: 8px 0 0; text-align: left; align-self: flex-start; }
 .hero-content .hero-badge { display: inline-block; margin-bottom: 20px; font-size: .9rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--primary-pink, #E12BC0); }
 .hero-content h1 { margin: 0 0 16px; font-size: clamp(2.75rem, 6vw, 4.8rem); font-weight: 200; letter-spacing: .05em; line-height: 1.05; text-transform: uppercase; color: #fff; }
 .hero-content p { margin: 0 0 8px; font-size: clamp(1rem, 1.6vw, 1.3rem); font-weight: 300; font-style: italic; line-height: 1.6; letter-spacing: .04em; color: #e6e6e6; }
 .hero-eyebrow { display: block; margin-bottom: 20px; font-size: .9rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--primary-pink, #E12BC0); }
 .hero h1, .hero p { max-width: 760px; text-shadow: 0 2px 18px rgba(0,0,0,.55); }
 .hero-btn {   /* same look as Request Staff */
-    position: static; margin-top: 32px; padding: 16px 36px;
+    position: static; display: inline-block; margin-top: 32px; padding: 16px 36px;
     background: var(--primary-pink, #E12BC0); color: #fff; border: 1px solid var(--primary-pink, #E12BC0);
     font-size: .85rem; font-weight: 400; letter-spacing: .25em; text-transform: uppercase; transition: all .3s ease;
 }
@@ -210,7 +213,7 @@
 }
 
 @media (max-width: 900px) {
-    .hero { padding: 140px 20px 80px; }
+    .hero { padding: 96px 20px 40px; }
     .hero h1 { font-size: 2.25rem; line-height: 1.15; }
     .hero p { font-size: 1.05rem; margin-bottom: 25px; }
     .hero-btn { position: relative; bottom: auto; right: auto; display: inline-block; align-self: flex-start; }
@@ -233,56 +236,4 @@
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .poster-img, .cta-btn, .row-btn, .services-wrapper * { transition: none !important; }
-}
-/* HERO - text + button TOP-LEFT under nav / logo */
-.hero {
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  text-align: left !important;
-  padding: 110px 60px 64px !important;
-}
-.hero-content {
-  margin: 0 !important;
-  padding: 0 !important;
-  padding-top: 8px !important;
-  text-align: left !important;
-  align-self: flex-start !important;
-}
-.hero-content h1,
-.hero-content p,
-.hero-content .hero-badge {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-.hero-btn {
-  align-self: flex-start !important;
-  margin-left: 0 !important;
-}
-@media (max-width: 900px) {
-  .hero { padding: 96px 20px 40px !important; }
-}
-/* === HERO: FORCE FULL SCREEN - MUST BE LAST IN home.css === */
-.hero {
-  height: 100vh !important;
-  height: 100svh !important;
-  height: 100dvh !important;
-  min-height: 100svh !important;
-  min-height: 100dvh !important;
-  max-height: none !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-}
-
-@media (max-width: 900px) {
-  .hero {
-    height: 100svh !important;
-    height: 100dvh !important;
-    min-height: 100svh !important;
-    min-height: 100dvh !important;
-    padding: 96px 20px 40px !important;
-  }
 }
