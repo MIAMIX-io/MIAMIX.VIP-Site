@@ -78,8 +78,8 @@ layout: null
             .romina-hero { padding-bottom: 50px; }
             .bio, .curated-stories { padding: 50px 0 60px; }
         }
-    </style>
-    /* UNIFIED NAV - match homepage */
+        
+        /* UNIFIED NAV - match homepage */
 .site-header {
   background: rgba(0,0,0,.25) !important;
   backdrop-filter: blur(20px) saturate(1.4) !important;
@@ -92,6 +92,28 @@ layout: null
   font-size: 14px !important;
   font-weight: 300 !important;
 }
+        
+        /* Duo - 2 small images side-by-side, saves space */
+.romina-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+}
+.romina-duo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border: 1px solid rgba(225,43,192,.4);
+}
+@media (max-width: 480px) {
+  .romina-duo { gap: 8px; margin: 20px 0; }
+}
+    </style>
+    
 </head>
 <body class="curated-page">
 
