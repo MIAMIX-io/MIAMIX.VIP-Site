@@ -193,7 +193,7 @@ layout: null
       {%- for post in curated %}
       {%- assign label = post.page_title | default: post.title -%}
       {%- assign img = post.cover_image | default: post.thumbnail | default: post.cover -%}
-      {%- assign teaser = post.description | default: post.excerpt | default: post.content | strip_html | truncatewords: 60 -%}
+      {%- assign teaser = post.description | default: post.excerpt | default: post.content | strip_html | truncatewords: 32 -%}
       <article class="cl-article {% if forloop.first %}cl-article--featured{% endif %} {% if forloop.index0 == 1 or forloop.index0 == 3 %}cl-article--flip{% endif %}">
         <a class="cl-article__media" href="{{ post.url | relative_url }}">
           {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy">{% endif %}
