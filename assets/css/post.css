@@ -202,3 +202,8 @@
 @media (prefers-reduced-motion: reduce) {
   .post-hero::after { animation: none; }
 }
+/* Auto-linked handles */
+.post-content a.ig-handle {
+  color: #E12BC0; border-bottom: none; font-weight: 400; white-space: nowrap;
+}
+.post-content a.ig-handle:hover { color: #fff; border-bottom: 1px solid #E12BC0; }
