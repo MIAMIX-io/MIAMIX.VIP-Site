@@ -1,8 +1,9 @@
 {%- assign cols = include.cols | default: 3 -%}
 {%- assign type = include.type | default: 'grid' -%}
+{%- assign ratio = include.ratio | default: 'auto' -%}
 {%- assign imgs = include.images | split: '|' -%}
 {%- assign folder = include.folder | default: '/images/curated' -%}
-<div class="gallery gallery--{{ type }}" data-cols="{{ cols }}" data-type="{{ type }}">
+<div class="gallery gallery--{{ type }}" data-cols="{{ cols }}" data-type="{{ type }}" data-ratio="{{ ratio }}">
   {%- if type == 'carousel' -%}
     <button class="carousel-btn carousel-btn--prev" type="button" aria-label="Previous image">&#8249;</button>
     <div class="carousel-track">
