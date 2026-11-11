@@ -1,21 +1,21 @@
-title: "Luxury Meets Heart at Jimmy Choo Coral Gables"
-page_title: "Luxury Meets Heart at Jimmy Choo Coral Gables"
-description: "Set at Merrick Park, the Jimmy Choo Coral Gables boutique provided the perfect backdrop for an afternoon defined by elegance and intention. A carefully curated guest list ensured an atmosphere that felt both exclusive and welcoming, where every detail—from the setting to the conversations—reflected a shared appreciation for craftsmanship, community, and conscious living."
+---
+title: "Luxury Meets Heart at 【entity-Jimmy Choo¦canonical_name=Jimmy Choo】 Coral Gables"
+page_title: "Luxury Meets Heart at 【entity-Jimmy Choo¦canonical_name=Jimmy Choo】 Coral Gables"
+description: "Set at Merrick Park, the 【entity-Jimmy Choo¦canonical_name=Jimmy Choo】 Coral Gables boutique provided the perfect backdrop for an afternoon defined by elegance and intention. A carefully curated guest list ensured an atmosphere that felt both exclusive and welcoming, where every detail—from the setting to the conversations—reflected a shared appreciation for craftsmanship, community, and conscious living."
 date: 2026-02-06
-cover_image: /images/WHERE LUXURY MEETS HEART FOTOS_369A2850.jpg
+cover_image: /images/curated/WHERE-LUXURY-MEETS-HEART-FOTOS_369A2850.jpg
 external_url: "https://www.miamix.io/romina-nabhen/luxury-meets-heart-at-jimmy-choo-coral-gables"
 channel: CuratedLifestyle
-business_name: "Jimmy Choo Coral Gables"
+business_name: "【entity-Jimmy Choo¦canonical_name=Jimmy Choo】 Coral Gables"
 author: "Romina Nabhen"
 featured: false
-published: false # uncomment while drafting to keep it off the site
-_thumbnail: >-
-/images/WHERE LUXURY MEETS HEART FOTOS_369A2850.jpg
+published: true
+_thumbnail: /images/curated/WHERE-LUXURY-MEETS-HEART-FOTOS_369A2850.jpg
+---
 
 Luxury took on a deeper meaning in Coral Gables during An Afternoon with Purpose, an intimate VIP experience that seamlessly blended elevated fashion with social impact. Hosted by Doral Genesis in partnership with the Out of Foster Foundation, the event unfolded inside the iconic Jimmy Choo boutique, transforming a refined retail space into a platform for connection, awareness, and giving back.
 
-<!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
-{% include gallery.html folder="/images/curated" images="WHERE LUXURY MEETS HEART FOTOS_369A2869.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2685.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2820.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2803.jpg" cols=2 %}
+{% include gallery.html folder="/images/curated" images="WHERE-LUXURY-MEETS-HEART-FOTOS_369A2869.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2685.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2820.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2803.jpg" cols=2 %}
 
 Set at Merrick Park, the Jimmy Choo Coral Gables boutique provided the perfect backdrop for an afternoon defined by elegance and intention. A carefully curated guest list ensured an atmosphere that felt both exclusive and welcoming, where every detail from the setting to the conversations, reflected a shared appreciation for craftsmanship, community, and conscious living.
 
@@ -35,5 +35,4 @@ The event was made possible by Doral Genesis, a luxury automotive brand known fo
 
 What made An Afternoon with Purpose truly special was its sense of intention. This was not merely a social gathering or a shopping moment, but a thoughtfully curated experience designed to foster awareness and generosity. As guests departed, they carried with them more than memories of a beautiful afternoon they left with a renewed belief that when luxury meets heart, real impact follows.
 
-<!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
-{% include gallery.html folder="/images/curated" images="WHERE LUXURY MEETS HEART FOTOS_369A2850.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2878.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2727.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2741.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2757.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2796.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2799.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2801.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2818.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2823.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2824.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2830.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2837.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2843.jpg|WHERE LUXURY MEETS HEART FOTOS_369A2682.jpg" cols=3 %}
+{% include gallery.html folder="/images/curated" images="WHERE-LUXURY-MEETS-HEART-FOTOS_369A2850.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2878.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2727.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2741.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2757.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2796.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2799.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2801.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2818.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2823.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2824.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2830.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2837.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2843.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2682.jpg" cols=3 %}
