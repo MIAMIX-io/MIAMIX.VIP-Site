@@ -12,8 +12,17 @@
     'use strict';
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var rows = document.querySelectorAll('[data-row]');
-    Array.prototype.forEach.call(rows, initRow);
+
+    function initAll() {
+        var rows = document.querySelectorAll('[data-row]');
+        Array.prototype.forEach.call(rows, initRow);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+        initAll();
+    }
 
     function initRow(row) {
         var track = row.querySelector('.row-track');
