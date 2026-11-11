@@ -1,4 +1,13 @@
-{% assign posts = site.posts | where: "channel", include.channel | sort: "date" | reverse %}
+{%- comment -%} Channel grid - matches channel as string OR list {%- endcomment -%}
+{% assign posts = "" | split: "" %}
+{% for p in site.posts %}
+  {% assign ch_raw = p.channel | join: "," | strip %}
+  {% if ch_raw contains include.channel %}
+    {% assign posts = posts | push: p %}
+  {% endif %}
+{% endfor %}
+{% assign posts = posts | sort: "date" | reverse %}
+
 <div class="channel-content">
   <div class="card-grid">
   {% assign seen = "" %}
