@@ -1,12 +1,12 @@
 ---
-title: "【entity-Copa Airlines¦canonical_name=Copa Airlines】"
-page_title: "【entity-Copa Airlines¦canonical_name=Copa Airlines】"
-description: "【entity-Copa Airlines¦canonical_name=Copa Airlines】 is a leading Latin American carrier connecting Miami to numerous destinations across the Americas via its Hub in Panama. It is renowned for its punctuality and world-class in-flight service."
+title: "Copa Airlines"
+page_title: "Copa Airlines"
+description: "Copa Airlines is a leading Latin American carrier connecting Miami to numerous destinations across the Americas via its Hub in Panama. It is renowned for its punctuality and world-class in-flight service."
 date: 2026-03-09
 cover_image: /images/travel/CopaAir_cover.jpg
 external_url: "https://www.miamix.io/travel-leisure/copa-airlines"
 channel: [Travel]
-business_name: "【entity-Copa Airlines¦canonical_name=Copa Airlines】"
+business_name: "Copa Airlines"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
@@ -14,9 +14,9 @@ _thumbnail: /images/travel/CopaAir_cover.jpg
 ---
 
 <!-- SINGLE IMAGE -->
-![【entity-Copa Airlines¦canonical_name=Copa Airlines】](/images/travel/CopaAir_cover.jpg)
+![Copa Airlines](/images/travel/CopaAir_cover.jpg)
 
-【entity-Copa Airlines¦canonical_name=Copa Airlines】 often enters the Miami conversation the way a well timed connection does, quietly and efficiently, until you realize how many journeys across the Americas depend on the rhythm of its network and the geographic advantage of Panama.
+Copa Airlines often enters the Miami conversation the way a well timed connection does, quietly and efficiently, until you realize how many journeys across the Americas depend on the rhythm of its network and the geographic advantage of Panama.
 
 For travelers leaving Florida, especially Miami, the story usually begins with a short flight south and a smooth transition through Copa’s hub at Tocumen International Airport in Panama City, where the airline has turned location into strategy and turned strategy into a map that reaches nearly every corner of the hemisphere.
 
