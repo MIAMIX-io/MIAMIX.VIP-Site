@@ -301,3 +301,30 @@ iframe[src*="youtu.be"] {
     0 0 42px rgba(225,43,192,0.45),
     0 0 0 1px rgba(225,43,192,0.35) !important;
 }
+/* === INTER MIAMI VIDEOS - FLOATING - LAST IN site.css === */
+iframe[src*="youtube"],
+iframe[src*="youtu.be"] {
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9;
+  margin: 28px auto !important;
+  background: #000;
+  border: 1px solid rgba(225,43,192,0.40) !important;
+  border-radius: 0 !important;
+  box-shadow:
+    0 22px 45px rgba(0,0,0,0.70),
+    0 8px 20px rgba(0,0,0,0.60),
+    0 0 32px rgba(225,43,192,0.32),
+    0 0 0 1px rgba(225,43,192,0.20) !important;
+  animation: videoFloat 5s ease-in-out infinite !important;
+}
+
+@keyframes videoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* If there IS a wrapper, give it room too */
+.video-card, .video-embed, .video-wrapper, .video-item, .youtube-embed {
+  margin-bottom: 28px !important;
+}
