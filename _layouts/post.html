@@ -114,8 +114,21 @@
 .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 2000; cursor: zoom-out; }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 8px; }
+
+.post-cta { max-width: 800px; margin: 0 auto 100px; padding: 36px 40px; text-align: center; border: 1px solid rgba(225,43,192,.4); border-radius: 12px; background: rgba(225,43,192,.06); }
+.post-cta h3 { font-weight: 200; letter-spacing: .08em; text-transform: uppercase; font-size: 28px; margin-bottom: 20px; }
         
     </style>
+
+    {% assign hero_img = page.cover | default: page.cover_image %}
+<meta name="description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ page.page_title | default: page.title }}">
+<meta property="og:description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 }}">
+<meta property="og:url" content="https://miamix.io{{ page.url }}">
+{% if hero_img %}<meta property="og:image" content="https://miamix.io{{ hero_img }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+    
 </head>
 <body>
 
@@ -128,7 +141,7 @@
         <div class="post-hero-content">
             <span class="article-cat">{{ page.channel | join: ", " | replace: "CuratedLifestyle", "Curated Lifestyle" | replace: "InterMIA", "Inter Miami" | replace: "Curated", "Curated Lifestyle" }}</span>
             <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
-            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
+            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
         </div>
     </div>
     {% else %}
@@ -136,7 +149,7 @@
         <div class="post-hero-content">
             <span class="article-cat">{{ page.channel | join: ", " | replace: "CuratedLifestyle", "Curated Lifestyle" | replace: "InterMIA", "Inter Miami" | replace: "Curated", "Curated Lifestyle" }}</span>
             <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
-            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
+            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
         </div>
     </div>
     {% endif %}
@@ -146,6 +159,13 @@
             {{ content }}
         </div>
     </article>
+
+    {% if page.external_url contains "http" %}
+<aside class="post-cta">
+  {% if page.business_name %}<span class="article-cat">Featured</span><h3>{{ page.business_name }}</h3>{% endif %}
+  <a class="hero-btn" href="{{ page.external_url }}" target="_blank" rel="noopener">Visit {{ page.business_name | default: "Website" }}</a>
+</aside>
+{% endif %}
 
     {% include footer.html %}
 
