@@ -290,3 +290,40 @@ iframe[src*="youtu.be"] {
 @media (prefers-reduced-motion: reduce) {
   .ch-hero::before, .channel-hero::before { animation: none !important; }
 }
+/* === MOBILE NAV - CHANNELS VISIBLE - LAST IN site.css === */
+@media (max-width: 900px) {
+  .main-nav {
+    background: rgba(0,0,0,0.94) !important;
+  }
+  .main-nav::before {
+    background: rgba(0,0,0,0.94) !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  .main-nav .nav-item > a,
+  .main-nav .nav-trigger {
+    color: #fff !important;
+    opacity: 1 !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,.8) !important;
+  }
+  /* CHANNELS row - same as the others, with a clear + */
+  .main-nav .has-dropdown > .nav-trigger {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    color: #fff !important;
+  }
+  .main-nav .has-dropdown.open > .nav-trigger { color: #E12BC0 !important; }
+  /* Dropdown - indented, slightly darker, so you can tell it's inside Channels */
+  .main-nav .has-dropdown.open .dropdown {
+    display: block !important;
+    background: rgba(255,255,255,0.06) !important;
+    border-left: 2px solid #E12BC0 !important;
+    padding-left: 12px !important;
+  }
+  .main-nav .has-dropdown.open .dropdown a {
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+}
