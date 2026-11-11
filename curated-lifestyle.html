@@ -226,10 +226,13 @@ layout: null
       <article class="cl-article {% if forloop.first %}cl-article--featured{% endif %} {% if forloop.index0 == 1 or forloop.index0 == 3 %}cl-article--flip{% endif %}">
         <a class="cl-article__media" href="{{ post.url | relative_url }}">
           {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy">{% endif %}
-          <span class="cl-article__kicker">Curated Lifestyle</span>
+          <span class="cl-article__watermark">
+            <span class="cl-article__wm-kicker">Curated Lifestyle</span>
+            <span class="cl-article__wm-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+            {%- if post.author %}<span class="cl-article__wm-author">By {{ post.author }}</span>{% endif %}
+          </span>
         </a>
         <div class="cl-article__body">
-          <p class="cl-article__meta">{{ post.date | date: "%B %-d, %Y" }}{% if post.author %} &nbsp;&middot;&nbsp; {{ post.author }}{% endif %}</p>
           <h3 class="cl-article__title"><a href="{{ post.url | relative_url }}">{{ label }}</a></h3>
           <p class="cl-article__excerpt">{{ teaser }}</p>
           <a class="cl-article__read" href="{{ post.url | relative_url }}">Read Story &rarr;</a>
