@@ -1,8 +1,8 @@
 {%- comment -%}
   Reusable channel landing page. No Notion, no subscribe.
-  Params: channel, eyebrow, title, subtitle (optional), image, page_title (optional),
-          intro_heading (optional), intro_text (optional)
-  Grid + opt-in removed, grid comes from channel-bands.html, which reads site.posts.
+  Params: channel, eyebrow, title, accent (optional, pink text after the title), subtitle (optional),
+          image, page_title (optional), intro_heading (optional), intro_text (optional)
+  Grid comes from channel-bands.html, which reads site.posts.
 {%- endcomment -%}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,9 +30,10 @@
     {% include header.html %}
 
     <section class="ch-hero" style="--ch-image: url('{{ include.image }}');">
+        <div class="ch-hero-overlay"></div>
         <div class="ch-hero-content">
             <p class="ch-eyebrow">{{ include.eyebrow }}</p>
-            <h1 class="ch-hero-title">{{ include.title }}</h1>
+            <h1 class="ch-hero-title">{{ include.title }}{% if include.accent %} <span class="accent">{{ include.accent }}</span>{% endif %}</h1>
             {%- if include.subtitle %}
             <p class="ch-sub">{{ include.subtitle }}</p>
             {%- endif %}
