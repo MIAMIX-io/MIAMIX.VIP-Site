@@ -116,3 +116,19 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
 @media (min-width: 900px) {
   .ch-hero-content { padding: 0 60px !important; }
 }
+.ch-hero { position: relative; isolation: isolate; }
+.ch-hero-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 0% 100%, rgba(225,43,192,.5) 0%, rgba(225,43,192,0) 55%),
+    radial-gradient(ellipse at center, rgba(0,0,0,0) 35%, rgba(0,0,0,.65) 100%),
+    linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.4) 45%, rgba(0,0,0,.55) 100%);
+}
+.ch-hero-content { position: relative; z-index: 2; }
+.ch-hero-title .accent {
+  color: var(--primary-pink) !important;
+  -webkit-text-fill-color: var(--primary-pink) !important;
+  -webkit-text-stroke: 0 !important;
+  background: none !important;
+  text-shadow: 0 0 40px rgba(225,43,192,.6), 0 2px 20px rgba(0,0,0,.8);
+}
