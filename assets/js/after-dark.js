@@ -1,90 +1,127 @@
-/* After Dark gallery: one photo at a time.
-   Reads its photos from the thumbnail buttons in the page (data-src / data-caption),
-   so adding a photo means adding one <button> there. No autoplay for reduced-motion users. */
+/* After Dark gallery: a revolving 3D carousel.
+   Photos sit on a ring; the ring keeps turning in one direction and wraps forever.
+   Photos come from the <li> items in #adRing (img + data-caption), so adding one means adding one <li>.
+   Without JavaScript (or with reduced motion) the same list is a plain swipeable row. */
 (function () {
     'use strict';
 
-    var stage = document.getElementById('adStage');
-    var imgEl = document.getElementById('adImg');
-    var thumbsEl = document.getElementById('adThumbs');
-    if (!stage || !imgEl || !thumbsEl) return;
+    var scene = document.getElementById('adScene');
+    var ring = document.getElementById('adRing');
+    if (!scene || !ring) return;
 
-    var thumbs = Array.prototype.slice.call(thumbsEl.querySelectorAll('button'));
-    var total = thumbs.length;
-    if (!total) return;
+    var items = Array.prototype.slice.call(ring.children);
+    var n = items.length;
+    if (n < 3) return;
 
     var captionEl = document.getElementById('adCaption');
     var countEl = document.getElementById('adCount');
-    var barEl = document.getElementById('adBar');
     var dotsEl = document.getElementById('adDots');
     var pauseBtn = document.getElementById('adPause');
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var INTERVAL = 4500;
-    var current = 0;
+    var INTERVAL = 3800;
+    var step = 360 / n;
+    var rot = 0;                         // keeps counting up or down, so the ring never "rewinds"
     var playing = !reduceMotion;
-    var hovering = false;
+    var held = false;                    // hovering or focused
     var timer = null;
+    var radius = 300;
 
-    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function pad(v) { return (v < 10 ? '0' : '') + v; }
+    function active() { return ((rot % n) + n) % n; }
 
-    function show(i) {
-        current = (i + total) % total;
-        var t = thumbs[current];
-        imgEl.src = t.getAttribute('data-src');
-        imgEl.alt = t.getAttribute('data-caption') || '';
-        captionEl.textContent = t.getAttribute('data-caption') || '';
-        countEl.textContent = pad(current + 1) + ' / ' + pad(total);
-        barEl.style.width = ((current + 1) / total * 100) + '%';
-        thumbs.forEach(function (b, n) { b.classList.toggle('active', n === current); b.setAttribute('aria-current', n === current ? 'true' : 'false'); });
+    function measure() {
+        var w = items[0].offsetWidth || 260;
+        // tight-fit radius for n flat cards, plus a little air between them
+        radius = Math.round((w / 2) / Math.tan(Math.PI / n) * 1.18);
+        items.forEach(function (li, i) {
+            li.style.transform = 'rotateY(' + (i * step) + 'deg) translateZ(' + radius + 'px)';
+        });
+        scene.style.setProperty('--ad-depth', radius + 'px');
+    }
+
+    function render() {
+        ring.style.transform = 'translateZ(' + (-radius) + 'px) rotateY(' + (-rot * step) + 'deg)';
+        var a = active();
+        items.forEach(function (li, i) {
+            var d = Math.abs(i - a); d = Math.min(d, n - d);          // distance around the ring
+            li.classList.toggle('is-active', d === 0);
+            li.style.opacity = d === 0 ? '1' : d === 1 ? '.72' : d === 2 ? '.38' : '.18';
+            li.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+        });
+        captionEl.textContent = items[a].getAttribute('data-caption') || '';
+        countEl.textContent = pad(a + 1) + ' / ' + pad(n);
         var dots = dotsEl.children;
-        for (var d = 0; d < dots.length; d++) dots[d].classList.toggle('active', d === current);
+        for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('active', k === a);
     }
 
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function start() {
         stop();
-        if (playing && !hovering) timer = setInterval(function () { show(current + 1); }, INTERVAL);
+        if (playing && !held) timer = setInterval(function () { rot += 1; render(); }, INTERVAL);
     }
-    function go(i) { show(i); start(); }
+    function turn(by) { rot += by; render(); start(); }
+    function goTo(i) {                                                  // shortest way round
+        var delta = i - active();
+        if (delta > n / 2) delta -= n;
+        if (delta < -n / 2) delta += n;
+        turn(delta);
+    }
 
-    /* dots + thumbnails */
-    thumbs.forEach(function (b, i) {
-        var dot = document.createElement('span');
+    /* build dots, wire clicks on the photos themselves */
+    items.forEach(function (li, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Show photo ' + (i + 1) + ' of ' + n);
+        dot.addEventListener('click', function () { goTo(i); });
         dotsEl.appendChild(dot);
-        b.setAttribute('aria-label', 'Show photo ' + (i + 1) + ' of ' + total);
-        b.addEventListener('click', function () { go(i); });
+        li.setAttribute('role', 'group');
+        li.setAttribute('aria-roledescription', 'slide');
+        li.setAttribute('aria-label', (i + 1) + ' of ' + n);
+        li.addEventListener('click', function () { if (!li.classList.contains('is-active')) goTo(i); });
     });
 
-    document.getElementById('adPrev').addEventListener('click', function () { go(current - 1); });
-    document.getElementById('adNext').addEventListener('click', function () { go(current + 1); });
+    document.getElementById('adPrev').addEventListener('click', function () { turn(-1); });
+    document.getElementById('adNext').addEventListener('click', function () { turn(1); });
 
-    function syncPause() { pauseBtn.textContent = playing ? 'Pause' : 'Play'; pauseBtn.setAttribute('aria-pressed', playing ? 'false' : 'true'); }
+    function syncPause() {
+        pauseBtn.textContent = playing ? 'Pause' : 'Play';
+        pauseBtn.setAttribute('aria-pressed', playing ? 'false' : 'true');
+    }
     pauseBtn.addEventListener('click', function () { playing = !playing; syncPause(); start(); });
 
-    stage.addEventListener('mouseenter', function () { hovering = true; stop(); });
-    stage.addEventListener('mouseleave', function () { hovering = false; start(); });
+    scene.addEventListener('mouseenter', function () { held = true; stop(); });
+    scene.addEventListener('mouseleave', function () { held = false; start(); });
+    scene.addEventListener('focusin', function () { held = true; stop(); });
+    scene.addEventListener('focusout', function () { held = false; start(); });
 
-    /* arrow keys only while the gallery has focus, so page scrolling isn't hijacked */
-    stage.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowRight') { e.preventDefault(); go(current + 1); }
-        if (e.key === 'ArrowLeft') { e.preventDefault(); go(current - 1); }
+    /* arrow keys only while the carousel has focus, so page scrolling isn't hijacked */
+    scene.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); turn(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); turn(-1); }
     });
 
-    /* swipe on touch screens */
+    /* drag or swipe to spin */
     var x0 = null;
-    stage.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-    stage.addEventListener('touchend', function (e) {
+    scene.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    scene.addEventListener('pointerup', function (e) {
         if (x0 === null) return;
-        var dx = e.changedTouches[0].clientX - x0;
-        if (Math.abs(dx) > 40) go(current + (dx < 0 ? 1 : -1));
-        x0 = null;
-    }, { passive: true });
+        var dx = e.clientX - x0; x0 = null;
+        if (Math.abs(dx) > 40) turn(dx < 0 ? 1 : -1);
+    });
+    scene.addEventListener('pointercancel', function () { x0 = null; });
 
-    /* don't burn cycles while the tab is hidden */
     document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
 
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () { measure(); render(); }, 120);
+    });
+
+    scene.classList.add('is-3d');        // switch from the plain row to the ring
+    measure();
+    render();
     syncPause();
-    show(0);
     start();
 })();
