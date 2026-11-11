@@ -1,11 +1,11 @@
-{% assign posts = site.posts | where: "channel", include.channel | sort: "date" | reverse %}
+{% assign posts = site.posts | where_exp: "post", "post.channel contains include.channel or post.categories contains include.channel or post.tags contains include.channel" | sort: "date" | reverse %}
 <div class="channel-content">
   <div class="card-grid">
   {% assign seen = "" %}
   {% for post in posts %}
     {% unless seen contains post.title %}
     {% assign seen = seen | append: post.title | append: "|" %}
-    {% assign thumb = site.data.thumbs[post.slug] | default: post.cover_image | default: post.thumbnail | default: post.image %}
+    {% assign thumb = post.cover_image | default: post.thumbnail | default: post.image %}
     {% assign label = site.data.channels.labels[post.channel] | default: post.channel %}
     <article class="card">
       <a href="{{ post.url | relative_url }}">
