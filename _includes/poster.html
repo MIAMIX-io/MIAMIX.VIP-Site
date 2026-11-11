@@ -13,22 +13,14 @@
 {%- comment -%} If labels lookup missed, humanize the key per channel {%- endcomment -%}
 {%- if label == ch -%}
   {%- case ch -%}
-    {%- when 'CuratedLifestyle' -%}
-      {%- assign label = 'Curated Lifestyle' -%}
     {%- when 'Curated' -%}
       {%- assign label = 'Curated Lifestyle' -%}
-    {%- when 'InterMIA' -%}
-      {%- assign label = 'Inter&nbsp;Miami' -%}
     {%- when 'InterMiami' -%}
-      {%- assign label = 'Inter&nbsp;Miami' -%}
-    {%- when '【entity-Inter Miami¦canonical_name=Inter Miami】' -%}
-      {%- assign label = 'Inter&nbsp;Miami' -%}
-    {%- when 'AfterDark' -%}
+      {%- assign label = 'Inter Miami' -%}
+    {%- when 'After-Dark' -%}
       {%- assign label = 'After Dark' -%}
     {%- when 'Culture' -%}
       {%- assign label = 'Culture' -%}
-    {%- when 'Cultural' -%}
-      {%- assign label = 'Cultural' -%}
     {%- when 'Fashion' -%}
       {%- assign label = 'Fashion' -%}
     {%- when 'Health' -%}
