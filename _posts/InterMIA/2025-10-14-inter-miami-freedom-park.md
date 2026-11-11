@@ -1,8 +1,7 @@
 ---
 title: "Miami Freedom Park"
 page_title: "Transforming Miami's sporting landscape"
-description: 
-  Miami Freedom Park marks a new era for Inter Miami CF, bringing sport, entertainment, and community together near Miami International Airport. At its heart, a 25,000-seat state-of-the-art stadium will become the club’s permanent home, celebrating Miami’s energy and multicultural identity.
+description: "Miami Freedom Park marks a new era for Inter Miami CF, bringing sport, entertainment, and community together near Miami International Airport. At its heart, a 25,000-seat state-of-the-art stadium will become the club’s permanent home, celebrating Miami’s energy and multicultural identity."
 date: 2025-10-14
 cover_image: /images/inter-miami/MIAMIX-23.png
 external_url: "https://www.miamix.io/inter-miami-cf/aqn5p5bg7z8sc2az1p106j6wx9nn86"
