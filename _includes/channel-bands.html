@@ -1,30 +1,35 @@
-{% assign filtered = '' | split: '' %}
-{% for post in site.posts %}
-  {% assign ch = post.channel | join: ',' %}
-  {% assign cats = post.categories | join: ',' %}
-  {% assign tags = post.tags | join: ',' %}
-  {% if ch contains include.channel or cats contains include.channel or tags contains include.channel %}
-    {% assign filtered = filtered | push: post %}
-  {% endif %}
-{% endfor %}
-{% assign posts = filtered | sort: "date" | reverse %}
+{% assign posts = site.posts | where: "channel", include.channel | sort: "date" | reverse %}
 <div class="channel-content">
   <div class="card-grid">
   {% assign seen = "" %}
   {% for post in posts %}
     {% unless seen contains post.title %}
     {% assign seen = seen | append: post.title | append: "|" %}
-    {% assign thumb = post.cover_image | default: post.thumbnail | default: post.image %}
+    {% assign thumb = site.data.thumbs[post.slug] | default: post.cover_image | default: post.thumbnail | default: post.image %}
     {% assign label = site.data.channels.labels[post.channel] | default: post.channel %}
+
+    {%- comment -%} CARD DESCRIPTION: description > subtitle > excerpt, never just a "By ..." line {%- endcomment -%}
+    {% assign card_desc = post.description | default: post.subtitle | default: post.excerpt | strip_html | strip %}
+    {% assign first_three = card_desc | slice: 0, 3 %}
+    {% if first_three == "By " %}
+      {% assign card_desc = post.content | strip_html | strip | remove: card_desc | strip | truncate: 140 %}
+    {% elsif card_desc == "" %}
+      {% assign card_desc = post.content | strip_html | strip | truncate: 140 %}
+    {% else %}
+      {% assign card_desc = card_desc | truncate: 140 %}
+    {% endif %}
+
     <article class="card">
       <a href="{{ post.url | relative_url }}">
         {% if thumb %}
-        <div class="card-media"><img src="{{ thumb }}" alt="{{ post.title | escape }}" loading="lazy"></div>
+        <div class="card-media"><img src="{{ thumb }}" alt="" loading="lazy"></div>
         {% endif %}
         <div class="card-content">
           <p class="card-eyebrow">{{ label }}</p>
           <h3 class="card-title">{{ post.title }}</h3>
-          <p class="card-sub">{{ post.subtitle | default: post.excerpt | strip_html | truncate: 140 }}</p>
+          {% if card_desc != "" %}
+          <p class="card-sub">{{ card_desc }}</p>
+          {% endif %}
           <span class="card-read">READ STORY &rarr;</span>
         </div>
       </a>
