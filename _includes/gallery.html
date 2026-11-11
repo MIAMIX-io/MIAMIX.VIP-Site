@@ -1,0 +1,8 @@
+<div class="gallery cols-{{ include.cols | default: 3 }}">
+{%- assign imgs = include.images | split: "|" -%}
+{%- for img in imgs -%}
+{%- assign file = img | strip -%}
+{%- if include.folder -%}{%- assign path = include.folder | append: "/" | append: file -%}{%- else -%}{%- assign path = file -%}{%- endif -%}
+<a href="{{ path }}"><img src="{{ path }}" alt="{{ include.alt | default: '' }}" loading="lazy" decoding="async"></a>
+{%- endfor -%}
+</div>
