@@ -72,15 +72,37 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   }
 }
 
-/* --- HERO SECTION --- */
+/* === HERO - PINK / BLACK FLOATING GRADIENT - LAST IN site.css === */
 .hero {
-    position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 120px 20px 60px; background-size: cover; background-position: center 90%; overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .hero::before {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.95) 100%);
-    z-index: 1;
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: linear-gradient(
+    115deg,
+    rgba(225,43,192,0.55) 0%,
+    rgba(0,0,0,0.88) 28%,
+    rgba(225,43,192,0.32) 52%,
+    rgba(0,0,0,0.92) 78%,
+    rgba(225,43,192,0.50) 100%
+  ) !important;
+  background-size: 300% 300% !important;
+  animation: heroGradientFloat 12s ease-in-out infinite !important;
+}
+.hero-content { position: relative; z-index: 2; }
+
+@keyframes heroGradientFloat {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, iframe[src*="youtube"] { animation: none !important; }
+}
 }
 .hero-content { position: relative; z-index: 2; max-width: 850px; margin: 0 auto; }
 .hero-badge { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; color: var(--primary-pink); text-transform: uppercase; margin-bottom: 12px; }
@@ -300,31 +322,4 @@ iframe[src*="youtu.be"] {
     0 10px 22px rgba(0,0,0,0.60),
     0 0 42px rgba(225,43,192,0.45),
     0 0 0 1px rgba(225,43,192,0.35) !important;
-}
-/* === INTER MIAMI VIDEOS - FLOATING - LAST IN site.css === */
-iframe[src*="youtube"],
-iframe[src*="youtu.be"] {
-  display: block !important;
-  width: 100% !important;
-  aspect-ratio: 16 / 9;
-  margin: 28px auto !important;
-  background: #000;
-  border: 1px solid rgba(225,43,192,0.40) !important;
-  border-radius: 0 !important;
-  box-shadow:
-    0 22px 45px rgba(0,0,0,0.70),
-    0 8px 20px rgba(0,0,0,0.60),
-    0 0 32px rgba(225,43,192,0.32),
-    0 0 0 1px rgba(225,43,192,0.20) !important;
-  animation: videoFloat 5s ease-in-out infinite !important;
-}
-
-@keyframes videoFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* If there IS a wrapper, give it room too */
-.video-card, .video-embed, .video-wrapper, .video-item, .youtube-embed {
-  margin-bottom: 28px !important;
 }
