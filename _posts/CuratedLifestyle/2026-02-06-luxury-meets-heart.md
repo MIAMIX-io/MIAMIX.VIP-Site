@@ -3,19 +3,19 @@ title: "Luxury Meets Heart at Jimmy Choo Coral Gables"
 page_title: "Luxury Meets Heart at Jimmy Choo Coral Gables"
 description: "Set at Merrick Park, the Jimmy Choo Coral Gables boutique provided the perfect backdrop for an afternoon defined by elegance and intention. A carefully curated guest list ensured an atmosphere that felt both exclusive and welcoming, where every detail—from the setting to the conversations—reflected a shared appreciation for craftsmanship, community, and conscious living."
 date: 2026-02-06
-cover_image: /images/curated/WHERE-LUXURY-MEETS-HEART-FOTOS_369A2850.jpg
+cover_image: /images/curated/WHERE+LUXURY+MEETS+HEART+FOTOS_369A2820.jpg
 external_url: "https://www.miamix.io/romina-nabhen/luxury-meets-heart-at-jimmy-choo-coral-gables"
 channel: CuratedLifestyle
 business_name: "Jimmy Choo"
 author: "Romina Nabhen"
 featured: false
 published: true
-_thumbnail: /images/curated/WHERE-LUXURY-MEETS-HEART-FOTOS_369A2850.jpg
+_thumbnail: /images/curated/WHERE+LUXURY+MEETS+HEART+FOTOS_369A2820.jpg
 ---
 
 Luxury took on a deeper meaning in Coral Gables during An Afternoon with Purpose, an intimate VIP experience that seamlessly blended elevated fashion with social impact. Hosted by Doral Genesis in partnership with the Out of Foster Foundation, the event unfolded inside the iconic Jimmy Choo boutique, transforming a refined retail space into a platform for connection, awareness, and giving back.
 
-{% include gallery.html folder="/images/curated" images="WHERE-LUXURY-MEETS-HEART-FOTOS_369A2869.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2685.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2820.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2803.jpg" cols=2 %}
+{% include gallery.html folder="/images/curated" images="WHERE-LUXURY-MEETS-HEART-FOTOS_369A2869.jpg|WHERE+LUXURY+MEETS+HEART+FOTOS_369A2869.jpg|WHERE+LUXURY+MEETS+HEART+FOTOS_369A2685.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2803.jpg" cols=2 %}
 
 Set at Merrick Park, the Jimmy Choo Coral Gables boutique provided the perfect backdrop for an afternoon defined by elegance and intention. A carefully curated guest list ensured an atmosphere that felt both exclusive and welcoming, where every detail from the setting to the conversations, reflected a shared appreciation for craftsmanship, community, and conscious living.
 
