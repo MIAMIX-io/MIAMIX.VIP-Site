@@ -44,7 +44,7 @@ a.ad-eyebrow:hover { color: #fff; }
     min-height: 100vh; min-height: 100svh;
     display: flex; align-items: flex-end;
     padding: 120px 0 72px;
-    background: var(--ad-hero) center 30% / cover no-repeat, #000;
+    background: var(--ad-hero) 30% 20% / cover no-repeat, #000;   /* tune the two % to reframe the photo */
 }
 .ad-hero-overlay {
     position: absolute; inset: 0; z-index: -1; pointer-events: none;
