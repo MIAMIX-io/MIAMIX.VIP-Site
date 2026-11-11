@@ -1,22 +1,64 @@
 {%- comment -%}
   One portrait "poster" card.
-  Params: post (required), accent (hex), title (optional override), clone (optional, "true" for aria-hidden copies - not used server-side)
+  Params: post (required), accent (hex), title (optional override)
+  Handles channel as string OR list, falls back to cover_image when thumbs is missing.
+  No hardcoded channel - label comes from labels data, then per-channel mapping.
 {%- endcomment -%}
 {%- assign p = include.post -%}
 {%- assign stem = p.path | split: '/' | last | remove: '.md' -%}
-{%- assign ch = p.channel | first -%}
+{%- assign ch_raw = p.channel | join: ',' -%}
+{%- assign ch = ch_raw | split: ',' | first | strip -%}
 {%- assign label = site.data.channels.labels[ch] | default: ch -%}
+
+{%- comment -%} If labels lookup missed, humanize the key per channel {%- endcomment -%}
+{%- if label == ch -%}
+  {%- case ch -%}
+    {%- when 'CuratedLifestyle' -%}
+      {%- assign label = 'Curated Lifestyle' -%}
+    {%- when 'Curated' -%}
+      {%- assign label = 'Curated Lifestyle' -%}
+    {%- when 'InterMIA' -%}
+      {%- assign label = 'Inter&nbsp;Miami' -%}
+    {%- when 'InterMiami' -%}
+      {%- assign label = 'Inter&nbsp;Miami' -%}
+    {%- when '【entity-Inter Miami¦canonical_name=Inter Miami】' -%}
+      {%- assign label = 'Inter&nbsp;Miami' -%}
+    {%- when 'Culture' -%}
+      {%- assign label = 'Culture' -%}
+    {%- when 'Cultural' -%}
+      {%- assign label = 'Cultural' -%}
+    {%- when 'Fashion' -%}
+      {%- assign label = 'Fashion' -%}
+    {%- when 'Health' -%}
+      {%- assign label = 'Health' -%}
+    {%- when 'Hospitality' -%}
+      {%- assign label = 'Hospitality' -%}
+    {%- when 'Nonprofit' -%}
+      {%- assign label = 'Nonprofit' -%}
+    {%- when 'Sports' -%}
+      {%- assign label = 'Sports' -%}
+    {%- when 'Travel' -%}
+      {%- assign label = 'Travel' -%}
+  {%- endcase -%}
+{%- endif -%}
+
 {%- assign card_title = include.title | default: p.page_title | default: p.title -%}
 <a class="poster" href="{{ p.url | relative_url }}" style="--accent: {{ include.accent | default: '#d9008d' }};" draggable="false">
     <span class="poster-img">
         {%- if site.data.thumbs contains stem -%}
         <img src="/assets/thumbs/{{ stem }}.webp" alt="" width="300" height="400" loading="lazy" decoding="async" draggable="false">
+        {%- elsif p.cover_image -%}
+        <img src="{{ p.cover_image | relative_url }}" alt="" width="300" height="400" loading="lazy" decoding="async" draggable="false">
+        {%- elsif p.image -%}
+        <img src="{{ p.image | relative_url }}" alt="" width="300" height="400" loading="lazy" decoding="async" draggable="false">
         {%- else -%}
         <span class="poster-fallback"><span>{{ label }}</span></span>
         {%- endif -%}
     </span>
     <span class="poster-meta">
+        {%- if label != "" -%}
         <span class="poster-eyebrow">{{ label }}</span>
+        {%- endif -%}
         <span class="poster-title">{{ card_title }}</span>
     </span>
 </a>
