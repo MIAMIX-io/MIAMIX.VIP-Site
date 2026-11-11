@@ -183,6 +183,66 @@ footer .social-icon img { width: 100%; height: 100%; object-fit: contain; }
   letter-spacing: inherit;
   text-transform: inherit;
 }
+/* FEATURED PARTNERS - Bigger tiles, no cropping */
+.brand-logos,
+.partners-grid,
+.featured-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Tile */
+.brand-logos img,
+.partners-grid img,
+.partner-tile img,
+.featured-partners-grid img {
+  width: 100%;
+  height: 190px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 22px !important;
+  background: #000;
+  border: 1px solid rgba(225,43,192,.35);
+  box-sizing: border-box;
+}
+
+/* Light tiles - Lennox, Paradores - keep their light background */
+.brand-logos img[src*="lennox"],
+.brand-logos img[src*="paradores"],
+.partners-grid img[src*="lennox"],
+.partners-grid img[src*="paradores"] {
+  background: #f5f1e8;
+}
+
+/* AFA + Inter Miami are tall / circular - give them more height */
+.brand-logos img[src*="afa"],
+.brand-logos img[src*="inter-miami"],
+.partners-grid img[src*="afa"],
+.partners-grid img[src*="inter-miami"],
+.partner-tile img[src*="afa"],
+.partner-tile img[src*="inter-miami"] {
+  height: 230px !important;
+  padding: 16px 20px !important;
+}
+
+@media (max-width: 900px) {
+  .brand-logos img,
+  .partners-grid img,
+  .partner-tile img,
+  .featured-partners-grid img {
+    height: 170px !important;
+    padding: 18px !important;
+  }
+  .brand-logos img[src*="afa"],
+  .brand-logos img[src*="inter-miami"],
+  .partners-grid img[src*="afa"],
+  .partners-grid img[src*="inter-miami"] {
+    height: 205px !important;
+    padding: 14px 16px !important;
+  }
+}
+
 /* === FOOTER FIX - MUST BE LAST IN site.css - targets <footer> AND .site-footer === */
 footer,
 .site-footer {
