@@ -1,8 +1,7 @@
 ---
 title: "Rodrigo De Paul"
 page_title: "Puts on the Pink"
-description: 
-   Rodrigo De Paul officially joined Inter Miami CF in a high-profile move from Atlético Madrid, bringing the Argentine midfielder to the pink side alongside Lionel Messi. Introduced before a packed crowd, De Paul signed a contract through 2028, marking a new chapter in his career and the club’s ambitions.
+description: "Rodrigo De Paul officially joined Inter Miami CF in a high-profile move from Atlético Madrid, bringing the Argentine midfielder to the pink side alongside Lionel Messi. Introduced before a packed crowd, De Paul signed a contract through 2028, marking a new chapter in his career and the club’s ambitions."
 date: 2025-10-09
 cover_image: /images/inter-miami/IMG_7188.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/rodrigo-de-paul-puts-on-the-pink"
