@@ -1,19 +1,18 @@
 ---
-title: "RODRIGO DE PAUL"
-page_title: "Puts on the pink"
-description: "Put’s on the pink By Silvina Fuentes & Cristhian Gassmann The summer heat in Florida was even stronger, but it wasn't because of the weather: it was because of Rodrigo De Paul's official arrival at Inter Miami CF. In front of a stadium packed with fans and cameras, the \"Little Engine\" of the Argentine National Team was introduced as the new star of the pink team, accompanied by his family and the always radiant Tini Stoessel, who didn't stop smiling throughout the event. The deal that brought the midfielder from Atlético Madrid was worth around $35 million, making it one of the most expensive signings in MLS history. A contract until 2028 with an option for a further year, which includes variables based on performance and team titles, marked the beginning of a new phase in the Argentine's career."
+title: "Rodrigo De Paul"
+page_title: "Puts on the Pink"
+description: 
+   Rodrigo De Paul officially joined Inter Miami CF in a high-profile move from Atlético Madrid, bringing the Argentine midfielder to the pink side alongside Lionel Messi. Introduced before a packed crowd, De Paul signed a contract through 2028, marking a new chapter in his career and the club’s ambitions.
 date: 2025-10-09
 cover_image: /images/inter-miami/IMG_7188.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/rodrigo-de-paul-puts-on-the-pink"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
-author: "Cristhian Gassmann"
+author: "Silvina Fuentes & Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
 _thumbnail: /images/inter-miami/IMG_7188.jpg
 ---
-
-*By Silvina Fuentes & Cristhian Gassmann*
 
 The summer heat in Florida was even stronger, but it wasn't because of the weather: it was because of Rodrigo De Paul's official arrival at Inter Miami CF. In front of a stadium packed with fans and cameras, the "Little Engine" of the Argentine National Team was introduced as the new star of the pink team, accompanied by his family and the always radiant Tini Stoessel, who didn't stop smiling throughout the event.
 
@@ -37,4 +36,3 @@ Rodrigo De Paul is no longer just Inter Miami's "new signing," but a key player 
 
 [Read More](/rodrigo-de-paul-puts-on-the-pink)
 
-{% include logos.html brands="ridersmiamicf,ridersmiami" %}
