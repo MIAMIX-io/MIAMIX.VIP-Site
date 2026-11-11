@@ -133,5 +133,51 @@ document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
 });
   </script>
   <script src="/assets/js/nav.js" defer></script>
+  
+  // Auto-link @handles in post body, skip emails
+document.querySelectorAll('.post-content').forEach(function(root) {
+  var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: function(node) {
+      if (!node.nodeValue || !node.nodeValue.includes('@')) return NodeFilter.FILTER_REJECT;
+      var p = node.parentNode;
+      if (!p || p.closest('a, code, pre, script, style')) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  var nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+
+  nodes.forEach(function(node) {
+    var text = node.nodeValue;
+    // @ must be at start or after space, not in an email like robert@miamix.io
+    var re = /(^|\s)@([A-Za-z0-9_][A-Za-z0-9._]*)/g;
+    if (!re.test(text)) return;
+    re.lastIndex = 0;
+
+    var frag = document.createDocumentFragment();
+    var last = 0, m;
+    while ((m = re.exec(text)) !== null) {
+      var handle = m[2];
+      var trailing = '';
+      // strip sentence punctuation off the end: @handle. -> @handle + .
+      if (/[.,;:!?]$/.test(handle) && handle.length > 2) {
+        trailing = handle.slice(-1);
+        handle = handle.slice(0, -1);
+      }
+      frag.appendChild(document.createTextNode(text.slice(last, m.index + m[1].length)));
+      var a = document.createElement('a');
+      a.href = 'https://www.instagram.com/' + handle + '/';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.className = 'ig-handle';
+      a.textContent = '@' + handle;
+      frag.appendChild(a);
+      if (trailing) frag.appendChild(document.createTextNode(trailing));
+      last = re.lastIndex;
+    }
+    frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  });
+});
 </body>
 </html>
