@@ -1,7 +1,7 @@
 ---
 title: "INTER MIAMI: SEASON FINALE"
 page_title: "Miami dominates Atlanta 4-0"
-description: "Miami Dominates Atlanta 4-0   The final match of the 【entity-MLS¦canonical_name=MLS】 regular season turned into a true football gala at Chase Stadium. Inter Miami closed its campaign with a resounding 4–0 victory over 【entity-Atlanta United¦canonical_name=Atlanta United】, a night that blended top-level football with emotional farewells. Supporters will remember it as a perfect celebration of talent and camaraderie that defined the season.  【entity-Lionel Messi¦canonical_name=Lionel Messi】 once again showed why many consider him the greatest of all time. The Argentine star displayed his full repertoire — dazzling dribbles, exceptional vision, and pinpoint passing. His play not only created goal-scoring chances, it elevated the spectacle to heights only he can reach. Each touch was met with anticipation from fans witnessing a genius at work."
+description: "Miami Dominates Atlanta 4-0   The final match of the MLS regular season turned into a true football gala at Chase Stadium. Inter Miami closed its campaign with a resounding 4–0 victory over Atlanta United, a night that blended top-level football with emotional farewells. Supporters will remember it as a perfect celebration of talent and camaraderie that defined the season.  Lionel Messi once again showed why many consider him the greatest of all time. The Argentine star displayed his full repertoire — dazzling dribbles, exceptional vision, and pinpoint passing. His play not only created goal-scoring chances, it elevated the spectacle to heights only he can reach. Each touch was met with anticipation from fans witnessing a genius at work."
 date: 2025-10-24
 cover_image: /images/inter-miami/IMG_2766.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/inter-miami-final"
@@ -13,9 +13,9 @@ featured: false
 _thumbnail: /images/inter-miami/IMG_2766.jpg
 ---
 
-The final match of the 【entity-MLS¦canonical_name=MLS】 regular season turned into a true football gala at Chase Stadium. 【entity-Inter Miami¦canonical_name=INTER MIAMI CF】 closed its campaign with a resounding 4–0 victory over 【entity-Atlanta United¦canonical_name=Atlanta United】, a night that blended top-level football with emotional farewells. Supporters will remember it as a perfect celebration of talent and camaraderie that defined the season.
+The final match of the MLS regular season turned into a true football gala at Chase Stadium. Inter Miami closed its campaign with a resounding 4–0 victory over Atlanta United, a night that blended top-level football with emotional farewells. Supporters will remember it as a perfect celebration of talent and camaraderie that defined the season.
 
-Lionel 【entity-Messi¦canonical_name=Messi】 once again showed why many consider him the greatest of all time. The Argentine star displayed his full repertoire — dazzling dribbles, exceptional vision, and pinpoint passing. His play not only created goal-scoring chances, it elevated the spectacle to heights only he can reach. Each touch was met with anticipation from fans witnessing a genius at work.
+Lionel Messi once again showed why many consider him the greatest of all time. The Argentine star displayed his full repertoire — dazzling dribbles, exceptional vision, and pinpoint passing. His play not only created goal-scoring chances, it elevated the spectacle to heights only he can reach. Each touch was met with anticipation from fans witnessing a genius at work.
 
 <!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
 {% include gallery.html folder="/images/inter-miami" images="IMG_9195.jpg|IMG_9191.jpg|IMG_9204.jpg" cols=2 %}
@@ -27,9 +27,9 @@ The night also marked Jordi Alba’s farewell in pink. The Spanish fullback, a k
 <!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
 {% include gallery.html folder="/images/inter-miami" images="IMG_4216.jpeg|IMG_4217.jpeg|IMG_4218.jpeg|IMG_4220.jpeg|IMG_9190.jpeg|IMG_9190-2.jpeg|IMG_9192.jpeg|IMG_9193.jpeg|IMG_9194.jpeg|IMG_9195.jpeg|IMG_9196.jpeg|IMG_9197.jpeg|IMG_9198.jpeg|IMG_9207.jpeg|IMG_9208.jpeg" cols=3 %}
 
-Inter Miami controlled the match from the opening whistle. Atlanta United rarely threatened a side that combined defensive solidity with creative attacking play. The four goals reflected the difference between the teams and the spectacular way 【entity-Inter Miami¦canonical_name=INTER MIAMI CF】 closed the regular season.
+Inter Miami controlled the match from the opening whistle. Atlanta United rarely threatened a side that combined defensive solidity with creative attacking play. The four goals reflected the difference between the teams and the spectacular way Inter Miami closed the regular season.
 
-This final encapsulates the season: global stars blended with local talent to forge an attractive, effective identity. Figures like 【entity-Messi¦canonical_name=Messi】 and Alba have elevated the team’s level and inspired a new generation of players and fans across the country. The 4–0 win was more than a result. It was a statement ahead of the playoffs and a celebration of the journey so far.
+This final encapsulates the season: global stars blended with local talent to forge an attractive, effective identity. Figures like Messi and Alba have elevated the team’s level and inspired a new generation of players and fans across the country. The 4–0 win was more than a result. It was a statement ahead of the playoffs and a celebration of the journey so far.
 
 With this performance, Inter Miami sent a clear message to the league: the team is ready to compete for the title. Experience from Europe, South American flair and hunger for glory create an explosive mix that promises drama in the postseason. Supporters can dream big as they bid farewell to legends like Jordi Alba while continuing to enjoy the privilege of watching Leo Messi in pink week after week.
 
