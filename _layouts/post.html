@@ -64,11 +64,9 @@ layout: null
   {% include footer.html %}
 
   <script>
-  // Auto orientation for gallery + single images
-  // Jekyll on GitHub Pages cannot read image width/height at build time, so we do it in the browser.
   document.addEventListener('DOMContentLoaded', function() {
-    var imgs = document.querySelectorAll('.post-content img');
-    imgs.forEach(function(img) {
+    // 1. Orientation
+    document.querySelectorAll('.post-content img').forEach(function(img) {
       function tag() {
         if (!img.naturalWidth) return;
         img.classList.remove('is-portrait', 'is-landscape', 'is-square');
@@ -79,112 +77,90 @@ layout: null
       if (img.complete) tag();
       else img.addEventListener('load', tag);
     });
-  });
-    // Orientation: portrait vs landscape, for all gallery types
-document.querySelectorAll('.post-content img').forEach(function(img) {
-  function tag() {
-    if (!img.naturalWidth) return;
-    img.classList.remove('is-portrait', 'is-landscape', 'is-square');
-    if (img.naturalHeight > img.naturalWidth * 1.05) img.classList.add('is-portrait');
-    else if (img.naturalWidth > img.naturalHeight * 1.05) img.classList.add('is-landscape');
-    else img.classList.add('is-square');
-  }
-  if (img.complete) tag();
-  else img.addEventListener('load', tag);
-});
 
-// 2. Carousel: arrows + dots, LOOPS
-document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
-  var track = gallery.querySelector('.carousel-track');
-  var prev = gallery.querySelector('.carousel-btn--prev');
-  var next = gallery.querySelector('.carousel-btn--next');
-  var dotsWrap = gallery.querySelector('.carousel-dots');
-  if (!track || !dotsWrap) return;
-  var imgs = track.querySelectorAll('img');
-  if (!imgs.length) return;
-
-  var current = 0;
-
-  function goTo(i) {
-    // loop: -1 -> last, last+1 -> first
-    current = ((i % imgs.length) + imgs.length) % imgs.length;
-    imgs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    dots.forEach(function(d, idx) { d.classList.toggle('is-active', idx === current); });
-  }
-
-  imgs.forEach(function(_, i) {
-    var dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
-    dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
-    dot.addEventListener('click', function() { goTo(i); });
-    dotsWrap.appendChild(dot);
-  });
-  var dots = dotsWrap.querySelectorAll('.carousel-dot');
-
-  if (prev) prev.addEventListener('click', function() { goTo(current - 1); });
-  if (next) next.addEventListener('click', function() { goTo(current + 1); });
-
-  // Keep current in sync if user swipes / scrolls manually
-  track.addEventListener('scroll', function() {
-    var center = track.scrollLeft + track.clientWidth / 2;
-    var best = 0, bestDist = Infinity;
-    imgs.forEach(function(img, i) {
-      var c = img.offsetLeft + img.offsetWidth / 2;
-      var d = Math.abs(c - center);
-      if (d < bestDist) { bestDist = d; best = i; }
-    });
-    if (best !== current) {
-      current = best;
-      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === best); });
-    }
-  }, { passive: true });
-});
-    // Auto-link @handles in post body, skip emails
-document.querySelectorAll('.post-content').forEach(function(root) {
-  var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode: function(node) {
-      if (!node.nodeValue || !node.nodeValue.includes('@')) return NodeFilter.FILTER_REJECT;
-      var p = node.parentNode;
-      if (!p || p.closest('a, code, pre, script, style')) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }
-  });
-  var nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-
-  nodes.forEach(function(node) {
-    var text = node.nodeValue;
-    // @ must be at start or after space, not in an email like robert@miamix.io
-    var re = /(^|\s)@([A-Za-z0-9_][A-Za-z0-9._]*)/g;
-    if (!re.test(text)) return;
-    re.lastIndex = 0;
-
-    var frag = document.createDocumentFragment();
-    var last = 0, m;
-    while ((m = re.exec(text)) !== null) {
-      var handle = m[2];
-      var trailing = '';
-      // strip sentence punctuation off the end: @handle. -> @handle + .
-      if (/[.,;:!?]$/.test(handle) && handle.length > 2) {
-        trailing = handle.slice(-1);
-        handle = handle.slice(0, -1);
+    // 2. Carousel - loops
+    document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
+      var track = gallery.querySelector('.carousel-track');
+      var prev = gallery.querySelector('.carousel-btn--prev');
+      var next = gallery.querySelector('.carousel-btn--next');
+      var dotsWrap = gallery.querySelector('.carousel-dots');
+      if (!track || !dotsWrap) return;
+      var imgs = track.querySelectorAll('img');
+      if (!imgs.length) return;
+      var current = 0;
+      function goTo(i) {
+        current = ((i % imgs.length) + imgs.length) % imgs.length;
+        imgs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        dots.forEach(function(d, idx) { d.classList.toggle('is-active', idx === current); });
       }
-      frag.appendChild(document.createTextNode(text.slice(last, m.index + m[1].length)));
-      var a = document.createElement('a');
-      a.href = 'https://www.instagram.com/' + handle + '/';
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = 'ig-handle';
-      a.textContent = '@' + handle;
-      frag.appendChild(a);
-      if (trailing) frag.appendChild(document.createTextNode(trailing));
-      last = re.lastIndex;
-    }
-    frag.appendChild(document.createTextNode(text.slice(last)));
-    node.parentNode.replaceChild(frag, node);
+      imgs.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+        dot.addEventListener('click', function() { goTo(i); });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = dotsWrap.querySelectorAll('.carousel-dot');
+      if (prev) prev.addEventListener('click', function() { goTo(current - 1); });
+      if (next) next.addEventListener('click', function() { goTo(current + 1); });
+      track.addEventListener('scroll', function() {
+        var center = track.scrollLeft + track.clientWidth / 2;
+        var best = 0, bestDist = Infinity;
+        imgs.forEach(function(img, i) {
+          var c = img.offsetLeft + img.offsetWidth / 2;
+          var d = Math.abs(c - center);
+          if (d < bestDist) { bestDist = d; best = i; }
+        });
+        if (best !== current) {
+          current = best;
+          dots.forEach(function(d, i) { d.classList.toggle('is-active', i === best); });
+        }
+      }, { passive: true });
+    });
+
+    // 3. Auto-link @handles, skip emails
+    document.querySelectorAll('.post-content').forEach(function(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          if (!node.nodeValue || !node.nodeValue.includes('@')) return NodeFilter.FILTER_REJECT;
+          var p = node.parentNode;
+          if (!p || p.closest('a, code, pre, script, style')) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(function(node) {
+        var text = node.nodeValue;
+        var re = /(^|\s)@([A-Za-z0-9_][A-Za-z0-9._]*)/g;
+        if (!re.test(text)) return;
+        re.lastIndex = 0;
+        var frag = document.createDocumentFragment();
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          var handle = m[2];
+          var trailing = '';
+          if (/[.,;:!?]$/.test(handle) && handle.length > 2) {
+            trailing = handle.slice(-1);
+            handle = handle.slice(0, -1);
+          }
+          frag.appendChild(document.createTextNode(text.slice(last, m.index + m[1].length)));
+          var a = document.createElement('a');
+          a.href = 'https://www.instagram.com/' + handle + '/';
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.className = 'ig-handle';
+          a.textContent = '@' + handle;
+          frag.appendChild(a);
+          if (trailing) frag.appendChild(document.createTextNode(trailing));
+          last = re.lastIndex;
+        }
+        frag.appendChild(document.createTextNode(text.slice(last)));
+        node.parentNode.replaceChild(frag, node);
+      });
+    });
   });
-});
   </script>
   <script src="/assets/js/nav.js" defer></script>
 </body>
