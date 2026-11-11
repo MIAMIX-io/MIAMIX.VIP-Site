@@ -80,6 +80,57 @@ layout: null
       else img.addEventListener('load', tag);
     });
   });
+    // Orientation: portrait vs landscape, for all gallery types
+document.querySelectorAll('.post-content img').forEach(function(img) {
+  function tag() {
+    if (!img.naturalWidth) return;
+    img.classList.remove('is-portrait', 'is-landscape', 'is-square');
+    if (img.naturalHeight > img.naturalWidth * 1.05) img.classList.add('is-portrait');
+    else if (img.naturalWidth > img.naturalHeight * 1.05) img.classList.add('is-landscape');
+    else img.classList.add('is-square');
+  }
+  if (img.complete) tag();
+  else img.addEventListener('load', tag);
+});
+
+// Carousel: arrows + dots, only runs on carousel galleries
+document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
+  var track = gallery.querySelector('.carousel-track');
+  var prev = gallery.querySelector('.carousel-btn--prev');
+  var next = gallery.querySelector('.carousel-btn--next');
+  var dotsWrap = gallery.querySelector('.carousel-dots');
+  var imgs = track.querySelectorAll('img');
+  if (!track || !imgs.length) return;
+
+  imgs.forEach(function(_, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+    dot.addEventListener('click', function() {
+      imgs[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+  function go(dir) {
+    track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: 'smooth' });
+  }
+  prev.addEventListener('click', function() { go(-1); });
+  next.addEventListener('click', function() { go(1); });
+
+  track.addEventListener('scroll', function() {
+    var center = track.scrollLeft + track.clientWidth / 2;
+    var best = 0, bestDist = Infinity;
+    imgs.forEach(function(img, i) {
+      var c = img.offsetLeft + img.offsetWidth / 2;
+      var d = Math.abs(c - center);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    dots.forEach(function(d, i) { d.classList.toggle('is-active', i === best); });
+  }, { passive: true });
+});
   </script>
   <script src="/assets/js/nav.js" defer></script>
 </body>
