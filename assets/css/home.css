@@ -237,3 +237,84 @@
     html { scroll-behavior: auto; }
     .poster-img, .cta-btn, .row-btn, .services-wrapper * { transition: none !important; }
 }
+/* === FEATURED PARTNERS - HOME ONLY - LAST IN home.css === */
+
+/* Case 1: logos.html / .brand-logos tiles */
+.brand-logos {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 60px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+.brand-logos .partner-tile,
+.brand-logos > img {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 210px !important;
+  padding: 22px !important;
+  background: #000 !important;
+  border: 1px solid rgba(225,43,192,.35) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.brand-logos .partner-tile--light { background: #f5f1e8 !important; }
+.brand-logos .partner-tile img,
+.brand-logos > img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 88% !important;
+  max-height: 88% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+.brand-logos .partner-tile:has(img[src*="afa"]),
+.brand-logos .partner-tile:has(img[src*="inter-miami"]) {
+  height: 240px !important;
+  padding: 16px 20px !important;
+}
+.brand-logos .partner-tile:has(img[src*="aerolineas"]),
+.brand-logos .partner-tile:has(img[src*="brightline"]) img {
+  max-width: 92% !important;
+  max-height: 70% !important;
+}
+
+/* Case 2: Featured Partners as .row--featured posters in home.css
+   This is why they were cropped: .poster-img in home.css is aspect-ratio: 3/4 + object-fit: cover,
+   which crops circular / wide logos. For featured only, switch to contain. */
+.row--featured .poster { width: 300px !important; }
+.row--featured .poster-img {
+  aspect-ratio: 4 / 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #000 !important;
+  padding: 22px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.row--featured .poster-img img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 88% !important;
+  max-height: 88% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+@media (max-width: 900px) {
+  .brand-logos { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; padding: 0 20px !important; }
+  .brand-logos .partner-tile,
+  .brand-logos > img { height: 180px !important; padding: 18px !important; }
+  .brand-logos .partner-tile:has(img[src*="afa"]),
+  .brand-logos .partner-tile:has(img[src*="inter-miami"]) { height: 210px !important; }
+
+  .row--featured .poster { width: 220px !important; }
+  .row--featured .poster-img { aspect-ratio: 4 / 3 !important; padding: 18px !important; }
+}
