@@ -22,7 +22,7 @@
 
     <section class="ch-hero" style="--ch-image: url('{{ include.image }}');">
         <p class="ch-eyebrow">{{ include.eyebrow }}</p>
-        <h1>{{ include.title }}</h1>
+        <h1>{{ include.title }}{% if include.accent %} <span class="accent">{{ include.accent }}</span>{% endif %}</h1>
         {%- if include.subtitle %}
         <p class="ch-sub">{{ include.subtitle }}</p>
         {%- endif %}
