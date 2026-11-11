@@ -1,6 +1,13 @@
 <div class="brand-logos">
-{%- assign brands = include.brands | split: "," -%}
-{%- for b in brands -%}{%- assign name = b | strip -%}
-<img src="/assets/images/logos/{{ name }}.png" alt="{{ name | capitalize }}" loading="lazy">
+{%- for partner in site.data.partners -%}
+  {%- if partner.url -%}
+  <a class="partner-tile {% if partner.light %}partner-tile--light{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener" aria-label="{{ partner.name }} - opens in new tab">
+    <img src="{{ partner.image }}" alt="{{ partner.name }}" loading="lazy">
+  </a>
+  {%- else -%}
+  <span class="partner-tile {% if partner.light %}partner-tile--light{% endif %}">
+    <img src="{{ partner.image }}" alt="{{ partner.name }}" loading="lazy">
+  </span>
+  {%- endif -%}
 {%- endfor -%}
 </div>
