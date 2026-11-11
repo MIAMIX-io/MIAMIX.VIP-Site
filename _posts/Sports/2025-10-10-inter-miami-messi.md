@@ -6,7 +6,7 @@ date: 2025-10-10
 cover_image: /images/sports/MIAMIX-44 (1).png
 external_url: "https://www.miamix.io/sports-miamix-member/messi-did-it-again"
 channel: [Sports]
-business_name: "【entity-Inter Miami CF¦canonical_name=Inter Miami CF】"
+business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
