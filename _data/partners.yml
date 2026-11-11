@@ -1,30 +1,36 @@
-# _data/partners.yml : one entry per logo. url is optional (makes the tile clickable).
+# _data/partners.yml : one entry per logo. url = brand's own site, opens in new tab.
 # light: true puts the logo on a light tile (use for dark logos like Lennox and Paradores).
-# Rows alternate: 1st, 3rd, 5th... go in the top row; 2nd, 4th, 6th... in the bottom row.
 - name: "Inter Miami"
   image: /images/partners/inter-miami.png
-  url: /miami-freedom-park/
+  url: https://www.intermiamicf.com/
 - name: "AFA - Argentine Football Association"
   image: /images/partners/afa.png
+  url: https://www.afa.com.ar/
 - name: "Riders Miami Motorsports"
   image: /images/partners/riders-miami.png
+  url: https://www.ridersmiami.com/
 - name: "Aerolíneas Argentinas"
   image: /images/partners/aerolineas-argentinas.png
-  url: /aerolineas-argentinas/
+  url: https://www.aerolineas.com.ar/
 - name: "Salta Argentina"
   image: /images/partners/salta.png
+  url: https://www.salta.gov.ar/turismo/
 - name: "Brightline"
   image: /images/partners/brightline.png
+  url: https://www.gobrightline.com/
 - name: "Lennox Hotels"
   image: /images/partners/lennox-hotels.png
+  url: https://www.lennoxmiamibeach.com/
   light: true
 - name: "Paradores"
   image: /images/partners/paradores.png
+  url: https://www.discoverpuertorico.com/profile/paradores
   light: true
 - name: "BW Hair Studio & Spa"
   image: /images/partners/bw-hair-studio.png
-  url: /bw-hair-studio-spa-a-haven-of-style-and-well-being-in-florida/
+  url: https://www.bwhairstudioandspa.com/
 - name: "Sabrina Contigo"
   image: /images/partners/sabrina-contigo.png
+  # No official site found - add url: here when you have it, it will become clickable automatically
 - name: "Partner"
   image: /images/partners/small.png
