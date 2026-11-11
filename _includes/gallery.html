@@ -1,11 +1,21 @@
 {%- assign cols = include.cols | default: 3 -%}
+{%- assign type = include.type | default: 'grid' -%}
 {%- assign imgs = include.images | split: '|' -%}
 {%- assign folder = include.folder | default: '/images/curated' -%}
-<div class="gallery image-gallery" data-cols="{{ cols }}">
+<div class="gallery gallery--{{ type }}" data-cols="{{ cols }}" data-type="{{ type }}">
+  {%- if type == 'carousel' -%}
+    <button class="carousel-btn carousel-btn--prev" type="button" aria-label="Previous image">&#8249;</button>
+    <div class="carousel-track">
+  {%- endif -%}
   {%- for img in imgs -%}
     {%- assign name = img | strip -%}
     {%- if name != '' -%}
       <img src="{{ folder }}/{{ name | relative_url }}" alt="" loading="lazy" decoding="async">
     {%- endif -%}
   {%- endfor -%}
+  {%- if type == 'carousel' -%}
+    </div>
+    <button class="carousel-btn carousel-btn--next" type="button" aria-label="Next image">&#8250;</button>
+    <div class="carousel-dots"></div>
+  {%- endif -%}
 </div>
