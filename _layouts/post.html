@@ -125,9 +125,9 @@
 
     {% assign hero_img = page.cover | default: page.cover_image %}
 <meta name="description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 | escape }}">
+<meta property="og:type" content="article">
 <meta property="og:title" content="{{ page.page_title | default: page.title | escape }}">
 <meta property="og:description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 | escape }}">
-<meta property="og:description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 }}">
 <meta property="og:url" content="https://miamix.io{{ page.url }}">
 {% if hero_img %}<meta property="og:image" content="https://miamix.io{{ hero_img }}">{% endif %}
 <meta name="twitter:card" content="summary_large_image">
