@@ -140,10 +140,7 @@ document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
     }
   }, { passive: true });
 });
-  </script>
-  <script src="/assets/js/nav.js" defer></script>
-  
-  // Auto-link @handles in post body, skip emails
+    // Auto-link @handles in post body, skip emails
 document.querySelectorAll('.post-content').forEach(function(root) {
   var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode: function(node) {
@@ -188,5 +185,7 @@ document.querySelectorAll('.post-content').forEach(function(root) {
     node.parentNode.replaceChild(frag, node);
   });
 });
+  </script>
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>
