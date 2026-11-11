@@ -6,7 +6,7 @@ permalink: /after-dark/
   AFTER DARK with Julio Medina: creator channel inside MIAMIX.
   Styles: /assets/css/after-dark.css   Gallery + Lightbox: /assets/js/after-dark.js
   Images: /images/after-dark/julio-after-dark-001.jpeg (hero) and 002-008 (gallery).
-  Optional: tag 【entity-Notion¦canonical_name=Notion】 posts with channel "AfterDark" and they appear in the articles grid automatically.
+  Articles use _includes/poster.html — same card as every other channel.
 {%- endcomment -%}
 <!DOCTYPE html>
 <html lang="en">
@@ -36,19 +36,15 @@ permalink: /after-dark/
 
     <main>
 
-        <!-- MEGA HERO: After Dark + The Host in one hero — NO six-worlds boxes -->
-        <!-- Image focus is center/top (object-position: 50% 0%). Blur + Ken Burns motion masks low-res. -->
+        <!-- MEGA HERO: After Dark + ONE inline host card, left, compact -->
         <section class="ad-hero ad-hero--mega" style="--ad-hero: url('/images/after-dark/julio-after-dark-001.jpeg');">
             <div class="ad-hero-media" aria-hidden="true">
-                <!-- Blurred base layer: fills edges, hides pixelation / compression -->
                 <img class="ad-hero-media__blur" src="/images/after-dark/julio-after-dark-001.jpeg" alt="" fetchpriority="high">
-                <!-- Sharp layer on top, slow Ken Burns drift -->
                 <img class="ad-hero-media__sharp" src="/images/after-dark/julio-after-dark-001.jpeg" alt="" fetchpriority="high">
             </div>
             <div class="ad-hero-overlay"></div>
 
             <div class="ad-wrap ad-hero-content">
-                <!-- TOP: brand -->
                 <div class="ad-hero-top">
                     <a class="ad-eyebrow" href="/">MIAMIX Presents</a>
                     <h1 class="ad-title">After <span class="accent">Dark</span></h1>
@@ -61,41 +57,36 @@ permalink: /after-dark/
                     </div>
                 </div>
 
-                <!-- BOTTOM: The Host — slim left panel only, so face / hero stays visible -->
-                <div class="ad-hero-host ad-hero-host--slim" id="host">
+                <!-- ONE inline card, left — no grid, no full-width box -->
+                <aside class="ad-host-card" id="host">
                     <span class="ad-eyebrow">The Host</span>
                     <h2 class="ad-h2">Julio Medina</h2>
                     <p class="ad-role">Cuban Author &middot; Storyteller &middot; Host of After Dark</p>
-
                     <p class="ad-hero-intro">Six worlds. One night. After Dark moves through fashion &amp; runway, VIP parties &amp; nightlife, luxury lifestyle, the celebrity &amp; influencer scene, red carpet &amp; exclusive events, and hotels, restaurants &amp; destinations &mdash; one night, one story, one look.</p>
-
                     <p class="ad-text">From Chamboli, Havana to Miami, Julio turned survival into storytelling. Author of <strong>From Chamboli to Miami (2025)</strong> and <strong>Adictos</strong>, and host of <strong>7 Values</strong>, he now tells the stories of Miami after dark.</p>
-
                     <p class="ad-quote">&ldquo;My past shaped me, but it does not determine my future.&rdquo;</p>
-
-                    <ul class="ad-timeline" aria-label="Julio's journey">
-                        <li>Havana</li>
-                        <li>Adversity</li>
-                        <li>Exile</li>
-                        <li>Miami &rarr;</li>
-                    </ul>
-                    <div class="ad-links">
+                    <div class="ad-host-card__foot">
+                        <ul class="ad-timeline" aria-label="Julio's journey">
+                            <li>Havana</li>
+                            <li>Adversity</li>
+                            <li>Exile</li>
+                            <li>Miami &rarr;</li>
+                        </ul>
                         <a class="ad-btn ad-btn--ghost ad-btn--small" href="https://www.globalmix.network/juliomedina" target="_blank" rel="noopener">Julio Medina &mdash; Bio</a>
                     </div>
-                </div>
+                </aside>
 
                 <a class="ad-scroll" href="#gallery" aria-label="Scroll to gallery">Scroll <span aria-hidden="true">&darr;</span></a>
             </div>
         </section>
 
-        <!-- GALLERY: larger revolving carousel + fullscreen lightbox -->
+        <!-- GALLERY -->
         <section class="ad-section ad-section--stone" id="gallery">
             <div class="ad-wrap ad-center">
                 <span class="ad-eyebrow">The Gallery</span>
                 <h2 class="ad-h2 ad-h2--center">Julio Medina, in frames</h2>
                 <p class="ad-text ad-text--muted">Spin it with the arrows, drag or swipe &mdash; click the front photo to view it fullscreen.</p>
             </div>
-
             <div class="ad-scene" id="adScene" tabindex="0" aria-roledescription="carousel" aria-label="Julio Medina photo gallery">
                 <ul class="ad-ring" id="adRing">
                 <li data-caption="The Emperor &mdash; Classical Editorial"><img src="/images/after-dark/julio-after-dark-007.jpeg" alt="Julio in a white toga and gold laurel in a marble hall" decoding="async" draggable="false"></li>
@@ -109,7 +100,6 @@ permalink: /after-dark/
                 <button class="ad-arrow ad-arrow--left" id="adPrev" type="button" aria-label="Previous photo">&lsaquo;</button>
                 <button class="ad-arrow ad-arrow--right" id="adNext" type="button" aria-label="Next photo">&rsaquo;</button>
             </div>
-
             <div class="ad-wrap ad-center">
                 <p class="ad-caption"><strong id="adCaption" aria-live="polite">The Emperor &mdash; Classical Editorial</strong><span id="adCount">01 / 07</span></p>
                 <div class="ad-controls">
@@ -118,24 +108,19 @@ permalink: /after-dark/
                     <button class="ad-pause" id="adFullscreenBtn" type="button">View fullscreen</button>
                 </div>
             </div>
-
-            <!-- Fullscreen lightbox -->
             <div class="ad-lightbox" id="adLightbox" hidden role="dialog" aria-modal="true" aria-label="Fullscreen photo">
                 <button class="ad-lightbox__close" id="adLightboxClose" type="button" aria-label="Close fullscreen">&times;</button>
                 <button class="ad-lightbox__nav ad-lightbox__nav--prev" id="adLightboxPrev" type="button" aria-label="Previous photo">&lsaquo;</button>
                 <figure class="ad-lightbox__figure">
                     <img id="adLightboxImg" src="" alt="">
-                    <figcaption>
-                        <strong id="adLightboxCaption"></strong>
-                        <span id="adLightboxCount"></span>
-                    </figcaption>
+                    <figcaption><strong id="adLightboxCaption"></strong><span id="adLightboxCount"></span></figcaption>
                 </figure>
                 <button class="ad-lightbox__nav ad-lightbox__nav--next" id="adLightboxNext" type="button" aria-label="Next photo">&rsaquo;</button>
                 <p class="ad-lightbox__hint">Esc to close &nbsp;&middot;&nbsp; &larr; &rarr; to browse &nbsp;&middot;&nbsp; Click outside photo to close</p>
             </div>
         </section>
 
-        {%- comment %} POSTS / ARTICLES: ALWAYS renders now. If nothing is tagged AfterDark, show placeholders so the section is never missing. {% endcomment -%}
+        {%- comment %} ARTICLES — uses poster.html, same as other channels {% endcomment -%}
         {%- assign ad_posts = '' | split: '' -%}
         {%- assign seen = '|' -%}
         {%- for post in site.posts -%}
@@ -161,64 +146,14 @@ permalink: /after-dark/
                     </div>
                     <a class="ad-btn ad-btn--ghost ad-btn--small" href="/articles/?channel=AfterDark">All articles</a>
                 </div>
-
                 {%- if ad_posts.size > 0 %}
-                <div class="ad-articles">
+                <div class="poster-grid ad-posters">
                     {%- for post in ad_posts %}
-                    {%- assign label = post.page_title | default: post.title -%}
-                    {%- assign img = post.cover_image | default: post.thumbnail | default: post.cover -%}
-                    {%- assign excerpt_text = post.excerpt | strip_html | strip | truncate: 160 -%}
-                    <article class="ad-article{% if forloop.first %} ad-article--featured{% endif %}">
-                        <a class="ad-article__link" href="{{ post.url | relative_url }}">
-                            <span class="ad-article__img">{%- if img %}<img src="{{ img }}" alt="" loading="lazy" decoding="async">{% endif %}</span>
-                            <span class="ad-article__body">
-                                <span class="ad-article__meta"><span>After Dark</span><i>&middot;</i><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time></span>
-                                <span class="ad-article__title">{{ label }}</span>
-                                {%- if excerpt_text != '' -%}<span class="ad-article__excerpt">{{ excerpt_text }}</span>{%- endif -%}
-                                <span class="ad-article__read">Read story <span aria-hidden="true">&rarr;</span></span>
-                            </span>
-                        </a>
-                    </article>
+                        {% include poster.html post=post accent='#e12bc0' %}
                     {%- endfor %}
                 </div>
                 {%- else %}
-                <!-- Fallback: no posts tagged AfterDark yet — section still shows -->
-                <div class="ad-articles">
-                    <article class="ad-article ad-article--featured">
-                        <a class="ad-article__link" href="/articles/?channel=AfterDark">
-                            <span class="ad-article__img"><img src="/images/after-dark/julio-after-dark-002.jpeg" alt="" loading="lazy" decoding="async"></span>
-                            <span class="ad-article__body">
-                                <span class="ad-article__meta"><span>After Dark</span><i>&middot;</i><span>Coming Soon</span></span>
-                                <span class="ad-article__title">After Dark stories are on the way</span>
-                                <span class="ad-article__excerpt">New nights, looks, places and conversations from Julio — check back for the first stories.</span>
-                                <span class="ad-article__read">All articles <span aria-hidden="true">&rarr;</span></span>
-                            </span>
-                        </a>
-                    </article>
-                    <article class="ad-article">
-                        <a class="ad-article__link" href="/articles/?channel=AfterDark">
-                            <span class="ad-article__img"><img src="/images/after-dark/julio-after-dark-003.jpeg" alt="" loading="lazy" decoding="async"></span>
-                            <span class="ad-article__body">
-                                <span class="ad-article__meta"><span>After Dark</span><i>&middot;</i><span>Coming Soon</span></span>
-                                <span class="ad-article__title">Fashion &amp; Runway</span>
-                                <span class="ad-article__excerpt">Looks, designers, backstage.</span>
-                                <span class="ad-article__read">Read story <span aria-hidden="true">&rarr;</span></span>
-                            </span>
-                        </a>
-                    </article>
-                    <article class="ad-article">
-                        <a class="ad-article__link" href="/articles/?channel=AfterDark">
-                            <span class="ad-article__img"><img src="/images/after-dark/julio-after-dark-008.jpeg" alt="" loading="lazy" decoding="async"></span>
-                            <span class="ad-article__body">
-                                <span class="ad-article__meta"><span>After Dark</span><i>&middot;</i><span>Coming Soon</span></span>
-                                <span class="ad-article__title">VIP Parties &amp; Nightlife</span>
-                                <span class="ad-article__excerpt">The rooms everyone wants in.</span>
-                                <span class="ad-article__read">Read story <span aria-hidden="true">&rarr;</span></span>
-                            </span>
-                        </a>
-                    </article>
-                </div>
-                <p class="ad-note">To feature a real post here, tag it <strong style="color:#fff;">channel: AfterDark</strong> (also checks categories / tags) in Notion / front matter.</p>
+                <p class="ad-note">No After Dark posts tagged yet. Tag a post <strong style="color:#fff;">channel: AfterDark</strong> in Notion / front matter and it will appear here automatically.</p>
                 {%- endif %}
             </div>
         </section>
@@ -231,7 +166,7 @@ permalink: /after-dark/
                     <div class="ad-book">
                         <h3>Adictos</h3>
                         <p>&ldquo;We are all addicted to something.&rdquo; A raw look at love, loss, ambition and belonging.</p>
-                        <a class="ad-book-link" href="https://www.amazon.com/dp/B0HGT75RG5" target="_blank" rel="noopener">Get Adictos on Amazon <span aria-hidden="true">&rarr;</span></a>
+                        <a class="ad-book-link" href="https://www.amazon.com/dp/B0HGT75RG5" target="_blank" rel="noopener">Get Adictos on 【entity-Amazon¦canonical_name=Amazon】 <span aria-hidden="true">&rarr;</span></a>
                     </div>
                     <div class="ad-book">
                         <h3>From Chamboli to Miami (2025)</h3>
@@ -251,9 +186,9 @@ permalink: /after-dark/
                     </ul>
                     <p class="ad-text ad-text--muted">What defines us is not only what we achieve, but what we choose not to betray.</p>
                     <div class="ad-links">
-                        <span class="ad-btn ad-btn--ghost ad-btn--small is-coming-soon" aria-disabled="true">Podcast &mdash; 7 Values on Amazon <em>Coming Soon</em></span>
+                        <span class="ad-btn ad-btn--ghost ad-btn--small is-coming-soon" aria-disabled="true">Podcast &mdash; 7 Values on 【entity-Amazon¦canonical_name=Amazon】 <em>Coming Soon</em></span>
                     </div>
-                    <p class="ad-note">The 7 Values podcast on Amazon is coming soon — check back for the launch link.</p>
+                    <p class="ad-note">The 7 Values podcast on 【entity-Amazon¦canonical_name=Amazon】 is coming soon — check back for the launch link.</p>
                 </div>
             </div>
         </section>
