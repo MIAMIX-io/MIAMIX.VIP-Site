@@ -1,7 +1,8 @@
 ---
 title: "INTER MIAMI VS CHICAGO FIRE"
 page_title: "The Show Goes On"
-description: "THE SHOW GOES ON At Chase Stadium, under the Miami lights that never lose their shine, Inter Miami once again turned a Tuesday night into a global stage. The crowd came ready for a show, and even though the scoreboard ended in Chicago Fire’s favor, the energy, drama, and passion made it feel like another unforgettable chapter in the club’s ongoing spectacle. Before kickoff, the atmosphere was pure Miami: palm trees swaying outside, music thumping through the concourse, and a sea of pink filling every seat. Fans arrived dressed to impress, phones in hand, ready to capture the magic. When Lionel Messi and Luis Suárez stepped onto the field, the stadium came alive, two living legends sharing the spotlight in a city that thrives on star power."
+description: 
+  Inter Miami brought its signature energy to Chase Stadium as Lionel Messi and Luis Suárez shared the spotlight against Chicago Fire. Despite the visitors taking the win, the night delivered Miami’s familiar mix of football, entertainment, star power, and passionate fans.
 date: 2025-10-24
 cover_image: /images/inter-miami/IMG_2767.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/inter-chicago"
@@ -41,4 +42,3 @@ Messi, ever the leader, applauded the fans as he walked off the pitch, a quiet r
 
 Inter Miami continues to be more than a team, it’s a movement, a lifestyle, and the pulse of a city that turns every game into a festival. The score may fade, but the Miami magic remains, bold, passionate, and always ready for the next chapter.
 
-{% include logos.html brands="intermiamicf,ridersmiami" %}
