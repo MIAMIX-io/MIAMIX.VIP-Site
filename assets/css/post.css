@@ -179,3 +179,26 @@
     flex-basis: 82%; width: 82%; height: 62vh; max-height: 560px;
   }
 }
+/* Hero: blurred backdrop + slow drift to hide low-res */
+.post-hero { position: relative; overflow: hidden; isolation: isolate; }
+.post-hero::before {
+  content: ""; position: absolute; inset: -24px; z-index: 0;
+  background-image: var(--hero-image); background-size: cover; background-position: center 30%;
+  filter: blur(22px) brightness(0.55) saturate(1.1); transform: scale(1.15);
+}
+.post-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background-image: var(--hero-image); background-size: cover; background-position: center 30%;
+  animation: hero-drift 26s ease-in-out infinite alternate;
+}
+.post-hero-overlay { z-index: 2; }
+.post-hero-content { z-index: 3; }
+
+@keyframes hero-drift {
+  from { transform: scale(1.0) translateY(0); }
+  to { transform: scale(1.07) translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-hero::after { animation: none; }
+}
