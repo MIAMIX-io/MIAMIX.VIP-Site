@@ -1,0 +1,6 @@
+<div class="brand-logos">
+{%- assign brands = include.brands | split: "," -%}
+{%- for b in brands -%}{%- assign name = b | strip -%}
+<img src="/assets/images/logos/{{ name }}.png" alt="{{ name | capitalize }}" loading="lazy">
+{%- endfor -%}
+</div>
