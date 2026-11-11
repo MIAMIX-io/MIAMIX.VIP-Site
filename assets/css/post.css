@@ -100,3 +100,61 @@
   .post-content .gallery[data-cols="3"] img,
   .post-content .gallery[data-cols="4"] img { grid-column: span 12; aspect-ratio: auto; height: auto; }
 }
+/* GALLERY: all four types */
+
+/* 1. GRID: default, clean rows */
+.post-content .gallery--grid {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin: 48px auto; width: 100%;
+}
+.post-content .gallery--grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.post-content .gallery--grid[data-cols="2"] img { grid-column: span 6; aspect-ratio: 4 / 3; }
+.post-content .gallery--grid[data-cols="3"] img { grid-column: span 4; aspect-ratio: 3 / 4; }
+.post-content .gallery--grid[data-cols="4"] img { grid-column: span 3; aspect-ratio: 1 / 1; }
+.post-content .gallery--grid[data-cols="1"] img { grid-column: span 12; aspect-ratio: 16 / 9; }
+
+/* 2. CAROUSEL: swipe, arrows, dots */
+.post-content .gallery--carousel { position: relative; display: block; margin: 48px auto; padding: 0 52px; }
+.post-content .carousel-track {
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 4px 2px;
+}
+.post-content .carousel-track::-webkit-scrollbar { display: none; }
+.post-content .gallery--carousel img {
+  flex: 0 0 78%; width: 78%; height: auto; aspect-ratio: 16 / 10; object-fit: cover;
+  scroll-snap-align: center; border-radius: 6px; margin: 0;
+}
+.post-content .gallery--carousel img.is-portrait { flex-basis: 42%; width: 42%; aspect-ratio: 3 / 4; }
+.post-content .gallery--carousel img.is-landscape { flex-basis: 78%; width: 78%; aspect-ratio: 16 / 10; }
+.post-content .carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.65); color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
+}
+.post-content .carousel-btn--prev { left: 0; }
+.post-content .carousel-btn--next { right: 0; }
+.post-content .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.post-content .carousel-dot { width: 8px; height: 8px; border-radius: 50%; border: 0; background: #444; cursor: pointer; padding: 0; }
+.post-content .carousel-dot.is-active { background: #E12BC0; }
+
+/* 3. MASONRY: mixed portrait + landscape, no cropping */
+.post-content .gallery--masonry { display: block; columns: 3 280px; column-gap: 16px; margin: 48px auto; }
+.post-content .gallery--masonry img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; margin: 0 0 16px; break-inside: avoid; display: block; border-radius: 6px; }
+
+/* 4. STACKED: full-width, one under the other */
+.post-content .gallery--stacked { display: block; margin: 48px auto; }
+.post-content .gallery--stacked img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; margin: 0 0 32px; display: block; border-radius: 6px; }
+.post-content .gallery--stacked img.is-portrait { max-width: 720px; margin-left: auto; margin-right: auto; }
+.post-content .gallery--stacked img.is-landscape { max-width: 1120px; }
+
+/* Single images in text stay large */
+.post-content > p > img:only-child { display: block; width: 100%; max-width: 1120px; height: auto; border-radius: 6px; margin: 48px auto; }
+
+@media (max-width: 900px) {
+  .post-content .gallery--carousel { padding: 0; }
+  .post-content .gallery--carousel img { flex-basis: 86%; width: 86%; }
+  .post-content .gallery--carousel img.is-portrait { flex-basis: 62%; width: 62%; }
+  .post-content .carousel-btn { display: none; }
+  .post-content .gallery--grid[data-cols="2"] img,
+  .post-content .gallery--grid[data-cols="3"] img,
+  .post-content .gallery--grid[data-cols="4"] img { grid-column: span 12; aspect-ratio: auto; height: auto; }
+}
