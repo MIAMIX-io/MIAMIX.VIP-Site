@@ -1,7 +1,8 @@
 ---
-title: "MIAMI FREEDOM PARK"
+title: "Miami Freedom Park"
 page_title: "Transforming Miami's sporting landscape"
-description: "Transforming Miami's sporting landscape Inter Miami CF is entering a new chapter with the construction of Miami Freedom Park, a pioneering project that will reshape the city’s landscape and redefine the football experience in South Florida. Located next to Miami International Airport, the development blends sport, entertainment and community spaces in an ambitious vision that reflects Miami’s energy and diversity. At the heart of Miami Freedom Park will be a 25,000-seat soccer-specific stadium, the permanent home of Inter Miami CF. This state-of-the-art venue will offer a first-class experience with advanced technology, premium hospitality areas and vibrant supporter zones that celebrate both the club and Miami’s multicultural identity."
+description: 
+  Miami Freedom Park marks a new era for Inter Miami CF, bringing sport, entertainment, and community together near Miami International Airport. At its heart, a 25,000-seat state-of-the-art stadium will become the club’s permanent home, celebrating Miami’s energy and multicultural identity.
 date: 2025-10-14
 cover_image: /images/inter-miami/MIAMIX-23.png
 external_url: "https://www.miamix.io/inter-miami-cf/aqn5p5bg7z8sc2az1p106j6wx9nn86"
@@ -38,4 +39,3 @@ Inter Miami’s ownership group, led by David Beckham and entrepreneur Jorge Mas
 
 When it opens in 2026, Miami Freedom Park will not only give Inter Miami CF a permanent home, it will also stand as a new gateway to the city where football, entertainment and community come together under a bold vision for the future.
 
-{% include logos.html brands="intermiamicf,ridersmiami" %}
