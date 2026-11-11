@@ -21,6 +21,34 @@ layout: null
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/channel.css">
     <link rel="stylesheet" href="/assets/css/creator.css">
+    /* CURATED LIFESTYLE - Editorial, replaces card grid */
+    .cl-editorial { display: flex; flex-direction: column; gap: 0; border-top: 1px solid #222; text-align: left; }
+    .cl-article { display: grid; grid-template-columns: 1.15fr 1fr; background: #0a0a0a; border-bottom: 1px solid #222; }
+    .cl-article__media { position: relative; display: block; overflow: hidden; min-height: 320px; background: #111; }
+    .cl-article__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+    .cl-article:hover .cl-article__media img { transform: scale(1.04); }
+    .cl-article__kicker { position: absolute; left: 0; bottom: 0; padding: 8px 14px; background: #000; color: #E12BC0; font-size: .68rem; font-weight: 400; letter-spacing: .28em; text-transform: uppercase; }
+    .cl-article__body { padding: 42px 42px 38px; display: flex; flex-direction: column; align-items: flex-start; }
+    .cl-article__meta { font-size: .72rem; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: #999; }
+    .cl-article__title { margin-top: 14px; font-size: clamp(1.6rem, 2.8vw, 2.35rem); font-weight: 200; line-height: 1.15; letter-spacing: .06em; text-transform: uppercase; }
+    .cl-article__title a { color: #fff; }
+    .cl-article__title a:hover { color: #E12BC0; }
+    .cl-article__excerpt { margin-top: 16px; font-size: 1.02rem; font-weight: 300; line-height: 1.8; color: #e6e6e6; }
+    .cl-article__read { margin-top: auto; padding-top: 22px; padding-bottom: 3px; border-bottom: 1px solid #E12BC0; font-size: .72rem; font-weight: 400; letter-spacing: .24em; text-transform: uppercase; color: #E12BC0; }
+    .cl-article__read:hover { color: #fff; border-color: #fff; }
+    .cl-article--featured { grid-template-columns: 1.45fr 1fr; }
+    .cl-article--featured .cl-article__media { min-height: 460px; }
+    .cl-article--featured .cl-article__body { padding: 52px 48px; }
+    .cl-article--featured .cl-article__title { font-size: clamp(2rem, 3.6vw, 3rem); }
+    .cl-article--flip .cl-article__media { order: 2; }
+    .cl-article--flip .cl-article__body { order: 1; }
+    @media (max-width: 900px) {
+      .cl-article, .cl-article--featured { grid-template-columns: 1fr; }
+      .cl-article__media { min-height: 300px; }
+      .cl-article--featured .cl-article__media { min-height: 340px; }
+      .cl-article__body { padding: 28px 22px 30px; }
+      .cl-article--flip .cl-article__media, .cl-article--flip .cl-article__body { order: unset; }
+    }
     <style>
         .curated-page .wrap { padding-left: 24px; padding-right: 24px; }
         /* HERO - single column, headshot right under tagline */
