@@ -1,8 +1,11 @@
-<div class="gallery cols-{{ include.cols | default: 3 }}">
-{%- assign imgs = include.images | split: "|" -%}
-{%- for img in imgs -%}
-{%- assign file = img | strip -%}
-{%- if include.folder -%}{%- assign path = include.folder | append: "/" | append: file -%}{%- else -%}{%- assign path = file -%}{%- endif -%}
-<a href="{{ path }}"><img src="{{ path }}" alt="{{ include.alt | default: '' }}" loading="lazy" decoding="async"></a>
-{%- endfor -%}
+{%- assign cols = include.cols | default: 3 -%}
+{%- assign imgs = include.images | split: '|' -%}
+{%- assign folder = include.folder | default: '/images/curated' -%}
+<div class="gallery image-gallery" data-cols="{{ cols }}">
+  {%- for img in imgs -%}
+    {%- assign name = img | strip -%}
+    {%- if name != '' -%}
+      <img src="{{ folder }}/{{ name | relative_url }}" alt="" loading="lazy" decoding="async">
+    {%- endif -%}
+  {%- endfor -%}
 </div>
