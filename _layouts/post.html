@@ -1,192 +1,86 @@
+---
+layout: null
+---
+{%- assign ch_raw = page.channel | join: ',' -%}
+{%- assign ch = ch_raw | split: ',' | first | strip -%}
+{%- assign label = site.data.channels.labels[ch] | default: ch -%}
+{%- if label == ch -%}
+  {%- case ch -%}
+    {%- when 'CuratedLifestyle' -%}{%- assign label = 'Curated Lifestyle' -%}
+    {%- when 'InterMIA' -%}{%- assign label = 'Inter&nbsp;Miami' -%}
+    {%- when 'Culture' -%}{%- assign label = 'Culture' -%}
+    {%- when 'Cultural' -%}{%- assign label = 'Cultural' -%}
+    {%- when 'Fashion' -%}{%- assign label = 'Fashion' -%}
+    {%- when 'Health' -%}{%- assign label = 'Health' -%}
+    {%- when 'Hospitality' -%}{%- assign label = 'Hospitality' -%}
+    {%- when 'Nonprofit' -%}{%- assign label = 'Nonprofit' -%}
+    {%- when 'Sports' -%}{%- assign label = 'Sports' -%}
+    {%- when 'Travel' -%}{%- assign label = 'Travel' -%}
+  {%- endcase -%}
+{%- endif -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.page_title | default: page.title }} | MIAMIX</title>
-    <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/site.css">
-    <style>
-        :root { --primary-pink: #E12BC0; --bg-black: #000000; --bg-dark-grey: #111111; --text-main: #ffffff; --text-muted: #aaaaaa; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Jost', 'Montserrat', sans-serif; font-weight: 300; background-color: var(--bg-black); color: var(--text-main); overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
-
-        /* --- ARTICLE HERO - larger, readable --- */
-        .post-hero {
-            position: relative;
-            width: 100%;
-            height: 85vh;
-            min-height: 560px;
-            background-size: cover;
-            background-position: center 80%;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-        }
-        .post-hero.no-cover { height: auto; min-height: 420px; align-items: center; background-color: var(--bg-dark-grey); padding-top: 120px; }
-        .post-hero-overlay {
-            position: absolute; inset: 0;
-            background:
-              linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.25) 100%),
-              linear-gradient(to right, rgba(0,0,0,.60) 0%, rgba(0,0,0,.25) 60%, rgba(0,0,0,0) 100%);
-            z-index: 1;
-        }
-        .post-hero-content {
-            position: relative; z-index: 2; width: 100%; max-width: 800px;
-            padding: 28px; text-align: left; margin: 0 20px 40px;
-            background: rgba(0,0,0,.42); backdrop-filter: blur(4px);
-            border-radius: 12px; border-left: 3px solid #E12BC0;
-        }
-        .article-cat { color: var(--primary-pink); font-size: 14px; text-transform: uppercase; font-weight: 500; letter-spacing: 3px; display: block; margin-bottom: 14px; }
-        .article-title { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 14px; font-weight: 200; letter-spacing: .05em; text-transform: uppercase; color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.9); }
-        .article-date { color: #ddd; font-size: 14px; font-weight: 300; letter-spacing: 1px; }
-
-        /* --- EDITORIAL CONTENT --- */
-        .article-container { max-width: 800px; margin: 60px auto 100px auto; padding: 20px 40px; }
-        .content { line-height: 1.85; font-size: 19px; color: #e8e8e8; font-weight: 300; }
-        .content p { margin-bottom: 25px; }
-        .content p:first-of-type { font-size: 21px; line-height: 1.8; color: #fff; font-weight: 300; }
-        .content h2 { font-family: 'Jost', sans-serif; font-weight: 200; font-size: clamp(28px, 4vw, 38px); letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; margin: 60px 0 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(225,43,192,.4); color: #fff; }
-        .content h3 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 24px; letter-spacing: .06em; text-transform: uppercase; line-height: 1.3; margin: 48px 0 16px; color: #fff; }
-        .content h3::before { content: ""; display: inline-block; width: 24px; height: 2px; background: #E12BC0; margin-right: 12px; vertical-align: middle; }
-        .content h4 { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 18px; letter-spacing: .12em; text-transform: uppercase; color: #E12BC0; margin: 36px 0 12px; }
-        .content strong { font-weight: 500; color: #fff; }
-        .content em { color: #f0f0f0; }
-        .content ul, .content ol { margin: 0 0 25px 20px; }
-        .content li { margin-bottom: 10px; }
-        .content a { color: var(--primary-pink); text-decoration: none; border-bottom: 1px dotted var(--primary-pink); }
-        .content a:hover { border-bottom: 1px solid var(--primary-pink); }
-        .image-gallery { display: flex; flex-wrap: wrap; gap: 20px; margin: 50px auto; justify-content: center; }
-        .image-gallery img { flex: 1 1 300px; margin: 0 !important; }
-        .image-gallery img, .content > p > img:only-child { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; max-width: 100%; max-height: 75vh; margin: 40px auto; display: block; }
-        .content iframe { width: 100%; aspect-ratio: 16 / 9; border: none; border-radius: 12px; margin: 50px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #111; }
-        .content blockquote { background: rgba(225,43,192,0.08); border-left: 4px solid var(--primary-pink); padding: 30px; margin: 50px 0; border-radius: 0 12px 12px 0; font-size: 22px; font-style: italic; color: #fff; line-height: 1.6; }
-        .content blockquote p { margin: 0; }
-        .content details { background: var(--bg-dark-grey); padding: 25px; border-radius: 10px; margin: 30px 0; border: 1px solid #333; }
-        .content details:hover { border-color: #555; }
-        .content summary { font-weight: 500; font-size: 18px; cursor: pointer; color: #fff; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between; }
-        .content summary::-webkit-details-marker { display: none; }
-        .content summary::after { content: '▾'; color: var(--primary-pink); font-size: 24px; display: inline-block; transition: transform 0.3s ease; }
-        .content details[open] summary::after { transform: rotate(180deg); }
-        .content details[open] summary { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; color: var(--primary-pink); }
-        .content details p:last-child { margin-bottom: 0; }
-
-        @media (max-width: 1024px) {
-            .post-hero { background-position: center center; min-height: 420px; height: 70vh; }
-            .article-container { margin: 20px auto 60px auto; }
-        }
-        @media (max-width: 768px) {
-            .post-hero-content { padding: 20px; margin: 0 16px 24px; }
-            .article-container { padding: 20px 30px; }
-            .content { font-size: 17px; }
-            .content blockquote { font-size: 20px; padding: 25px; margin: 40px 0; }
-            .image-gallery img, .content > p > img:only-child { max-height: 50vh; }
-        }
-        @media (max-width: 480px) {
-            .post-hero { min-height: 380px; height: 62vh; }
-            .article-cat { font-size: 13px; letter-spacing: 2px; }
-            .article-container { margin: 10px auto; padding: 20px 20px; }
-            .content { font-size: 17px; line-height: 1.75; }
-            .content h2 { margin-top: 44px; margin-bottom: 16px; font-size: 28px; }
-            .content h3 { margin-top: 36px; margin-bottom: 14px; font-size: 21px; }
-            .content h4 { margin-top: 28px; margin-bottom: 10px; font-size: 16px; }
-            .content blockquote { font-size: 18px; padding: 20px; margin: 30px 0; border-left-width: 3px; }
-            .content details { padding: 15px; margin: 20px 0; }
-            .content summary { font-size: 16px; }
-            .content iframe { margin: 30px 0; }
-            .image-gallery { gap: 10px; margin: 20px auto; }
-            .image-gallery img, .content > p > img:only-child { margin: 20px auto; }
-        }
-            .gallery { display: grid; gap: 12px; margin: 50px 0; grid-template-columns: repeat(3, 1fr); }
-.gallery.cols-2 { grid-template-columns: repeat(2, 1fr); }
-.gallery.cols-4 { grid-template-columns: repeat(4, 1fr); }
-.gallery a { display: block; overflow: hidden; border-radius: 12px; aspect-ratio: 4 / 3; }
-.gallery img { width: 100%; height: 100%; object-fit: cover; margin: 0 !important; max-height: none; border-radius: 0; box-shadow: none; transition: transform .4s; }
-.gallery a:hover img { transform: scale(1.04); }
-@media (max-width: 600px) { .gallery, .gallery.cols-3, .gallery.cols-4 { grid-template-columns: repeat(2, 1fr); } }
-
-.video-embed { margin: 50px 0; }
-.video-embed iframe, .video-embed video { margin: 0; width: 100%; }
-.video-embed figcaption, .content figcaption { margin-top: 10px; font-size: 14px; color: var(--text-muted); letter-spacing: .05em; text-align: center; }
-
-.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 2000; cursor: zoom-out; }
-.lightbox.open { display: flex; }
-.lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 8px; }
-
-.post-cta { max-width: 800px; margin: 0 auto 100px; padding: 36px 40px; text-align: center; border: 1px solid rgba(225,43,192,.4); border-radius: 12px; background: rgba(225,43,192,.06); }
-.post-cta h3 { font-weight: 200; letter-spacing: .08em; text-transform: uppercase; font-size: 28px; margin-bottom: 20px; }
-
-.brand-logos { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: center; margin: 50px 0; }
-.brand-logos img { height: 36px; width: auto; margin: 0 !important; opacity: .85; border-radius: 0; box-shadow: none; }
-        
-    </style>
-
-    {% assign hero_img = page.cover | default: page.cover_image %}
-<meta name="description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 | escape }}">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{{ page.page_title | default: page.title | escape }}">
-<meta property="og:description" content="{{ page.description | default: content | strip_html | strip_newlines | truncate: 160 | escape }}">
-<meta property="og:url" content="https://miamix.io{{ page.url }}">
-{% if hero_img %}<meta property="og:image" content="https://miamix.io{{ hero_img }}">{% endif %}
-<meta name="twitter:card" content="summary_large_image">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{ page.title }} | MIAMIX</title>
+  <meta name="description" content="{{ page.description | default: page.title }}">
+  <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/post.css">
 </head>
-<body>
+<body class="post-page">
+  {% include header.html %}
 
-    {% include header.html %}
-
-    {% assign hero_img = page.cover | default: page.cover_image %}
-    {% if hero_img %}
-    <div class="post-hero" style="background-image: url('{{ hero_img }}');">
-        <div class="post-hero-overlay"></div>
-        <div class="post-hero-content">
-            <span class="article-cat">{{ page.channel | join: ", " | replace: "CuratedLifestyle", "Curated Lifestyle" | replace: "InterMIA", "Inter Miami" | replace: "Curated", "Curated Lifestyle" }}</span>
-            <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
-            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
-        </div>
+  {%- assign hero_img = page.cover_image | default: page.cover -%}
+  {%- if hero_img -%}
+  <section class="post-hero" style="--hero-image: url('{{ hero_img | relative_url }}');">
+    <div class="post-hero-overlay"></div>
+    <div class="post-hero-content">
+      <span class="post-hero-eyebrow">{{ label }}</span>
+      <h1 class="post-hero-title">{{ page.page_title | default: page.title }}</h1>
+      <p class="post-hero-meta">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
     </div>
-    {% else %}
-    <div class="post-hero no-cover">
-        <div class="post-hero-content">
-            <span class="article-cat">{{ page.channel | join: ", " | replace: "CuratedLifestyle", "Curated Lifestyle" | replace: "InterMIA", "Inter Miami" | replace: "Curated", "Curated Lifestyle" }}</span>
-            <h1 class="article-title">{{ page.page_title | default: page.title }}</h1>
-            <p class="article-date">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
-        </div>
+  </section>
+  {%- else -%}
+  <section class="post-hero post-hero--no-cover">
+    <div class="post-hero-content">
+      <span class="post-hero-eyebrow">{{ label }}</span>
+      <h1 class="post-hero-title">{{ page.page_title | default: page.title }}</h1>
+      <p class="post-hero-meta">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
     </div>
-    {% endif %}
+  </section>
+  {%- endif -%}
 
-    <article class="article-container">
-        <div class="content">
-            {{ content }}
-        </div>
+  <main class="post-body">
+    <article class="post-content">
+      {{ content }}
     </article>
+  </main>
 
-    {% if page.external_url contains "http" %}
-<aside class="post-cta">
-  {% if page.business_name %}<span class="article-cat">Featured</span><h3>{{ page.business_name }}</h3>{% endif %}
-  <a class="hero-btn" href="{{ page.external_url }}" target="_blank" rel="noopener">Visit {{ page.business_name | default: "Website" }}</a>
-</aside>
-{% endif %}
+  {% include footer.html %}
 
-    {% include footer.html %}
-
-    <script src="/assets/js/nav.js" defer></script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll('.gallery a');
-  if (!links.length) return;
-  const box = document.createElement('div');
-  box.className = 'lightbox';
-  box.innerHTML = '<img alt="">';
-  document.body.appendChild(box);
-  const big = box.querySelector('img');
-  links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); big.src = a.href; box.classList.add('open'); }));
-  box.addEventListener('click', () => box.classList.remove('open'));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('open'); });
-});
-</script>
-
+  <script>
+  // Auto orientation for gallery + single images
+  // Jekyll on GitHub Pages cannot read image width/height at build time, so we do it in the browser.
+  document.addEventListener('DOMContentLoaded', function() {
+    var imgs = document.querySelectorAll('.post-content img');
+    imgs.forEach(function(img) {
+      function tag() {
+        if (!img.naturalWidth) return;
+        img.classList.remove('is-portrait', 'is-landscape', 'is-square');
+        if (img.naturalHeight > img.naturalWidth * 1.05) img.classList.add('is-portrait');
+        else if (img.naturalWidth > img.naturalHeight * 1.05) img.classList.add('is-landscape');
+        else img.classList.add('is-square');
+      }
+      if (img.complete) tag();
+      else img.addEventListener('load', tag);
+    });
+  });
+  </script>
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>
