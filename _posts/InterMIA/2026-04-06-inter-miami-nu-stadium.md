@@ -1,7 +1,8 @@
 ---
 title: "INTER MIAMI"
 page_title: "Nu Stadium Launches In Miami"
-description: "NU Stadium Launches In Miami The night of April 4 marked a historic milestone in American soccer with the grand opening of the new stadium of Inter Miami CF. More than just a sporting venue, the stadium represents a bold and strategic statement about the continued growth of the game in the United States, positioning Miami as a global hub where football, entertainment, and culture converge. From early in the afternoon, thousands of fans gathered around the stadium, building an atmosphere charged with anticipation, pride, and a sense of belonging to a transformative moment in the sport’s history."
+description: 
+   On April 4, Inter Miami CF opened its new stadium, marking a historic moment for American soccer. More than a sporting venue, it positions Miami as a global hub where football, entertainment, and culture meet. Thousands of fans gathered from early afternoon, filling the area with anticipation and pride.
 date: 2026-04-06
 cover_image: /images/inter-miami/MIAMIX-2.png
 external_url: "https://www.miamix.io/inter-miami-cf/inter-miami-final-wjsgb"
@@ -43,4 +44,3 @@ Beyond the immediate spectacle, the inauguration of this stadium represents a br
 
 Ultimately, this opening was far more than the unveiling of a new home ground. It was a declaration of intent, a celebration of vision, and a glimpse into the future of football in the United States. With Messi leading on the pitch and Beckham guiding the project from behind the scenes, Inter Miami is not only building a team, but shaping a legacy, one that places Miami firmly at the center of the global football conversation.
 
-{% include logos.html brands="intermiamicf,ridersmiami" %}
