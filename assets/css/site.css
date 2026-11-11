@@ -303,3 +303,58 @@ iframe[src*="youtu.be"] {
 @media (prefers-reduced-motion: reduce) {
   .ch-hero::before, .channel-hero::before { animation: none !important; }
 }
+/* === FEATURED PARTNERS - BIGGER, NO CROP - LAST IN site.css === */
+.brand-logos {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+.brand-logos .partner-tile,
+.brand-logos > img {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 210px !important;
+  padding: 22px !important;
+  background: #000 !important;
+  border: 1px solid rgba(225,43,192,.35) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.brand-logos .partner-tile--light { background: #f5f1e8 !important; }
+.brand-logos .partner-tile img,
+.brand-logos > img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 88% !important;
+  max-height: 88% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+/* Tall / circular - AFA + Inter Miami need more height */
+.brand-logos .partner-tile:has(img[src*="afa"]),
+.brand-logos .partner-tile:has(img[src*="inter-miami"]) {
+  height: 240px !important;
+  padding: 16px 20px !important;
+}
+/* Wide - Aerolineas + Brightline - let them fill the width */
+.brand-logos .partner-tile:has(img[src*="aerolineas"]),
+.brand-logos .partner-tile:has(img[src*="brightline"]) img {
+  max-width: 92% !important;
+  max-height: 70% !important;
+}
+
+@media (max-width: 900px) {
+  .brand-logos { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; padding: 0 16px !important; }
+  .brand-logos .partner-tile,
+  .brand-logos > img { height: 180px !important; padding: 18px !important; }
+  .brand-logos .partner-tile:has(img[src*="afa"]),
+  .brand-logos .partner-tile:has(img[src*="inter-miami"]) { height: 210px !important; }
+}
