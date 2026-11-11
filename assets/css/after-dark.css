@@ -237,6 +237,35 @@ a.ad-eyebrow:hover { color: #fff; }
     height: calc(280px * 1.333 + 110px);
   }
 }
+/* Host card - 3 buttons in a row under quote */
+.ad-host-card__foot {
+  display: block;
+  margin-top: 18px;
+}
+
+.ad-host-card__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.ad-host-card__actions .ad-btn {
+  flex: 1 1 0;
+  padding: 13px 10px;
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .ad-host-card__actions {
+    flex-wrap: wrap;
+  }
+  .ad-host-card__actions .ad-btn {
+    flex: 1 1 100%;
+  }
+}
 
 /* ---------- FORCE OVERRIDES - MUST STAY LAST ---------- */
 /* These win over site.css and over .ad-section--black no matter what order files load in */
