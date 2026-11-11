@@ -1,5 +1,5 @@
 ---
-title: "AFA & 【entity-DiDi¦canonical_name=DiDi】"
+title: "AFA & DiDi"
 page_title: "Strategic Partnership"
 description: "Strategic Partnership"
 date: 2025-10-10
@@ -13,17 +13,17 @@ featured: false
 _thumbnail: /images/sports/MIA_AFA4_OFFICE_DAV6-1024x576.jpg
 ---
 
-At an event that brought together sports figures, media representatives, and corporate leaders, the Argentine Football Association (AFA) announced its new partnership with 【entity-DiDi¦canonical_name=DiDi】, the renowned global mobility platform.
+At an event that brought together sports figures, media representatives, and corporate leaders, the Argentine Football Association (AFA) announced its new partnership with DiDi, the renowned global mobility platform.
 
 <!-- VIDEO: YouTube or Vimeo link, or file="/assets/video/clip.mp4" -->
-{% include video.html url="https://www.youtube.com/embed/TsrQF5IgW9k?feature=oembed" caption="AFA y 【entity-Didi¦canonical_name=DiDi】" %}
+{% include video.html url="https://www.youtube.com/embed/TsrQF5IgW9k?feature=oembed" caption="AFA y DiDi" %}
 
-This collaboration marks a significant step in AFA’s international expansion and establishes 【entity-DiDi¦canonical_name=DiDi】 as an Official Sponsor of the Argentine National Football Team.
+This collaboration marks a significant step in AFA’s international expansion and establishes DiDi as an Official Sponsor of the Argentine National Football Team.
 
-The announcement was attended by AFA President Claudio “Chiqui” Tapia and National Team Head Coach 【entity-Lionel Scaloni¦canonical_name=Lionel Scaloni】, who took part in a press conference alongside 【entity-DiDi¦canonical_name=DiDi】 executives. Their presence reaffirmed both institutional and sporting support for a partnership that connects two worlds that inspire and mobilize millions: mobility and football.
+The announcement was attended by AFA President Claudio “Chiqui” Tapia and National Team Head Coach Lionel Scaloni, who took part in a press conference alongside DiDi executives. Their presence reaffirmed both institutional and sporting support for a partnership that connects two worlds that inspire and mobilize millions: mobility and football.
 
 <!-- SINGLE IMAGE -->
-![AFA and 【entity-DiDi¦canonical_name=DiDi】 event](/images/sports/IMG_9092.png)
+![AFA and DiDi event](/images/sports/IMG_9092.png)
 
 During the event, Leandro Petersen, AFA’s Chief Commercial & Marketing Officer, celebrated DiDi’s addition to the Association’s institutional network, emphasizing that the agreement represents “a partnership between global leaders who share values of connection, community, and passion.”
 
@@ -32,7 +32,7 @@ DiDi representatives, in turn, highlighted that being part of the National Team�
 Through this partnership, DiDi will offer exclusive benefits for drivers and passengers during National Team matches, aiming to create unique experiences and bring fans closer to the “Scaloneta” from anywhere in the country or the world.
 
 <!-- SINGLE IMAGE -->
-![AFA and 【entity-DiDi¦canonical_name=DiDi】 partnership photo](/images/sports/AFADIDI00450.jpeg)
+![AFA and DiDi partnership photo](/images/sports/AFADIDI00450.jpeg)
 
 The agreement is envisioned as a long-term collaboration, featuring special activations, joint campaigns, and experiences that celebrate the values of Argentine football—strengthening the bond between AFA and its global community of supporters.
 
