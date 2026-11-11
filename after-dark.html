@@ -135,25 +135,25 @@ permalink: /after-dark/
         {%- endfor -%}
         {%- assign ad_posts = ad_posts | sort: "date" | reverse -%}
 
-            <section class="ad-section ad-closing">
-        <div class="ad-wrap">
-          <div class="ad-articles-head">
-            <div>
-              <span class="ad-eyebrow">Latest</span>
-              <h2 class="ad-h2">After Dark Articles</h2>
-              <p class="ad-text ad-text--muted">Stories, nights, looks and places — from the After Dark desk.</p>
-            </div>
-            <a class="ad-btn ad-btn--ghost ad-btn--small" href="/articles/?channel=AfterDark">All articles</a>
-          </div>
-          {%- if ad_posts.size > 0 %}
-          <div class="poster-grid ad-posters">
-            {%- for post in ad_posts %}
-              {% include poster.html post=post accent='#e12bc0' %}
-            {%- endfor %}
-          </div>
-          {%- endif %}
-        </div>
-      </section>
+          <section class="ad-section ad-section--black" id="articles">
+  <div class="ad-wrap">
+    <div class="ad-articles-head">
+      <div>
+        <span class="ad-eyebrow">Latest</span>
+        <h2 class="ad-h2">After Dark Articles</h2>
+        <p class="ad-text ad-text--muted">Stories, nights, looks and places — from the After Dark desk.</p>
+      </div>
+      <a class="ad-btn ad-btn--ghost ad-btn--small" href="/articles/?channel=AfterDark">All articles</a>
+    </div>
+    {%- if ad_posts.size > 0 %}
+    <div class="poster-grid ad-posters">
+      {%- for post in ad_posts %}
+        {% include poster.html post=post accent='#e12bc0' %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
 
         <!-- BOOKS + PODCAST -->
         <section class="ad-section ad-section--stone" id="books">
