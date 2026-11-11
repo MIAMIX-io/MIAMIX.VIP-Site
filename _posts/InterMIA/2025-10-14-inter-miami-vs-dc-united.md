@@ -1,7 +1,8 @@
 ---
-title: "INTER MIAMI vS DC UNITED"
+title: "Inter Miami VS DC United"
 page_title: "Messi Leads Inter Miami"
-description: "MESSI LEADS INTER MIAMI Under the bright lights of Chase Stadium, Inter Miami once again delivered what fans have come to expect: football as spectacle. The stands pulsed with music, color, and the unmistakable Miami energy that turns every match into a cultural event. On this night, the city’s biggest star, Lionel Messi, shone with effortless brilliance, guiding his team to a thrilling 3-2 victory over D.C. United. From the first whistle, it was clear that this wasn’t just a game, it was a show. Celebrities filled the VIP boxes, fans waved pink flags, and the rhythm of the drums echoed through the stands. Miami has turned soccer into performance art, and Inter Miami into the hottest ticket in town."
+description: 
+  Lionel Messi guided Inter Miami to an exciting 3–2 victory over D.C. United at Chase Stadium. Amid celebrity guests, pink flags, and electric crowds, the match captured Miami’s unique blend of football, entertainment, and culture.
 date: 2025-10-14
 cover_image: /images/inter-miami/Untitled (2).png
 external_url: "https://www.miamix.io/inter-miami-cf/inter-dc"
@@ -40,5 +41,3 @@ Inter Miami has become more than a team; it’s a global brand, a lifestyle, and
 
 <!-- SINGLE IMAGE -->
 ![Inter Miami vs D.C. United](/images/inter-miami/Untitled (1).png)
-
-{% include logos.html brands="intermiamicf,ridersmiami" %}
