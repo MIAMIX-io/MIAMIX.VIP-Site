@@ -1,11 +1,12 @@
 {
   "labels": {
-    "CuratedLifestyle": "Curated Lifestyle",
-    "InterMIA": "【entity-Inter Miami¦canonical_name=Inter Miami】",
+    "Curated": "Curated Lifestyle",
+    "InterMIA": "Inter Miami",
+    "After-Dark": "After Dark",
     "Travel": "Travel",
     "Hospitality": "Hospitality",
     "Fashion": "Fashion",
-    "Culture": "Cultural",
+    "Culture": "Culture",
     "Health": "Health",
     "Sports": "Sports",
     "Nonprofit": "Nonprofit"
@@ -28,7 +29,17 @@
       "tagline": "Inter Miami stories, match nights and moments from the Heron's Nest.",
       "accent": "#E12BC0",
       "url": "/inter-miami",
-      "channels": ["InterMIA", "Inter Miami", "Inter Miami CF"],
+      "channels": ["InterMIA", "Inter Miami", "Inter Miami CF", "Inter Miami",]
+      "show": true
+    },
+    {
+      "id": "after-dark",
+      "eyebrow": "After Dark",
+      "title": "After Dark",
+      "tagline": "When the sun goes down, the scene comes alive. Fashion, nightlife, luxury, people and experiences. Six worlds. One night.",
+      "accent": "#E12BC0",
+      "url": "/after-dark",
+      "channels": ["AfterDark", "After Dark"],
       "show": true
     },
     {
@@ -68,7 +79,7 @@
       "tagline": "Art exhibits, artist spotlights, and exclusive events in Miami.",
       "accent": "#E12BC0",
       "url": "/culture",
-      "channels": ["Culture", "Cultural"],
+      "channels": ["Culture"],
       "show": true
     },
     {
