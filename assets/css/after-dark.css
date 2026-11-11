@@ -45,12 +45,12 @@ a.ad-eyebrow:hover { color: #fff; }
     background: var(--primary-pink); color: #fff; font-size: .62rem; letter-spacing: .18em;
 }
 
-/* ---------- MEGA HERO: After Dark + Host + Six Worlds ---------- */
+/* ---------- MEGA HERO: After Dark + Host (no Six Worlds boxes) ---------- */
 .ad-hero {
     position: relative; isolation: isolate; overflow: hidden;
     min-height: 100vh; min-height: 100svh;
     display: flex; align-items: flex-end;
-    padding: 132px 0 64px;
+    padding: 132px 0 48px;
     /* fallback if <img> fails — focus center/top */
     background: var(--ad-hero) 50% 0% / cover no-repeat, #000;
 }
@@ -79,19 +79,17 @@ a.ad-eyebrow:hover { color: #fff; }
     to   { transform: scale(1.12) translate(-1.5%, -1%); }
 }
 
-/* Brand pink + black gradient — DIFFERENT from other channel pages:
-   diagonal sweep (115deg) black -> pink wash -> black, + pink glow bottom-left,
-   + black vignette top. Other channels use radial bottom glow; this one is diagonal. */
+/* Brand pink + black gradient — DIFFERENT from other channel pages.
+   CHANGED: lighter on right / center so face stays visible. Dark only on left where text sits. */
 .ad-hero-overlay {
     position: absolute; inset: 0; z-index: -1; pointer-events: none;
     background:
-        linear-gradient(to top, #000 0%, rgba(0,0,0,.74) 14%, rgba(0,0,0,.18) 42%, rgba(0,0,0,.22) 70%, rgba(0,0,0,.58) 100%),
-        linear-gradient(115deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.28) 32%, rgba(225,43,192,.14) 58%, rgba(0,0,0,.78) 100%),
-        radial-gradient(85% 70% at 8% 100%, rgba(225,43,192,.55) 0%, rgba(225,43,192,0) 60%),
-        radial-gradient(70% 60% at 95% 8%, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 62%),
-        linear-gradient(180deg, rgba(225,43,192,.22) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 72%, rgba(225,43,192,.28) 100%);
+        linear-gradient(to top, #000 0%, rgba(0,0,0,.55) 18%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.08) 70%, rgba(0,0,0,.45) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.48) 42%, rgba(0,0,0,.12) 68%, rgba(0,0,0,.38) 100%),
+        radial-gradient(85% 70% at 8% 100%, rgba(225,43,192,.45) 0%, rgba(225,43,192,0) 60%),
+        linear-gradient(180deg, rgba(225,43,192,.18) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 72%, rgba(225,43,192,.22) 100%);
 }
-.ad-hero-content { position: relative; display: flex; flex-direction: column; gap: 56px; width: 100%; }
+.ad-hero-content { position: relative; display: flex; flex-direction: column; gap: 36px; width: 100%; }
 .ad-hero .ad-eyebrow { text-shadow: 0 1px 12px rgba(0,0,0,.7); }
 .ad-title {
     font-size: clamp(3.2rem, 12vw, 8rem); font-weight: 200; line-height: 1;
@@ -107,46 +105,40 @@ a.ad-eyebrow:hover { color: #fff; }
 .ad-tags { margin-top: 14px; font-size: .75rem; font-weight: 400; letter-spacing: .25em; text-transform: uppercase; color: #e6e6e6; text-shadow: 0 1px 12px rgba(0,0,0,.7); }
 .ad-tags i { font-style: normal; margin: 0 .5em; color: var(--primary-pink); }
 
-/* Host inside hero — glass panel over the photo */
-.ad-hero-host {
-    display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: start;
-    padding: 36px 36px 32px;
-    background: linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.74) 100%);
-    border: 1px solid color-mix(in srgb, var(--primary-pink) 45%, transparent);
-    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 24px 60px rgba(0,0,0,.45);
+/* Host inside hero — CHANGED: slim left-only panel, no full-width glass box, no grid.
+   Left fade only, so right side / face stays clear. */
+.ad-hero-host { display: block; }
+.ad-hero-host--slim {
+    max-width: 640px;
+    padding: 28px 28px 24px 24px;
+    background: linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.42) 72%, rgba(0,0,0,0) 100%);
+    border: 0;
+    border-left: 1px solid var(--primary-pink);
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+    box-shadow: none;
 }
 .ad-role { margin-top: 22px; font-size: .8rem; font-weight: 400; letter-spacing: .25em; text-transform: uppercase; color: #e6e6e6; }
 .ad-hero-intro {
-    margin-top: 22px; max-width: 640px;
+    margin-top: 20px; max-width: 640px;
     font-size: 1.14rem; font-weight: 300; line-height: 1.75; color: #fff;
     padding-left: 20px; border-left: 1px solid var(--primary-pink);
 }
+.ad-hero-host--slim .ad-text { margin-top: 14px; }
 .ad-quote {
-    margin: 28px 0 0; padding-left: 24px; max-width: 620px;
+    margin: 20px 0 0; padding-left: 24px; max-width: 620px;
     border-left: 1px solid var(--primary-pink);
-    font-size: 1.3rem; font-weight: 200; line-height: 1.6; letter-spacing: .02em;
+    font-size: 1.2rem; font-weight: 200; line-height: 1.6; letter-spacing: .02em;
 }
-.ad-timeline { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.ad-timeline { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .ad-timeline li {
     padding: 9px 16px; border: 1px solid #555;
     font-size: .75rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: #e6e6e6;
 }
 .ad-timeline li:last-child { border-color: var(--primary-pink); color: var(--primary-pink); }
 
-/* Six worlds — compact inside hero */
-.ad-hero-worlds__label { font-size: 1.05rem; font-weight: 200; letter-spacing: .12em; text-transform: uppercase; }
-.ad-hero-worlds__label span { color: var(--primary-pink); }
-.ad-hero-worlds__list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
-.ad-hero-worlds__list li {
-    padding: 16px 16px 14px; background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.14);
-    transition: border-color .3s, background .3s;
-}
-.ad-hero-worlds__list li:hover { border-color: var(--primary-pink); background: rgba(225,43,192,.08); }
-.ad-hero-worlds__list b { display: block; font-size: .72rem; font-weight: 400; letter-spacing: .3em; color: var(--primary-pink); }
-.ad-hero-worlds__list strong { display: block; margin-top: 8px; font-size: .92rem; font-weight: 400; line-height: 1.35; letter-spacing: .06em; text-transform: uppercase; }
-.ad-hero-worlds__list span { display: block; margin-top: 6px; font-size: .88rem; font-weight: 300; line-height: 1.5; color: #d8d8d8; }
+/* Six Worlds boxes REMOVED — kept hidden in case old HTML is cached */
+.ad-hero-worlds, .ad-hero-worlds__list { display: none !important; }
+
 .ad-scroll {
     align-self: center; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: #e6e6e6;
     opacity: .85; transition: color .25s;
@@ -316,7 +308,7 @@ a.ad-eyebrow:hover { color: #fff; }
 /* ---------- motion ---------- */
 @media (prefers-reduced-motion: reduce) {
     .ad-hero-media__sharp, .ad-scroll span { animation: none !important; }
-    .ad-article__img, .ad-article__img img, .ad-btn, .ad-hero-worlds__list li { transition: none; }
+    .ad-article__img, .ad-article__img img, .ad-btn { transition: none; }
     .ad-article:hover .ad-article__img { transform: none; }
     .ad-scene.is-3d .ad-ring, .ad-scene.is-3d .ad-ring li { transition-duration: .01s; }
 }
@@ -325,8 +317,8 @@ a.ad-eyebrow:hover { color: #fff; }
 @media (max-width: 900px) {
     .ad-section { padding: 72px 0; }
     .ad-hero { padding: 110px 0 56px; }
-    .ad-hero-host, .ad-two-col { grid-template-columns: 1fr; gap: 40px; }
-    .ad-hero-host { padding: 28px 24px; }
+    .ad-hero-host--slim { max-width: 100%; padding: 24px 20px; background: linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.45)); }
+    .ad-two-col { grid-template-columns: 1fr; gap: 40px; }
     .ad-articles { grid-template-columns: repeat(2, 1fr); }
     .ad-article--featured .ad-article__link { grid-template-columns: 1fr; padding: 0; border: 0; background: none; }
     .ad-article--featured .ad-article__body { padding-top: 16px; }
@@ -335,9 +327,8 @@ a.ad-eyebrow:hover { color: #fff; }
 @media (max-width: 600px) {
     .ad-wrap { padding: 0 20px; }
     .ad-section { padding: 56px 0; }
-    .ad-hero-content { gap: 40px; }
-    .ad-hero-host { padding: 24px 20px; gap: 32px; }
-    .ad-hero-worlds__list { grid-template-columns: 1fr; }
+    .ad-hero-content { gap: 32px; }
+    .ad-hero-host--slim { padding: 20px 16px; }
     .ad-articles { grid-template-columns: 1fr; }
     .ad-article__img { aspect-ratio: 16 / 10; }
     .ad-actions { flex-direction: column; }
