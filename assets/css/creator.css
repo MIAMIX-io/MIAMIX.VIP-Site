@@ -261,3 +261,60 @@
   text-shadow: 0 1px 8px rgba(0,0,0,0.70) !important;
   opacity: 0.92 !important;
 }
+/* === CURATED - TOP BOX ALMOST INVISIBLE + TITLE BOX GRADIENT - LAST IN creator.css === */
+
+/* TOP BOX - CURATED LIFESTYLE / JUNE 2, 2026 / BY ROMINA - basically transparent */
+[class*="curated"] [class*="meta"],
+[class*="curated"] [class*="top"],
+[class*="curated"] [class*="eyebrow"],
+[class*="curated"] [class*="label"],
+[class*="curated"] [class*="badge"],
+[class*="curated"] [class*="category"],
+[class*="curated"] [class*="overlay"]:first-child,
+.curated-card .curated-meta,
+.curated-card .curated-top-label,
+.curated-card .curated-watermark,
+.curated-card .curated-category-box,
+.curated-lifestyle .curated-meta {
+  background: linear-gradient(135deg, rgba(0,0,0,0.10), rgba(0,0,0,0.02)) !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-left: 2px solid rgba(225,43,192,0.30) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  padding: 7px 9px !important;
+  opacity: 0.70 !important;
+}
+[class*="curated"] [class*="meta"] *,
+[class*="curated"] [class*="top"] * {
+  font-size: 10px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.18em !important;
+}
+
+/* TITLE BOX - BOTTOM - gradient, a little darker, but still see-through */
+[class*="curated"] [class*="title"],
+[class*="curated"] [class*="info"],
+[class*="curated"] [class*="content"],
+[class*="curated"] [class*="bottom"],
+[class*="curated"] [class*="text-box"],
+[class*="curated"] [class*="text_box"],
+.curated-card .curated-title-box,
+.curated-card .curated-info,
+.curated-lifestyle .curated-title-box {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.02) 0%,
+    rgba(0,0,0,0.22) 35%,
+    rgba(0,0,0,0.55) 68%,
+    rgba(0,0,0,0.78) 100%
+  ) !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-top: none !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  padding: 22px 22px 20px !important;
+}
