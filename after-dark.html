@@ -83,39 +83,33 @@ permalink: /after-dark/
             </div>
         </section>
 
-        <!-- GALLERY (works without JS: first photo shows, the script adds the slideshow) -->
+        <!-- GALLERY: revolving carousel (plain swipeable row without JS) -->
         <section class="ad-section ad-section--stone" id="gallery">
-            <div class="ad-wrap">
-                <div class="ad-center">
-                    <span class="ad-eyebrow">The Gallery</span>
-                    <h2 class="ad-h2 ad-h2--center">Julio Medina, in frames</h2>
-                    <p class="ad-text ad-text--muted">One photo at a time. Use the arrows, dots or thumbnails.</p>
-                </div>
+            <div class="ad-wrap ad-center">
+                <span class="ad-eyebrow">The Gallery</span>
+                <h2 class="ad-h2 ad-h2--center">Julio Medina, in frames</h2>
+                <p class="ad-text ad-text--muted">Spin it with the arrows, drag or swipe, or tap a photo.</p>
+            </div>
 
-                <div class="ad-stage" id="adStage" tabindex="0" aria-roledescription="carousel" aria-label="Julio Medina photo gallery">
-                    <img id="adImg" class="ad-stage-img" src="/images/after-dark/julio-after-dark-007.jpeg" alt="The Emperor, classical editorial">
-                    <button class="ad-arrow ad-arrow--left" id="adPrev" type="button" aria-label="Previous photo">&lsaquo;</button>
-                    <button class="ad-arrow ad-arrow--right" id="adNext" type="button" aria-label="Next photo">&rsaquo;</button>
-                    <div class="ad-caption">
-                        <strong id="adCaption" aria-live="polite">The Emperor &mdash; Classical Editorial</strong>
-                        <span id="adCount">01 / 07</span>
-                    </div>
-                    <div class="ad-progress"><i id="adBar"></i></div>
-                </div>
+            <div class="ad-scene" id="adScene" tabindex="0" aria-roledescription="carousel" aria-label="Julio Medina photo gallery">
+                <ul class="ad-ring" id="adRing">
+                <li data-caption="The Emperor &mdash; Classical Editorial"><img src="/images/after-dark/julio-after-dark-007.jpeg" alt="Julio in a white toga and gold laurel in a marble hall" decoding="async" draggable="false"></li>
+                <li data-caption="The Library &mdash; Old-World Editorial"><img src="/images/after-dark/julio-after-dark-003.jpeg" alt="Julio on a leather sofa in a wood-paneled library" decoding="async" draggable="false"></li>
+                <li data-caption="Studio &mdash; Minimal, Bare, Honest"><img src="/images/after-dark/julio-after-dark-006.jpeg" alt="Julio in a warm studio, open brown jacket and white linen trousers" decoding="async" draggable="false"></li>
+                <li data-caption="Portrait in Black &mdash; The Gaze"><img src="/images/after-dark/julio-after-dark-004.jpeg" alt="Julio in black on a stool against a dark backdrop" loading="lazy" decoding="async" draggable="false"></li>
+                <li data-caption="Day Luxury &mdash; Effortless"><img src="/images/after-dark/julio-after-dark-005.jpeg" alt="Julio in a bright lobby with sunglasses and a tote bag" loading="lazy" decoding="async" draggable="false"></li>
+                <li data-caption="Street Elegance &mdash; Black Coat &amp; City"><img src="/images/after-dark/julio-after-dark-002.jpeg" alt="Julio walking a city street in a long black coat" loading="lazy" decoding="async" draggable="false"></li>
+                <li data-caption="After Dark Drive &mdash; Neon Night"><img src="/images/after-dark/julio-after-dark-008.jpeg" alt="Julio sitting in an open car door under neon lights" loading="lazy" decoding="async" draggable="false"></li>
+                </ul>
+                <button class="ad-arrow ad-arrow--left" id="adPrev" type="button" aria-label="Previous photo">&lsaquo;</button>
+                <button class="ad-arrow ad-arrow--right" id="adNext" type="button" aria-label="Next photo">&rsaquo;</button>
+            </div>
 
+            <div class="ad-wrap ad-center">
+                <p class="ad-caption"><strong id="adCaption" aria-live="polite">The Emperor &mdash; Classical Editorial</strong><span id="adCount">01 / 07</span></p>
                 <div class="ad-controls">
-                    <div class="ad-dots" id="adDots" aria-hidden="true"></div>
+                    <div class="ad-dots" id="adDots"></div>
                     <button class="ad-pause" id="adPause" type="button">Pause</button>
-                </div>
-
-                <div class="ad-thumbs" id="adThumbs">
-                    <button type="button" class="active" data-src="/images/after-dark/julio-after-dark-007.jpeg" data-caption="The Emperor &mdash; Classical Editorial"><img src="/images/after-dark/julio-after-dark-007.jpeg" alt="" loading="lazy"></button>
-                    <button type="button" data-src="/images/after-dark/julio-after-dark-003.jpeg" data-caption="The Library &mdash; Old-World Editorial"><img src="/images/after-dark/julio-after-dark-003.jpeg" alt="" loading="lazy"></button>
-                    <button type="button" data-src="/images/after-dark/julio-after-dark-006.jpeg" data-caption="Studio &mdash; Minimal, Bare, Honest"><img src="/images/after-dark/julio-after-dark-006.jpeg" alt="" loading="lazy"></button>
-                    <button type="button" data-src="/images/after-dark/julio-after-dark-004.jpeg" data-caption="Portrait in Black &mdash; The Gaze"><img src="/images/after-dark/julio-after-dark-004.jpeg" alt="" loading="lazy"></button>
-                    <button type="button" data-src="/images/after-dark/julio-after-dark-005.jpeg" data-caption="Day Luxury &mdash; Effortless"><img src="/images/after-dark/julio-after-dark-005.jpeg" alt="" loading="lazy"></button>
-                    <button type="button" data-src="/images/after-dark/julio-after-dark-002.jpeg" data-caption="Street Elegance &mdash; Black Coat &amp; City"><img src="/images/after-dark/julio-after-dark-002.jpeg" alt="" loading="lazy"></button>
-                    <button type="button" data-src="/images/after-dark/julio-after-dark-008.jpeg" data-caption="After Dark Drive &mdash; Neon Night"><img src="/images/after-dark/julio-after-dark-008.jpeg" alt="" loading="lazy"></button>
                 </div>
             </div>
         </section>
@@ -132,16 +126,6 @@ permalink: /after-dark/
                     <div class="ad-world"><b>04</b><h3>Celebrity &amp; Influencer Scene</h3><p>Who is shaping the scene.</p></div>
                     <div class="ad-world"><b>05</b><h3>Red Carpet &amp; Exclusive Events</h3><p>Premieres, galas, openings.</p></div>
                     <div class="ad-world"><b>06</b><h3>Hotels, Restaurants &amp; Destinations</h3><p>Where to go, stay, taste.</p></div>
-                </div>
-                <p class="ad-text ad-text--muted ad-explore">After Dark lives inside MIAMIX. Explore the other worlds:</p>
-                <div class="ad-chips">
-                    <a href="/curated-lifestyle">Curated by Romina</a>
-                    <a href="/sports">Game Day</a>
-                    <a href="/travel">Departures</a>
-                    <a href="/hospitality">Table for Miami</a>
-                    <a href="/culture">Made in Miami</a>
-                    <a href="/fashion">The Style Edit</a>
-                    <a href="/health">Feel Good, Do Good</a>
                 </div>
             </div>
         </section>
