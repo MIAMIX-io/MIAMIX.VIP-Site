@@ -158,3 +158,24 @@
   .post-content .gallery--grid[data-cols="3"] img,
   .post-content .gallery--grid[data-cols="4"] img { grid-column: span 12; aspect-ratio: auto; height: auto; }
 }
+/* Portrait carousel: tall slides, 3 visible on desktop, 1 on mobile */
+.post-content .gallery--carousel[data-ratio="portrait"] {
+  padding: 0 52px;
+}
+.post-content .gallery--carousel[data-ratio="portrait"] .carousel-track {
+  gap: 16px; align-items: stretch;
+}
+.post-content .gallery--carousel[data-ratio="portrait"] img {
+  flex: 0 0 32%; width: 32%; height: 72vh; max-height: 720px;
+  aspect-ratio: 3 / 4; object-fit: cover;
+}
+.post-content .gallery--carousel[data-ratio="portrait"] img.is-landscape {
+  flex-basis: 32%; width: 32%; aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 900px) {
+  .post-content .gallery--carousel[data-ratio="portrait"] { padding: 0; }
+  .post-content .gallery--carousel[data-ratio="portrait"] img {
+    flex-basis: 82%; width: 82%; height: 62vh; max-height: 560px;
+  }
+}
