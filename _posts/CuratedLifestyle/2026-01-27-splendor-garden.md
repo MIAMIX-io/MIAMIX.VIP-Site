@@ -17,7 +17,7 @@ Splendor in the Garden celebrated its 15th annual edition, reaffirming its place
 
 {% include gallery.html folder="/images/curated" images="IMG_4844.jpeg|IMG_4819.jpg|IMG_4841.jpg|IMG_4993.jpeg" type="carousel" ratio="portrait" %}
 
-Presented by 【entity-Neiman Marcus¦canonical_name=Neiman Marcus】 Coral Gables and sponsored by The Collection, the afternoon showcased The Best of 【entity-Neiman Marcus¦canonical_name=Neiman Marcus】 Spring 2026 collections, set against the garden’s lush and timeless tropical scenery. The natural surroundings elevated the experience, creating a refined yet organic stage for the season’s most coveted looks.
+Presented by Neiman Marcus Coral Gables and sponsored by The Collection, the afternoon showcased The Best of Neiman Marcus Spring 2026 collections, set against the garden’s lush and timeless tropical scenery. The natural surroundings elevated the experience, creating a refined yet organic stage for the season’s most coveted looks.
 
 The curated presentations highlighted fresh silhouettes, vibrant seasonal hues, and lightweight textures that captured the spirit of Spring 2026. Fashion and nature existed in perfect harmony, offering guests an immersive visual experience that celebrated creativity and style in an open-air setting.
 
