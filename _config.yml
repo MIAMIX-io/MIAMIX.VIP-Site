@@ -4,3 +4,4 @@ description: "MIAMIX - Curated stories on sports, fashion, culture, travel, hosp
 url: "https://miamix.io"
 defaults: [{scope: {path: "", type: "posts"}, values: {layout: "post"}}]
 permalink: /:slug/
+timezone: America/New_York
