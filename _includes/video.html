@@ -1,0 +1,19 @@
+{%- assign u = include.url -%}
+{%- if u contains "youtu.be/" -%}
+  {%- assign id = u | split: "youtu.be/" | last | split: "?" | first -%}
+  {%- assign src = "https://www.youtube-nocookie.com/embed/" | append: id -%}
+{%- elsif u contains "youtube.com/watch" -%}
+  {%- assign id = u | split: "v=" | last | split: "&" | first -%}
+  {%- assign src = "https://www.youtube-nocookie.com/embed/" | append: id -%}
+{%- elsif u contains "vimeo.com/" -%}
+  {%- assign id = u | split: "vimeo.com/" | last | split: "?" | first -%}
+  {%- assign src = "https://player.vimeo.com/video/" | append: id -%}
+{%- endif -%}
+<figure class="video-embed">
+{%- if src -%}
+<iframe src="{{ src }}" title="{{ include.title | default: 'Video' }}" loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+{%- elsif include.file -%}
+<video controls playsinline preload="metadata" src="{{ include.file }}"></video>
+{%- endif -%}
+{%- if include.caption -%}<figcaption>{{ include.caption }}</figcaption>{%- endif -%}
+</figure>
