@@ -1,4 +1,13 @@
-{% assign posts = site.posts | where_exp: "post", "post.channel contains include.channel or post.categories contains include.channel or post.tags contains include.channel" | sort: "date" | reverse %}
+{% assign filtered = '' | split: '' %}
+{% for post in site.posts %}
+  {% assign ch = post.channel | join: ',' %}
+  {% assign cats = post.categories | join: ',' %}
+  {% assign tags = post.tags | join: ',' %}
+  {% if ch contains include.channel or cats contains include.channel or tags contains include.channel %}
+    {% assign filtered = filtered | push: post %}
+  {% endif %}
+{% endfor %}
+{% assign posts = filtered | sort: "date" | reverse %}
 <div class="channel-content">
   <div class="card-grid">
   {% assign seen = "" %}
