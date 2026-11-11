@@ -1,168 +1,204 @@
----
-layout: null
----
-{%- assign ch_raw = page.channel | join: ',' -%}
-{%- assign ch = ch_raw | split: ',' | first | strip -%}
-{%- assign label = site.data.channels.labels[ch] | default: ch -%}
-{%- if label == ch -%}
-  {%- case ch -%}
-    {%- when 'CuratedLifestyle' -%}{%- assign label = 'Curated Lifestyle' -%}
-    {%- when 'InterMIA' -%}{%- assign label = 'Inter&nbsp;Miami' -%}
-    {%- when 'Culture' -%}{%- assign label = 'Culture' -%}
-    {%- when 'Cultural' -%}{%- assign label = 'Cultural' -%}
-    {%- when 'Fashion' -%}{%- assign label = 'Fashion' -%}
-    {%- when 'Health' -%}{%- assign label = 'Health' -%}
-    {%- when 'Hospitality' -%}{%- assign label = 'Hospitality' -%}
-    {%- when 'Nonprofit' -%}{%- assign label = 'Nonprofit' -%}
-    {%- when 'Sports' -%}{%- assign label = 'Sports' -%}
-    {%- when 'Travel' -%}{%- assign label = 'Travel' -%}
-  {%- endcase -%}
-{%- endif -%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>{{ page.title }} | MIAMIX</title>
-  <meta name="description" content="{{ page.description | default: page.title }}">
-  <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/post.css">
-</head>
-<body class="post-page">
-  {% include header.html %}
+/* Post page: dramatic hero, wide modern text, large inline images, auto orientation */
 
-  {%- assign hero_img = page.cover_image | default: page.cover -%}
-  {%- if hero_img -%}
-  <section class="post-hero" style="--hero-image: url('{{ hero_img | relative_url }}');">
-    <div class="post-hero-overlay"></div>
-    <div class="post-hero-content">
-      <span class="post-hero-eyebrow">{{ label }}</span>
-      <h1 class="post-hero-title">{{ page.page_title | default: page.title }}</h1>
-      <p class="post-hero-meta">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
-    </div>
-  </section>
-  {%- else -%}
-  <section class="post-hero post-hero--no-cover">
-    <div class="post-hero-content">
-      <span class="post-hero-eyebrow">{{ label }}</span>
-      <h1 class="post-hero-title">{{ page.page_title | default: page.title }}</h1>
-      <p class="post-hero-meta">{{ page.date | date: "%B %d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
-    </div>
-  </section>
-  {%- endif -%}
+.post-hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+.post-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.92) 100%);
+  z-index: 1;
+}
+.post-hero-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1280px;
+  margin: 0 auto; padding: 0 32px 72px;
+}
+.post-hero-eyebrow {
+  display: block; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400;
+  letter-spacing: 0.28em; text-transform: uppercase; color: #E12BC0; margin-bottom: 16px;
+}
+.post-hero-title {
+  font-family: 'Jost', sans-serif; font-weight: 200; text-transform: uppercase;
+  font-size: clamp(3rem, 7.5vw, 6.5rem); line-height: 0.95; letter-spacing: 0.02em;
+  color: #fff; max-width: 1100px; margin: 0 0 16px;
+}
+.post-hero-meta { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.08em; color: #d8d8d8; }
+.post-hero--no-cover { height: auto; min-height: 520px; align-items: flex-end; background: #111; }
 
-  <main class="post-body">
-    <article class="post-content">
-      {{ content }}
-    </article>
-  </main>
+/* Wider, cleaner body */
+.post-body { background: #000; padding: 72px 0 96px; }
+.post-content {
+  width: 100%; max-width: 1120px;
+  margin: 0 auto; padding: 0 32px;
+  font-family: 'Jost', sans-serif; font-weight: 300; font-size: 19px; line-height: 1.9;
+  letter-spacing: 0.01em; color: #e8e8e8;
+}
+.post-content p { margin: 0 0 28px; max-width: 1120px; }
+.post-content h2, .post-content h3 { font-weight: 300; text-transform: uppercase; letter-spacing: 0.04em; margin: 56px 0 20px; color: #fff; }
+.post-content h2 { font-size: 1.9rem; line-height: 1.2; }
+.post-content h3 { font-size: 1.45rem; line-height: 1.3; }
+.post-content a { color: #E12BC0; text-decoration: none; border-bottom: 1px solid rgba(225,43,192,0.5); }
+.post-content blockquote { border-left: 3px solid #E12BC0; padding-left: 24px; margin: 48px 0; font-size: 22px; line-height: 1.6; color: #fff; }
 
-  {% include footer.html %}
+/* Single images: large, inline, full width of text column */
+.post-content > p > img:only-child,
+.post-content .gallery-single img,
+.post-content img.single {
+  display: block; width: 100%; max-width: 1120px; height: auto;
+  border-radius: 6px; margin: 48px auto;
+}
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 1. Orientation: portrait vs landscape, for all gallery types
-    document.querySelectorAll('.post-content img').forEach(function(img) {
-      function tag() {
-        if (!img.naturalWidth) return;
-        img.classList.remove('is-portrait', 'is-landscape', 'is-square');
-        if (img.naturalHeight > img.naturalWidth * 1.05) img.classList.add('is-portrait');
-        else if (img.naturalWidth > img.naturalHeight * 1.05) img.classList.add('is-landscape');
-        else img.classList.add('is-square');
-      }
-      if (img.complete) tag();
-      else img.addEventListener('load', tag);
-    });
+/* Gallery: grid that respects orientation via JS classes */
+.post-content .gallery,
+.post-content .image-gallery {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin: 48px auto; width: 100%;
+}
+.post-content .gallery img,
+.post-content .image-gallery img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block;
+}
+.post-content .gallery[data-cols="2"] img,
+.post-content .image-gallery[data-cols="2"] img { grid-column: span 6; aspect-ratio: 4 / 3; }
+.post-content .gallery[data-cols="3"] img,
+.post-content .image-gallery[data-cols="3"] img { grid-column: span 4; aspect-ratio: 3 / 4; }
+.post-content .gallery[data-cols="4"] img,
+.post-content .image-gallery[data-cols="4"] img { grid-column: span 3; aspect-ratio: 1 / 1; }
+.post-content .gallery[data-cols="1"] img,
+.post-content .image-gallery[data-cols="1"] img { grid-column: span 12; aspect-ratio: 16 / 9; }
 
-    // 2. Carousel: arrows + dots
-    document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
-      var track = gallery.querySelector('.carousel-track');
-      var prev = gallery.querySelector('.carousel-btn--prev');
-      var next = gallery.querySelector('.carousel-btn--next');
-      var dotsWrap = gallery.querySelector('.carousel-dots');
-      if (!track || !dotsWrap) return;
-      var imgs = track.querySelectorAll('img');
-      if (!imgs.length) return;
+/* Auto orientation when no cols is set, or to override cols */
+.post-content .gallery img.is-portrait { grid-column: span 4; aspect-ratio: 3 / 4; }
+.post-content .gallery img.is-landscape { grid-column: span 8; aspect-ratio: 16 / 9; }
+.post-content .gallery img.is-square { grid-column: span 4; aspect-ratio: 1 / 1; }
+.post-content .gallery[data-cols="1"] img.is-portrait { grid-column: span 12; aspect-ratio: 3 / 4; max-height: 82vh; }
+.post-content .gallery[data-cols="1"] img.is-landscape { grid-column: span 12; aspect-ratio: 16 / 9; }
 
-      imgs.forEach(function(_, i) {
-        var dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
-        dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
-        dot.addEventListener('click', function() {
-          imgs[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
-        dotsWrap.appendChild(dot);
-      });
-      var dots = dotsWrap.querySelectorAll('.carousel-dot');
+/* Safety: hide any old Visit Website button if it lives in another include */
+.post-visit, .visit-website, .featured-visit, .post-visit-btn, .post-cta, a.post-external {
+  display: none !important;
+}
 
-      function go(dir) {
-        track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: 'smooth' });
-      }
-      if (prev) prev.addEventListener('click', function() { go(-1); });
-      if (next) next.addEventListener('click', function() { go(1); });
+@media (max-width: 900px) {
+  .post-hero { height: 82svh; min-height: 520px; background-position: center 25%; }
+  .post-hero-content { padding: 0 20px 48px; }
+  .post-content { font-size: 17px; line-height: 1.8; padding: 0 20px; }
+  .post-content .gallery img.is-portrait,
+  .post-content .gallery img.is-landscape,
+  .post-content .gallery img.is-square { grid-column: span 12; aspect-ratio: auto; height: auto; }
+  .post-content .gallery[data-cols="2"] img,
+  .post-content .gallery[data-cols="3"] img,
+  .post-content .gallery[data-cols="4"] img { grid-column: span 12; aspect-ratio: auto; height: auto; }
+}
+/* GALLERY: all four types */
 
-      track.addEventListener('scroll', function() {
-        var center = track.scrollLeft + track.clientWidth / 2;
-        var best = 0, bestDist = Infinity;
-        imgs.forEach(function(img, i) {
-          var c = img.offsetLeft + img.offsetWidth / 2;
-          var d = Math.abs(c - center);
-          if (d < bestDist) { bestDist = d; best = i; }
-        });
-        dots.forEach(function(d, i) { d.classList.toggle('is-active', i === best); });
-      }, { passive: true });
-    });
+/* 1. GRID: default, clean rows */
+.post-content .gallery--grid {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin: 48px auto; width: 100%;
+}
+.post-content .gallery--grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.post-content .gallery--grid[data-cols="2"] img { grid-column: span 6; aspect-ratio: 4 / 3; }
+.post-content .gallery--grid[data-cols="3"] img { grid-column: span 4; aspect-ratio: 3 / 4; }
+.post-content .gallery--grid[data-cols="4"] img { grid-column: span 3; aspect-ratio: 1 / 1; }
+.post-content .gallery--grid[data-cols="1"] img { grid-column: span 12; aspect-ratio: 16 / 9; }
 
-    // 3. Auto-link @handles, skip emails
-    document.querySelectorAll('.post-content').forEach(function(root) {
-      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-        acceptNode: function(node) {
-          if (!node.nodeValue || !node.nodeValue.includes('@')) return NodeFilter.FILTER_REJECT;
-          var p = node.parentNode;
-          if (!p || p.closest('a, code, pre, script, style')) return NodeFilter.FILTER_REJECT;
-          return NodeFilter.FILTER_ACCEPT;
-        }
-      });
-      var nodes = [];
-      while (walker.nextNode()) nodes.push(walker.currentNode);
+/* 2. CAROUSEL: swipe, arrows, dots */
+.post-content .gallery--carousel { position: relative; display: block; margin: 48px auto; padding: 0 52px; }
+.post-content .carousel-track {
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 4px 2px;
+}
+.post-content .carousel-track::-webkit-scrollbar { display: none; }
+.post-content .gallery--carousel img {
+  flex: 0 0 78%; width: 78%; height: auto; aspect-ratio: 16 / 10; object-fit: cover;
+  scroll-snap-align: center; border-radius: 6px; margin: 0;
+}
+.post-content .gallery--carousel img.is-portrait { flex-basis: 42%; width: 42%; aspect-ratio: 3 / 4; }
+.post-content .gallery--carousel img.is-landscape { flex-basis: 78%; width: 78%; aspect-ratio: 16 / 10; }
+.post-content .carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.65); color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
+}
+.post-content .carousel-btn--prev { left: 0; }
+.post-content .carousel-btn--next { right: 0; }
+.post-content .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.post-content .carousel-dot { width: 8px; height: 8px; border-radius: 50%; border: 0; background: #444; cursor: pointer; padding: 0; }
+.post-content .carousel-dot.is-active { background: #E12BC0; }
 
-      nodes.forEach(function(node) {
-        var text = node.nodeValue;
-        var re = /(^|\s)@([A-Za-z0-9_][A-Za-z0-9._]*)/g;
-        if (!re.test(text)) return;
-        re.lastIndex = 0;
+/* 3. MASONRY: mixed portrait + landscape, no cropping */
+.post-content .gallery--masonry { display: block; columns: 3 280px; column-gap: 16px; margin: 48px auto; }
+.post-content .gallery--masonry img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; margin: 0 0 16px; break-inside: avoid; display: block; border-radius: 6px; }
 
-        var frag = document.createDocumentFragment();
-        var last = 0, m;
-        while ((m = re.exec(text)) !== null) {
-          var handle = m[2];
-          var trailing = '';
-          if (/[.,;:!?]$/.test(handle) && handle.length > 2) {
-            trailing = handle.slice(-1);
-            handle = handle.slice(0, -1);
-          }
-          frag.appendChild(document.createTextNode(text.slice(last, m.index + m[1].length)));
-          var a = document.createElement('a');
-          a.href = 'https://www.instagram.com/' + handle + '/';
-          a.target = '_blank';
-          a.rel = 'noopener';
-          a.className = 'ig-handle';
-          a.textContent = '@' + handle;
-          frag.appendChild(a);
-          if (trailing) frag.appendChild(document.createTextNode(trailing));
-          last = re.lastIndex;
-        }
-        frag.appendChild(document.createTextNode(text.slice(last)));
-        node.parentNode.replaceChild(frag, node);
-      });
-    });
-  });
-  </script>
-  <script src="/assets/js/nav.js" defer></script>
-</body>
-</html>
+/* 4. STACKED: full-width, one under the other */
+.post-content .gallery--stacked { display: block; margin: 48px auto; }
+.post-content .gallery--stacked img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; margin: 0 0 32px; display: block; border-radius: 6px; }
+.post-content .gallery--stacked img.is-portrait { max-width: 720px; margin-left: auto; margin-right: auto; }
+.post-content .gallery--stacked img.is-landscape { max-width: 1120px; }
+
+/* Single images in text stay large */
+.post-content > p > img:only-child { display: block; width: 100%; max-width: 1120px; height: auto; border-radius: 6px; margin: 48px auto; }
+
+@media (max-width: 900px) {
+  .post-content .gallery--carousel { padding: 0; }
+  .post-content .gallery--carousel img { flex-basis: 86%; width: 86%; }
+  .post-content .gallery--carousel img.is-portrait { flex-basis: 62%; width: 62%; }
+  .post-content .carousel-btn { display: none; }
+  .post-content .gallery--grid[data-cols="2"] img,
+  .post-content .gallery--grid[data-cols="3"] img,
+  .post-content .gallery--grid[data-cols="4"] img { grid-column: span 12; aspect-ratio: auto; height: auto; }
+}
+/* Portrait carousel: tall slides, 3 visible on desktop, 1 on mobile */
+.post-content .gallery--carousel[data-ratio="portrait"] {
+  padding: 0 52px;
+}
+.post-content .gallery--carousel[data-ratio="portrait"] .carousel-track {
+  gap: 16px; align-items: stretch;
+}
+.post-content .gallery--carousel[data-ratio="portrait"] img {
+  flex: 0 0 32%; width: 32%; height: 72vh; max-height: 720px;
+  aspect-ratio: 3 / 4; object-fit: cover;
+}
+.post-content .gallery--carousel[data-ratio="portrait"] img.is-landscape {
+  flex-basis: 32%; width: 32%; aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 900px) {
+  .post-content .gallery--carousel[data-ratio="portrait"] { padding: 0; }
+  .post-content .gallery--carousel[data-ratio="portrait"] img {
+    flex-basis: 82%; width: 82%; height: 62vh; max-height: 560px;
+  }
+}
+/* Hero: blurred backdrop + slow drift to hide low-res */
+.post-hero { position: relative; overflow: hidden; isolation: isolate; }
+.post-hero::before {
+  content: ""; position: absolute; inset: -24px; z-index: 0;
+  background-image: var(--hero-image); background-size: cover; background-position: center 30%;
+  filter: blur(22px) brightness(0.55) saturate(1.1); transform: scale(1.15);
+}
+.post-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background-image: var(--hero-image); background-size: cover; background-position: center 30%;
+  animation: hero-drift 26s ease-in-out infinite alternate;
+}
+.post-hero-overlay { z-index: 2; }
+.post-hero-content { z-index: 3; }
+
+@keyframes hero-drift {
+  from { transform: scale(1.0) translateY(0); }
+  to { transform: scale(1.07) translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-hero::after { animation: none; }
+}
