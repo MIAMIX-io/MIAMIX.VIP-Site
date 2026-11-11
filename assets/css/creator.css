@@ -99,3 +99,56 @@
   .curated-page .curated-stories { padding: 100px 0 120px; }
   .curated-page .curated-grid { gap: 36px; }
 }
+
+/* =====================================================================
+   CURATED LIFESTYLE (ROMINA) PAGE - SECTION DEFINITION
+   Sections alternate black / stone, with a glowing pink hairline at each boundary.
+   Applies at all widths; mobile spacing is unchanged.
+   ===================================================================== */
+.curated-page main > section { position: relative; }
+
+/* boundary line between sections */
+.curated-page main > section + section::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg, rgba(225,43,192,0) 0%, rgba(225,43,192,.75) 50%, rgba(225,43,192,0) 100%);
+  box-shadow: 0 0 22px rgba(225,43,192,.45);
+}
+
+/* BLACK: hero (with a soft pink glow top right), bio, closing bio */
+.curated-page .romina-hero {
+  background: radial-gradient(70% 90% at 88% 15%, rgba(225,43,192,.16) 0%, rgba(225,43,192,0) 65%), #000;
+}
+.curated-page .bio { background: #000; }
+
+/* STONE: gallery, mid-break, stories - lighter with an inner shadow so they read as recessed bands */
+.curated-page .romina-strip,
+.curated-page .mid-break,
+.curated-page .curated-stories {
+  background: linear-gradient(180deg, #2b2a28 0%, #1f1e1d 100%);
+  box-shadow: inset 0 44px 60px -44px rgba(0,0,0,.7), inset 0 -44px 60px -44px rgba(0,0,0,.7);
+}
+
+/* the closing bio starts right under a boundary line, so give it room */
+.curated-page .bio .wrap.bio-single { padding-top: 72px; }
+
+/* mid-break photo: edge + shadow so it holds up on stone */
+.curated-page .mid-break-figure img {
+  border: 1px solid rgba(225,43,192,.35);
+  box-shadow: 0 24px 60px rgba(0,0,0,.6);
+}
+
+/* stories: heading underline, and cards that lift off the stone */
+.curated-page .curated-stories h2::after {
+  content: ""; display: block; width: 56px; height: 1px; background: #E12BC0; margin: 18px auto 0;
+}
+.curated-page .curated-stories .stories-sub { margin-top: 18px; }
+.curated-page .curated-card {
+  border-color: rgba(225,43,192,.25);
+  box-shadow: 0 18px 44px rgba(0,0,0,.55);
+  transition: border-color .3s, box-shadow .3s, transform .3s;
+}
+.curated-page .curated-card:hover {
+  border-color: #E12BC0;
+  box-shadow: 0 22px 54px rgba(0,0,0,.65), 0 0 40px rgba(225,43,192,.2);
+  transform: translateY(-4px);
+}
