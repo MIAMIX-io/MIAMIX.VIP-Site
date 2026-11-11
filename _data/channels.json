@@ -1,8 +1,8 @@
 {
   "labels": {
-    "Curated": "Curated Lifestyle",
-    "InterMIA": "Inter Miami",
-    "After-Dark": "After Dark",
+    "CuratedLifestyle": "Curated Lifestyle",
+    "InterMIA": "【entity-Inter Miami¦canonical_name=Inter Miami】",
+    "AfterDark": "After Dark",
     "Travel": "Travel",
     "Hospitality": "Hospitality",
     "Fashion": "Fashion",
@@ -29,7 +29,7 @@
       "tagline": "Inter Miami stories, match nights and moments from the Heron's Nest.",
       "accent": "#E12BC0",
       "url": "/inter-miami",
-      "channels": ["InterMIA", "Inter Miami", "Inter Miami CF", "Inter Miami",]
+      "channels": ["InterMIA", "Inter Miami", "Inter Miami CF"],
       "show": true
     },
     {
