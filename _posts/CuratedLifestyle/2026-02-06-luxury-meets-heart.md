@@ -6,7 +6,7 @@ date: 2026-02-06
 cover_image: /images/curated/WHERE-LUXURY-MEETS-HEART-FOTOS_369A2850.jpg
 external_url: "https://www.miamix.io/romina-nabhen/luxury-meets-heart-at-jimmy-choo-coral-gables"
 channel: CuratedLifestyle
-business_name: "【entity-Jimmy Choo¦canonical_name=Jimmy Choo】 Coral Gables"
+business_name: "Jimmy Choo"
 author: "Romina Nabhen"
 featured: false
 published: true
