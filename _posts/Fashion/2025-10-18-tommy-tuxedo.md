@@ -1,18 +1,17 @@
 ---
 title: "TOMMY’S TUXEDOS"
 page_title: "Elegance That Transcends Generations"
-description: "Elegance That Transcends Generations Talking about masculine elegance means talking about TOMMY’S TUXEDOS, an iconic establishment that has been dressing generations of gentlemen for the most special moments of their lives since 1976. With over 45 years of experience, their hallmark is synonymous with distinction, personalized service, and meticulous attention to detail. Al frente de la marca se encuentra Luis Casella, director ejecutivo y figura clave, quien aporta una visión empresarial moderna y dinámica. Gracias a su liderazgo, Tommy's Tuxedos ha mantenido su excelencia y una estrecha relación con sus clientes, convirtiéndose en una marca de confianza en Miami y más allá. A su lado, Elizabeth, esposa y un verdadero referente de buen gusto en las alfombras rojas más prestigiosas. Ella es la mente creativa detrás de los looks que deslumbran en eventos como los Premios Martín Fierro Latino, los Premios Lo Nuestro y la sofisticada Semana de la Moda de París, aportando siempre su ojo experto que combina a la perfección elegancia y personalidad."
+description: >-
+  Elegance That Transcends Generations Talking about masculine elegance means talking about TOMMY’S TUXEDOS, an iconic establishment that has been dressing generations of gentlemen for the most special moments of their lives since 1976. With over 45 years of experience, their hallmark is synonymous with distinction, personalized service, and meticulous attention to detail. Al frente de la marca se encuentra Luis Casella, director ejecutivo y figura clave, quien aporta una visión empresarial moderna y dinámica. Gracias a su liderazgo, Tommy's Tuxedos ha mantenido su excelencia y una estrecha relación con sus clientes, convirtiéndose en una marca de confianza en Miami y más allá. A su lado, Elizabeth, esposa y un verdadero referente de buen gusto en las alfombras rojas más prestigiosas. Ella es la mente creativa detrás de los looks que deslumbran en eventos como los Premios Martín Fierro Latino, los Premios Lo Nuestro y la sofisticada Semana de la Moda de París, aportando siempre su ojo experto que combina a la perfección elegancia y personalidad.
 date: 2025-10-18
-cover_image: /images/fashion/IMG_4983.png
+cover_image: "/images/fashion/IMG_4983.png"
 external_url: "https://www.miamix.io/fashion-lifestyle/tommys-tuxedos"
-channel:
-Fashion
+channel: Fashion
 business_name: "TOMMY’S TUXEDOS"
 author: "Cristhian Gassmann"
 featured: false
-published: false # uncomment while drafting to keep it off the site
-_thumbnail: >-
-/images/fashion/IMG_4983.png
+published: false
+_thumbnail: "/images/fashion/IMG_4983.png"
 ---
 
 To speak of masculine elegance is to speak of TOMMY’S TUXEDOS, an iconic house that since 1976 has dressed generations of gentlemen for the most special moments of their lives. With more than 45 years of experience, its name has become synonymous with distinction, personalized service, and meticulous attention to detail.
