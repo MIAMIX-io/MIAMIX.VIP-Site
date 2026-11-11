@@ -42,7 +42,7 @@ a.ad-eyebrow:hover { color: #fff; }
 .ad-hero-media__blur { filter: blur(28px) brightness(.82) saturate(1.25); transform: scale(1.35); opacity: .9; }
 .ad-hero-media__sharp { filter: blur(.4px) contrast(1.03) saturate(1.06); animation: ad-kenburns 28s ease-in-out infinite alternate; will-change: transform; }
 @keyframes ad-kenburns { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.12) translate(-1.5%, -1%); } }
-.ad-hero-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, #000 0%, rgba(0,0,0,.55) 18%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.08) 70%, rgba(0,0,0,.45) 100%), linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.55) 36%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.30) 100%), linear-gradient(115deg, rgba(225,43,192,.34) 0%, rgba(225,43,192,.14) 26%, rgba(225,43,192,0) 46%, rgba(0,0,0,.22) 100%), radial-gradient(60% 50% at 92% 16%, rgba(225,43,192,.42) 0%, rgba(225,43,192,0) 62%), radial-gradient(85% 70% at 8% 100%, rgba(225,43,192,.50) 0%, rgba(225,43,192,0) 60%), linear-gradient(180deg, rgba(225,43,192,.22) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 72%, rgba(225,43,192,.28) 100%); }
+.ad-hero-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, #000 0%, rgba(0,0,0,.52) 18%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.06) 70%, rgba(0,0,0,.38) 100%), linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.48) 36%, rgba(0,0,0,.10) 62%, rgba(0,0,0,.22) 100%), linear-gradient(115deg, rgba(225,43,192,.20) 0%, rgba(225,43,192,.08) 28%, rgba(225,43,192,0) 48%), radial-gradient(50% 42% at 92% 14%, rgba(225,43,192,.26) 0%, rgba(225,43,192,0) 62%), radial-gradient(60% 48% at 8% 100%, rgba(225,43,192,.20) 0%, rgba(225,43,192,0) 60%); }
 /* PINK SPLASH FALLBACK - shows even if .ad-hero-overlay div is missing in HTML */
 .ad-hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(115deg, rgba(225,43,192,.38) 0%, rgba(225,43,192,.16) 28%, rgba(225,43,192,0) 48%), radial-gradient(55% 45% at 92% 14%, rgba(225,43,192,.48) 0%, rgba(225,43,192,0) 62%), radial-gradient(70% 55% at 8% 100%, rgba(225,43,192,.38) 0%, rgba(225,43,192,0) 60%), linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 70%, rgba(0,0,0,.55) 100%); }
 .ad-hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; width: 100%; }
@@ -204,44 +204,44 @@ a.ad-eyebrow:hover { color: #fff; }
 }
 
 .ad-scene {
+  --ad-w: 440px;
   width: min(96vw, 1360px);
   max-width: none;
-  height: 580px;
-  perspective: 1600px;
   margin: 0 auto;
 }
 
-.ad-ring li {
-  width: 440px;
-  height: 540px;
+.ad-scene.is-3d {
+  height: calc(440px * 1.333 + 110px);
+  perspective: 1600px;
 }
+
+.ad-scene.is-3d .ad-arrow { width: 46px; height: 46px; }
+.ad-arrow--left { left: max(14px, calc(50% - 680px)); }
+.ad-arrow--right { right: max(14px, calc(50% - 680px)); }
 
 @media (max-width: 900px) {
   .ad-scene {
+    --ad-w: 340px;
     width: min(96vw, 900px);
-    height: 460px;
   }
-  .ad-ring li {
-    width: 340px;
-    height: 420px;
+  .ad-scene.is-3d {
+    height: calc(340px * 1.333 + 110px);
   }
 }
 
 @media (max-width: 600px) {
   .ad-scene {
-    height: 380px;
+    --ad-w: 280px;
   }
-  .ad-ring li {
-    width: 280px;
-    height: 360px;
+  .ad-scene.is-3d {
+    height: calc(280px * 1.333 + 110px);
   }
 }
 
 /* ---------- FORCE OVERRIDES - MUST STAY LAST ---------- */
 /* These win over site.css and over .ad-section--black no matter what order files load in */
-.after-dark-page .ad-hero-overlay { background: linear-gradient(to top, #000 0%, rgba(0,0,0,.55) 18%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.08) 70%, rgba(0,0,0,.45) 100%), linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.55) 36%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.30) 100%), linear-gradient(115deg, rgba(225,43,192,.42) 0%, rgba(225,43,192,.18) 26%, rgba(225,43,192,0) 46%, rgba(0,0,0,.22) 100%), radial-gradient(60% 50% at 92% 16%, rgba(225,43,192,.55) 0%, rgba(225,43,192,0) 62%), radial-gradient(85% 70% at 8% 100%, rgba(225,43,192,.55) 0%, rgba(225,43,192,0) 60%) !important; opacity: 1 !important; }
-.after-dark-page .ad-hero::after { background: linear-gradient(115deg, rgba(225,43,192,.42) 0%, rgba(225,43,192,.18) 28%, rgba(225,43,192,0) 48%), radial-gradient(55% 45% at 92% 14%, rgba(225,43,192,.55) 0%, rgba(225,43,192,0) 62%), radial-gradient(70% 55% at 8% 100%, rgba(225,43,192,.42) 0%, rgba(225,43,192,0) 60%) !important; }
-.after-dark-page .ad-closing,
+.after-dark-page .ad-hero-overlay { background: linear-gradient(to top, #000 0%, rgba(0,0,0,.55) 18%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.08) 70%, rgba(0,0,0,.45) 100%), linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.55) 36%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.30) 100%), linear-gradient(115deg, rgba(225,43,192,.20) 0%, rgba(225,43,192,.08) 28%, rgba(225,43,192,0) 48%), radial-gradient(50% 42% at 92% 14%, rgba(225,43,192,.26) 0%, rgba(225,43,192,0) 62%), radial-gradient(60% 48% at 8% 100%, rgba(225,43,192,.20) 0%, rgba(225,43,192,0) 60%) !important; opacity: 1 !important; }
+.after-dark-page .ad-hero::after { background: linear-gradient(to top, #000 0%, rgba(0,0,0,.52) 18%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.06) 70%, rgba(0,0,0,.38) 100%), linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.48) 36%, rgba(0,0,0,.10) 62%, rgba(0,0,0,.22) 100%) !important; }.after-dark-page .ad-closing,
 .after-dark-page .ad-section.ad-closing,
 .after-dark-page .ad-section--black.ad-closing,
 .after-dark-page main > section:last-of-type.ad-closing { background: linear-gradient(135deg, #FF2BD6 0%, #E12BC0 38%, #A80082 72%, #4A0038 100%) !important; color: #fff !important; border-top: 4px solid #000 !important; border-bottom: 4px solid #000 !important; }
