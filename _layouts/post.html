@@ -93,33 +93,39 @@ document.querySelectorAll('.post-content img').forEach(function(img) {
   else img.addEventListener('load', tag);
 });
 
-// Carousel: arrows + dots, only runs on carousel galleries
+// 2. Carousel: arrows + dots, LOOPS
 document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
   var track = gallery.querySelector('.carousel-track');
   var prev = gallery.querySelector('.carousel-btn--prev');
   var next = gallery.querySelector('.carousel-btn--next');
   var dotsWrap = gallery.querySelector('.carousel-dots');
+  if (!track || !dotsWrap) return;
   var imgs = track.querySelectorAll('img');
-  if (!track || !imgs.length) return;
+  if (!imgs.length) return;
+
+  var current = 0;
+
+  function goTo(i) {
+    // loop: -1 -> last, last+1 -> first
+    current = ((i % imgs.length) + imgs.length) % imgs.length;
+    imgs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    dots.forEach(function(d, idx) { d.classList.toggle('is-active', idx === current); });
+  }
 
   imgs.forEach(function(_, i) {
     var dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
     dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
-    dot.addEventListener('click', function() {
-      imgs[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    });
+    dot.addEventListener('click', function() { goTo(i); });
     dotsWrap.appendChild(dot);
   });
   var dots = dotsWrap.querySelectorAll('.carousel-dot');
 
-  function go(dir) {
-    track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: 'smooth' });
-  }
-  prev.addEventListener('click', function() { go(-1); });
-  next.addEventListener('click', function() { go(1); });
+  if (prev) prev.addEventListener('click', function() { goTo(current - 1); });
+  if (next) next.addEventListener('click', function() { goTo(current + 1); });
 
+  // Keep current in sync if user swipes / scrolls manually
   track.addEventListener('scroll', function() {
     var center = track.scrollLeft + track.clientWidth / 2;
     var best = 0, bestDist = Infinity;
@@ -128,7 +134,10 @@ document.querySelectorAll('.gallery--carousel').forEach(function(gallery) {
       var d = Math.abs(c - center);
       if (d < bestDist) { bestDist = d; best = i; }
     });
-    dots.forEach(function(d, i) { d.classList.toggle('is-active', i === best); });
+    if (best !== current) {
+      current = best;
+      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === best); });
+    }
   }, { passive: true });
 });
   </script>
