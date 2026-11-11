@@ -99,6 +99,22 @@
             .image-gallery { gap: 10px; margin: 20px auto; }
             .image-gallery img, .content > p > img:only-child { margin: 20px auto; }
         }
+            .gallery { display: grid; gap: 12px; margin: 50px 0; grid-template-columns: repeat(3, 1fr); }
+.gallery.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.gallery.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.gallery a { display: block; overflow: hidden; border-radius: 12px; aspect-ratio: 4 / 3; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; margin: 0 !important; max-height: none; border-radius: 0; box-shadow: none; transition: transform .4s; }
+.gallery a:hover img { transform: scale(1.04); }
+@media (max-width: 600px) { .gallery, .gallery.cols-3, .gallery.cols-4 { grid-template-columns: repeat(2, 1fr); } }
+
+.video-embed { margin: 50px 0; }
+.video-embed iframe, .video-embed video { margin: 0; width: 100%; }
+.video-embed figcaption, .content figcaption { margin-top: 10px; font-size: 14px; color: var(--text-muted); letter-spacing: .05em; text-align: center; }
+
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 2000; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 8px; }
+        
     </style>
 </head>
 <body>
@@ -135,27 +151,19 @@
 
     <script src="/assets/js/nav.js" defer></script>
     <script>
-        // AUTOMATIC IMAGE GALLERY LOGIC - kept from old post.html
-        document.addEventListener("DOMContentLoaded", function() {
-            const content = document.querySelector('.content');
-            if(!content) return;
-            let gallery = null;
-            Array.from(content.children).forEach(el => {
-                const images = Array.from(el.querySelectorAll('img'));
-                const text = el.textContent.trim();
-                if (el.tagName === 'P' && images.length > 0 && text === '') {
-                    if (!gallery) {
-                        gallery = document.createElement('div');
-                        gallery.className = 'image-gallery';
-                        el.parentNode.insertBefore(gallery, el);
-                    }
-                    images.forEach(img => gallery.appendChild(img));
-                    el.remove();
-                } else {
-                    gallery = null;
-                }
-            });
-        });
-    </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll('.gallery a');
+  if (!links.length) return;
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.innerHTML = '<img alt="">';
+  document.body.appendChild(box);
+  const big = box.querySelector('img');
+  links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); big.src = a.href; box.classList.add('open'); }));
+  box.addEventListener('click', () => box.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('open'); });
+});
+</script>
+
 </body>
 </html>
