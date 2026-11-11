@@ -185,30 +185,34 @@ layout: null
         {%- assign curated = curated | sort: "date" | reverse -%}
 
         <section class="curated-stories" id="stories">
-            <div class="wrap">
-                <h2>Curated Lifestyle Posts</h2>
-                <p class="stories-sub">Fashion, beauty and lifestyle stories by Romina.</p>
-                {%- if curated.size > 0 %}
-                <div class="curated-grid">
-                    {%- for post in curated %}
-                    {%- assign label = post.page_title | default: post.title -%}
-                    {%- assign img = post.cover_image | default: post.thumbnail | default: post.cover -%}
-                    <a href="{{ post.url | relative_url }}" class="curated-card">
-                        {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy">{% endif %}
-                        <div class="curated-card-body">
-                            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
-                            <h3>{{ label }}</h3>
-                            <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-                            <span class="read">Read Story →</span>
-                        </div>
-                    </a>
-                    {%- endfor %}
-                </div>
-                {%- else %}
-                <p style="text-align:center; color:#aaa;">New stories are on the way.</p>
-                {%- endif %}
-            </div>
-        </section>
+  <div class="wrap">
+    <h2>Curated Lifestyle Posts</h2>
+    <p class="stories-sub">Fashion, beauty and lifestyle stories by Romina.</p>
+    {%- if curated.size > 0 %}
+    <div class="cl-editorial">
+      {%- for post in curated %}
+      {%- assign label = post.page_title | default: post.title -%}
+      {%- assign img = post.cover_image | default: post.thumbnail | default: post.cover -%}
+      {%- assign teaser = post.description | default: post.excerpt | default: post.content | strip_html | truncatewords: 60 -%}
+      <article class="cl-article {% if forloop.first %}cl-article--featured{% endif %} {% if forloop.index0 == 1 or forloop.index0 == 3 %}cl-article--flip{% endif %}">
+        <a class="cl-article__media" href="{{ post.url | relative_url }}">
+          {%- if img %}<img src="{{ img }}" alt="{{ label | escape }}" loading="lazy">{% endif %}
+          <span class="cl-article__kicker">Curated Lifestyle</span>
+        </a>
+        <div class="cl-article__body">
+          <p class="cl-article__meta">{{ post.date | date: "%B %-d, %Y" }}{% if post.author %} &nbsp;&middot;&nbsp; {{ post.author }}{% endif %}</p>
+          <h3 class="cl-article__title"><a href="{{ post.url | relative_url }}">{{ label }}</a></h3>
+          <p class="cl-article__excerpt">{{ teaser }}</p>
+          <a class="cl-article__read" href="{{ post.url | relative_url }}">Read Story &rarr;</a>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p style="text-align:center; color:#aaa;">New stories are on the way.</p>
+    {%- endif %}
+  </div>
+</section>
     </main>
 
     {% include footer.html %}
