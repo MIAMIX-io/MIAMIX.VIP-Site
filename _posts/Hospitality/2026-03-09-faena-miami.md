@@ -1,24 +1,24 @@
 ---
-title: "【entity-Faena¦canonical_name=Faena】 Miami"
-page_title: "【entity-Faena¦canonical_name=Faena】 Miami"
+title: "Faena Miami"
+page_title: "Faena Miami"
 description: "Design-Forward Luxury Hospitality"
 date: 2026-03-09
-cover_image: /images/hospitality/【entity-Faena¦canonical_name=Faena】 Miami_MIAMIX.png
+cover_image: /images/hospitality/Faena_Miami_MIAMIX.png
 external_url: "https://www.miamix.io/hospitality-mix/faena-miami"
 channel: [Hospitality]
-business_name: "【entity-Faena¦canonical_name=Faena】 Miami"
+business_name: "Faena Miami"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/【entity-Faena¦canonical_name=Faena】 Miami_MIAMIX.png
+_thumbnail: /images/hospitality/Faena_Miami_MIAMIX.png
 ---
 
-【entity-Faena¦canonical_name=Faena】 Miami Beach stands as an architectural masterpiece on the shores of South Florida, redefining luxury hospitality in one of the world's most vibrant coastal destinations. This extraordinary oceanfront resort seamlessly blends art, culture, and sophistication to create an immersive experience that transcends traditional hotel stays. Designed by renowned architects and visionaries, the property features stunning Art Deco influences combined with contemporary elegance, making it a landmark destination for discerning travelers seeking something truly exceptional. The accommodations are nothing short of spectacular, offering guests a sanctuary of refined comfort and style with custom furnishings, luxurious materials, and thoughtful details that reflect the property's commitment to excellence.
+Faena Miami Beach stands as an architectural masterpiece on the shores of South Florida, redefining luxury hospitality in one of the world's most vibrant coastal destinations. This extraordinary oceanfront resort seamlessly blends art, culture, and sophistication to create an immersive experience that transcends traditional hotel stays. Designed by renowned architects and visionaries, the property features stunning Art Deco influences combined with contemporary elegance, making it a landmark destination for discerning travelers seeking something truly exceptional. The accommodations are nothing short of spectacular, offering guests a sanctuary of refined comfort and style with custom furnishings, luxurious materials, and thoughtful details that reflect the property's commitment to excellence.
 
 <!-- SINGLE IMAGE -->
 ![【entity-Faena¦canonical_name=Faena】 Miami](/images/hospitality/Faena_post01.jpeg)
 
-The culinary program at 【entity-Faena¦canonical_name=Faena】 Miami Beach represents a journey through diverse flavors and innovative gastronomy, with multiple dining venues offering distinct culinary perspectives crafted by world-class chefs. From contemporary Argentine cuisine that pays homage to the property's cultural roots to fresh seafood prepared with local ingredients, every restaurant delivers an unforgettable dining experience. Art and culture form the very essence of the 【entity-Faena¦canonical_name=Faena】 experience, with the property serving as a living gallery that celebrates creativity in all its forms through an impressive collection of contemporary artworks, installations, and performances that engage guests throughout their stay.
+The culinary program at Faena Miami Beach represents a journey through diverse flavors and innovative gastronomy, with multiple dining venues offering distinct culinary perspectives crafted by world-class chefs. From contemporary Argentine cuisine that pays homage to the property's cultural roots to fresh seafood prepared with local ingredients, every restaurant delivers an unforgettable dining experience. Art and culture form the very essence of the Faena experience, with the property serving as a living gallery that celebrates creativity in all its forms through an impressive collection of contemporary artworks, installations, and performances that engage guests throughout their stay.
 
 <!-- SINGLE IMAGE -->
 ![【entity-Faena¦canonical_name=Faena】 Miami](/images/hospitality/Faena_post02.jpeg)
@@ -28,7 +28,7 @@ The spa and wellness facilities offer a transformative journey toward relaxation
 <!-- SINGLE IMAGE -->
 ![【entity-Faena¦canonical_name=Faena】 Miami](/images/hospitality/Faena_post03.webp)
 
-The beachfront at 【entity-Faena¦canonical_name=Faena】 Miami Beach provides an idyllic setting for relaxation and recreation, featuring pristine white sand and crystal clear waters. The beach club offers impeccable service with comfortable loungers, private cabanas, and attentive staff ensuring every need is met. Guests can enjoy refreshing cocktails and light cuisine delivered directly to their beachside retreat, creating a seamless experience of luxury and leisure while also having opportunities for water sports and activities that allow them to engage with the natural beauty of Miami Beach.
+The beachfront at Faena Miami Beach provides an idyllic setting for relaxation and recreation, featuring pristine white sand and crystal clear waters. The beach club offers impeccable service with comfortable loungers, private cabanas, and attentive staff ensuring every need is met. Guests can enjoy refreshing cocktails and light cuisine delivered directly to their beachside retreat, creating a seamless experience of luxury and leisure while also having opportunities for water sports and activities that allow them to engage with the natural beauty of Miami Beach.
 
 <!-- SINGLE IMAGE -->
 ![Faena Miami](/images/hospitality/Faena_post04.jpeg)
@@ -40,7 +40,7 @@ The service philosophy centers on anticipating and exceeding guest expectations 
 <!-- SINGLE IMAGE -->
 ![Faena Miami](/images/hospitality/Faena_post05.jpeg)
 
-Faena Miami Beach is located at 3201 Collins Avenue, Miami Beach, Florida 33140. Guests can visit the official website at [faena.com](http://faena.com) to explore the full range of accommodations, dining options, and experiences available at this remarkable property. For reservations and inquiries, the hotel can be reached by phone at +1 (305) 534 8800 or by email at [reservations@【entity-faena¦canonical_name=Faena】.com](mailto:reservations@faena.com). Follow 【entity-Faena Hotel Miami Beach¦canonical_name=Faena】 on Instagram @【entity-faena¦canonical_name=Faena】 to discover the latest happenings, special events, and stunning visual glimpses of this extraordinary oceanfront destination where art, culture, and luxury converge to create unforgettable experiences.
+Faena Miami Beach is located at 3201 Collins Avenue, Miami Beach, Florida 33140. Guests can visit the official website at faena.com to explore the full range of accommodations, dining options, and experiences available at this remarkable property. For reservations and inquiries, the hotel can be reached by phone at +1 (305) 534 8800 or by email at reservations@faena.com. Follow Faena on Instagram @faena to discover the latest happenings, special events, and stunning visual glimpses of this extraordinary oceanfront destination where art, culture, and luxury converge to create unforgettable experiences.
 
 <!-- SINGLE IMAGE -->
-![【entity-Faena¦canonical_name=Faena】 Miami logo](/images/hospitality/【entity-Faena¦canonical_name=Faena】 Miami_logo.webp)
+![Faena Miami logo](/images/hospitality/Faena_Miami_logo.webp)
