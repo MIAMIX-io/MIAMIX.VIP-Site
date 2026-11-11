@@ -10,7 +10,7 @@
   {%- for img in imgs -%}
     {%- assign name = img | strip -%}
     {%- if name != '' -%}
-      <img src="{{ folder }}/{{ name | relative_url }}" alt="" loading="lazy" decoding="async">
+      <img src="{{ folder | append: '/' | append: name | relative_url }}" alt="" loading="lazy" decoding="async">
     {%- endif -%}
   {%- endfor -%}
   {%- if type == 'carousel' -%}
