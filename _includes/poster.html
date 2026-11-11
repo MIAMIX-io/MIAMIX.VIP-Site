@@ -13,26 +13,16 @@
 {%- comment -%} If labels lookup missed, humanize the key per channel {%- endcomment -%}
 {%- if label == ch -%}
   {%- case ch -%}
-    {%- when 'Curated' -%}
-      {%- assign label = 'Curated Lifestyle' -%}
-    {%- when 'InterMiami' -%}
-      {%- assign label = 'Inter Miami' -%}
-    {%- when 'After-Dark' -%}
-      {%- assign label = 'After Dark' -%}
-    {%- when 'Culture' -%}
-      {%- assign label = 'Culture' -%}
-    {%- when 'Fashion' -%}
-      {%- assign label = 'Fashion' -%}
-    {%- when 'Health' -%}
-      {%- assign label = 'Health' -%}
-    {%- when 'Hospitality' -%}
-      {%- assign label = 'Hospitality' -%}
-    {%- when 'Nonprofit' -%}
-      {%- assign label = 'Nonprofit' -%}
-    {%- when 'Sports' -%}
-      {%- assign label = 'Sports' -%}
-    {%- when 'Travel' -%}
-      {%- assign label = 'Travel' -%}
+    {%- when 'CuratedLifestyle' -%}{%- assign label = 'Curated Lifestyle' -%}
+    {%- when 'InterMIA' -%}{%- assign label = '【entity-Inter Miami¦canonical_name=Inter Miami】' -%}
+    {%- when 'AfterDark' -%}{%- assign label = 'After Dark' -%}
+    {%- when 'Culture' -%}{%- assign label = 'Culture' -%}
+    {%- when 'Fashion' -%}{%- assign label = 'Fashion' -%}
+    {%- when 'Health' -%}{%- assign label = 'Health' -%}
+    {%- when 'Hospitality' -%}{%- assign label = 'Hospitality' -%}
+    {%- when 'Nonprofit' -%}{%- assign label = 'Nonprofit' -%}
+    {%- when 'Sports' -%}{%- assign label = 'Sports' -%}
+    {%- when 'Travel' -%}{%- assign label = 'Travel' -%}
   {%- endcase -%}
 {%- endif -%}
 
