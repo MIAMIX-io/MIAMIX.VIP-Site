@@ -3,7 +3,7 @@
   <div class="carousel-track">
     {% for post in include.posts %}
     <a href="{{ post.url }}" class="carousel-item">
-      <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+      <img src="{{ post.cover_image | default: post.image }}" alt="{{ post.title }}">
       <div class="carousel-content">
         <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
         <h3>{{ post.title }}</h3>
