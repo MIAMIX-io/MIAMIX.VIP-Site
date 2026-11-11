@@ -1,6 +1,4 @@
-# _data/partners.yml : one entry per logo. url = brand's own site, opens in new tab.
-# light: true puts the logo on a light tile (use for dark logos like Lennox and Paradores).
-- name: "Inter Miami"
+- name: "【entity-Inter Miami¦canonical_name=Inter Miami】"
   image: /images/partners/inter-miami.png
   url: https://www.intermiamicf.com/
 - name: "AFA - Argentine Football Association"
@@ -31,6 +29,5 @@
   url: https://www.bwhairstudioandspa.com/
 - name: "Sabrina Contigo"
   image: /images/partners/sabrina-contigo.png
-  # No official site found - add url: here when you have it, it will become clickable automatically
 - name: "Partner"
   image: /images/partners/small.png
