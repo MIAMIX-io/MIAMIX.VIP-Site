@@ -31,17 +31,17 @@ a.ad-eyebrow:hover { color: #fff; }
 .ad-btn.is-coming-soon em { font-style: normal; margin-left: 10px; padding: 4px 8px; background: var(--primary-pink); color: #fff; font-size: .62rem; letter-spacing: .18em; }
 
 /* ---------- MEGA HERO ---------- */
-.ad-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 92svh; display: flex; align-items: flex-end; padding: 120px 0 36px; background: var(--ad-hero) 50% 0% / cover no-repeat, #000; }
+.ad-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 92svh; display: flex; align-items: flex-end; padding: 120px 0 36px; background: var(--ad-hero) 72% 0% / cover no-repeat, #000; }
 .ad-hero--mega { align-items: flex-end; }
 .ad-hero-media { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: #000; }
-.ad-hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
+.ad-hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% 8%; }
 .ad-hero-media__blur { filter: blur(28px) brightness(.82) saturate(1.25); transform: scale(1.35); opacity: .9; }
 .ad-hero-media__sharp { filter: blur(.4px) contrast(1.03) saturate(1.06); animation: ad-kenburns 28s ease-in-out infinite alternate; will-change: transform; }
 @keyframes ad-kenburns { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.12) translate(-1.5%, -1%); } }
-.ad-hero-overlay { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(to top, #000 0%, rgba(0,0,0,.55) 18%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.08) 70%, rgba(0,0,0,.45) 100%), linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.48) 42%, rgba(0,0,0,.12) 68%, rgba(0,0,0,.38) 100%), radial-gradient(85% 70% at 8% 100%, rgba(225,43,192,.45) 0%, rgba(225,43,192,0) 60%), linear-gradient(180deg, rgba(225,43,192,.18) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 72%, rgba(225,43,192,.22) 100%); }
+.ad-hero-overlay { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(to top, #000 0%, rgba(0,0,0,.55) 18%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.08) 70%, rgba(0,0,0,.45) 100%), linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.55) 36%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.30) 100%), radial-gradient(85% 70% at 8% 100%, rgba(225,43,192,.45) 0%, rgba(225,43,192,0) 60%), linear-gradient(180deg, rgba(225,43,192,.18) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 72%, rgba(225,43,192,.22) 100%); }
 .ad-hero-content { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 28px; width: 100%; }
 .ad-hero .ad-eyebrow { text-shadow: 0 1px 12px rgba(0,0,0,.7); }
-.ad-hero-top { max-width: 720px; }
+.ad-hero-top { max-width: 560px; }
 .ad-title { font-size: clamp(3.2rem, 12vw, 8rem); font-weight: 200; line-height: 1; letter-spacing: .08em; text-transform: uppercase; text-shadow: 0 2px 24px rgba(0,0,0,.7); }
 .ad-title .accent { color: var(--primary-pink); text-shadow: 0 0 40px rgba(225,43,192,.6), 0 2px 20px rgba(0,0,0,.8); }
 .ad-sub { margin-top: 14px; font-size: clamp(1rem, 2.4vw, 1.5rem); font-weight: 300; letter-spacing: .3em; text-transform: uppercase; text-shadow: 0 2px 18px rgba(0,0,0,.6); }
@@ -49,8 +49,8 @@ a.ad-eyebrow:hover { color: #fff; }
 .ad-tags { margin-top: 14px; font-size: .75rem; font-weight: 400; letter-spacing: .25em; text-transform: uppercase; color: #e6e6e6; text-shadow: 0 1px 12px rgba(0,0,0,.7); }
 .ad-tags i { font-style: normal; margin: 0 .5em; color: var(--primary-pink); }
 
-/* ONE inline card, left, compact — replaces old .ad-hero-host grid */
-.ad-host-card { display: block; width: min(520px, 100%); align-self: flex-start; padding: 20px 22px 18px 20px; background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.48) 78%, rgba(0,0,0,.18) 100%); border: 0; border-left: 1px solid var(--primary-pink); }
+/* ONE inline card, left, compact - replaces old .ad-hero-host grid */
+.ad-host-card { display: block; width: min(460px, 100%); align-self: flex-start; padding: 20px 22px 18px 20px; background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.48) 78%, rgba(0,0,0,.18) 100%); border: 0; border-left: 1px solid var(--primary-pink); }
 .ad-host-card .ad-eyebrow { margin-bottom: 8px; }
 .ad-host-card .ad-h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .ad-host-card .ad-h2::after { margin-top: 12px; }
@@ -126,7 +126,7 @@ a.ad-eyebrow:hover { color: #fff; }
 /* ---------- articles via poster.html ---------- */
 .ad-articles-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
 .ad-posters { margin-top: 36px; }
-/* .poster + .poster-grid styles already live in site.css — just ensure grid gaps */
+/* .poster + .poster-grid styles already live in site.css - just ensure grid gaps */
 .poster-grid.ad-posters { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 22px; }
 
 /* ---------- books + values ---------- */
@@ -154,7 +154,8 @@ a.ad-eyebrow:hover { color: #fff; }
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
     .ad-section { padding: 72px 0; }
-    .ad-hero { padding: 110px 0 36px; }
+    .ad-hero { padding: 110px 0 36px; background-position: 62% 0%; }
+    .ad-hero-media img { object-position: 62% 0%; }
     .ad-host-card { width: 100%; max-width: 100%; }
     .ad-two-col { grid-template-columns: 1fr; gap: 40px; }
     .ad-scene { --ad-w: 300px; }
