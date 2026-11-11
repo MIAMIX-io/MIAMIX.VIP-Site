@@ -31,12 +31,11 @@ layout: null
             linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 35%, rgba(0,0,0,.15) 65%, rgba(0,0,0,.55) 100%); }
         @keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.12); } }
         .inter-hero .wrap { max-width: 1280px; width: 100%; }
-        .inter-hero-inner { position: relative; z-index: 2; display: flex; align-items: flex-end; gap: 56px; }
-        .inter-crest { width: 220px; height: 220px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 12px 40px rgba(0,0,0,.85)) drop-shadow(0 0 30px rgba(225,43,192,.35)); }
-        .inter-hero h1 { font-weight: 200; font-size: clamp(64px, 13vw, 190px); line-height: .88; letter-spacing: .03em; text-transform: uppercase; margin: 0; text-shadow: 0 4px 40px rgba(0,0,0,.85); }
+        .inter-hero-inner { position: relative; z-index: 2; display: flex; align-items: center; gap: 72px; }
+        .inter-crest { width: clamp(220px, 28vw, 400px); height: clamp(220px, 28vw, 400px); object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 16px 50px rgba(0,0,0,.9)) drop-shadow(0 0 60px rgba(225,43,192,.55)); }
+        .inter-hero h1 { font-weight: 200; font-size: clamp(56px, 9vw, 140px); line-height: .88; letter-spacing: .03em; text-transform: uppercase; margin: 0; text-shadow: 0 4px 40px rgba(0,0,0,.85); }
         .inter-hero h1 .white { display: block; color: #fff; }
         .inter-hero h1 .pink { display: block; color: #E12BC0; font-weight: 400; text-shadow: 0 0 48px rgba(225,43,192,.7), 0 4px 30px rgba(0,0,0,.8); }
-        .inter-hero h1 .outline { display: inline-block; margin-top: .12em; font-size: .38em; letter-spacing: .3em; color: transparent; -webkit-text-stroke: 1.5px #fff; font-weight: 300; }
         .inter-hero .pink-bar { width: 120px; height: 5px; background: #E12BC0; margin: 26px 0 20px; box-shadow: 0 0 24px rgba(225,43,192,.7); }
         .inter-hero .subtitle { display: flex; align-items: center; gap: 14px; font-size: 24px; letter-spacing: 3px; color: #fff; margin: 0; font-weight: 300; font-style: italic; text-shadow: 0 2px 14px rgba(0,0,0,.9); }
         .inter-hero .subtitle .line { width: 40px; height: 1px; background: rgba(255,255,255,.7); display: inline-block; }
@@ -56,7 +55,8 @@ layout: null
 
         /* POSTS - clear top, no overlap */
         .inter-posts { padding: 50px 0 60px; background: #000; position: relative; z-index: 1; clear: both; }
-        .inter-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; border-bottom: 1px solid #222; }
+        .inter-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; margin-bottom: 90px; }
+        .inter-post:last-child { margin-bottom: 0; }
         .inter-post:nth-child(even) .inter-post-img { order: 2; }
         .inter-post-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top center; }
         .inter-post-img-placeholder { width: 100%; aspect-ratio: 4 / 3; background: linear-gradient(135deg, #111, #2a0a22); display: flex; align-items: center; justify-content: center; color: #E12BC0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
@@ -71,13 +71,14 @@ layout: null
         @media (max-width: 768px) {
             .inter-hero { min-height: 92vh; min-height: 92svh; align-items: center; padding: 120px 0 90px; }
             .inter-hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 22px; }
-            .inter-crest { width: 120px; height: 120px; }
-            .inter-hero h1 { font-size: clamp(56px, 20vw, 100px); }
+            .inter-crest { width: 190px; height: 190px; }
+            .inter-hero h1 { font-size: clamp(48px, 16vw, 90px); }
             .inter-hero .pink-bar { margin-left: auto; margin-right: auto; }
             .inter-hero .subtitle { font-size: 18px; justify-content: center; }
             .video-row, .inter-post { grid-template-columns: 1fr; }
             .inter-post:nth-child(even) .inter-post-img { order: 0; }
-            .inter-post-body { padding: 24px 0 36px; }
+            .inter-post-body { padding: 24px 0 0; }
+            .inter-post { margin-bottom: 56px; }
             .video-section { padding-bottom: 44px; }
         }
     </style>
@@ -92,7 +93,7 @@ layout: null
             <div class="wrap inter-hero-inner">
                 <img class="inter-crest" src="/images/partners/inter-miami.png" alt="Inter Miami CF crest">
                 <div>
-                    <h1><span class="white">INTER</span> <span class="pink">MIAMI</span> <span class="outline">CF</span></h1>
+                    <h1><span class="white">INTER</span> <span class="pink">MIAMI</span></h1>
                     <div class="pink-bar"></div>
                     <p class="subtitle"><span class="line"></span> The Heron's Nest <span class="line"></span></p>
                     <p class="tagline">Matchday, videos and stories from Chase Stadium and beyond.</p>
