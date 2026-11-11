@@ -1,34 +1,37 @@
 ---
 title: "Your Post Title Here"
 page_title: "Your Post Title Here"
-date: 2026-11-04T00:00:00.000Z
+description: "One or two sentences for link previews and search."
+date: 2026-11-04
 cover_image: /assets/images/CuratedLifestyle/cover-image.png
-external_url: "link/goes/here"
+external_url: "https://www.business-site.com"
 channel:
   - CuratedLifestyle
-business_name: "business_name here"
+business_name: "Business Name"
 author: "Your Name"
 featured: false
+# published: false   # uncomment while drafting to keep it off the site
 _thumbnail: >-
   /assets/images/CuratedLifestyle/thumbnail-image.jpg
 ---
 
-## **Heading 1**
+Intro paragraph. This first paragraph is styled larger automatically.
 
-Write your introduction or main content here. 
+## Section Heading
 
-Remember to keep your image paths clean and relative to the root of your repository:
+Write your story here.
 
-![](/assets/images/ChannelName/your-image-1.png)
+<!-- SINGLE IMAGE -->
+![Describe the image](/assets/images/CuratedLifestyle/post-name/photo-1.jpg)
 
-Continue your story here...
+<!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
+{% include gallery.html folder="/assets/images/CuratedLifestyle/post-name" images="a.jpg|b.jpg|c.jpg|d.jpg" cols=2 %}
 
-add image files using the code line here
-![](/assets/images/ChannelName/your-image-2.png)
+<!-- VIDEO: YouTube or Vimeo link, or file="/assets/video/clip.mp4" -->
+{% include video.html url="https://www.youtube.com/watch?v=XXXXXXXXXXX" caption="Optional caption" %}
 
-continue with content here...
-duplicate as needed...
+<!-- PULL QUOTE -->
+> A line worth highlighting.
 
-add www.business/links.com here
-![Nike Logo](/assets/images/logos/nike.png) ![Adidas Logo](/assets/images/logos/adidas.png) ![Jordan Logo](/assets/images/logos/jordan.png)
-
+<!-- BRAND LOGOS: file names in /assets/images/logos/ without .png -->
+{% include logos.html brands="nike,adidas,jordan" %}
