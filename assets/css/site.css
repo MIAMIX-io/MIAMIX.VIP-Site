@@ -1,4 +1,4 @@
-##/* MIAMIX shared chrome: base, header/nav, footer. Used via _includes.
+#/* MIAMIX shared chrome: base, header/nav, footer. Used via _includes.
    Direction: razor-thin Jost, deep black / stone grey, brand pink for accents, borders and glow. */
 :root {
     --primary-pink: #E12BC0;
@@ -260,20 +260,7 @@ iframe[src*="youtu.be"] {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-/* === HERO - HOME: NO PINK - LAST IN site.css === */
-.hero::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.40) 50%, rgba(0,0,0,0.95) 100%) !important;
-  background-size: auto !important;
-  animation: none !important;
-}
-.hero { position: relative; overflow: hidden; }
-.hero-content { position: relative; z-index: 2; }
-
-/* === HERO - CHANNEL PAGES ONLY: PINK FLOATING - LAST IN site.css === */
+/* === HERO - CHANNEL PAGES ONLY: SUBTLE PINK DRIFT - LAST IN site.css === */
 .ch-hero::before,
 .channel-hero::before,
 [class*="channel-hero"]::before,
@@ -284,21 +271,21 @@ iframe[src*="youtu.be"] {
   z-index: 1 !important;
   background: linear-gradient(
     115deg,
-    rgba(225,43,192,0.55) 0%,
-    rgba(0,0,0,0.88) 28%,
-    rgba(225,43,192,0.32) 52%,
-    rgba(0,0,0,0.92) 78%,
-    rgba(225,43,192,0.50) 100%
+    rgba(225,43,192,0.16) 0%,
+    rgba(0,0,0,0.82) 32%,
+    rgba(225,43,1(92,0.08) 55%,
+    rgba(0,0,0,0.86) 80%,
+    rgba(225,43,192,0.14) 100%
   ) !important;
-  background-size: 300% 300% !important;
-  animation: heroGradientFloat 12s ease-in-out infinite !important;
+  background-size: 200% 200% !important;
+  animation: heroGradientFloat 22s ease-in-out infinite alternate !important;
 }
 .ch-hero, .channel-hero, [class*="channel-hero"] { position: relative; overflow: hidden; }
 .ch-hero-content, .channel-hero-content { position: relative; z-index: 2; }
 
 @keyframes heroGradientFloat {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 30% 50%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ch-hero::before, .channel-hero::before { animation: none !important; }
