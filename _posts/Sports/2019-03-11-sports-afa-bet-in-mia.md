@@ -1,7 +1,7 @@
 ---
 title: "AFA"
 page_title: "Bet In Miami"
-description: "Bet In Miami"
+description: "AFA is betting on Miami. On June 13, the federation announced the AFA International Center at Treasure Island School in North Bay Village, a space for high performance training, sports programs, cultural workshops and youth activities. Two days later, it celebrated Father's Day at Chase Stadium in Fort Lauderdale with Más+, families, and figures from Argentine soccer."
 date: 2019-03-11
 cover_image: /images/sports/afa-f3-683x1024.jpg
 external_url: "https://www.miamix.io/sports-miamix-member/afa-bet-in-miami"
