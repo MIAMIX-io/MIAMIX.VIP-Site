@@ -3,14 +3,14 @@ title: "Rhapsody of the Seas"
 page_title: "Classic Elegance"
 description: "There are experiences that transform the way we look at the sea. Ours was aboard Rhapsody of the Seas, where we discovered from the inside how one of the world's most prestigious fleets works, from turquoise waters and clear skies to main kitchens where hundreds of chefs work in perfect synchrony."
 date: 2025-11-01
-cover_image: /images/travel/IMG_4736.jpg
+cover_image: /images/travel/IMG_6446_5.jpeg
 external_url: "https://www.miamix.io/travel-leisure/rhapsody"
 channel: [Travel]
 business_name: "Rhapsody of the Seas"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/IMG_4736.jpg
+_thumbnail: /images/travel/IMG_6446_5.jpeg
 ---
 
 There are experiences that transform the way we look at the sea. That's how our journey aboard the Rhapsody of the Seas, an elegant cruise ship from Royal Caribbean International, allowed us to discover, from the inside, the workings of one of the world's most prestigious fleets. During an exclusive fam tour for media and tourism professionals, we sailed from Florida to Panama. In just four days, the itinerary took us to explore destinations with turquoise waters and clear skies, confirming that the Caribbean's charm remains inexhaustible.
