@@ -1,7 +1,7 @@
 ---
 title: "La Cabrera"
 page_title: "New Midtown Location"
-description: "Midtown Location"
+description: "From Buenos Aires to Midtown, La Cabrera brings its legendary asado to one of Miami's most vibrant neighborhoods. Expect prime cuts cooked over fire, classic sides served in small casseroles, and the warm, family style hospitality that made the brand famous around the world."
 date: 2019-03-11
 cover_image: /images/hospitality/MIAMIX-34 (1).png
 external_url: "https://www.miamix.io/hospitality-mix/la-cabrera-midtown"
