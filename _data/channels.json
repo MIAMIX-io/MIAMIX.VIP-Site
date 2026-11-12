@@ -1,15 +1,13 @@
 {
   "labels": {
     "CuratedLifestyle": "Curated Lifestyle",
-    "InterMIA": "【entity-Inter Miami¦canonical_name=Inter Miami】",
+    "InterMIA": "\u3010entity-Inter Miami\u00a6canonical_name=Inter Miami\u3011",
     "AfterDark": "After Dark",
     "Travel": "Travel",
     "Hospitality": "Hospitality",
     "Fashion": "Fashion",
     "Culture": "Culture",
-    "Health": "Health",
-    "Sports": "Sports",
-    "Nonprofit": "Nonprofit"
+    "Sports": "Sports"
   },
   "rows": [
     {
@@ -19,7 +17,11 @@
       "tagline": "Luxury with intention. Style with soul.",
       "accent": "#E12BC0",
       "url": "/curated-lifestyle",
-      "channels": ["CuratedLifestyle", "Curated Lifestyle", "Curated"],
+      "channels": [
+        "CuratedLifestyle",
+        "Curated Lifestyle",
+        "Curated"
+      ],
       "show": true
     },
     {
@@ -29,7 +31,11 @@
       "tagline": "Inter Miami stories, match nights and moments from the Heron's Nest.",
       "accent": "#E12BC0",
       "url": "/inter-miami",
-      "channels": ["InterMIA", "Inter Miami", "Inter Miami CF"],
+      "channels": [
+        "InterMIA",
+        "Inter Miami",
+        "Inter Miami CF"
+      ],
       "show": true
     },
     {
@@ -39,7 +45,10 @@
       "tagline": "When the sun goes down, the scene comes alive. Fashion, nightlife, luxury, people and experiences. Six worlds. One night.",
       "accent": "#E12BC0",
       "url": "/after-dark",
-      "channels": ["AfterDark", "After Dark"],
+      "channels": [
+        "AfterDark",
+        "After Dark"
+      ],
       "show": true
     },
     {
@@ -49,7 +58,9 @@
       "tagline": "Travel points, mile-high stories and escapes from Miami.",
       "accent": "#E12BC0",
       "url": "/travel",
-      "channels": ["Travel"],
+      "channels": [
+        "Travel"
+      ],
       "show": true
     },
     {
@@ -59,7 +70,9 @@
       "tagline": "Restaurants, chefs, hotels and the tables that define Miami.",
       "accent": "#E12BC0",
       "url": "/hospitality",
-      "channels": ["Hospitality"],
+      "channels": [
+        "Hospitality"
+      ],
       "show": true
     },
     {
@@ -69,7 +82,9 @@
       "tagline": "Fashion and lifestyle stories from Miami: style, designers, shopping and the people shaping the look of the city.",
       "accent": "#E12BC0",
       "url": "/fashion",
-      "channels": ["Fashion"],
+      "channels": [
+        "Fashion"
+      ],
       "show": true
     },
     {
@@ -79,17 +94,9 @@
       "tagline": "Art exhibits, artist spotlights, and exclusive events in Miami.",
       "accent": "#E12BC0",
       "url": "/culture",
-      "channels": ["Culture"],
-      "show": true
-    },
-    {
-      "id": "health",
-      "eyebrow": "Health & Wellness",
-      "title": "Feel Good",
-      "tagline": "Health, wellness and feel-good stories from Miami.",
-      "accent": "#E12BC0",
-      "url": "/health",
-      "channels": ["Health", "Health & Wellness"],
+      "channels": [
+        "Culture"
+      ],
       "show": true
     },
     {
@@ -99,18 +106,10 @@
       "tagline": "From Inter Miami nights to race weekends and fight cards, the games, athletes and moments that bring Miami to its feet.",
       "accent": "#E12BC0",
       "url": "/sports",
-      "channels": ["Sports"],
+      "channels": [
+        "Sports"
+      ],
       "show": true
-    },
-    {
-      "id": "nonprofit",
-      "eyebrow": "Nonprofit",
-      "title": "Make a Difference",
-      "tagline": "Nonprofit stories and people making a difference in Miami.",
-      "accent": "#E12BC0",
-      "url": "/nonprofit",
-      "channels": ["Nonprofit"],
-      "show": false
     }
   ]
 }
