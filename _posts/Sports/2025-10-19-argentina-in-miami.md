@@ -1,7 +1,7 @@
 ---
 title: "Argentina In Miami"
 page_title: "Sport & Style"
-description: "Football and Style"
+description: "Miami welcomed Argentina as if a movie star were arriving on the red carpet. Two friendlies against Venezuela and Puerto Rico became more than preparation matches. They were confirmation that this world champion team understands image is as important as results, from the redesigned Adidas home jersey with metallic details and golden touches for the third star to the oversize jackets and limited sneakers on arrival."
 date: 2025-10-19
 cover_image: /images/sports/IMG_4375.JPG
 external_url: "https://www.miamix.io/sports-miamix-member/seleccion-arg-miami"
