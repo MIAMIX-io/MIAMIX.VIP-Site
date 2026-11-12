@@ -1,7 +1,7 @@
 ---
 title: "Culebra, Puerto Rico"
 page_title: "A Caribbean Treasure"
-description: "A Caribbean Treasure Just a 30‑minute flight from San Juan, the island of Culebra unfolds like a small Caribbean paradise. Getting here is an experience in itself: hop on a light aircraft with Air Flamenco @airflamencopr, which runs daily flights from Isla Grande Airport. You’ll enjoy jaw‑dropping aerial views of turquoise waters and white‑sand beaches before landing in this natural refuge. In under half an hour, you go from urban bustle to total island relaxation. Puerto Rico is only about a two‑hour flight from Miami or many other points in the Caribbean, making Culebra perfect for quick getaways. While a day trip is ideal for beaches and activities, staying one or two nights lets you discover it’s quieter, more unhurried side."
+description: "Just a 30 minute flight from San Juan, the island of Culebra unfolds like a small Caribbean paradise. Getting here is an experience in itself: hop on a light aircraft with Air Flamenco, enjoy aerial views of turquoise waters and white sand beaches, and in under half an hour go from urban bustle to total island relaxation."
 date: 2025-11-05
 cover_image: /images/travel/MIAMIX-54.png
 external_url: "https://www.miamix.io/travel-leisure/culebra-puerto-rico"
