@@ -1,13 +1,13 @@
 ---
 title: "Fly Miami Beach"
 page_title: "Fly Miami Beach"
-description: "Top-Tier Aerial Tour Operator"
+description: "Fly Miami Beach feels like the kind of experience you only truly understand once you are strapped in, headset on, watching the city shrink beneath you as an airplane or helicopter lifts off and turns South Florida into a living postcard, guided by local pilots who know where the coastline glows."
 date: 2026-03-09
 cover_image: /images/travel/FlyMB_MIAMIX.png
 external_url: "https://www.miamix.io/travel-leisure/fly-miami-beach"
 channel: [Travel]
 business_name: "Fly Miami Beach"
-author: "Robert Eldridge"
+author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
 _thumbnail: /images/travel/FlyMB_MIAMIX.png
