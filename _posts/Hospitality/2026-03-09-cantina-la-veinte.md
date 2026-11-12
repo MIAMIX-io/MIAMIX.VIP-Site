@@ -3,18 +3,15 @@ title: "Cantina La Veinte"
 page_title: "Cantina La Veinte"
 description: "In the heart of Brickell, where skyscrapers meet luxury, Cantina La Veinte is a culinary refuge that captures Mexico with elegance. Expect citrus bright ceviches, tacos elevated to fine dining, tender grilled octopus on black bean puree with morita chile, and cocktails built on premium mezcal and tequila."
 date: 2026-03-09
-cover_image: /images/hospitality/Cantina La Veinte_MIAMIX.png
+cover_image: /images/hospitality/Cantina+La+Veinte_post02.jpeg
 external_url: "https://www.miamix.io/hospitality-mix/cantina-la-veinte"
 channel: [Hospitality]
 business_name: "Cantina La Veinte"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/Cantina La Veinte_MIAMIX.png
+_thumbnail: /images/hospitality/Cantina+La+Veinte_post02.jpeg
 ---
-
-<!-- SINGLE IMAGE -->
-![Cantina La Veinte](/images/hospitality/cantina-ambiente-15-1536x1024-1-1024x683.jpg)
 
 In the heart of Brickell, where skyscrapers rise like guardians of modernity and luxury permeates every corner, there exists a culinary refuge that has managed to capture the essence of Mexico with incomparable elegance. Cantina La Veinte is not simply a restaurant, it is a sensory experience that transports its diners through the most authentic and sophisticated flavors of Mexican gastronomy, all while rubbing shoulders with some of the most recognized personalities in international entertainment.
 
@@ -36,6 +33,9 @@ Among the most emblematic dishes is the grilled octopus, tender and perfectly se
 {% include gallery.html folder="/images/hospitality" images="Cantina La Veinte_post05.png|Cantina La Veinte_post04.png|TATORE_post03.jpeg" cols=2 %}
 
 The experience at Cantina La Veinte would not be complete without exploring its exceptional beverage menu. The restaurant's mixologists have created a selection of artisanal cocktails that pay homage to the finest Mexican spirits, with premium mezcals and tequilas combined with fresh ingredients and innovative techniques. Each drink is a celebration in itself, designed to perfectly complement the intense and complex flavors of the food, creating harmonies that elevate the entire gastronomic experience.
+
+<!-- SINGLE IMAGE -->
+![Cantina La Veinte](/images/hospitality/cantina-ambiente-15-1536x1024-1-1024x683.jpg)
 
 Service at this establishment is another of its fundamental pillars. The team has been trained not only in the technical aspects of luxury hospitality, but also in the art of anticipating the needs of each diner. From personalized recommendations based on individual preferences to attention to the smallest details, each staff member contributes to creating that feeling of being treated like a special guest in an old friend's home, but with all the sophistication of a world class restaurant.
 
