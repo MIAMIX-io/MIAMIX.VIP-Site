@@ -1,11 +1,11 @@
 ---
 title: Angels for Humanity
 page_title: Angels for Humanity
+description: "Angels for Humanity hosted its fifth annual Tea for a Cause at the Biltmore Hotel in Coral Gables, blending a Gardens of Versailles theme with purpose and elegance. The afternoon featured a fashion presentation by 【entity-Giannina Azar¦canonical_name=Giannina Azar】 and celebrated the organization's mission to uplift underserved children through education, healthcare, and essential resources."
 date: 2026-05-10T00:10:00.000Z
 cover_image: /images/curated/20260426-0T0A0093.jpg
 external_url: null
-channel:
-  - CuratedLifestyle
+channel: [CuratedLifestyle]
 business_name: null
 author: "Romina Nabhen"
 featured: false
@@ -19,7 +19,7 @@ From the moment guests arrived, the atmosphere reflected a careful balance of be
 
 At the heart of the afternoon was the mission of Angels for Humanity, an organization dedicated to uplifting underserved children through initiatives focused on education, healthcare, and essential resources. Tea for a Cause serves as an extension of that work, offering a platform where community and philanthropy intersect in a meaningful way.
 
-Guests enjoyed delectable bites and champagne as the experience unfolded with a refined sense of ease and intention. A highlight of the afternoon was the fashion presentation by Giannina Azar, whose designs brought an added layer of artistry and sophistication to the event, seamlessly complementing the theme and elevating the overall experience.
+Guests enjoyed delectable bites and champagne as the experience unfolded with a refined sense of ease and intention. A highlight of the afternoon was the fashion presentation by 【entity-Giannina Azar¦canonical_name=Giannina Azar】, whose designs brought an added layer of artistry and sophistication to the event, seamlessly complementing the theme and elevating the overall experience.
 
 Each element was thoughtfully integrated, allowing the event to flow naturally while maintaining a clear sense of purpose. Guests were not only present for the experience, but engaged in the impact behind it.
 
