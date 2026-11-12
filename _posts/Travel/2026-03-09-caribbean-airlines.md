@@ -1,7 +1,7 @@
 ---
 title: "Caribbean Airlines"
 page_title: "Caribbean Airlines"
-description: "The National Carrier of Trinidad and Tobago"
+description: "Caribbean Airlines has established itself as a vital link between the Caribbean region and the United States. With its hub at Piarco, it serves both the large Caribbean diaspora in America and tourists seeking tropical getaways, with complimentary meals, generous baggage and Caribbean music on board."
 date: 2026-03-09
 cover_image: /images/travel/Caribbean Airlines_cover.png
 external_url: "https://www.miamix.io/travel-leisure/caribbean-airlines"
