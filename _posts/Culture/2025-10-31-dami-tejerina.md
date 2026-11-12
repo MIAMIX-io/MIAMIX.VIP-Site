@@ -1,7 +1,7 @@
 ---
 title: "Dami Tejerina"
 page_title: "Argentine Rhythm"
-description: "Argentine Rhythm We had the pleasure of meeting Dami Tejerina in South Beach on a sunny afternoon filled with good vibes. The Argentine DJ arrived in Miami in the middle of a busy tour, and we took the opportunity to chat about his career, his beginnings, and everything he has to offer. With a constant smile and a sense of humility, Dami shared details about his life behind the turntables and his passion for making people dance. The conversation flowed naturally. Dami recalled his first parties in Buenos Aires, where he started DJing with borrowed equipment and a lot of enthusiasm. He told us that those were years of learning, late nights, and a constant search for his own sound. Today, that sound takes him to different cities around the world, but always with a distinctly Argentine touch. He also spoke to us about his tours in Latin America and Europe, where audiences welcome him with open arms. “Every city has its own energy,” he said, “and that's what motivates me to keep creating. The connection with people is everything.”"
+description: "We met Argentine DJ Dami Tejerina in South Beach during his busy tour for a sunny chat about his career and his passion for making people dance. He recalled starting out in Buenos Aires with borrowed equipment, late nights, and a search for his own sound, a sound that now takes him around the world with a distinctly Argentine touch. “Every city has its own energy,” he said, “and that’s what motivates me to keep creating. The connection with people is everything.”"
 date: 2025-10-31
 cover_image: /images/culture/DAMI-1-1024x670.jpg
 external_url: "https://www.miamix.io/culture-arts/dami-tejerina"
