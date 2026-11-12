@@ -1,7 +1,7 @@
 ---
 title: "Northern Argentina"
 page_title: "A journey through unforgettable landscapes"
-description: "A journey through unforgettable landscapes  We flew to the city of Salta and from there we set off on a journey to Cafayate, where we enjoyed the city and tasted some wines. Along the way, the landscapes were constantly changing, offering a unique visual experience that left us breathless.    On the journey from Salta to Cafayate via Route 68, you can enjoy the Quebrada de las Conchas, which offers unique rock formations such as the Amphitheater, the Toad, the Friar, and the Devil's Throat. Each of these formations tells a millennia-old geological story carved by wind and water."
+description: "We flew to Salta and set off for Cafayate, where the landscapes kept changing and left us breathless. From Quebrada de las Conchas with the Amphitheater, the Toad, the Friar and the Devil's Throat, to high altitude wines, adobe towns and salt flats that look infinite, Northern Argentina is a journey through unforgettable landscapes."
 date: 2025-10-31
 cover_image: /images/travel/IMG_5205.JPG
 external_url: "https://www.miamix.io/travel-leisure/northern-argentina-unforgettable-landscapes"
