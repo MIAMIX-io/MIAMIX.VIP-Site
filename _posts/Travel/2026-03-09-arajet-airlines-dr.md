@@ -3,14 +3,14 @@ title: "Arajet Airlines DR"
 page_title: "Arajet Airlines DR"
 description: "Arajet has put the Dominican Republic back at the center of regional air travel. With a clear identity and an ambitious route strategy, it has attracted travelers who want a smoother way to move between key cities in Latin America and North America, through hubs that reduce friction and open new combinations."
 date: 2026-03-09
-cover_image: /images/travel/Arajet_MIAMIX.png
+cover_image: /images/travel/Arajet_MIAMIX_0.png
 external_url: "https://www.miamix.io/travel-leisure/arajet-airlines-dr"
 channel: [Travel]
 business_name: "Arajet Airlines DR"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/Arajet_MIAMIX.png
+_thumbnail: /images/travel/Arajet_MIAMIX_0.png
 ---
 
 <!-- SINGLE IMAGE -->
