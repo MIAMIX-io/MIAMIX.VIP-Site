@@ -1,7 +1,7 @@
 ---
 title: "Lennox Miami Beach Hotel"
 page_title: "Lennox Miami Beach Hotel"
-description: "Experience the Art Deco Charm"
+description: "Lennox Miami Beach is a refined retreat from South Beach energy. Expect calm interiors, light and texture over flash, and a base that feels connected to the neighborhood yet removed from the chaos, perfect for exploring on your own terms."
 date: 2026-03-08
 cover_image: /images/hospitality/Lennox Miami Beach Hotel_cover.jpeg
 external_url: "https://www.miamix.io/hospitality-mix/lennox-miami-beach-hotel"
