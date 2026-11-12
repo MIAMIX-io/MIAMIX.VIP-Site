@@ -1,7 +1,7 @@
 ---
 title: "Hotel Lennox"
 page_title: "Buenos Aires, Argentina"
-description: "Buenos Aries, Argentina"
+description: "In the heart of Buenos Aires, Lennox is an exclusive urban oasis. Expect cutting edge Argentine design, rooms built for comfort and pleasure, a terrace made for spring afternoons above the city, and service that treats every stay like a celebration."
 date: 2026-03-08
 cover_image: /images/hospitality/IMG_0049.JPG
 external_url: "https://www.miamix.io/hospitality-mix/hotel-lennox"
