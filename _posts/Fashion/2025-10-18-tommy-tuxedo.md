@@ -9,7 +9,7 @@ channel: [Fashion]
 business_name: "TOMMY’S TUXEDOS"
 author: "Cristhian Gassmann"
 featured: false
-published: false
+published: true
 _thumbnail: "/images/fashion/IMG_4983.png"
 ---
 

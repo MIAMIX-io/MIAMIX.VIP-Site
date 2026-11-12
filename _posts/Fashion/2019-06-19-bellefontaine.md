@@ -9,7 +9,7 @@ channel: [Fashion]
 business_name: ""
 author: "Cristhian Gassmann"
 featured: false
-published: false
+published: true
 _thumbnail: "/images/fashion/mb2-ar-creativo.jpg"
 ---
 
