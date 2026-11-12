@@ -3,14 +3,14 @@ title: "INTER MIAMI"
 page_title: "Nu Stadium Launches In Miami"
 description: "On April 4, Inter Miami CF opened its new stadium, marking a historic moment for American soccer. More than a sporting venue, it positions Miami as a global hub where football, entertainment, and culture meet. Thousands of fans gathered from early afternoon, filling the area with anticipation and pride."
 date: 2026-04-06
-cover_image: /images/inter-miami/MIAMIX-2.png
+cover_image: /images/intermia/media_94707295_94313658_compressed (1).jpg
 external_url: "https://www.miamix.io/inter-miami-cf/inter-miami-final-wjsgb"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/inter-miami/MIAMIX-2.png
+_thumbnail: /images/intermia/media_94707295_94313658_compressed (1).jpg
 ---
 
 The night of April 4 marked a historic milestone in American soccer with the grand opening of the new stadium of Inter Miami CF. More than just a sporting venue, the stadium represents a bold and strategic statement about the continued growth of the game in the United States, positioning Miami as a global hub where football, entertainment, and culture converge. From early in the afternoon, thousands of fans gathered around the stadium, building an atmosphere charged with anticipation, pride, and a sense of belonging to a transformative moment in the sport’s history.
