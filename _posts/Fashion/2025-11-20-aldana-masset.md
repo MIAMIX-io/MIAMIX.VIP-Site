@@ -3,14 +3,14 @@ title: "Aldana Masset"
 page_title: "The Argentine Hope"
 description: "After more than six decades since Argentina’s last Miss Universe crown in 1962, a new generation of hope emerges in Aldana Masset. More than a beauty queen, she represents resilience, authenticity, and the strength to rise above life’s challenges, reminding us that true beauty comes from within."
 date: 2025-11-20
-cover_image: "/images/fashion/IMG_0375.jpeg"
+cover_image: "/images/fashion/IMG_0359.jpeg"
 external_url: "https://www.miamix.io/fashion-lifestyle/aldana-masset"
 channel: [Fashion]
 business_name: ""
 author: "Cristhian Gassmann"
 featured: false
 published: true
-_thumbnail: "/images/fashion/IMG_0375.jpeg"
+_thumbnail: "/images/fashion/IMG_0359.jpeg"
 ---
 
 Argentina carries a long, almost symbolic, wait: more than six decades since Norma Nolan gifted us our only Miss Universe crown in 1962. Since then, the desire to hear our country's name at the top again has become a dream that has spanned generations. A dream that seemed dormant… until now.
