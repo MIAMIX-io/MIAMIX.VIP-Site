@@ -1,7 +1,7 @@
 ---
 title: "Bodega Isasmendi"
 page_title: "High-altitude wines with a family soul"
-description: "High-altitude wines with a family soul Nestled in the heart of the Calchaquí Valleys, at 2,500 meters above sea level, Bodega Isasmendi is much more than a producer of extreme high-altitude wines. It is the result of three migrant stories that converged in Cachi, Salta, to create a family venture that honors a nearly two-century-old winemaking legacy and celebrates the magic of one of the world's most extraordinary terroirs. The Isasmendi family's history in the wine world dates back to 1831, when Don Nicolás Severo de Isasi Isasmendi y Echalar founded Colomé , Argentina's oldest operating winery. In 1854, his daughter Ascensión introduced the first pre-phylloxera vines of Cabernet Sauvignon and Malbec from France, becoming a pioneer of the Argentine wine scene. This legacy remained in the family for 170 years, until the Hess group acquired Colomé in 2001."
+description: "Nestled in the heart of the Calchaquí Valleys, at 2,500 meters above sea level, Bodega Isasmendi is the result of three migrant stories that converged in Cachi to honor a nearly two century old winemaking legacy, from Don Nicolás Severo de Isasi Isasmendi founding Colomé in 1831 to today."
 date: 2025-11-05
 cover_image: /images/travel/IMG_9846.jpeg
 external_url: "https://www.miamix.io/travel-leisure/bodega-isasmendi"
