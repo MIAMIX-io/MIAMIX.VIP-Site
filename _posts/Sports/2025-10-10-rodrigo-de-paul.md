@@ -1,7 +1,7 @@
 ---
 title: "Rodrigo De Paul"
 page_title: "Put On The Pink"
-description: "Puts On The Pink"
+description: "The summer heat in Florida was not because of the weather. It was because Rodrigo De Paul, the Little Engine of the Argentine National Team, was introduced as Inter Miami's new star, in pink No. 7, in front of a packed stadium, with his family, a radiant Tini Stoessel, and an embrace from Lionel Messi, whom he calls an older brother."
 date: 2025-10-10
 cover_image: /images/sports/MIAMIX-34.png
 external_url: "https://www.miamix.io/sports-miamix-member/rodrigo-de-paul-puts-on-the-pink"
