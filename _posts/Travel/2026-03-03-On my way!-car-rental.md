@@ -1,7 +1,7 @@
 ---
 title: "OMW Car Rental Miami"
 page_title: "OMW Car Rental Miami"
-description: "Miami-based Transport"
+description: "Miami has a way of making every arrival feel like a small celebration. The air is warmer, the light is brighter, and the city invites you to move beyond postcard views. Instead of lining up for a faceless counter experience, one traveler found OMW, a small name that felt personal from the start."
 date: 2026-03-03
 cover_image: /images/travel/On my way!_cover.jpeg
 external_url: "https://www.miamix.io/travel-leisure/on-my-way"
