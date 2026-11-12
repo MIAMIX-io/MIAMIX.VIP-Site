@@ -215,6 +215,28 @@ layout: null
     <p style="text-align:center; color:#aaa;">New stories are on the way.</p>
     {%- endif %}
   </div>
+            <section class="curated-lifestyle">
+  <div class="curated-head">
+    <span class="curated-eyebrow">Spotlight</span>
+    <h2>Curated Lifestyle</h2>
+  </div>
+
+  <div class="curated-grid">
+    {%- assign curated = site.posts | where_exp: "post", "post.categories contains 'curated-lifestyle'" -%}
+    {%- for post in curated limit: 6 -%}
+    <article class="curated-card">
+      <a class="curated-card__media" href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }}">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">
+      </a>
+      <div class="curated-card__body">
+        <div class="curated-card__meta">{{ post.date | date: "%B %d, %Y" }}</div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      </div>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
 </section>
     </main>
 
