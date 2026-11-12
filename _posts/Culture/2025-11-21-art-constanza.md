@@ -3,7 +3,7 @@ title: "Art By Constanza Espejo"
 page_title: "Art By Constanza Espejo"
 description: "From text to truth In the vibrant framework of the Ibero American Film Festival Miami, the local art scene experienced one of its most intimate and significant days with the official presentation of the book Meisner Technique + Combined Resources: From Text to Truth by actress and director Constanza Espejo."
 date: 2025-11-21
-cover_image: /images/culture/d0a99966-5b62-486d-bbea-b1c79a3bd819.JPG
+cover_image: /images/culture/art-constanza-photo.JPG
 external_url: "https://www.amazon.com/dp/B0FRH7LMZZ?bestFormat=true"
 channel: Culture
 business_name: "We Art Foundation"
@@ -11,7 +11,7 @@ author: "Cristhian Gassmann"
 featured: false
 # published: false
 _thumbnail: >-
-  /images/culture/d0a99966-5b62-486d-bbea-b1c79a3bd819.JPG
+  /images/culture/art-constanza-photo.JPG
 ---
 
 In the vibrant framework of the Ibero American Film Festival Miami, the local art scene experienced one of its most intimate and significant days with the official presentation of the book Meisner Technique + Combined Resources: From Text to Truth by actress and director Constanza Espejo. A work destined to become essential reading for performers and creators who seek to work from authenticity, organicity and stage presence.
