@@ -1,7 +1,7 @@
 ---
 title: "Espiritu Parrillero"
 page_title: "Carnivore Carnival Festival"
-description: "Carnivore Carnival"
+description: "In Kansas City, smoke, music and fire took over as Espíritu Parrillero brought the philosophy of Argentine asado to the Carnivore Carnival. More than a brand, it is a movement built on the idea that fire is about connection, and it was felt in every activation, collaboration and shared plate."
 date: 2025-10-12
 cover_image: /images/hospitality/IMG_9214.jpeg
 external_url: "https://www.miamix.io/hospitality-mix/espritu-parrillero-at-the-carnivore-carnival-festival-en-kansas-city-j5f6x"
