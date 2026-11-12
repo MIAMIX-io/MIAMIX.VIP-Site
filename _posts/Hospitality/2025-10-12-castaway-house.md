@@ -1,7 +1,7 @@
 ---
 title: "Castaway House"
 page_title: "Wines with Identity"
-description: "Wines with Identity"
+description: "Born in the heart of Parras Valley, Casa Náufrago began in 2018 as a family dream: to prove Mexican wine can stand with the finest international labels. Each bottle is a story born from the earth, shaped by respect for the land, and made to be shared."
 date: 2025-10-12
 cover_image: /images/hospitality/MIAMIX-51.png
 external_url: "https://www.miamix.io/hospitality-mix/castaway-house-wines-with-identity"
