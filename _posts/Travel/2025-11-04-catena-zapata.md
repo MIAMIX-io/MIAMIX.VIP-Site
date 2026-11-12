@@ -1,7 +1,7 @@
 ---
 title: "Catena Zapata"
 page_title: "A Journey of Argentine Wines"
-description: "A Journey of Argentine Wines We were invited to live a unique experience with one of the most recognized Argentine wine brands in the world: CATENA Zapata. Not only did we taste the best wines, but we also learned a lot about how they are produced and enjoyed an exceptional gastronomy. The history of this winery began in 1902, when Nicola Catena, an Italian immigrant, arrived in Argentina and planted his first vineyards in Mendoza. Throughout four generations, the Catena family has dedicated its life to viticulture, turning the winery into a world reference for high quality wines that today combines tradition, innovation and an unparalleled gastronomic proposal. The person in charge of making this experience unforgettable was Martín, the winery's chef, who with his culinary secrets has become a true master of Mendoza's gastronomy. Martín is responsible for all of Ernesto Catena's gastronomic projects and is also associated with Johana Foster in a project to elaborate mainly with aged crianza grapes. His mission is clear: that every visitor comes and fully enjoys the experience, immersing themselves in Mendoza's culture through every dish and every glass of wine."
+description: "We were invited to live a unique experience with Catena Zapata. We tasted the best wines, learned how they are produced, and enjoyed exceptional gastronomy, from Tikal Júbilo and Campo del Cielo to Cosmovisión orange wine, paired with clay oven empanadas and Mendoza tomato."
 date: 2025-11-04
 cover_image: /images/travel/IMG_5457.JPG
 external_url: "https://www.miamix.io/travel-leisure/catena-zapata"
