@@ -1,7 +1,7 @@
 ---
 title: "Valeria Schapira"
 page_title: "New Book In Miami"
-description: "New Book Release In Miami The Argentine Consulate General and Promotion Center in Miami hosted a special event where journalist and writer Valeria Schapira shared her latest book with the public. The event brought together readers, friends, and literature lovers in a relaxed and highly participatory atmosphere. With her approachable and charismatic style, Valeria spoke about the spirit of her new work, which invites reflection and self-discovery. Known for her ability to connect with people's emotions, the author also shared anecdotes from her creative process and encouraged those present to view life's challenges with optimism and resilience. The event was produced by Silvina Fuentes, who has promoted numerous cultural gatherings in Miami that bring the Argentine and Latin American communities closer to literary, artistic, and musical figures. Her collaboration with the consulate allowed for an intimate and intimate space between the author and the audience."
+description: "Valeria Schapira presented her latest book at the Argentine Consulate General and Promotion Center in Miami, in a relaxed, participatory evening with readers and literature lovers. The journalist and writer spoke about reflection, self-discovery, and facing life's challenges with optimism and resilience, sharing anecdotes from her creative process. The event was produced by Silvina Fuentes."
 date: 2019-06-19
 cover_image: /images/culture/vva14-1024x709.jpg
 external_url: "https://www.miamix.io/culture-arts/valeria-schapira-miamix"
