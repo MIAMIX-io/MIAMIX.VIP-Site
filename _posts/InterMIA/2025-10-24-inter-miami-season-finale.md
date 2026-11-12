@@ -3,14 +3,14 @@ title: "Inter Miami: Season Finale"
 page_title: "Miami dominates Atlanta 4-0"
 description: "Inter Miami closed its MLS regular season with a commanding victory over Atlanta United at Chase Stadium. Lionel Messi led the show with dazzling dribbles, pinpoint passing, and brilliant play, delivering a memorable night of football and celebration for Miami fans."
 date: 2025-10-24
-cover_image: /images/inter-miami/IMG_2766.jpg
+cover_image: /images/intermia/IMG_9194.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/inter-miami-final"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/inter-miami/IMG_2766.jpg
+_thumbnail: /images/intermia/IMG_9194.jpg
 ---
 
 The final match of the MLS regular season turned into a true football gala at Chase Stadium. Inter Miami closed its campaign with a resounding 4–0 victory over Atlanta United, a night that blended top-level football with emotional farewells. Supporters will remember it as a perfect celebration of talent and camaraderie that defined the season.
