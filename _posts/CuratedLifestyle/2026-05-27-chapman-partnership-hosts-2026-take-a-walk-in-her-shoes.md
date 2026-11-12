@@ -1,17 +1,16 @@
 ---
-title: Chapman Partnership Hosts 2026 Take a Walk in Her Shoes
-page_title: Chapman Partnership Hosts 2026 Take a Walk in Her Shoes
+title: "Chapman Partnership Hosts 2026 Take a Walk in Her Shoes"
+page_title: "Chapman Partnership Hosts 2026 Take a Walk in Her Shoes"
+description: "Chapman Partnership hosted its annual Take a Walk in Her Shoes luncheon at Hotel Colonnade Coral Gables, bringing together more than 400 philanthropists and advocates. The afternoon blended fashion, storytelling, and purpose to support women and children experiencing homelessness in Miami-Dade County."
 date: 2026-06-02T14:25:00.000Z
-cover_image: >-
-  /assets/images/CuratedLifestyle/DSC_8786_4.jpeg
+cover_image: /images/curated/DSC_8786_0.jpeg
 external_url: null
-channel:
-  - CuratedLifestyle
+channel: [Curated Lifestyle]
 business_name: "null"
 author: "Romina Nabhen"
 featured: false
 _thumbnail: >-
-  /assets/images/CuratedLifestyle/DSC_8786_4.jpeg
+  /images/curated/DSC_8786_0.jpeg
 ---
 
 Chapman Partnership Hosts Take a Walk in Her Shoes 2026 at Hotel Colonnade Coral Gables
