@@ -3,14 +3,14 @@ title: "La Cabrera"
 page_title: "New Midtown Location"
 description: "From Buenos Aires to Midtown, La Cabrera brings its legendary asado to one of Miami's most vibrant neighborhoods. Expect prime cuts cooked over fire, classic sides served in small casseroles, and the warm, family style hospitality that made the brand famous around the world."
 date: 2019-03-11
-cover_image: /images/hospitality/MIAMIX-34 (1).png
+cover_image: /images/hospitality/cab-2-1024x576.jpg
 external_url: "https://www.miamix.io/hospitality-mix/la-cabrera-midtown"
 channel: [Hospitality]
 business_name: "La Cabrera"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/MIAMIX-34 (1).png
+_thumbnail: /images/hospitality/cab-2-1024x576.jpg
 ---
 
 The renowned steakhouse La Cabrera continues to consolidate its international presence with the official opening of its third restaurant in Miami, this time in the vibrant Midtown neighborhood. May 1st marks a special date for food lovers, who can now enjoy authentic Argentine grilled meats in a new space that blends tradition, elegance, and flavor.
