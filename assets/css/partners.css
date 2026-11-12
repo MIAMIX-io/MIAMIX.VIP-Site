@@ -96,3 +96,34 @@ a.partner-tile:hover, a.partner-tile:focus-visible {
   .logo-tile[aria-hidden="true"],
   .partner-tile[aria-hidden="true"] { display: none; }
 }
+/* Partner logos: fit + centered, never cropped */
+.partner-tile,
+.logo-tile,
+.partner-card,
+.logo-card,
+.partners-grid > *,
+.partner-logos > *,
+.logo-grid > * {
+  aspect-ratio: 5 / 4 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.partner-tile img,
+.logo-tile img,
+.partner-card img,
+.logo-card img,
+.partners-grid img,
+.partner-logos img,
+.logo-grid img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 14% !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
