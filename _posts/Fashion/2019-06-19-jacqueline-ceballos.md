@@ -3,14 +3,14 @@ title: "Jacqueline Ceballos"
 page_title: "Queen of Flowers"
 description: "Celebrated as the Queen of Flowers, Jacqueline Ceballos graced the cover of SOMOS LA REVISTA with an elegant celebration at Neiman Marcus in Bal Harbour. Surrounded by luxury, fine wines, and the fragrances of Parfums de Marly, the event honored her creative vision and floral legacy through Petal Cartel, with MIAMIX capturing every moment."
 date: 2019-06-19
-cover_image: "/images/fashion/unsplash-image-UxArzYUBXpI.jpg"
+cover_image: "/images/fashion/BF7ABBFE-6543-4748-B143-23788829206A.jpeg"
 external_url: "https://www.miamix.io/fashion-lifestyle/jacqueline-ceballos"
 channel: [Fashion]
 business_name: ""
 author: "Cristhian Gassmann"
 featured: false
 published: true
-_thumbnail: "/images/fashion/unsplash-image-UxArzYUBXpI.jpg"
+_thumbnail: "/images/fashion/BF7ABBFE-6543-4748-B143-23788829206A.jpeg"
 ---
 
 Jacqueline Ceballos, celebrated as The Queen of Floral, graced the cover of SOMOS LA REVISTA, marking a remarkable midday celebration. The event, held at the prestigious Saks Bal Harbor store, was a tribute to the talent, elegance, and entrepreneurial vision of a woman who has turned her passion for flowers into a lasting legacy of beauty and inspiration.
