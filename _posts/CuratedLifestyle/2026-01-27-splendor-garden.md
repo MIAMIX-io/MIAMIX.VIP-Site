@@ -1,7 +1,7 @@
 ---
 title: "Splendor in the Garden"
 page_title: "Splendor in the Garden"
-description: "Splendor in the Garden celebrated its 15th annual edition, reaffirming its place as one of South Florida’s most anticipated afternoons where fashion and philanthropy seamlessly converge. Hosted at the iconic Fairchild Tropical Botanic Garden, the event brought together leaders from fashion, society, and the philanthropic community in an atmosphere of elegance and purpose."
+description: "The 15th annual Splendor in the Garden brought together South Florida’s fashion, society, and philanthropic communities at Fairchild Tropical Botanic Garden for an elegant afternoon celebrating style and giving back."
 date: 2026-01-27
 cover_image: /images/curated/IMG_4819.jpg
 external_url: "https://www.miamix.io/romina-nabhen/splendor-in-the-garden"
