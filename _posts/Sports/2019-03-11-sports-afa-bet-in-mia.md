@@ -3,14 +3,14 @@ title: "AFA"
 page_title: "Bet In Miami"
 description: "AFA is betting on Miami. On June 13, the federation announced the AFA International Center at Treasure Island School in North Bay Village, a space for high performance training, sports programs, cultural workshops and youth activities. Two days later, it celebrated Father's Day at Chase Stadium in Fort Lauderdale with Más+, families, and figures from Argentine soccer."
 date: 2019-03-11
-cover_image: /images/sports/afa-f3-683x1024.jpg
+cover_image: /images/sports/IMG_9092.JPG
 external_url: "https://www.miamix.io/sports-miamix-member/afa-bet-in-miami"
 channel: [Sports]
 business_name: "AFA"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/sports/afa-f3-683x1024.jpg
+_thumbnail: /images/sports/IMG_9092.JPG
 ---
 
 The Argentine Football Association (AFA) continues to strengthen its international presence with a clear focus on the United States, the new epicenter of football's growth. Miami, in particular, has become the central hub of its initiatives, with a series of actions that underscore the organization's commitment to the development of the sport and its connection with local communities.
