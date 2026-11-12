@@ -3,14 +3,14 @@ title: "Defed Rental Car"
 page_title: "Defed Rental Car"
 description: "In the heart of Miami's vibrant landscape, Defed Miami Rental emerges as the destination for travelers seeking an unparalleled automotive experience. From cruising Ocean Drive to navigating Brickell, each vehicle blends comfort, style and power, with handcrafted interiors and state of the art technology."
 date: 2026-03-09
-cover_image: /images/travel/Defed Rental Car_cover.jpeg
+cover_image: /images/travel/IMG_6300_0.jpeg
 external_url: "https://www.miamix.io/travel-leisure/defed-rental-car"
 channel: [Travel]
 business_name: "Defed Rental Car"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/Defed Rental Car_cover.jpeg
+_thumbnail: /images/travel/IMG_6300_0.jpeg
 ---
 
 <!-- SINGLE IMAGE -->
