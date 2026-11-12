@@ -1,7 +1,7 @@
 ---
 title: "Cantina La Veinte"
 page_title: "Cantina La Veinte"
-description: "The Heart of Brickell"
+description: "In the heart of Brickell, where skyscrapers meet luxury, Cantina La Veinte is a culinary refuge that captures Mexico with elegance. Expect citrus bright ceviches, tacos elevated to fine dining, tender grilled octopus on black bean puree with morita chile, and cocktails built on premium mezcal and tequila."
 date: 2026-03-09
 cover_image: /images/hospitality/Cantina La Veinte_MIAMIX.png
 external_url: "https://www.miamix.io/hospitality-mix/cantina-la-veinte"
