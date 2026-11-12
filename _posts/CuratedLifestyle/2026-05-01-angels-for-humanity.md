@@ -1,4 +1,4 @@
- ---
+---
 title: Angels for Humanity
 page_title: Angels for Humanity
 description: "Angels for Humanity hosted its fifth annual Tea for a Cause at the Biltmore Hotel in Coral Gables, blending a Gardens of Versailles theme with purpose and elegance. The afternoon featured a fashion presentation by 【entity-Giannina Azar¦canonical_name=Giannina Azar】 and celebrated the organization's mission to uplift underserved children through education, healthcare, and essential resources."
