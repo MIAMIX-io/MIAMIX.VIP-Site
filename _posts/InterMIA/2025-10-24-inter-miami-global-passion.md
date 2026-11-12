@@ -3,14 +3,14 @@ title: "Inter Miami Global Passion"
 page_title: "Experience Global Passion"
 description: "In 2018, David Beckham and brothers Jorge and José Mas joined forces in Miami with a shared vision: to create a soccer club that reflected the city’s passion, diversity, and energy. That conversation sparked the creation of Inter Miami CF, a team built on unity, pride, and ambition."
 date: 2025-10-24
-cover_image: /images/inter-miami/IMG_2766.jpg
+cover_image: /images/intermia/media_94718617_94325004_compressed.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/inter-global-passion"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/inter-miami/IMG_2766.jpg
+_thumbnail: /images/intermia/media_94718617_94325004_compressed.jpg
 ---
 
 In 2018, in Miami, Florida, David Beckham, Jorge Mas, and José Mas met for a conversation. It wasn't just any conversation: it was the beginning of a dream. They wondered how it was possible that a city with so much energy, diversity, and love for soccer didn't have a club that represented that passion. That void transformed into a plan, and that plan into a mission: to found a team that would be a symbol of unity, pride, and hope.
