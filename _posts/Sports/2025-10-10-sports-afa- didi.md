@@ -1,7 +1,7 @@
 ---
 title: "AFA & DiDi"
 page_title: "Strategic Partnership"
-description: "Strategic Partnership"
+description: "At an event with sports figures, media and corporate leaders, AFA announced its new partnership with DiDi. The collaboration makes DiDi an Official Sponsor of the Argentine National Team, and connects two worlds that inspire and mobilize millions: mobility and football."
 date: 2025-10-10
 cover_image: /images/sports/MIA_AFA4_OFFICE_DAV6-1024x576.jpg
 external_url: "https://www.miamix.io/sports-miamix-member/blog-post-title-one-5p89y-2t43z-wnyzz-6e6nt"
