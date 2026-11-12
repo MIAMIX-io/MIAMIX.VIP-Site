@@ -147,7 +147,7 @@
    ROMINA HERO - mobile single column, desktop copy left / portrait right
    HTML order stays mobile-first: eyebrow -> name -> tagline -> portrait -> intro
    ===================================================================== */
-.curated-page .romina-hero { padding: 100px 0 70px; }
+.curated-page .romina-hero { padding: 90px 0 60px; }
 .curated-page .romina-hero-single { max-width: 760px; margin: 0 auto; }
 
 .curated-page .romina-eyebrow {
@@ -536,7 +536,7 @@
   .bio-photo { position: static; max-width: 460px; margin: 0 auto; }
 
   .curated-page .wrap { padding-left: 20px; padding-right: 20px; }
-  .curated-page .romina-hero { padding-top: 92px; padding-bottom: 50px; }
+  .curated-page .romina-hero { padding-top: 84px; padding-bottom: 40px; }
   .curated-page .bio .wrap.bio-grid { grid-template-columns: 1fr; gap: 36px; }
   .curated-page .bio-photo { position: static; max-width: 460px; margin: 0 auto; }
   .curated-page .bio h2 { font-size: 32px; }
@@ -565,7 +565,7 @@
 
 @media (min-width: 901px) {
   /* Hero: copy left, portrait right, vertically centered */
-  .curated-page .romina-hero { padding: 150px 0 110px; }
+  .curated-page .romina-hero { padding: 100px 0 70px; }
   .curated-page .romina-hero-single {
     max-width: 1200px;
     display: grid;
