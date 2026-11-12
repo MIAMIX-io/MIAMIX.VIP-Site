@@ -318,3 +318,42 @@
   .row--featured .poster { width: 220px !important; }
   .row--featured .poster-img { aspect-ratio: 4 / 3 !important; padding: 18px !important; }
 }
+
+/* === Align Featured Partners with Latest Stories - MUST BE LAST in home.css === */
+
+/* Make all homepage sections use the same container */
+.latest-stories,
+.curated-lifestyle,
+.spotlight,
+.featured-partners,
+.partners-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Make the wrappers inside match too */
+.latest-stories .wrap,
+.curated-lifestyle .wrap,
+.spotlight .wrap,
+.featured-partners .wrap,
+.partners-section .wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Remove the extra left padding on just this title */
+.featured-partners h2,
+.spotlight h2,
+.partners-section h2,
+.featured-partners .section-title,
+.spotlight .section-title,
+.featured-partners .spotlight-title {
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+}
