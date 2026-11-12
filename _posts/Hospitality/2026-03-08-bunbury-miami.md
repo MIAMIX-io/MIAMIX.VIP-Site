@@ -1,7 +1,7 @@
 ---
 title: "Bunbury Miami"
 page_title: "Bunbury Miami"
-description: "Vibrant Neighborhood Restaurant & Bar"
+description: "In Miami Beach, Bunbury is the kind of neighborhood spot you return to. Seasonal dishes built on local ingredients, plates that look as good as they taste, craft cocktails with a modern twist, and service that makes every table feel personal."
 date: 2026-03-08
 cover_image: /images/hospitality/Bunbury_Miami_cover.webp
 external_url: "https://www.miamix.io/hospitality-mix/bunbury-miami"
