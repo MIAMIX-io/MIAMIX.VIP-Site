@@ -3,14 +3,14 @@ title: "Castaway House"
 page_title: "Wines with Identity"
 description: "Born in the heart of Parras Valley, Casa Náufrago began in 2018 as a family dream: to prove Mexican wine can stand with the finest international labels. Each bottle is a story born from the earth, shaped by respect for the land, and made to be shared."
 date: 2025-10-12
-cover_image: /images/hospitality/MIAMIX-51.png
+cover_image: /images/hospitality/m14-1024x576.jpg
 external_url: "https://www.miamix.io/hospitality-mix/castaway-house-wines-with-identity"
 channel: [Hospitality]
 business_name: "Castaway House"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/MIAMIX-51.png
+_thumbnail: /images/hospitality/m14-1024x576.jpg
 ---
 
 In the heart of the Parras Valley, in Coahuila, Mexico, Casa Náufrago was born, a family project pursuing an ambitious dream: to produce world-class wines capable of competing with the finest international labels. With 100 hectares of privileged land and a unique microclimate, the winery is committed to respect for the land, oenological innovation, and the passion of its founders.
