@@ -3,14 +3,14 @@ title: "María José"
 page_title: "The Voice That Never Stops"
 description: "In an exclusive interview with MIAMIX, María José, known as “La Josa,” opened up about her journey from Kabah at 16 to established solo artist and proud mother. The Mexican singer, dancer, and actress said packed venues push her to give her all, and credited her mother’s determination for helping her handle fame while protecting her family’s privacy. She also recalled opening for Rihanna with adrenaline and humor: give it your all and get out fast."
 date: 2025-10-31
-cover_image: /images/culture/LAJOSA2-1024x684.jpg
+cover_image: /images/culture/LAJOSA3D3-819x1024.jpg
 external_url: "https://www.miamix.io/culture-arts/maria-jose"
 channel: [Culture]
 business_name: ""
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/culture/LAJOSA2-1024x684.jpg
+_thumbnail: /images/culture/LAJOSA3D3-819x1024.jpg
 ---
 
 In an exclusive interview with Miamix.us, María José, known as "La Josa," opened her heart to us in an intimate conversation. With her trademark authenticity, the Mexican singer, dancer, and actress shared her story, from her beginnings as part of the iconic group Kabah to her present as an established solo artist and proud mother.
