@@ -3,14 +3,14 @@ title: "Tommy's Tuxedos"
 page_title: "Elegance That Transcends Generations"
 description: "Elegance That Transcends Generations, Since 1976, **TOMMY’S TUXEDOS** has defined men’s formalwear through timeless elegance and personalized service. Led by CEO Luis Casella and his wife Elizabeth, whose styling expertise shines on international red carpets, the Miami institution continues to blend tradition with modern sophistication."
 date: 2025-10-18
-cover_image: "/images/fashion/IMG_4983.png"
+cover_image: "/images/fashion/IMG_4456.jpeg"
 external_url: "https://www.miamix.io/fashion-lifestyle/tommys-tuxedos"
 channel: [Fashion]
 business_name: "TOMMY’S TUXEDOS"
 author: "Cristhian Gassmann"
 featured: false
 published: true
-_thumbnail: "/images/fashion/IMG_4983.png"
+_thumbnail: "/images/fashion/IMG_4456.jpeg"
 ---
 
 To speak of masculine elegance is to speak of TOMMY’S TUXEDOS, an iconic house that since 1976 has dressed generations of gentlemen for the most special moments of their lives. With more than 45 years of experience, its name has become synonymous with distinction, personalized service, and meticulous attention to detail.
