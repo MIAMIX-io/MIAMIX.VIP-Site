@@ -1,7 +1,7 @@
 ---
 title: "Chapman Partnership Hosts 2026 Take a Walk in Her Shoes"
-page_title: "Chapman Partnership Hosts 2026 Take a Walk in Her Shoes"
-description: "Chapman Partnership hosted its annual Take a Walk in Her Shoes luncheon at Hotel Colonnade Coral Gables, bringing together more than 400 philanthropists and advocates. The afternoon blended fashion, storytelling, and purpose to support women and children experiencing homelessness in Miami-Dade County."
+page_title: "2026 Take a Walk in Her Shoes"
+description: "Chapman Partnership’s annual Take a Walk in Her Shoes luncheon brought together more than 400 guests at Hotel Colonnade Coral Gables to unite fashion and philanthropy in support of women and children experiencing homelessness."
 date: 2026-06-02T14:25:00.000Z
 cover_image: /images/curated/DSC_8786_0.jpeg
 external_url: null
