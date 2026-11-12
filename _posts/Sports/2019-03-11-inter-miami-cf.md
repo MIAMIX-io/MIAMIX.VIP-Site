@@ -1,7 +1,7 @@
 ---
 title: "Inter Miami CF"
 page_title: "Ignites passion with the release of \"Euphoria\""
-description: "Euphoria Begins"
+description: "Inter Miami brought the party to Wynwood to start the season. In collaboration with Royal Caribbean, the club unveiled the Euphoria uniform and revealed a stunning new mural by JEKS, with Fafa Picault and local talent Benjamin Cremaschi seeing their faces painted into the neighborhood's iconic street art."
 date: 2019-03-11
 cover_image: /images/sports/AX3-1024x673.jpeg
 external_url: "https://www.miamix.io/sports-miamix-member/inter-miami-cf-ignites-passion-with-the-release-of-euphoria"
