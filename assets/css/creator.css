@@ -623,3 +623,29 @@
   .curated-page .curated-stories { padding: 100px 0 120px; }
   .curated-page .curated-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
 }
+/* Curated text - wider side to side */
+.curated-lifestyle .container,
+.curated-lifestyle .page-content,
+.curated-lifestyle .content,
+.curated-lifestyle .wrapper,
+.curated-lifestyle main,
+.curated-lifestyle article,
+.curated-lifestyle .bio,
+.curated-lifestyle .curated-bio,
+.curated-lifestyle .curated-text,
+.container,
+.page-content,
+.content,
+.wrapper,
+main {
+  max-width: 1150px !important;
+  width: 92% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.curated-lifestyle p,
+p {
+  max-width: none !important;
+  width: 100% !important;
+}
