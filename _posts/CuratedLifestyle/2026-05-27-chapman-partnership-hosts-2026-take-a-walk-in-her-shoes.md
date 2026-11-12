@@ -13,8 +13,6 @@ _thumbnail: >-
   /images/curated/DSC_8786_0.jpeg
 ---
 
-Chapman Partnership Hosts Take a Walk in Her Shoes 2026 at Hotel Colonnade Coral Gables
-
 An afternoon rooted in purpose, elegance, and community impact unfolded at the iconic Hotel Colonnade Coral Gables, Autograph Collection as Chapman Partnership welcomed guests to its annual Take a Walk in Her Shoes luncheon and fashion experience.
 
 ![](/assets/images/CuratedLifestyle/DSC_8437_8.jpeg)
