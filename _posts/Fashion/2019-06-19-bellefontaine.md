@@ -1,20 +1,17 @@
 ---
 title: "BelleFontaine x Tom Ford"
 page_title: "BelleFontaine x Tom Ford"
-description: >-
-  Bal Harbour Shops hosted Champagne & Caviar, an exclusive beauty and fashion experience at Carrie's at Neiman Marcus. Hosted by Fernanda Sosa and Stephanie Rosenberg, the event showcased BelleFontaine Switzerland’s luxury caviar skincare and the relaunch of Tom Ford’s iconic Black Orchid fragrance, bringing together premium beauty, haute perfumery, and glamour.
+description: "Bal Harbour Shops hosted Champagne & Caviar, an exclusive beauty and fashion experience at Carrie's at Neiman Marcus. Hosted by Fernanda Sosa and Stephanie Rosenberg, the event showcased BelleFontaine Switzerland’s luxury caviar skincare and the relaunch of Tom Ford’s iconic Black Orchid fragrance, bringing together premium beauty, haute perfumery, and glamour."
 date: 2019-06-19
 cover_image: "/images/fashion/mb2-ar-creativo.jpg"
 external_url: "https://www.miamix.io/fashion-lifestyle/bellefontaine-x-tom-ford-in-bal-harbor"
-channel: Fashion
+channel: [Fashion]
 business_name: ""
 author: "Cristhian Gassmann"
 featured: false
 published: false
 _thumbnail: "/images/fashion/mb2-ar-creativo.jpg"
 ---
-
-Champagne & Caviar
 
 Bal Harbour Shops was the setting for an exclusive event that brought together luxury, beauty, and fashion in one place. Carrie's at Neiman Marcus opened its doors to welcome more than 30 special guests for a unique day designed to celebrate the power of well-cared-for skin and the charm of iconic fragrances.
 
