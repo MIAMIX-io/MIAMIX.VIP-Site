@@ -1,36 +1,60 @@
-/* partners.css: Featured Partners marquee. Replaces the old logo-grid styles. */
-.partners { padding: 72px 0; background: #000; overflow: hidden; font-family: 'Jost', sans-serif; }
+/* Featured Partners - more-square boxes, logos fit without cropping */
+.partners {
+  padding: 72px 0;
+  background: #000;
+  overflow: hidden;
+  font-family: 'Jost', sans-serif;
+}
 .partners-head { max-width: 1200px; margin: 0 auto 36px; padding: 0 24px; }
-.partners-eyebrow { display: block; margin-bottom: 10px; font-size: .8rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--primary-pink, #E12BC0); }
-.partners h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 200; letter-spacing: .08em; text-transform: uppercase; line-height: 1.1; }
+.partners-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  font-size: .8rem;
+  font-weight: 400;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--primary-pink, #E12BC0);
+}
+.partners h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 200;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
 .partners-tag { margin-top: 12px; font-weight: 300; color: var(--text-muted, #bdbdbd); }
 
-.marquee { display: grid; gap: 16px;
+.marquee {
+  display: grid;
+  gap: 16px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
 .marquee-row { overflow: hidden; }
 .marquee-track { display: flex; width: max-content; animation: marquee 65s linear infinite; }
 .marquee-row--rev .marquee-track { animation-direction: reverse; animation-duration: 80s; }
 .marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
+/* The box: 5 wide, 4 tall. No fixed height, aspect-ratio drives height. */
 .logo-tile,
 .partner-tile {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 200px;
-  height: 200px;
-  aspect-ratio: 1 / 1;
+  width: 240px;
+  aspect-ratio: 5 / 4;
+  height: auto;
   box-sizing: border-box;
   margin-right: 20px;
-  padding: 28px;
+  padding: 26px;
   overflow: hidden;
   background: #111;
   border: 1px solid rgba(225,43,192,.3);
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
 
+/* The logo: fit inside, never crop */
 .logo-tile img,
 .partner-tile img {
   display: block;
@@ -39,6 +63,7 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  object-position: center;
   opacity: .95;
   transition: opacity .35s ease, transform .35s ease;
 }
@@ -52,24 +77,22 @@ a.partner-tile:hover, a.partner-tile:focus-visible {
   border-color: var(--primary-pink, #E12BC0);
   box-shadow: 0 8px 22px rgba(225,43,192,.45);
 }
-
 .logo-tile:hover img,
-.partner-tile:hover img { opacity: 1; transform: scale(1.06); }
+.partner-tile:hover img { opacity: 1; transform: scale(1.04); }
 
 @media (min-width: 900px) {
   .logo-tile,
   .partner-tile {
-    width: 240px;
-    height: 240px;
-    padding: 32px;
+    width: 320px;
+    aspect-ratio: 5 / 4;
+    padding: 30px;
   }
   .partners-head { padding: 0 60px; }
 }
 
-@media (min-width: 900px) { .logo-tile { width: 340px; height: 210px; padding: 16px 22px; } .partners-head { padding: 0 60px; } }
-
 @media (prefers-reduced-motion: reduce) {
   .marquee-row { overflow-x: auto; }
   .marquee-track { animation: none; }
-  .logo-tile[aria-hidden="true"] { display: none; }
+  .logo-tile[aria-hidden="true"],
+  .partner-tile[aria-hidden="true"] { display: none; }
 }
