@@ -112,10 +112,9 @@ layout: null
               </span>
             </a>
             <div class="curated-card__body">
-              <h3 class="curated-card__title"><a href="{{ post.url | relative_url }}">{{ label }}</a></h3>
-              <p class="curated-card__excerpt">{{ teaser }}</p>
-              <a class="curated-card__read" href="{{ post.url | relative_url }}">Read Story &rarr;</a>
-            </div>
+            <h3 class="curated-card__title"><a href="{{ post.url | relative_url }}">{{ label }}</a></h3>
+            <a class="curated-card__read" href="{{ post.url | relative_url }}">Read Story &rarr;</a>
+          </div>
           </article>
           {%- endfor %}
         </div>
