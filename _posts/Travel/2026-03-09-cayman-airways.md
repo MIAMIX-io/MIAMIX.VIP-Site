@@ -1,7 +1,7 @@
 ---
 title: "Cayman Airways"
 page_title: "Cayman Airways"
-description: "National Flag Carrier of the Cayman Islands"
+description: "Cayman Airways offers reliable and convenient air service to one of the Caribbean's most beautiful paradises. Flying direct eliminates connections through other hubs, multiple security checks and baggage transfers, so you start your island vacation sooner, refreshed and ready to explore."
 date: 2026-03-09
 cover_image: /images/travel/Cayman Airways _cover.jpeg
 external_url: "https://www.miamix.io/travel-leisure/cayman-airways"
