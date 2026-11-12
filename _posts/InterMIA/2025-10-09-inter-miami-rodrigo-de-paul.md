@@ -3,14 +3,14 @@ title: "Rodrigo De Paul"
 page_title: "Puts on the Pink"
 description: "Rodrigo De Paul officially joined Inter Miami CF in a high-profile move from Atlético Madrid, bringing the Argentine midfielder to the pink side alongside Lionel Messi. Introduced before a packed crowd, De Paul signed a contract through 2028, marking a new chapter in his career and the club’s ambitions."
 date: 2025-10-09
-cover_image: /images/inter-miami/IMG_7188.jpg
+cover_image: /images/intermia/IMG_7188-819x1024.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/rodrigo-de-paul-puts-on-the-pink"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
 author: "Silvina Fuentes & Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/inter-miami/IMG_7188.jpg
+_thumbnail: /images/intermia/IMG_7188-819x1024.jpg
 ---
 
 The summer heat in Florida was even stronger, but it wasn't because of the weather: it was because of Rodrigo De Paul's official arrival at Inter Miami CF. In front of a stadium packed with fans and cameras, the "Little Engine" of the Argentine National Team was introduced as the new star of the pink team, accompanied by his family and the always radiant Tini Stoessel, who didn't stop smiling throughout the event.
