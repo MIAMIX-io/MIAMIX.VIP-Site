@@ -1,16 +1,18 @@
 ---
-title: The Modern Mother’s Day Edit
-page_title: null
-cover_image: /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
-external_url: www.victoriassecret.com
-channel: [CuratedLifestyle]
+title: "The Modern Mother’s Day Edit"
+page_title: "The Modern Mother’s Day Edit"
+description: "Modern Mother's Day gifting is about intention over excess, choosing beauty, wellness, and fragrance that reflect who she is today. From soft everyday comfort and Bronze Bombshell to thoughtful wellness, this edit celebrates presence, individuality, and the quiet ways she shows up every day."
 date: 2026-05-06T00:00:00.000Z
+cover_image: /images/curated/Mother's+Day+-+Adriana+9.png
+external_url: www.victoriassecret.com
+channel: [Curated Lifestyle]
 business_name: Victoria Secret
-page_title: The Modern Mother’s Day Edit
 featured: false
 _thumbnail: >-
-  /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
+  /images/curated/Mother's+Day+-+Adriana+9.png
 ---
+
+## **Beauty, Wellness, Fragrance, and Thoughtful Gifts**
 
 Mother’s Day is an invitation to slow down and choose with intention. It is not about how much is given, but how thoughtfully it is considered. The most meaningful gifts are the ones that reflect who she is today, a woman who moves through life with depth, presence, and her own evolving sense of self.
 
@@ -26,7 +28,7 @@ Fragrance, on the other hand, remains one of the most intimate ways to gift. It 
 
 ![](/assets/images/CuratedLifestyle/Mothers_Day_-_Jasmine_1__4.png)
 
-At the same time, there is beauty in returning to what has always worked. The classics continue to hold their place, not out of habit, but because they carry emotion. Flowers, chocolates, handwritten notes, and the simplicity of a quiet morning shared together still resonate in a way nothing else quite can. These gestures are not about perfection, they are about presence. When paired with something she can continue to enjoy, such as soft cotton pajamas that become part of her everyday rhythm, they take on an added sense of care. The latest pieces from Victoria’s Secret, featuring Adriana Lima alongside her daughters, reflect that ease, where comfort and femininity naturally coexist.
+At the same time, there is beauty in returning to what has always worked. The classics continue to hold their place, not out of habit, but because they carry emotion. Flowers, chocolates, handwritten notes, and the simplicity of a quiet morning shared together still resonate in a way nothing else quite can. These gestures are not about perfection, they are about presence. When paired with something she can continue to enjoy, such as soft cotton pajamas that become part of her everyday rhythm, they take on an added sense of care. The latest pieces from Victoria’s Secret, featuring 【entity-Adriana Lima¦canonical_name=Adriana Lima】 alongside her daughters, reflect that ease, where comfort and femininity naturally coexist.
 
 ![](/assets/images/CuratedLifestyle/ceek_nellaspec_product_shot7_390_5.jpeg)
 
