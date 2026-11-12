@@ -1,7 +1,7 @@
 ---
 title: "Copa Airlines"
 page_title: "Copa Airlines"
-description: "Copa Airlines is a leading Latin American carrier connecting Miami to numerous destinations across the Americas via its Hub in Panama. It is renowned for its punctuality and world-class in-flight service."
+description: "Copa Airlines enters the Miami conversation quietly and efficiently, until you realize how many journeys across the Americas depend on its network and the geographic advantage of Panama. From Miami, a short flight south and a smooth transition through Tocumen turns location into strategy."
 date: 2026-03-09
 cover_image: /images/travel/CopaAir_cover.jpg
 external_url: "https://www.miamix.io/travel-leisure/copa-airlines"
