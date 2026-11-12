@@ -3,14 +3,14 @@ title: "Bunbury Miami"
 page_title: "Bunbury Miami"
 description: "In Miami Beach, Bunbury is the kind of neighborhood spot you return to. Seasonal dishes built on local ingredients, plates that look as good as they taste, craft cocktails with a modern twist, and service that makes every table feel personal."
 date: 2026-03-08
-cover_image: /images/hospitality/Bunbury_Miami_cover.webp
+cover_image: /images/hospitality/Bunbury_post06.jpeg
 external_url: "https://www.miamix.io/hospitality-mix/bunbury-miami"
 channel: [Hospitality]
 business_name: "Bunbury Miami"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/Bunbury_Miami_cover.webp
+_thumbnail: /images/hospitality/Bunbury_post06.jpeg
 ---
 
 Nestled in the vibrant neighborhood of Miami, Bunbury has quickly established itself as a must-visit destination for food enthusiasts and casual diners alike. This contemporary restaurant offers a unique blend of innovative cuisine, warm hospitality, and an inviting atmosphere that captures the essence of Miami's dynamic culinary scene. From the moment you step through the doors, you are greeted with an ambiance that perfectly balances sophistication and comfort, making it an ideal spot for any occasion.
