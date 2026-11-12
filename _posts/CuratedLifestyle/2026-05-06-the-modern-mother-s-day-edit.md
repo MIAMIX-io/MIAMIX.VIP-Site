@@ -1,21 +1,16 @@
 ---
 title: The Modern Mother’s Day Edit
 page_title: null
-cover_image: >-
-  /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
+cover_image: /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
 external_url: www.victoriassecret.com
-channel:
-  - CuratedLifestyle
+channel: [CuratedLifestyle]
 date: 2026-05-06T00:00:00.000Z
 business_name: Victoria Secret
 page_title: The Modern Mother’s Day Edit
 featured: false
 _thumbnail: >-
   /assets/images/CuratedLifestyle/Mothers_Day_-_Adriana_4_3.png
-
 ---
-
-## **Beauty, Wellness, Fragrance, and Thoughtful Gifts**
 
 Mother’s Day is an invitation to slow down and choose with intention. It is not about how much is given, but how thoughtfully it is considered. The most meaningful gifts are the ones that reflect who she is today, a woman who moves through life with depth, presence, and her own evolving sense of self.
 
