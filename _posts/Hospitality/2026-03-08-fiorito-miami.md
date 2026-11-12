@@ -3,14 +3,14 @@ title: "Fiorito Miami"
 page_title: "Fiorito Miami"
 description: "If you are craving authentic Argentine asado without the fuss, Fiorito is your spot. Think fire grilled meats cooked over open flame, golden flaky empanadas, generous portions made for sharing, and a laid back room that feels like a friend's place, only with a much better cook."
 date: 2026-03-08
-cover_image: /images/hospitality/Fiorito_MIAMIX.png
+cover_image: /images/hospitality/Fiorito+Miami_cover.jpeg
 external_url: "https://www.miamix.io/hospitality-mix/fiorito-miami"
 channel: [Hospitality]
 business_name: "Fiorito Miami"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/Fiorito_MIAMIX.png
+_thumbnail: /images/hospitality/Fiorito+Miami_cover.jpeg
 ---
 
 <!-- SINGLE IMAGE -->
