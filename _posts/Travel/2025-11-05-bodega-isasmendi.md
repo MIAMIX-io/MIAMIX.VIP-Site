@@ -3,14 +3,14 @@ title: "Bodega Isasmendi"
 page_title: "High-altitude wines with a family soul"
 description: "Nestled in the heart of the Calchaquí Valleys, at 2,500 meters above sea level, Bodega Isasmendi is the result of three migrant stories that converged in Cachi to honor a nearly two century old winemaking legacy, from Don Nicolás Severo de Isasi Isasmendi founding Colomé in 1831 to today."
 date: 2025-11-05
-cover_image: /images/travel/IMG_9846.jpeg
+cover_image: /images/travel/IMG_9842.jpeg
 external_url: "https://www.miamix.io/travel-leisure/bodega-isasmendi"
 channel: [Travel]
 business_name: "Bodega Isasmendi"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/IMG_9846.jpeg
+_thumbnail: /images/travel/IMG_9842.jpeg
 ---
 
 Nestled in the heart of the Calchaquí Valleys, at 2,500 meters above sea level, **Bodega Isasmendi** is much more than a producer of extreme high-altitude wines. It is the result of three migrant stories that converged in Cachi, Salta, to create a family venture that honors a nearly two-century-old winemaking legacy and celebrates the magic of one of the world's most extraordinary terroirs.
