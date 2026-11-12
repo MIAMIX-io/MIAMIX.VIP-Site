@@ -1,7 +1,7 @@
 ---
 title: "Supreme Twins Foundation"
 page_title: "An Event For Inclusion"
-description: "An Event For Inclusion Miami dressed up to welcome a host of notables who came together to support an extraordinary cause: the Supreme Twins Foundation. This event focused on the foundation's main objective: to provide comprehensive support to children and adolescents with special needs and their families, helping to create a more inclusive future full of opportunities for the most vulnerable. The Supreme Twins Foundation works tirelessly to provide these families with essential resources in three key areas. First, they offer access to essential therapeutic services, improving the quality of life for these children and adolescents. Second, they focus on ensuring these young people have access to education and career opportunities that will allow them to fully integrate into society. Finally, they provide emotional support and resources to parents, helping them guide their children through this important process of growth and development."
+description: "Miami welcomed notables supporting the Supreme Twins Foundation and its mission to help children and adolescents with special needs and their families build a more inclusive future. The foundation provides essential therapeutic services, access to education and career opportunities, and emotional support and resources for parents."
 date: 2025-10-31
 cover_image: /images/culture/DBatista Photography SUPREME MIAMI TWINS FUNDATION EPIC EVENTS-88.jpg
 external_url: "https://www.miamix.io/culture-arts/supreme-twins-foundation-an-event-for-inclusion"
