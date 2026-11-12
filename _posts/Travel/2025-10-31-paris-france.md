@@ -31,18 +31,18 @@ Its small bistros offer the best homemade French cuisine, while its viewpoints p
 
 Getting lost in its alleys is like traveling to a more intimate and less touristy Paris, where every corner tells a story and every window seems to hide a secret.
 
-During our last stay, we had the privilege of visiting the original 【entity-Dior¦canonical_name=Dior】 house, located at the elegant 30 Avenue Montaigne. This iconic building is not only the birthplace of one of the world's most influential haute couture maisons, but also a temple of luxury and sophistication. We were invited to tour its facilities, and the experience exceeded all our expectations.
+During our last stay, we had the privilege of visiting the original Dior house, located at the elegant 30 Avenue Montaigne. This iconic building is not only the birthplace of one of the world's most influential haute couture maisons, but also a temple of luxury and sophistication. We were invited to tour its facilities, and the experience exceeded all our expectations.
 
 <!-- SINGLE IMAGE -->
-![【entity-Dior¦canonical_name=Dior】 house](/images/travel/File_015.png)
+![Dior house](/images/travel/File_015.png)
 
-Touring the 【entity-Dior¦canonical_name=Dior】 house is immersing oneself in the creative universe of Christian 【entity-Dior¦canonical_name=Dior】 and his successors.
+Touring the Dior house is immersing oneself in the creative universe of Christian Dior and his successors.
 
 From the ateliers where haute couture pieces are handcrafted to the private salons where exclusive collections are presented, every space breathes excellence and attention to detail.
 
 The finishes, fabrics, colors: everything is designed to convey the founder's vision that fashion should be synonymous with timeless elegance.
 
-Touring the 【entity-Dior¦canonical_name=Dior】 house is immersing oneself in the creative universe of Christian 【entity-Dior¦canonical_name=Dior】 and his successors. From the ateliers where haute couture pieces are handcrafted to the private salons where exclusive collections are presented, every space breathes excellence and attention to detail. The finishes, fabrics, colors: everything is designed to convey the founder's vision that fashion should be synonymous with timeless elegance.
+Touring the Dior house is immersing oneself in the creative universe of Christian Dior and his successors. From the ateliers where haute couture pieces are handcrafted to the private salons where exclusive collections are presented, every space breathes excellence and attention to detail. The finishes, fabrics, colors: everything is designed to convey the founder's vision that fashion should be synonymous with timeless elegance.
 
 <!-- SINGLE IMAGE -->
 ![Dior suite](/images/travel/IMG_5234.png)

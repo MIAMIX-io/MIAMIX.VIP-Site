@@ -23,7 +23,7 @@ It is an invitation to shop with intention, support a greater cause, and engage 
 
 Set against the backdrop of the Westchester Cultural Arts Center, the event created an atmosphere that felt both elevated and heartfelt. Guests were immersed in a curated selection of luxury and exclusive designer pieces, offering a unique opportunity to discover fashion that tells a story. Beyond the racks and displays, a deeper mission remained at the heart of the experience: giving back.
 
-A portion of the proceeds benefited 【entity-St. Jude Children’s Research Hospital¦canonical_name=St. Jude Children’s Research Hospital】, an organization dedicated to advancing treatments and saving the lives of children facing serious illnesses. This partnership added a profound layer of purpose, reminding attendees that every purchase contributed to something far greater than themselves.
+A portion of the proceeds benefited St. Jude Children’s Research Hospital, an organization dedicated to advancing treatments and saving the lives of children facing serious illnesses. This partnership added a profound layer of purpose, reminding attendees that every purchase contributed to something far greater than themselves.
 
 What set S.H.E. Gives Back apart was its ability to blend sophistication with sincerity. It speaks to a modern woman who understands that true empowerment is not defined by labels or price tags, but by impact, connection, and heart. It is about aligning personal style with personal values and recognizing that the two can coexist beautifully.
 

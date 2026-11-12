@@ -54,7 +54,7 @@ The journey from Salinas Grandes to Purmamarca involves crossing the Cuesta del 
 
 Purmamarca is a charming town in the province of Jujuy, Argentina, famous for the Hill of Seven Colors.
 
-It is a popular tourist destination known for its adobe architecture, artisan markets where local craftspeople sell their creations, and scenic desert landscapes within the Quebrada de Humahuaca, a site declared a 【entity-UNESCO¦canonical_name=UNESCO】 World Heritage Site. Visitors can explore the town, walk the Paseo de los Colorados trail to get views of the colorful hills, and visit the historic Santa Rosa de Lima church. Here we stayed at La Comarca hotel, a place that combines comfort with spectacular views of the multicolored hills.
+It is a popular tourist destination known for its adobe architecture, artisan markets where local craftspeople sell their creations, and scenic desert landscapes within the Quebrada de Humahuaca, a site declared a UNESCO World Heritage Site. Visitors can explore the town, walk the Paseo de los Colorados trail to get views of the colorful hills, and visit the historic Santa Rosa de Lima church. Here we stayed at La Comarca hotel, a place that combines comfort with spectacular views of the multicolored hills.
 
 <!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
 {% include gallery.html folder="/images/travel" images="IMG_5205.JPG|IMG_5137.WEBP|IMG_5211.WEBP|IMG_5204.JPG|IMG_5207.JPG|IMG_5213.JPG|IMG_5208.JPG|IMG_5206.JPG|IMG_5209.JPG|IMG_5215.WEBP|IMG_5212.WEBP|IMG_5210.WEBP" cols=3 %}

@@ -22,7 +22,7 @@ Behind Lola’s magic is Gonzalo, whose years of experience in upscale nightlife
 
 When Gonzalo met Suzzet, their partnership became the heart of the brand. Together they brought Lola to life and to another level. After marrying and welcoming their daughter, it was Suzzet who encouraged Gonzalo to make Lola a truly unique space, one that merged fine dining with live artistry. Her intuition was right: Lola quickly became a stage for unforgettable nights.
 
-Music is part of Lola’s identity. The restaurant regularly hosts world-class Latin artists like Diana Fuentes, Amaury Gutiérrez, and 【entity-Francisco Céspedes¦canonical_name=Francisco Céspedes】, turning dinners into immersive experiences. These performances transform the space, laughter, applause, and melodies fill the room, creating memories that linger long after the last song.
+Music is part of Lola’s identity. The restaurant regularly hosts world-class Latin artists like Diana Fuentes, Amaury Gutiérrez, and Francisco Céspedes, turning dinners into immersive experiences. These performances transform the space, laughter, applause, and melodies fill the room, creating memories that linger long after the last song.
 
 <!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
 {% include gallery.html folder="/images/hospitality" images="IMG_4592.JPG|IMG_4590.JPG|IMG_4589.JPG" cols=2 %}

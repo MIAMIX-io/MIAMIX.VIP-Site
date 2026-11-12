@@ -16,17 +16,17 @@ _thumbnail: /images/hospitality/Faena_Miami_MIAMIX.png
 Faena Miami Beach stands as an architectural masterpiece on the shores of South Florida, redefining luxury hospitality in one of the world's most vibrant coastal destinations. This extraordinary oceanfront resort seamlessly blends art, culture, and sophistication to create an immersive experience that transcends traditional hotel stays. Designed by renowned architects and visionaries, the property features stunning Art Deco influences combined with contemporary elegance, making it a landmark destination for discerning travelers seeking something truly exceptional. The accommodations are nothing short of spectacular, offering guests a sanctuary of refined comfort and style with custom furnishings, luxurious materials, and thoughtful details that reflect the property's commitment to excellence.
 
 <!-- SINGLE IMAGE -->
-![【entity-Faena¦canonical_name=Faena】 Miami](/images/hospitality/Faena_post01.jpeg)
+![Faena Miami](/images/hospitality/Faena_post01.jpeg)
 
 The culinary program at Faena Miami Beach represents a journey through diverse flavors and innovative gastronomy, with multiple dining venues offering distinct culinary perspectives crafted by world-class chefs. From contemporary Argentine cuisine that pays homage to the property's cultural roots to fresh seafood prepared with local ingredients, every restaurant delivers an unforgettable dining experience. Art and culture form the very essence of the Faena experience, with the property serving as a living gallery that celebrates creativity in all its forms through an impressive collection of contemporary artworks, installations, and performances that engage guests throughout their stay.
 
 <!-- SINGLE IMAGE -->
-![【entity-Faena¦canonical_name=Faena】 Miami](/images/hospitality/Faena_post02.jpeg)
+![Faena Miami](/images/hospitality/Faena_post02.jpeg)
 
 The spa and wellness facilities offer a transformative journey toward relaxation and rejuvenation, drawing inspiration from ancient healing traditions while incorporating modern wellness techniques to deliver personalized treatments. Guests can indulge in signature therapies, therapeutic massages, and innovative beauty treatments administered by skilled practitioners. The wellness amenities include state of the art fitness facilities, yoga and meditation spaces, and hydrotherapy experiences that complement the comprehensive wellness programming designed to promote holistic well-being.
 
 <!-- SINGLE IMAGE -->
-![【entity-Faena¦canonical_name=Faena】 Miami](/images/hospitality/Faena_post03.webp)
+![Faena Miami](/images/hospitality/Faena_post03.webp)
 
 The beachfront at Faena Miami Beach provides an idyllic setting for relaxation and recreation, featuring pristine white sand and crystal clear waters. The beach club offers impeccable service with comfortable loungers, private cabanas, and attentive staff ensuring every need is met. Guests can enjoy refreshing cocktails and light cuisine delivered directly to their beachside retreat, creating a seamless experience of luxury and leisure while also having opportunities for water sports and activities that allow them to engage with the natural beauty of Miami Beach.
 

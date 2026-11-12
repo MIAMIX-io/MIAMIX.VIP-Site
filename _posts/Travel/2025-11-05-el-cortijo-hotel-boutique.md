@@ -44,4 +44,4 @@ Our visit to El Cortijo Hotel Boutique was, without a doubt, one of those experi
 
 Website: [www.elcortijohotel.com](https://www.elcortijohotel.com)
 
-【entity-Instagram¦canonical_name=Instagram】: [@elcortijohotel](https://www.instagram.com/elcortijohotel)
+Instagram: [@elcortijohotel](https://www.instagram.com/elcortijohotel)

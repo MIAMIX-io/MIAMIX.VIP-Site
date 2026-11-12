@@ -22,7 +22,7 @@ One of the main developments was the official announcement of the AFA Internatio
 
 The complex will be dedicated not only to high-performance training but also to strengthening social and educational ties with the community. With modern, multifunctional facilities, the center will offer sports programs, cultural workshops, and activities for youth and families, reflecting the vision of an AFA with strong roots and global reach.
 
-Two days later, on June 15, the AFA hosted another significant event at Chase Stadium in Fort Lauderdale. In collaboration with Más+, the health drink promoted by 【entity-Lionel Messi¦canonical_name=Lionel Scaloni】, a family event was held in celebration of Father's Day, bringing together sports figures, brand representatives, and federation officials in a relaxed and festive atmosphere.
+Two days later, on June 15, the AFA hosted another significant event at Chase Stadium in Fort Lauderdale. In collaboration with Más+, the health drink promoted by Lionel Messi, a family event was held in celebration of Father's Day, bringing together sports figures, brand representatives, and federation officials in a relaxed and festive atmosphere.
 
 <!-- SINGLE IMAGE -->
 ![AFA office in Miami](/images/sports/MIA_AFA4_OFFICE_DAV6-1024x576.jpg)
@@ -39,6 +39,6 @@ Through concrete investments, high-impact collaborations, and a national identit
 In its dual role as world champion and ambassador of Argentine soccer, its presence in Miami is much more than symbolic: it is a firm commitment to the future of the sport globally.
 
 <!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
-{% include gallery.html folder="/images/sports" images="afa-【entity-f1¦canonical_name=F1】-683x1024.jpg|afa-f3-683x1024.jpg|MIA_AFA_OFFICE_DAV6-1024x576.jpeg|MIA_AFA4_OFFICE_DAV6-1024x576.jpg" cols=2 %}
+{% include gallery.html folder="/images/sports" images="afa-f1-683x1024.jpg|afa-f3-683x1024.jpg|MIA_AFA_OFFICE_DAV6-1024x576.jpeg|MIA_AFA4_OFFICE_DAV6-1024x576.jpg" cols=2 %}
 
 PH: Nanker Benavides [@nanker.art](https://www.instagram.com/nanker.art/)

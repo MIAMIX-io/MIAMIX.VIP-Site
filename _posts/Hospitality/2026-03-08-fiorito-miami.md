@@ -34,7 +34,7 @@ They even offer private dining if you're celebrating something special or just w
 
 If you've got a favorite bottle you'd like to bring along, they welcome outside wine with a fifteen dollar corkage fee. Just another way they make the experience feel personal and flexible. Fiorito is open for both lunch and dinner, making it a versatile choice no matter what time your cravings hit. They also offer takeout and delivery, so you can enjoy their delicious food at home when you're not in the mood to go out.
 
-Reservations are accepted and highly recommended, especially during peak hours. You can easily book a table through 【entity-OpenTable¦canonical_name=OpenTable】, so you won't have to worry about waiting around. The portions at Fiorito are generous. Seriously, you might want to consider sharing a few dishes if you're dining with friends or family. It's all part of the Argentine dining tradition of abundance and sharing good food with good company.
+Reservations are accepted and highly recommended, especially during peak hours. You can easily book a table through OpenTable, so you won't have to worry about waiting around. The portions at Fiorito are generous. Seriously, you might want to consider sharing a few dishes if you're dining with friends or family. It's all part of the Argentine dining tradition of abundance and sharing good food with good company.
 
 <!-- SINGLE IMAGE -->
 ![Fiorito Miami](/images/hospitality/Fiorito Miami_post03.jpg)
