@@ -84,7 +84,7 @@
     position: relative; display: flex; gap: 20px; padding: 28px 60px 36px;
     overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch;
     cursor: grab; overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory; scroll-padding-inline: 60px;
+    scroll-snap-type: none; scroll-padding-inline: 60px;
     -webkit-mask-image: none; mask-image: none;
 }
 .row-track::-webkit-scrollbar { display: none; }
@@ -103,7 +103,7 @@
 .row-btn--next { right: 14px; }
 .row:hover .row-btn, .row-btn:focus-visible { opacity: 1; }
 .row-btn:hover { background: var(--accent); border-color: var(--accent); }
-@media (hover: none) { .row-btn { display: none !important; } }
+@media (hover: none) { .row-btn { display: flex; opacity: 1; } }
 
 /* --- POSTER CARDS --- */
 .poster { display: block; flex: 0 0 auto; width: 240px; -webkit-user-drag: none; scroll-snap-align: start; scroll-snap-stop: always; }
