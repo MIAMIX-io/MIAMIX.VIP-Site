@@ -3,14 +3,14 @@ title: "Messi In Miami"
 page_title: "He Did it Again"
 description: "HE DID IT AGAIN. Lionel Messi scored twice to lead Inter Miami to a 2–1 victory over Nashville SC at Chase Stadium. His standout performance included a brilliant low free-kick goal, extending his scoring streak and adding another memorable night in Fort Lauderdale."
 date: 2025-10-09
-cover_image: /images/inter-miami/IMG_6984.jpg
+cover_image: /images/intermia/IMG_6985.jpg
 external_url: "https://www.miamix.io/inter-miami-cf/blog-post-title-three-dwttt-g3ak7"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/inter-miami/IMG_6984.jpg
+_thumbnail: /images/intermia/IMG_6985.jpg
 ---
 
 With a brace at home against Nashville SC, the Argentine star led Inter Miami to another MLS victory, this time 2-1, and extended his scoring streak, which is already entering the record books. Saturday night at Chase Stadium witnessed, once again, the inevitable: Messi, when he wants to, can decide games.
