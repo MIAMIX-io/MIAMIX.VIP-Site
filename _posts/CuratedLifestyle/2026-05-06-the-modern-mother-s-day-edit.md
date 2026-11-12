@@ -1,7 +1,7 @@
 ---
 title: "The Modern Mother’s Day Edit"
 page_title: "The Modern Mother’s Day Edit"
-description: "Modern Mother's Day gifting is about intention over excess, choosing beauty, wellness, and fragrance that reflect who she is today. From soft everyday comfort and Bronze Bombshell to thoughtful wellness, this edit celebrates presence, individuality, and the quiet ways she shows up every day."
+description: "A modern Mother’s Day edit celebrating thoughtful gifting through beauty, wellness, and fragrance—where individuality, everyday comfort, and intention matter more than excess."
 date: 2026-05-06T00:00:00.000Z
 cover_image: /images/curated/Mother's+Day+-+Adriana+9.png
 external_url: www.victoriassecret.com
