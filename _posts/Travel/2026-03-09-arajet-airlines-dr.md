@@ -1,7 +1,7 @@
 ---
 title: "Arajet Airlines DR"
 page_title: "Arajet Airlines DR"
-description: "Dominican Republic’s Low-Cost Airline"
+description: "Arajet has put the Dominican Republic back at the center of regional air travel. With a clear identity and an ambitious route strategy, it has attracted travelers who want a smoother way to move between key cities in Latin America and North America, through hubs that reduce friction and open new combinations."
 date: 2026-03-09
 cover_image: /images/travel/Arajet_MIAMIX.png
 external_url: "https://www.miamix.io/travel-leisure/arajet-airlines-dr"
