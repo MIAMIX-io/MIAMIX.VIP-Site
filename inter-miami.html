@@ -7,12 +7,12 @@ layout: null
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIAMIX - 【entity-Inter Miami¦canonical_name=Inter Miami】</title>
-    <meta name="description" content="【entity-Inter Miami¦canonical_name=Inter Miami】 CF - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
+    <meta name="description" content="【entity-Inter Miami CF¦canonical_name=Inter Miami CF】 - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MIAMIX">
     <meta property="og:title" content="MIAMIX - 【entity-Inter Miami¦canonical_name=Inter Miami】">
-    <meta property="og:description" content="【entity-Inter Miami CF¦canonical_name=Inter Miami】 - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
-    <meta property="og:image" content="/images/partners/inter-【entity-miami¦canonical_name=Inter Miami CF】.png">
+    <meta property="og:description" content="【entity-Inter Miami CF¦canonical_name=Inter Miami CF】 - The Heron's Nest. Matchday, videos and stories from MIAMIX.">
+    <meta property="og:image" content="/images/partners/inter-miami.png">
     <link rel="icon" type="image/png" href="/images/MIAMIX-favicon-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,11 +49,11 @@ layout: null
         .video-main { width: 100%; aspect-ratio: 16 / 9; min-height: 240px; border: 0; display: block; background: #000; }
         .video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
         .video-row iframe { width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border: 0; display: block; background: #000; }
-        /* POSTS - dark stone, spaced, solid pink shadow */
+        /* POSTS - dark stone, spaced, soft pink shadow, gradient out */
         .inter-posts { padding: 64px 0 80px; background: #292524; position: relative; z-index: 1; clear: both; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); overflow: visible; }
         .inter-posts .wrap { overflow: visible; padding-right: 36px; }
-        .inter-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; margin-bottom: 72px; background: linear-gradient(145deg, #181818 0%, #0f0f0f 100%); border: 1px solid rgba(225,43,192,.3); border-radius: 16px; overflow: hidden; box-shadow: 10px 10px 0 0 #E12BC0; transition: border-color .3s, box-shadow .3s, transform .3s; }
-        .inter-post:hover { border-color: #E12BC0; box-shadow: 14px 14px 0 0 #E12BC0; transform: translate(-4px, -4px); }
+        .inter-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; margin-bottom: 72px; background: linear-gradient(145deg, #181818 0%, #0f0f0f 100%); border: 1px solid rgba(225,43,192,.3); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,.45), 0 10px 28px rgba(225,43,192,.22), 0 28px 56px rgba(225,43,192,.12); transition: border-color .3s, box-shadow .3s, transform .3s; }
+        .inter-post:hover { border-color: #E12BC0; box-shadow: 0 6px 16px rgba(0,0,0,.5), 0 14px 36px rgba(225,43,192,.32), 0 36px 72px rgba(225,43,192,.16); transform: translateY(-4px); }
         .inter-post > a { display: block; aspect-ratio: 4 / 3; }
         .inter-post:last-child { margin-bottom: 0; }
         .inter-post:nth-child(even) .inter-post-img { order: 2; }
@@ -76,21 +76,8 @@ layout: null
             .video-row, .inter-post { grid-template-columns: 1fr; }
             .inter-post:nth-child(even) .inter-post-img { order: 0; }
             .inter-post-body { padding: 26px 24px 32px; }
-            .inter-post {
-                  margin-bottom: 72px;
-                  box-shadow:
-                    0 4px 12px rgba(0,0,0,.45),
-                    0 10px 28px rgba(225,43,192,.22),
-                    0 28px 56px rgba(225,43,192,.12);
-                }
-                
-                .inter-post:hover {
-                  transform: translateY(-4px);
-                  box-shadow:
-                    0 6px 16px rgba(0,0,0,.5),
-                    0 14px 36px rgba(225,43,192,.32),
-                    0 36px 72px rgba(225,43,192,.16);
-                }
+            .inter-post { margin-bottom: 72px; box-shadow: 0 4px 10px rgba(0,0,0,.4), 0 8px 20px rgba(225,43,192,.18), 0 18px 36px rgba(225,43,192,.10); }
+            .inter-post:hover { transform: translateY(-4px); box-shadow: 0 6px 14px rgba(0,0,0,.45), 0 12px 28px rgba(225,43,192,.26), 0 26px 52px rgba(225,43,192,.14); }
             .video-section { padding-bottom: 44px; }
         }
     </style>
