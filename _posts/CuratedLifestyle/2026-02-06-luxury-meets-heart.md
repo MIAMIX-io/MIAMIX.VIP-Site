@@ -1,7 +1,7 @@
 ---
 title: "Luxury Meets Heart at Jimmy Choo Coral Gables"
-page_title: "Luxury Meets Heart at Jimmy Choo Coral Gables"
-description: "Set at Merrick Park, the Jimmy Choo Coral Gables boutique provided the perfect backdrop for an afternoon defined by elegance and intention. A carefully curated guest list ensured an atmosphere that felt both exclusive and welcoming, where every detail—from the setting to the conversations—reflected a shared appreciation for craftsmanship, community, and conscious living."
+page_title: "Luxury Meets Heart"
+description: "The Jimmy Choo boutique at Merrick Park set the scene for an elegant, intimate afternoon celebrating craftsmanship, community, and conscious living."
 date: 2026-02-06
 cover_image: /images/curated/WHERE+LUXURY+MEETS+HEART+FOTOS_369A2820.jpg
 external_url: "https://www.miamix.io/romina-nabhen/luxury-meets-heart-at-jimmy-choo-coral-gables"
