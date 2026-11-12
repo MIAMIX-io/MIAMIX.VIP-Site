@@ -3,14 +3,14 @@ title: "Northern Argentina"
 page_title: "A journey through unforgettable landscapes"
 description: "We flew to Salta and set off for Cafayate, where the landscapes kept changing and left us breathless. From Quebrada de las Conchas with the Amphitheater, the Toad, the Friar and the Devil's Throat, to high altitude wines, adobe towns and salt flats that look infinite, Northern Argentina is a journey through unforgettable landscapes."
 date: 2025-10-31
-cover_image: /images/travel/IMG_5205.JPG
+cover_image: /images/travel/ar-salta.jpeg
 external_url: "https://www.miamix.io/travel-leisure/northern-argentina-unforgettable-landscapes"
 channel: [Travel]
 business_name: "Northern Argentina"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/IMG_5205.JPG
+_thumbnail: /images/travel/ar-salta.jpeg
 ---
 
 We flew to the city of Salta and from there we set off on journey to Cafayate, where we enjoyed the city and tasted some wines. Along the way, the landscapes were constantly changing, offering a unique visual experience that left us breathless.
