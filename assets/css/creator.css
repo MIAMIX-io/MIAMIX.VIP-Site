@@ -239,8 +239,9 @@
   z-index: 1;
   width: 100%;
   height: auto;
+  max-height: 720px;
   aspect-ratio: auto;
-  object-fit: contain;
+  object-fit: cover;
   object-position: top center;
   display: block;
   background: #111;
@@ -590,12 +591,12 @@
   /* Hero: copy left, portrait right, vertically centered */
   .curated-page .romina-hero { padding: 100px 0 70px; }
   .curated-page .romina-hero-single {
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-    column-gap: clamp(40px, 6vw, 88px);
-    align-items: center;
-  }
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  column-gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
   .curated-page .romina-eyebrow,
   .curated-page .romina-name,
   .curated-page .romina-byline,
@@ -603,9 +604,9 @@
   .curated-page .romina-intro-block { grid-column: 1; }
   .curated-page .romina-cta { justify-self: start; }
   .curated-page .portrait-wrap {
-    grid-column: 2;
-    grid-row: 1 / -1;
-    align-self: center;
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: start;
     justify-self: end;
     width: min(100%, 520px);
     margin: 0 16px 16px 0;
