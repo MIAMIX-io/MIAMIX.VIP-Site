@@ -3,14 +3,14 @@ title: "Paris, France"
 page_title: "Charm and Elegance"
 description: "Paris reinvents itself without losing its essence. Corner cafés, galleries and luxury boutiques live with a vibrant contemporary scene, and among all neighborhoods there is one I always return to: Montmartre, with cobblestone streets, Place du Tertre and the golden age of Picasso, Toulouse-Lautrec and the Moulin Rouge."
 date: 2025-10-31
-cover_image: /images/travel/IMG_9864.JPG
+cover_image: /images/travel/leonard-cotte-R5scocnOOdM-unsplash.jpg
 external_url: "https://www.miamix.io/travel-leisure/paris-charm-and-elegance"
 channel: [Travel]
 business_name: "Paris"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/IMG_9864.JPG
+_thumbnail: /images/travel/leonard-cotte-R5scocnOOdM-unsplash.jpg
 ---
 
 Paris is much more than a city; it is a sensory experience lived with every step. From its iconic boulevards to its most secret corners, the French capital remains the dream destination of millions of travelers seeking to immerse themselves in its unparalleled atmosphere of elegance, history, and innovation. During our recent stay, we have walked its streets once again, discovering that each visit reveals a new facet of this eternal metropolis.
