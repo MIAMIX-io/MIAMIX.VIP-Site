@@ -3,14 +3,14 @@ title: "Caribbean Airlines"
 page_title: "Caribbean Airlines"
 description: "Caribbean Airlines has established itself as a vital link between the Caribbean region and the United States. With its hub at Piarco, it serves both the large Caribbean diaspora in America and tourists seeking tropical getaways, with complimentary meals, generous baggage and Caribbean music on board."
 date: 2026-03-09
-cover_image: /images/travel/Caribbean Airlines_cover.png
+cover_image: /images/travel/IMG_6314_0.png
 external_url: "https://www.miamix.io/travel-leisure/caribbean-airlines"
 channel: [Travel]
 business_name: "Caribbean Airlines"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/Caribbean Airlines_cover.png
+_thumbnail: /images/travel/IMG_6314_0.png
 ---
 
 <!-- SINGLE IMAGE -->
