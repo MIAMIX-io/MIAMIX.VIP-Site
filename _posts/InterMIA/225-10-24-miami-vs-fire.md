@@ -3,14 +3,14 @@ title: "Inter Miami VS Chicago Fire"
 page_title: "The Show Goes On"
 description: "Inter Miami brought its signature energy to Chase Stadium as Lionel Messi and Luis Suárez shared the spotlight against Chicago Fire. Despite the visitors taking the win, the night delivered Miami’s familiar mix of football, entertainment, star power, and passionate fans."
 date: 2025-10-24
-cover_image: /images/inter-miami/IMG_2767.jpg
+cover_image: /images/intermia/IMG_8720.PNG
 external_url: "https://www.miamix.io/inter-miami-cf/inter-chicago"
 channel: [Inter Miami]
 business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/inter-miami/IMG_2767.jpg
+_thumbnail: /images/intermia/IMG_8720.PNG
 ---
 
 <!-- SINGLE IMAGE -->
