@@ -3,14 +3,14 @@ title: "Culebra, Puerto Rico"
 page_title: "A Caribbean Treasure"
 description: "Just a 30 minute flight from San Juan, the island of Culebra unfolds like a small Caribbean paradise. Getting here is an experience in itself: hop on a light aircraft with Air Flamenco, enjoy aerial views of turquoise waters and white sand beaches, and in under half an hour go from urban bustle to total island relaxation."
 date: 2025-11-05
-cover_image: /images/travel/MIAMIX-54.png
+cover_image: /images/travel/Puerto_Rico_20190301_1840.jpg
 external_url: "https://www.miamix.io/travel-leisure/culebra-puerto-rico"
 channel: [Travel]
 business_name: "Culebra, Puerto Rico"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/MIAMIX-54.png
+_thumbnail: /images/travel/Puerto_Rico_20190301_1840.jpg
 ---
 
 <!-- SINGLE IMAGE -->
