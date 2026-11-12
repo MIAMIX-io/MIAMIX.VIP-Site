@@ -1,7 +1,7 @@
 ---
 title: "El Cortijo Hotel Boutique"
 page_title: "A Hidden Gem in the Heights"
-description: "A Hidden Gem in the Heights Located in the heart of Cachi, in the province of Salta, Argentina, El Cortijo Hotel Boutique is much more than just accommodation. It is a sensory experience that transports its guests to the most authentic essence of the Calchaquí Valleys, where time seems to have stopped in the year 1700. From the first moment you cross the door of this old village house, you are enveloped by a unique atmosphere. The warm colors of the adobe walls, the aromas of the patio flowers, and the textures of stone and wood create an environment of absolute relaxation. The exquisite collection of art and ancient imagery that decorates every corner of the hotel adds a touch of distinction and culture that makes each space a living museum."
+description: "Located in the heart of Cachi, El Cortijo is much more than accommodation. It is a sensory experience that transports guests to the most authentic essence of the Calchaquí Valleys, from adobe walls and patio flowers to art and ancient imagery that make each space a living museum."
 date: 2025-11-05
 cover_image: /images/travel/MIAMIX-2 (8).png
 external_url: "https://www.miamix.io/travel-leisure/el-cortijo-hotel-boutique"
