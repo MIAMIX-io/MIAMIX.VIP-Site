@@ -264,14 +264,13 @@
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   gap: 50px;
-  align-items: start;
+  align-items: stretch;
 }
 .curated-page .bio-photo {
-  position: sticky;
-  top: 110px;
+  position: static;
   width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
+  height: 100%;
+  aspect-ratio: auto;
   object-fit: cover;
   object-position: top center;
   display: block;
@@ -538,7 +537,7 @@
   .curated-page .wrap { padding-left: 20px; padding-right: 20px; }
   .curated-page .romina-hero { padding-top: 84px; padding-bottom: 40px; }
   .curated-page .bio .wrap.bio-grid { grid-template-columns: 1fr; gap: 36px; }
-  .curated-page .bio-photo { position: static; max-width: 460px; margin: 0 auto; }
+  .curated-page .bio-photo { position: static; height: auto; aspect-ratio: 3 / 4; max-width: 460px; margin: 0 auto; }
   .curated-page .bio h2 { font-size: 32px; }
   .curated-page .bio,
   .curated-page .curated-stories { padding: 50px 0 60px; }
