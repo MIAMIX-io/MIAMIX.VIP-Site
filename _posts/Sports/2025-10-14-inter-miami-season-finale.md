@@ -3,14 +3,14 @@ title: "Inter Miami: Season Finale"
 page_title: "Miami dominates Atlanta 4-0"
 description: "The final match of the MLS regular season turned into a true football gala at Chase Stadium. Inter Miami closed its campaign with a 4-0 win over Atlanta United, with Lionel Messi displaying his full repertoire of dribbles, vision and pinpoint passing, and Jordi Alba closing his chapter in pink with a goal and a hug from his children on the pitch."
 date: 2025-10-14
-cover_image: /images/sports/IMG_9190.jpeg
+cover_image: /images/sports/IMG_9190.jpg
 external_url: "https://www.miamix.io/sports-miamix-member/inter-miami-season-finale"
 channel: [Sports]
 business_name: "Inter Miami CF"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/sports/IMG_9190.jpeg
+_thumbnail: /images/sports/IMG_9190.jpg
 ---
 
 The final match of the MLS regular season turned into a true football gala at Chase Stadium. Inter Miami closed its campaign with a resounding 4–0 victory over Atlanta United, a night that blended top-level football with emotional farewells. Supporters will remember it as a perfect celebration of talent and camaraderie that defined the season.
