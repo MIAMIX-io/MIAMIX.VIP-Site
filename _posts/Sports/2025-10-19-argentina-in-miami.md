@@ -3,14 +3,14 @@ title: "Argentina In Miami"
 page_title: "Sport & Style"
 description: "Miami welcomed Argentina as if a movie star were arriving on the red carpet. Two friendlies against Venezuela and Puerto Rico became more than preparation matches. They were confirmation that this world champion team understands image is as important as results, from the redesigned Adidas home jersey with metallic details and golden touches for the third star to the oversize jackets and limited sneakers on arrival."
 date: 2025-10-19
-cover_image: /images/sports/IMG_4375.JPG
+cover_image: /images/sports/IMG_9317.jpg
 external_url: "https://www.miamix.io/sports-miamix-member/seleccion-arg-miami"
 channel: [Sports]
 business_name: "Argentina National Team"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/sports/IMG_4375.JPG
+_thumbnail: /images/sports/IMG_9317.jpg
 ---
 
 Miami welcomed the Argentina National Team as if a movie star were arriving on the red carpet. Two friendlies against Venezuela and Puerto Rico became more than just preparation matches: they were confirmation that this world champion team understands that their image is as important as their results. With each arrival at the stadium, at each press conference, the players displayed a sophisticated visual code that speaks of both present and future.
