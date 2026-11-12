@@ -1,7 +1,7 @@
 ---
 title: "Supreme Twins Foundation"
 page_title: "Music That Transforms"
-description: "Music That Transforms Music and inclusion came together for a deeply emotional day with talented percussionist 【entity-Brenda Navarrete¦canonical_name=Brenda Navarrete】 and the children of the Supreme Twins Foundation. With Latin rhythms and live percussion, the gathering became a unique experience filled with smiles, hugs, and a moving rendition of \"Happy Birthday\" that left a lasting impression on everyone present. From the very beginning, Brenda connected with the children with a natural warmth. Her contagious energy and the power of her drums sparked excitement and participation. Music became a common language that broke down barriers and allowed each child to express themselves freely and joyfully. One of the most memorable moments was when everyone joined together to sing and play to the rhythm of a special celebration. It was more than a song: it was a manifestation of love and community. In those minutes, the true value of this experience was epitomized, where everyone could feel seen and valued."
+description: "Music and inclusion came together for an emotional day with percussionist Brenda Navarrete and the children of the Supreme Twins Foundation. With Latin rhythms and live percussion, Brenda connected instantly, sparking smiles, hugs, and joyful participation. Music became a common language that broke down barriers, culminating in a moving group rendition of “Happy Birthday” where every child felt seen and valued."
 date: 2025-10-31
 cover_image: /images/culture/tw004.jpg
 external_url: "https://www.miamix.io/culture-arts/supreme-twins-foundation-music-that-transforms"
@@ -13,7 +13,7 @@ featured: false
 _thumbnail: /images/culture/tw004.jpg
 ---
 
-Music and inclusion came together for a deeply emotional day with talented percussionist 【entity-Brenda Navarrete¦canonical_name=Brenda Navarrete】 and the children of the Supreme Twins Foundation. With Latin rhythms and live percussion, the gathering became a unique experience filled with smiles, hugs, and a moving rendition of "Happy Birthday" that left a lasting impression on everyone present.
+Music and inclusion came together for a deeply emotional day with talented percussionist Brenda Navarrete and the children of the Supreme Twins Foundation. With Latin rhythms and live percussion, the gathering became a unique experience filled with smiles, hugs, and a moving rendition of "Happy Birthday" that left a lasting impression on everyone present.
 
 <!-- VIDEO: YouTube or Vimeo link, or file="/assets/video/clip.mp4" -->
 {% include video.html url="https://www.youtube.com/embed/OihpLUsBRUQ?feature=oembed" caption="Supreme Twins & Brenda Navarrete: Música que transforma" %}
