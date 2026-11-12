@@ -3,14 +3,14 @@ title: "Ajal Tulum Tree Houses"
 page_title: "Eco Oasis in the Mayan Jungle"
 description: "We had the privilege of visiting this paradise and speaking with Carlos, who welcomed us and shared the vision behind this exceptional project. This is an oasis in the jungle, four tree houses suspended in the canopy, solar powered, off grid, with toucans, howler monkeys and sea of treetops from the tower."
 date: 2025-11-05
-cover_image: /images/travel/IMG_9994.jpeg
+cover_image: /images/travel/IMG_9997.JPG
 external_url: "https://www.miamix.io/travel-leisure/ajal-tulum-tree-houses"
 channel: [Travel]
 business_name: "Ajal Tulum Tree Houses"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/IMG_9994.jpeg
+_thumbnail: /images/travel/IMG_9997.JPG
 ---
 
 Ajal Tulum Tree Houses is an adults‑only, eco‑boutique hotel in Tulum, Mexico, offering an authentic connection with nature without sacrificing luxury and comfort.
