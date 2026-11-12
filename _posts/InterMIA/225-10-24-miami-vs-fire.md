@@ -13,9 +13,6 @@ featured: false
 _thumbnail: /images/intermia/IMG_8720.PNG
 ---
 
-<!-- SINGLE IMAGE -->
-![Inter Miami vs Chicago Fire](/images/inter-miami/AD102081.jpg)
-
 At Chase Stadium, under the Miami lights that never lose their shine, Inter Miami once again turned a Tuesday night into a global stage. The crowd came ready for a show, and even though the scoreboard ended in Chicago Fire’s favor, the energy, drama, and passion made it feel like another unforgettable chapter in the club’s ongoing spectacle.
 
 <!-- GALLERY: images are separated by | and cols can be 2, 3 or 4 -->
@@ -38,6 +35,9 @@ Beyond the pitch, the night was its own red carpet event. Influencers, artists, 
 And as the game slipped away in the final minutes, the spirit of the fans never dimmed. They clapped, danced, and sang even as the scoreline read 3-5. Because in Miami, a loss doesn’t end the show, it just sets the stage for the next performance.
 
 Messi, ever the leader, applauded the fans as he walked off the pitch, a quiet reminder that this project is bigger than one match. It’s about identity, pride, and the dream of building something iconic in the heart of a city that knows no limits.
+
+<!-- SINGLE IMAGE -->
+![Inter Miami vs Chicago Fire](/images/inter-miami/AD102081.jpg)
 
 Inter Miami continues to be more than a team, it’s a movement, a lifestyle, and the pulse of a city that turns every game into a festival. The score may fade, but the Miami magic remains, bold, passionate, and always ready for the next chapter.
 
