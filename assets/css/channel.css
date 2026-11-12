@@ -43,22 +43,54 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
 }
 
 /* ---------- CHANNEL INTRO (optional, e.g. Fashion) ---------- */
-.channel-intro { padding: 64px 40px 0; }
-.intro-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+/* Left-aligned to line up with Latest Stories / Curated Lifestyle / grid */
+.channel-intro { padding: 64px 0 0; background: #292524; }
+.intro-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; text-align: left; }
 .intro-eyebrow { margin: 0 0 12px; color: #E12BC0; font-size: .85rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
 .intro-eyebrow span { color: #fff; }
 .intro-inner h2 { margin: 0 0 18px; font-weight: 200; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: .12em; text-transform: uppercase; line-height: 1.2; }
-.intro-inner p:last-child { margin: 0; color: #e6e6e6; font-size: 1.05rem; line-height: 1.8; }
+.intro-inner p:last-child { margin: 0; color: #e6e6e6; font-size: 1.05rem; line-height: 1.8; max-width: 640px; }
 
-/* ---------- GRID - styled containers ---------- */
-.channel-content { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.card { background: #141414; border: 1px solid #222; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+/* ---------- GRID - dark stone, 3-column, padded, pink shadow ---------- */
+.channel-content {
+  background: #292524; /* dark stone */
+  max-width: none; /* full-bleed, not a centered 1200px box */
+  padding: 64px 0 80px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: visible;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  row-gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 36px; /* extra room so pink shadow is not clipped */
+  overflow: visible;
+}
+.card {
+  background: #0F0F0F;
+  border: 1px solid rgba(225,43,192,.3);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 0 0 #E12BC0; /* SOLID pink shadow, 0 blur */
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.card:hover {
+  border-color: #E12BC0;
+  transform: translate(-4px, -4px);
+  box-shadow: 14px 14px 0 0 #E12BC0;
+}
 .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; }
 .card-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #111; }
 .card-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.25,.46,.45,.94); display: block; }
 .card:hover .card-media img { transform: scale(1.05); }
-.card-content { padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.card-content { padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 12px; }
 .card-eyebrow { font-size: 11px; color: #E12BC0; text-transform: uppercase; letter-spacing: 3px; font-weight: 400; margin: 0; }
 .card-title { font-size: 22px; font-weight: 200; line-height: 1.2; margin: 0; color: #fff; }
 .card:hover .card-title { color: #E12BC0; }
@@ -70,14 +102,18 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
 @media (max-width: 900px) {
   .ch-hero { min-height: 50vh; padding: 110px 24px 60px; }
   .ch-hero-content { padding: 20px 18px; margin: 0; }
-  .channel-intro { padding: 48px 24px 0; }
-  .channel-content { padding: 60px 24px; }
-  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .channel-intro { padding: 48px 0 0; }
+  .intro-inner { padding: 0 24px; }
+  .channel-content { padding: 60px 0 72px; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; row-gap: 36px; }
 }
 @media (max-width: 600px) {
-  .card-grid { grid-template-columns: 1fr; gap: 20px; }
+  .card-grid { grid-template-columns: 1fr; gap: 32px; }
+  .card { box-shadow: 8px 8px 0 0 #E12BC0; }
+  .card:hover { box-shadow: 10px 10px 0 0 #E12BC0; }
 }
-/* === CHANNEL HERO: DRAMATIC FULL-SCREEN - MUST BE LAST IN channel.css === */
+
+/* === CHANNEL HERO: DRAMATIC FULL-SCREEN - MUST BE LAST IN channel.css FOR HERO === */
 .ch-hero {
   min-height: 100svh !important;
   min-height: 100dvh !important;
@@ -140,4 +176,33 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
   -webkit-text-stroke: 0 !important;
   background: none !important;
   text-shadow: 0 0 40px rgba(225,43,192,.6), 0 2px 20px rgba(0,0,0,.8);
+}
+
+/* === FASHION ONLY - Curated tall 2-column - MUST BE VERY LAST === */
+body.fashion .channel-content .card-grid,
+.fashion-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  row-gap: 56px;
+}
+body.fashion .card-media {
+  aspect-ratio: 3 / 4; /* tall Curated portrait */
+}
+body.fashion .card-content {
+  padding: 36px 32px 40px;
+}
+
+@media (max-width: 900px) {
+  body.fashion .channel-content .card-grid,
+  .fashion-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    row-gap: 36px;
+  }
+}
+@media (max-width: 600px) {
+  body.fashion .channel-content .card-grid,
+  .fashion-grid {
+    grid-template-columns: 1fr;
+  }
 }
