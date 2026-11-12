@@ -3,14 +3,14 @@ title: "Cayman Airways"
 page_title: "Cayman Airways"
 description: "Cayman Airways offers reliable and convenient air service to one of the Caribbean's most beautiful paradises. Flying direct eliminates connections through other hubs, multiple security checks and baggage transfers, so you start your island vacation sooner, refreshed and ready to explore."
 date: 2026-03-09
-cover_image: /images/travel/Cayman Airways _cover.jpeg
+cover_image: /images/travel/IMG_6318_1.jpeg
 external_url: "https://www.miamix.io/travel-leisure/cayman-airways"
 channel: [Travel]
 business_name: "Cayman Airways"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/Cayman Airways _cover.jpeg
+_thumbnail: /images/travel/IMG_6318_1.jpeg
 ---
 
 Cayman Airways is the flag carrier airline of the Cayman Islands, offering reliable and convenient air service to travelers seeking to experience the beauty and charm of this Caribbean paradise. As the national airline, Cayman Airways has built a strong reputation for safety, punctuality, and exceptional customer service, making it the preferred choice for both leisure and business travelers heading to the islands.
