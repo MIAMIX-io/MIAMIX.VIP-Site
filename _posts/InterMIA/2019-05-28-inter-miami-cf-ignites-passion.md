@@ -1,6 +1,6 @@
 ---
 title: "INTER MIAMI CF"
-page_title: "Passion Ignites with release of Euphoria""
+page_title: "Passion Ignites with release of Euphoria"
 description: "Inter Miami CF celebrated the launch of its new “Euphoria” uniform with an energetic Wynwood event alongside Royal Caribbean. The highlight was a vibrant mural by renowned artist JEKS, featuring players in the new jersey and bringing soccer-inspired art to the neighborhood."
 date: 2019-05-28
 cover_image: /images/inter-miami/A5EF54ED-E04C-4852-B791-32E2D20AF728.JPEG
