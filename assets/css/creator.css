@@ -685,3 +685,27 @@
 }
 .curated-page .curated-card:hover .curated-card__title a { color: #E12BC0 !important; }
 }
+/* HERO EMERGENCY FIX - test only, overrides the broken grid */
+@media (min-width: 901px) {
+  .curated-page .romina-hero-single {
+    display: block !important;
+    max-width: 1200px !important;
+  }
+  .curated-page .portrait-wrap {
+    float: right !important;
+    width: min(100%, 460px) !important;
+    margin: 0 16px 24px 48px !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: auto !important;
+  }
+  .curated-page .portrait-wrap img {
+    height: auto !important;
+    max-height: 620px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+  .curated-page .romina-intro-block {
+    overflow: hidden !important;
+  }
+}
