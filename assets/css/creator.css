@@ -167,7 +167,7 @@
   letter-spacing: .02em;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 18px;
+  margin: 0 0 28px;
 }
 .curated-page .romina-byline {
   font-size: clamp(20px, 2.2vw, 28px);
@@ -176,7 +176,7 @@
   text-transform: uppercase;
   font-weight: 300;
   color: #fff;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
 }
 .curated-page .romina-cats {
   font-size: 13px;
@@ -184,11 +184,12 @@
   text-transform: uppercase;
   font-weight: 300;
   color: #ddd;
-  margin: 0 0 28px;
+  margin: 0 0 36px;
 }
 .curated-page .romina-intro-block {
   border-left: 2px solid #E12BC0;
   padding-left: 24px;
+  margin-top: 8px;
 }
 .curated-page .romina-lead {
   font-size: 22px;
