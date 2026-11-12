@@ -2,8 +2,7 @@
 title: Angels for Humanity
 page_title: Angels for Humanity
 date: 2026-05-10T00:10:00.000Z
-cover_image: >-
-  /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
+cover_image: /images/curated/20260426-0T0A0093.jpg
 external_url: null
 channel:
   - CuratedLifestyle
@@ -11,10 +10,8 @@ business_name: null
 author: "Romina Nabhen"
 featured: false
 _thumbnail: >-
-  /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
+  /images/curated/20260426-0T0A0093.jpg
 ---
-
-## **Tea for a Cause Brings a Garden of Versailles Theme to the Biltmore**
 
 On Sunday, April 26, 2026, Angels for Humanity hosted its annual Tea for a Cause at the iconic Biltmore Hotel in Coral Gables, welcoming a distinguished community for an afternoon where elegance and purpose came together with intention. Now in its fifth year, the event introduced a Gardens of Versailles theme, thoughtfully woven into the setting to create a refined and immersive experience within the hotel.
 
