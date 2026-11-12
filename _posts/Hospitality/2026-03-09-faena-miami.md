@@ -1,7 +1,7 @@
 ---
 title: "Faena Miami"
 page_title: "Faena Miami"
-description: "Design-Forward Luxury Hospitality"
+description: "On the shores of Mid Beach, Faena is not a typical hotel stay, it is a living gallery. Expect Art Deco architecture with contemporary elegance, a collection of contemporary art and performances throughout the property, dining that moves from Argentine roots to fresh local seafood, and a beachfront that feels like a private oasis."
 date: 2026-03-09
 cover_image: /images/hospitality/Faena_Miami_MIAMIX.png
 external_url: "https://www.miamix.io/hospitality-mix/faena-miami"
