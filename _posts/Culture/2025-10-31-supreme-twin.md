@@ -3,14 +3,14 @@ title: "Supreme Twins Foundation"
 page_title: "An Event For Inclusion"
 description: "Miami welcomed notables supporting the Supreme Twins Foundation and its mission to help children and adolescents with special needs and their families build a more inclusive future. The foundation provides essential therapeutic services, access to education and career opportunities, and emotional support and resources for parents."
 date: 2025-10-31
-cover_image: /images/culture/DBatista Photography SUPREME MIAMI TWINS FUNDATION EPIC EVENTS-88.jpg
+cover_image: /images/culture/DBatista+Photography+SUPREME+MIAMI+TWINS+FUNDATION+EPIC+EVENTS-88.jpg
 external_url: "https://www.miamix.io/culture-arts/supreme-twins-foundation-an-event-for-inclusion"
 channel: [Culture]
 business_name: "Supreme Twins Foundation"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/culture/DBatista Photography SUPREME MIAMI TWINS FUNDATION EPIC EVENTS-88.jpg
+_thumbnail: /images/culture/DBatista+Photography+SUPREME+MIAMI+TWINS+FUNDATION+EPIC+EVENTS-88.jpg
 ---
 
 Miami dressed up to welcome a host of notables who came together to support an extraordinary cause: the Supreme Twins Foundation.
