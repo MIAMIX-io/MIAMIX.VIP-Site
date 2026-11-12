@@ -3,14 +3,14 @@ title: "Lola Restaurante"
 page_title: "The Miami Beach Vibe with an Argentine Touch"
 description: "Behind a quiet entrance in Oceanside Plaza, Lola turns dinner into a show. Expect Argentine inspired dishes with Miami freshness, bold signature cocktails, and world class Latin artists like Diana Fuentes, Amaury Gutiérrez and Francisco Céspedes filling the room with laughter, applause and melody."
 date: 2025-10-20
-cover_image: /images/hospitality/12E5DB25-3E1D-4C3C-A757-B9825A5444DB.JPEG
+cover_image: /images/hospitality/449683786_1008990187567708_8107555789784055011_n.webp
 external_url: "https://www.miamix.io/hospitality-mix/lola-restaurante"
 channel: [Hospitality]
 business_name: "Lola Restaurante"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/12E5DB25-3E1D-4C3C-A757-B9825A5444DB.JPEG
+_thumbnail: /images/hospitality/449683786_1008990187567708_8107555789784055011_n.webp
 ---
 
 Hidden within the mezzanine of Oceanside Plaza Condominium, Lola Restaurant is one of those Miami secrets that locals whisper about and visitors never forget. The name evokes a free-spirited woman, sophisticated, passionate, and full of life. That same spirit defines Lola: a place where every detail celebrates discovery, connection, and the joy of living well.
