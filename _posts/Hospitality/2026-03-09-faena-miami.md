@@ -3,14 +3,14 @@ title: "Faena Miami"
 page_title: "Faena Miami"
 description: "On the shores of Mid Beach, Faena is not a typical hotel stay, it is a living gallery. Expect Art Deco architecture with contemporary elegance, a collection of contemporary art and performances throughout the property, dining that moves from Argentine roots to fresh local seafood, and a beachfront that feels like a private oasis."
 date: 2026-03-09
-cover_image: /images/hospitality/Faena_Miami_MIAMIX.png
+cover_image: /images/hospitality/IMG_6341_0.webp
 external_url: "https://www.miamix.io/hospitality-mix/faena-miami"
 channel: [Hospitality]
 business_name: "Faena Miami"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/hospitality/Faena_Miami_MIAMIX.png
+_thumbnail: /images/hospitality/IMG_6341_0.webp
 ---
 
 Faena Miami Beach stands as an architectural masterpiece on the shores of South Florida, redefining luxury hospitality in one of the world's most vibrant coastal destinations. This extraordinary oceanfront resort seamlessly blends art, culture, and sophistication to create an immersive experience that transcends traditional hotel stays. Designed by renowned architects and visionaries, the property features stunning Art Deco influences combined with contemporary elegance, making it a landmark destination for discerning travelers seeking something truly exceptional. The accommodations are nothing short of spectacular, offering guests a sanctuary of refined comfort and style with custom furnishings, luxurious materials, and thoughtful details that reflect the property's commitment to excellence.
