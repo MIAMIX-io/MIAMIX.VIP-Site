@@ -3,14 +3,14 @@ title: "Estefanía Iracet"
 page_title: "A Creative Mind"
 description: "Estefanía Iracet combines artistic talent, business vision, and career management like few in music. Manager of iconic Latin American artist Zeta Bosio, she is also a DJ and music producer who has made her mark since 2010. Based in Miami, Stefi balances her career with motherhood, with her daughter Anastasia as her main inspiration, proving it is possible to be a successful businesswoman, talented artist, and devoted mother at once."
 date: 2025-10-31
-cover_image: /images/culture/a1a-1024x836.jpg
+cover_image: /images/culture/a2a-897x1024.jpg
 external_url: "https://www.miamix.io/culture-arts/estefania-iracet"
 channel: [Culture]
 business_name: ""
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/culture/a1a-1024x836.jpg
+_thumbnail: /images/culture/a2a-897x1024.jpg
 ---
 
 In the music world, there are names that shine brightly, but few combine artistic talent, business vision, and the ability to manage a career like Estefanía Iracet. Not only is she the manager of one of the most iconic artists in Latin American music, Zeta Bosio, but she's also a DJ and music producer, a multifaceted woman who has made her mark on the industry since 2010. With a presence in Miami that doesn't go unnoticed, Stefi has managed to win over not only her audience but also those who follow her innovative vision.
