@@ -78,13 +78,21 @@ body { background: #000; color: #fff; font-family: 'Jost', 'Montserrat', sans-se
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 10px 10px 0 0 #E12BC0; /* SOLID pink shadow, 0 blur */
+  /* SOFT + GRADIENT OUT - no hard edge, fades from pink to transparent */
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.45),
+    0 10px 28px rgba(225,43,192,.22),
+    0 28px 56px rgba(225,43,192,.12);
   transition: transform .25s, box-shadow .25s, border-color .25s;
 }
+
 .card:hover {
   border-color: #E12BC0;
-  transform: translate(-4px, -4px);
-  box-shadow: 14px 14px 0 0 #E12BC0;
+  transform: translateY(-4px);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.5),
+    0 14px 36px rgba(225,43,192,.32),
+    0 36px 72px rgba(225,43,192,.16);
 }
 .card a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; }
 .card-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #111; }
