@@ -1,7 +1,7 @@
 ---
 title: "Inter Miami - Messi"
 page_title: "Did It Again"
-description: "Did It Again"
+description: "As a spectator and supporter of Inter Miami, this one felt like a roller coaster in the best way. Against Jamaica's Cavalier, the stadium was buzzing, the flags were out, personalized jerseys were everywhere, and some fans even shed tears of emotion on a magical day that reinforced their connection with the team."
 date: 2025-10-10
 cover_image: /images/sports/MIAMIX-44 (1).png
 external_url: "https://www.miamix.io/sports-miamix-member/messi-did-it-again"
