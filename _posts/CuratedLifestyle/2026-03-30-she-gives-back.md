@@ -1,7 +1,7 @@
 ---
 title: "S.H.E. Gives Back"
 page_title: "S.H.E. Gives Back"
-description: "Founded by Jenisbel Acevedo, S.H.E. Gives Back offered something far more meaningful than just a shopping event: a space where style and purpose seamlessly intertwined. This purpose-driven experience, presented by Acevedo and Friends, redefined what it means to look good while doing good."
+description: "Founded by Jenisbel Acevedo, S.H.E. Gives Back brought style and philanthropy together, creating a purpose-driven shopping experience presented by Acevedo and Friends."
 date: 2026-03-30
 cover_image: /images/curated/IMG_5786.jpg
 external_url: "https://www.miamix.io/romina-nabhen/she-gives-back"
