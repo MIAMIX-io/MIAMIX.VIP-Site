@@ -3,14 +3,14 @@ title: "Jungle Rides Tulum"
 page_title: "Moving With the Jungle"
 description: "Tulum is meant to be experienced through the senses. We have visited many times searching for ways to connect with nature, to feel the jungle, the sea, and the freedom that only this corner of the Mexican Caribbean can offer. In Tulum it is not just about arriving, but about how you move."
 date: 2026-01-29
-cover_image: /images/travel/IMG_0745.JPG
+cover_image: /images/travel/0d180519-6107-4fd7-9369-3b7f00ddaf47.JPG
 external_url: "https://www.miamix.io/travel-leisure/jungle-rides-tulum"
 channel: [Travel]
 business_name: "Jungle Rides Tulum"
 author: "Robert Eldridge"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/travel/IMG_0745.JPG
+_thumbnail: /images/travel/0d180519-6107-4fd7-9369-3b7f00ddaf47.JPG
 ---
 
 <!-- SINGLE IMAGE -->
