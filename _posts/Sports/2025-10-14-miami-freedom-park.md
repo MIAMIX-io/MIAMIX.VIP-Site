@@ -3,14 +3,14 @@ title: "Miami Freedom Park"
 page_title: "Transforming Miami's sporting landscape"
 description: "Inter Miami is entering a new chapter with Miami Freedom Park, a pioneering project next to Miami International Airport that blends sport, entertainment and community. At its heart will be a 25,000 seat stadium, the permanent home of Inter Miami, surrounded by an all day destination built for residents and visitors, not just match days."
 date: 2025-10-14
-cover_image: /images/sports/IMG_4046.jpeg
+cover_image: /images/sports/MFP_Signage_Inter Miami_Int_Bowl_1 2.jpg
 external_url: "https://www.miamix.io/sports-miamix-member/9rjvmza16w58h58t5m1wroh5jsknbo"
 channel: [Sports]
 business_name: "Miami Freedom Park"
 author: "Cristhian Gassmann"
 featured: false
 # published: false   # uncomment while drafting to keep it off the site
-_thumbnail: /images/sports/IMG_4046.jpeg
+_thumbnail: /images/sports/MFP_Signage_Inter Miami_Int_Bowl_1 2.jpg
 ---
 
 Inter Miami CF is entering a new chapter with the construction of Miami Freedom Park, a pioneering project that will reshape the city’s landscape and redefine the football experience in South Florida. Located next to Miami International Airport, the development blends sport, entertainment and community spaces in an ambitious vision that reflects Miami’s energy and diversity.
