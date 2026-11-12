@@ -394,7 +394,7 @@
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 4;
+  aspect-ratio: 3 / 4;
   height: auto;
   overflow: hidden;
   background: #111;
@@ -619,9 +619,9 @@
     padding-left: 28px;
   }
 
-  /* Stories: 2 columns */
+    /* Stories: 3 columns */
   .curated-page .curated-stories { padding: 100px 0 120px; }
-  .curated-page .curated-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .curated-page .curated-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
 }
 /* FIX 1 - widen bio text only, real page class */
 .curated-page .bio .wrap.bio-single {
