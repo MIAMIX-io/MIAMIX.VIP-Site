@@ -1,16 +1,16 @@
----
+ ---
 title: Angels for Humanity
 page_title: Angels for Humanity
 description: "Angels for Humanity hosted its fifth annual Tea for a Cause at the Biltmore Hotel in Coral Gables, blending a Gardens of Versailles theme with purpose and elegance. The afternoon featured a fashion presentation by 【entity-Giannina Azar¦canonical_name=Giannina Azar】 and celebrated the organization's mission to uplift underserved children through education, healthcare, and essential resources."
 date: 2026-05-10T00:10:00.000Z
-cover_image: /images/curated/20260426-0T0A0093.jpg
+cover_image: /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
 external_url: null
 channel: [CuratedLifestyle]
 business_name: null
 author: "Romina Nabhen"
 featured: false
 _thumbnail: >-
-  /images/curated/20260426-0T0A0093.jpg
+  /assets/images/CuratedLifestyle/20260428_033737_020_0.jpg
 ---
 
 On Sunday, April 26, 2026, Angels for Humanity hosted its annual Tea for a Cause at the iconic Biltmore Hotel in Coral Gables, welcoming a distinguished community for an afternoon where elegance and purpose came together with intention. Now in its fifth year, the event introduced a Gardens of Versailles theme, thoughtfully woven into the setting to create a refined and immersive experience within the hotel.
