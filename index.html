@@ -124,35 +124,35 @@ layout: null
 
     </main>
 
-    <!-- SERVICES -->
-    <section class="services-wrapper" id="services">
-        <video class="services-video-bg" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
-            <source src="/video/MIAMIX_logoEdits-4.mp4" type="video/mp4">
-        </video>
-        <div class="services-overlay"></div>
-
-        <div class="services-inner">
-            <div class="services-head">
-                <span class="services-eyebrow">{{ home.services.eyebrow }}</span>
-                <h2>{{ home.services.title }}</h2>
-                <p>{{ home.services.intro }}</p>
-            </div>
-
-            <div class="svc-list">
-                {%- for item in home.services.items %}
-                <a class="svc-row" href="{{ item.link }}">
-                    <h3 class="svc-title">{{ item.title }}</h3>
-                    <p class="svc-text">{{ item.text }}</p>
-                    <span class="svc-more">Learn more</span>
-                </a>
-                {%- endfor %}
-            </div>
-
-            <div class="services-foot">
-                <a class="cta-btn" href="{{ home.services.cta_url }}">{{ home.services.cta_text }}</a>
-            </div>
-        </div>
-    </section>
+               <!-- SERVICES -->
+            <section class="services-wrapper" id="services">
+                <video class="services-video-bg" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
+                    <source src="/video/MIAMIX_logoEdits-4.mp4" type="video/mp4">
+                </video>
+                <div class="services-overlay"></div>
+            
+                <div class="services-inner">
+                    <div class="services-head">
+                        <span class="services-eyebrow">{{ home.services.eyebrow }}</span>
+                        <h2>{{ home.services.title }}</h2>
+                        <p>{{ home.services.intro }}</p>
+                    </div>
+            
+                    <div class="svc-list">
+                        {%- for item in home.services.items %}
+                        <a class="svc-row" href="{{ item.link }}">
+                            <h3 class="svc-title">{{ item.title }}</h3>
+                            <p class="svc-text">{{ item.text }}</p>
+                            <span class="svc-more">Learn more</span>
+                        </a>
+                        {%- endfor %}
+                    </div>
+            
+                    <div class="services-foot">
+                        <a class="cta-btn" href="{{ home.services.cta_url }}">{{ home.services.cta_text }}</a>
+                    </div>
+                </div>
+            </section>
 
     {% include footer.html %}
 
