@@ -145,7 +145,7 @@
 
 /* =====================================================================
    ROMINA HERO - mobile single column, desktop copy left / portrait right
-   HTML order stays mobile-first: eyebrow -> name -> tagline -> portrait -> intro
+   HTML order stays mobile-first: eyebrow -> name -> byline -> portrait -> intro
    ===================================================================== */
 .curated-page .romina-hero { padding: 90px 0 60px; }
 .curated-page .romina-hero-single { max-width: 760px; margin: 0 auto; }
@@ -169,6 +169,7 @@
   color: #fff;
   margin: 0 0 28px;
 }
+.curated-page .romina-name span { color: #E12BC0; display: block; }
 .curated-page .romina-byline {
   font-size: clamp(20px, 2.2vw, 28px);
   line-height: 1.2;
@@ -224,7 +225,7 @@
 }
 .curated-page .romina-cta:hover { background: #E12BC0; }
 
-/* Hero headshot: NO crop, full image, top-aligned. This is the hero only, not the post cards. */
+/* Hero headshot: top-aligned. This is the hero only, not the post cards. */
 .curated-page .portrait-wrap { position: relative; margin: 0 16px 32px 0; }
 .curated-page .portrait-wrap::after {
   content: "";
@@ -276,7 +277,7 @@
 }
 
 /* =====================================================================
-   ROMINA BIO
+   ROMINA BIO - full width, image left / text right, aligned edge to edge
    ===================================================================== */
 .curated-page .bio { padding: 40px 0; }
 .curated-page .bio--tight { padding-top: 0; }
@@ -286,7 +287,10 @@
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   gap: 50px;
-  align-items: stretch;
+  align-items: start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 .curated-page .bio-photo {
   position: static;
@@ -327,10 +331,15 @@
 }
 .curated-page .bio .wrap.bio-single {
   display: block;
-  max-width: 760px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding-top: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
 }
+.curated-page .bio .wrap.bio-single p { max-width: none; }
 
 /* =====================================================================
    MID-BREAK - mobile stacked, desktop quote left / photo right
@@ -361,7 +370,7 @@
 
 /* =====================================================================
    CURATED STORIES - posts grid
-   Mobile: 1 column stack. Desktop: 2 columns.
+   Mobile: 1 column stack. Desktop: 3 columns.
    Post media: portrait 2 / 4, crop to fill. No fixed height.
    ===================================================================== */
 .curated-page .curated-stories { padding: 100px 0 120px; }
@@ -505,7 +514,11 @@
   letter-spacing: .05em;
   text-transform: uppercase;
 }
-.curated-page .curated-card__title a { color: #fff; text-decoration: none; }
+.curated-page .curated-card__title a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
 .curated-page .curated-card__title a:hover { color: #E12BC0; }
 .curated-page .curated-card:hover .curated-card__title a { color: #E12BC0; }
 .curated-page .curated-card__excerpt {
@@ -513,7 +526,8 @@
   font-size: .95rem;
   font-weight: 300;
   line-height: 1.65;
-  color: #e6e6e6;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.85);
 }
 .curated-page .curated-card__read {
   margin-top: 12px;
@@ -566,18 +580,18 @@
   .curated-page .bio { padding: 32px 0 40px; }
   .curated-page .curated-stories { padding: 50px 0 60px; }
 
-  /* Gallery stays 2 columns on mobile, the duo */
+  /* Gallery stays 3 columns on mobile */
   .curated-page .romina-strip .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  
+
   /* Stories: stack, 1 column */
   .curated-page .curated-grid { grid-template-columns: 1fr; gap: 28px; }
   .curated-page .curated-card__body {
-  width: calc(100% - 32px);
-  margin: -48px 0 0 auto;
-  padding: 16px 18px 14px;
-  border-radius: 14px;
-}
-.curated-page .curated-card--flip .curated-card__body { margin-left: auto; margin-right: 0; }
+    width: calc(100% - 32px);
+    margin: -48px 0 0 auto;
+    padding: 16px 18px 14px;
+    border-radius: 14px;
+  }
+  .curated-page .curated-card--flip .curated-card__body { margin-left: auto; margin-right: 0; }
 
   .curated-page .main-nav {
     background: linear-gradient(180deg, rgba(0,0,0,.96), rgba(20,0,18,.92)) !important;
@@ -588,44 +602,45 @@
 }
 
 @media (min-width: 901px) {
-  .curated-page .romina-hero { padding: 100px 0 70px; }
+  /* Hero: grid contains image, image capped so it fits in hero */
+  .curated-page .romina-hero { padding: 100px 0 70px; overflow: hidden; }
   .curated-page .romina-hero-single {
-    display: block;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    column-gap: clamp(40px, 6vw, 88px);
+    align-items: start;
     max-width: 1200px;
   }
-  .curated-page .portrait-wrap {
-    float: right;
-    width: min(100%, 460px);
-    margin: 0 0 24px 48px;
-  }
-  .curated-page .portrait-wrap img {
-    height: auto;
-    max-height: 620px;
-    width: 100%;
-    object-fit: cover;
-  }
-  .curated-page .romina-intro-block {
-    overflow: hidden;
-  }
-}
-  .curated-page .romina-eyebrow,
-  .curated-page .romina-name,
-  .curated-page .romina-byline,
-  .curated-page .romina-cats,
-  .curated-page .romina-intro-block { grid-column: 1; }
+  .curated-page .romina-eyebrow { grid-column: 1; grid-row: 1; }
+  .curated-page .romina-name { grid-column: 1; grid-row: 2; }
+  .curated-page .romina-byline { grid-column: 1; grid-row: 3; }
+  .curated-page .romina-intro-block { grid-column: 1; grid-row: 4; overflow: visible; }
   .curated-page .romina-cta { justify-self: start; }
   .curated-page .portrait-wrap {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  align-self: start;
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: start;
     justify-self: end;
-    width: min(100%, 520px);
-    margin: 0 16px 16px 0;
+    width: min(100%, 460px);
+    margin: 0;
+    float: none;
+  }
+  .curated-page .portrait-wrap img {
+    width: 100%;
+    height: 560px;
+    max-height: 560px;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .curated-page .portrait-wrap::after {
+    inset: 14px -14px -14px 14px;
   }
 
   /* Gallery: capped width, no stagger */
   .curated-page .romina-strip { padding: 90px 0 130px; }
-  .curated-page .romina-strip .gallery-grid { max-width: 1150px; margin: 0 auto; gap: 20px; align-items: start; }  /* Bio: more breathing room */
+  .curated-page .romina-strip .gallery-grid { max-width: 1150px; margin: 0 auto; gap: 20px; align-items: start; }
+
+  /* Bio: more breathing room */
   .curated-page .bio { padding: 50px 0; }
 
   /* Mid-break: quote left, photo right */
@@ -654,45 +669,7 @@
     padding-left: 28px;
   }
 
-    /* Stories: 3 columns */
+  /* Stories: 3 columns */
   .curated-page .curated-stories { padding: 100px 0 120px; }
   .curated-page .curated-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
-}
-/* FIX 1 - widen bio text only, real page class */
-.curated-page .bio .wrap.bio-single {
-  max-width: 1150px !important;
-  width: 92% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-}
-
-.curated-page .bio .wrap.bio-single p {
-  max-width: none !important;
-}
-
-.curated-page .bio .wrap.bio-grid {
-  max-width: 1150px !important;
-  width: 92% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* FIX 2 - floating card body, dark at top, fade to bottom, still blur */
-.curated-page .curated-card__body {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 30%, rgba(0,0,0,0.42) 62%, rgba(0,0,0,0) 100%) !important;
-  backdrop-filter: blur(14px) saturate(1.15) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(1.15) !important;
-}
-
-.curated-page .curated-card:hover .curated-card__title a { color: #E12BC0; }
-  color: #fff !important;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.9) !important;
-}
-
-.curated-page .curated-card__excerpt {
-  color: rgba(255,255,255,0.95) !important;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.85) !important;
-}
-.curated-page .curated-card:hover .curated-card__title a { color: #E12BC0 !important; }
 }
