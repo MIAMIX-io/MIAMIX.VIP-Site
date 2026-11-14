@@ -13,7 +13,7 @@ published: true
 _thumbnail: /images/curated/WHERE+LUXURY+MEETS+HEART+FOTOS_369A2820.jpg
 ---
 
-Luxury took on a deeper meaning in Coral Gables during An Afternoon with Purpose, an intimate VIP experience that seamlessly blended elevated fashion with social impact. Hosted by Doral Genesis in partnership with the Out of Foster Foundation, the event unfolded inside the iconic Jimmy Choo boutique, transforming a refined retail space into a platform for connection, awareness, and giving back.
+Luxury took on a deeper meaning in Coral Gables during An Afternoon with Purpose, an intimate IO experience that seamlessly blended elevated fashion with social impact. Hosted by Doral Genesis in partnership with the Out of Foster Foundation, the event unfolded inside the iconic Jimmy Choo boutique, transforming a refined retail space into a platform for connection, awareness, and giving back.
 
 {% include gallery.html folder="/images/curated" images="WHERE-LUXURY-MEETS-HEART-FOTOS_369A2869.jpg|WHERE+LUXURY+MEETS+HEART+FOTOS_369A2869.jpg|WHERE+LUXURY+MEETS+HEART+FOTOS_369A2685.jpg|WHERE-LUXURY-MEETS-HEART-FOTOS_369A2803.jpg" cols=2 %}
 

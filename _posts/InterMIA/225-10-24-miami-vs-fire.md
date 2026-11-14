@@ -27,7 +27,7 @@ Suárez was the main man of the night, scoring twice and proving why his name st
 
 Even in defeat, Inter Miami played with flair. The team’s rhythm, a mix of Latin fire and global glamour, kept fans on their feet until the final whistle. When Suárez curled in his second goal to tie the match 3-3, Chase Stadium erupted in the kind of joy only Miami can produce, loud, colorful, and contagious.
 
-Beyond the pitch, the night was its own red carpet event. Influencers, artists, and local icons filled the VIP lounges, and flashes from cameras sparkled like confetti. Inter Miami games have become a celebration of culture, where football meets fashion, music, and celebrity energy in perfect harmony.
+Beyond the pitch, the night was its own red carpet event. Influencers, artists, and local icons filled the IO lounges, and flashes from cameras sparkled like confetti. Inter Miami games have become a celebration of culture, where football meets fashion, music, and celebrity energy in perfect harmony.
 
 <!-- SINGLE IMAGE -->
 ![Inter Miami vs Chicago Fire](/images/inter-miami/IMG_2765.jpg)

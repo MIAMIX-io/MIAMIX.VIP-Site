@@ -18,7 +18,7 @@ Under the bright lights of Chase Stadium, Inter Miami once again delivered what 
 <!-- SINGLE IMAGE -->
 ![Inter Miami vs D.C. United](/images/inter-miami/IMG_6980.jpg)
 
-From the first whistle, it was clear that this wasn’t just a game, it was a show. Celebrities filled the VIP boxes, fans waved pink flags, and the rhythm of the drums echoed through the stands. Miami has turned soccer into performance art, and Inter Miami into the hottest ticket in town.
+From the first whistle, it was clear that this wasn’t just a game, it was a show. Celebrities filled the IO boxes, fans waved pink flags, and the rhythm of the drums echoed through the stands. Miami has turned soccer into performance art, and Inter Miami into the hottest ticket in town.
 
 And at the center of it all was Messi. The Royal Caribbean Icon of the Match lived up to every bit of his legend, scoring twice and assisting another goal. Every time he touched the ball, the crowd rose to its feet, phones ready to capture another piece of football magic. His chemistry with teammates like Jordi Alba and Sergio Busquets brought a touch of Barcelona nostalgia, now painted in Inter Miami pink.
 

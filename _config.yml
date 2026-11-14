@@ -1,5 +1,5 @@
-name: MIAMIX VIP
-title: MIAMIX VIP
+name: MIAMIX IO
+title: MIAMIX IO
 description: "MIAMIX - Curated stories on sports, fashion, culture, travel, hospitality, health and Miami lifestyle."
 url: "https://miamix.io"
 defaults: [{scope: {path: "", type: "posts"}, values: {layout: "post"}}]
